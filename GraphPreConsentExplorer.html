@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GraphPreConsentExplorer</title>
+        <script src="style.js"></script>
+        <style>
+            /* Custom scrollbar (not possible with Tailwind */
+            #modalContent::-webkit-scrollbar {
+                width: 8px; /* Adjust scrollbar width */
+            }
+            #modalContent::-webkit-scrollbar-track {
+                background: #374151;
+            }
+            #modalContent::-webkit-scrollbar-thumb {
+                background: #6b7280;
+                border-radius: 10px;
+            }
+            #modalContent::-webkit-scrollbar-thumb:hover {
+                background: #9ca3af;
+            }
+        </style>
+        
+    </head>
+    <body class="bg-gray-900 text-white p-6" id="theme">
+        <div class="container mx-auto">
+            <h1 class="text-4xl font-bold mb-4">GraphPreConsentExplorer 🔍</h1>
+            
+            <!-- File Upload for YAML -->
+            <div class="flex items-center gap-3">
+                <label for="fileInput" class="px-4 py-2 bg-gray-700 text-white rounded border border-gray-500 cursor-pointer hover:bg-gray-600">
+                    📂 Load YML File
+                </label>
+                <span id="fileLoadText" class="text-red-400 text-sm"><-Click to load data</span>
+            </div>
+            <input type="file" id="fileInput" accept=".yaml" class="hidden">
+
+            <!-- Stats -->
+            <div id="stats" class="text-right text-gray-400 text-sm mb-2">
+                Applications: 0 / Unique MS Graph permissions: 0
+            </div>
+
+            <!-- Filters -->
+            <div class="mb-4 flex justify-between items-center">
+                <div class="flex flex-1">
+                    <input type="text" id="search" class="p-2 border rounded w-3/5 min-w-[450px] bg-gray-800 text-white" placeholder="Search for Name, ID, Graph Permission...">
+                </div>
+                
+                <div class="flex gap-2">
+                    <button id="toggleEnabledFilter" class="p-2 border rounded bg-gray-800 text-white">
+                        Enabled only
+                    </button>
+                    <button id="toggleGraphFilter" class="p-2 border rounded bg-gray-800 text-white">
+                        With permission only
+                    </button>
+                    <select id="authFlowFilter" class="p-2 border rounded bg-gray-800 text-white">
+                        <option value="">Filter by Auth Flow</option>
+                        <option value="AuthCode">Auth Code Flow</option>
+                        <option value="DeviceCode">Device Code Flow</option>
+                        <option value="BrkRefresh">Brk Refresh Flow</option>
+                    </select>
+                    <select id="fociFilter" class="p-2 border rounded bg-gray-800 text-white">
+                        <option value="">Filter by FOCI</option>
+                        <option value="True">True</option>
+                        <option value="False">False</option>
+                    </select>
+                </div>
+            </div>
+
+            <table class="w-full bg-gray-800 shadow-md rounded-lg overflow-hidden text-white">
+                <thead>
+                    <tr class="bg-gray-700">
+                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" data-column="name" onclick="sortTable('name')">App Name ⬍</th>
+                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" data-column="client_id" onclick="sortTable('client_id')">Client ID ⬍</th>
+                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" data-column="enabled" onclick="sortTable('enabled')">Enabled ⬍</th>
+                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" data-column="graph_api_permissions" onclick="sortTable('graph_api_permissions')">Graph API Permissions ⬍</th>
+                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" data-column="auth_flow" onclick="sortTable('auth_flow')">Auth Flow ⬍</th>
+                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" data-column="foci" onclick="sortTable('foci')">FOCI ⬍</th>
+                    </tr>
+                </thead>
+                                
+                <tbody id="appTable"></tbody>
+            </table>
+        </div>
+
+        <!-- Modal -->
+        <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center p-4" onclick="closeModal(event)">
+            <div id="modalContent" class="bg-gray-800 text-white p-6 rounded-lg shadow-lg w-full max-w-7xl max-h-[95vh] overflow-y-auto">
+                <h2 id="modalTitle" class="text-2xl font-semibold mb-4 text-center"></h2>
+                <div class="space-y-2">
+                    <div class="bg-gray-700 p-2 rounded flex justify-between items-center relative">
+                        <strong>Client ID:</strong> 
+                        <span id="modalClientId" class="flex-1 mx-2 break-all"></span>
+                        <button onclick="copyToClipboard('modalClientId')" class="absolute right-2 text-gray-400 hover:text-white">📋</button>
+                    </div>
+                    
+                    <p class="bg-gray-700 p-2 rounded"><strong>Enabled:</strong> <span id="modalAppEnabled"></span></p>
+                    <p class="bg-gray-700 p-2 rounded"><strong>Graph API Permissions:</strong> <span id="modalPermissions"></span></p>
+                    <p class="bg-gray-700 p-2 rounded"><strong>Auth Flow:</strong> <span id="modalAuthFlow"></span></p>
+                    <p class="bg-gray-700 p-2 rounded"><strong>FOCI:</strong> <span id="modalFOCI"></span></p>
+                    
+                    <div id="modalReplyAddressesContainer" class="bg-gray-700 p-2 rounded">
+                        <strong>Reply Addresses:</strong>
+                        <ul id="modalReplyAddresses" class="list-disc pl-5"></ul>
+                    </div>
+        
+                    <div id="modalAuthCommandsContainer" class="bg-gray-700 p-2 rounded">
+                        <strong>Authentication Commands:</strong>
+                        <div id="modalAuthCommands" class="text-sm whitespace-pre-wrap overflow-x-auto max-w-full"></div>
+                    </div>
+        
+                    <div id="modalNotesContainer" class="bg-gray-700 p-2 rounded hidden">
+                        <strong>Notes:</strong>
+                        <p id="modalNotes"></p>
+                    </div>
+                </div>
+        
+                <button id="closeModal" class="mt-4 w-full py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+                    Close
+                </button>
+            </div>
+        </div>
+
+        <script>
+            let appData = [];
+            const toolDownloadLinks = {
+                "EntraTokenAid": "https://github.com/zh54321/EntraTokenAid",
+                // Maybe add more tools and links as needed
+            };
+            document.getElementById('fileInput').addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                if (!file) return;
+
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const yamlContent = e.target.result;
+                    const data = jsyaml.load(yamlContent);
+
+                    // Ensure empty values are not stored
+                    appData = data.apps.map(app => {
+                        return {
+                            ...app,
+                            graph_api_permissions: Array.isArray(app.graph_api_permissions) 
+                                ? app.graph_api_permissions.filter(perm => perm.trim() !== "") // Remove empty strings
+                                : app.graph_api_permissions 
+                                    ? [app.graph_api_permissions] // Convert single string to array
+                                    : [], // Ensure empty values become an empty array
+
+                            //Ensure AuthCode is always an array (even if it contains only one command)
+                            auth_commands: app.auth_commands
+                                ? Object.entries(app.auth_commands).reduce((acc, [tool, methods]) => {
+                                    acc[tool] = Object.entries(methods).reduce((methodAcc, [authFlow, cmd]) => {
+                                        methodAcc[authFlow] = Array.isArray(cmd) ? cmd : [cmd];
+                                        return methodAcc;
+                                    }, {});
+                                    return acc;
+                                }, {})
+                                : {},
+                        };
+                    });
+                    
+                    displayApps(appData);
+                    filterApps(); // Update stats immediately after loading the file
+                };
+                reader.readAsText(file);
+            });
+
+            //  Function to Copy Command to Clipboard
+            function copyToClipboard(elementId) {
+                const commandText = document.getElementById(elementId).innerText.trim();
+                navigator.clipboard.writeText(commandText).then(() => {
+                    // Show copied animation
+                    const button = document.querySelector(`[onclick="copyToClipboard('${elementId}')"]`);
+                    button.innerHTML = "✅";
+                    setTimeout(() => {
+                        button.innerHTML = "📋";
+                    }, 1000); // Revert back after 1 second
+                }).catch(err => console.error('Copy failed:', err));
+            }
+
+            let currentSortColumn = null;
+            let currentSortOrder = "asc"; // Default: Ascending
+
+            function sortTable(column) {
+                const tableBody = document.getElementById("appTable");
+                const rows = Array.from(tableBody.querySelectorAll("tr"));
+
+                // Set custom default sorting for specific columns
+                if (currentSortColumn !== column) {
+                    if (column === "graph_api_permissions" || column === "foci") {
+                        currentSortOrder = "desc"; // Default to descending
+                    } else {
+                        currentSortOrder = "asc"; // Default to ascending for other columns
+                    }
+                } else {
+                    currentSortOrder = currentSortOrder === "asc" ? "desc" : "asc"; // Toggle order
+                }
+                
+                currentSortColumn = column;
+
+                // Sort rows based on column data
+                rows.sort((rowA, rowB) => {
+                    let valA = rowA.querySelector(`[data-column="${column}"]`)?.innerText.trim() || "";
+                    let valB = rowB.querySelector(`[data-column="${column}"]`)?.innerText.trim() || "";
+
+                    // Special handling for Graph API Permissions (sort by count)
+                    if (column === "graph_api_permissions") {
+                        valA = valA.split(",").length; // Count of unique permissions
+                        valB = valB.split(",").length;
+                        return currentSortOrder === "asc" ? valA - valB : valB - valA;
+                    }
+
+                    // Special handling for FOCI (treat as boolean and sort descending first)
+                    if (column === "foci") {
+                        valA = valA.toLowerCase() === "true" ? 1 : 0;
+                        valB = valB.toLowerCase() === "true" ? 1 : 0;
+                        return currentSortOrder === "asc" ? valA - valB : valB - valA;
+                    }
+
+                    // Sort boolean values ("true"/"false") correctly
+                    if (column === "enabled") {
+                        valA = valA.toLowerCase() === "true" ? 1 : 0;
+                        valB = valB.toLowerCase() === "true" ? 1 : 0;
+                        return currentSortOrder === "asc" ? valA - valB : valB - valA;
+                    } 
+
+                    // Ensure values are strings before using localeCompare()
+                    return currentSortOrder === "asc" ? valA.localeCompare(valB) : valB.localeCompare(valA);
+                });
+
+                // Reorder rows in the table
+                rows.forEach(row => tableBody.appendChild(row)); // Moves existing rows in sorted order
+            }
+
+
+            function displayApps(apps) {
+                const tableBody = document.getElementById('appTable');
+
+                if (tableBody.children.length === 0) {
+                    // First-time render (Create all rows once)
+                    apps.forEach(app => {
+                        const row = document.createElement('tr');
+                        row.setAttribute("data-client-id", app.client_id); // Unique identifier for filtering
+                        row.classList.add("border-b", "cursor-pointer", "hover:bg-gray-700", "hover:text-white");
+                        row.innerHTML = `
+                            <td class="p-3" data-column="name">${app.name || 'N/A'}</td>
+                            <td class="p-3 whitespace-nowrap" data-column="client_id">${app.client_id || 'N/A'}</td>
+                            <td class="p-3" data-column="enabled">${String(app.enabled).trim().toLowerCase() === "false" ? 'False' : 'True'}</td>
+                            <td class="p-3" data-column="graph_api_permissions">${(app.graph_api_permissions || []).join(', ')}</td>
+                            <td class="p-3" data-column="auth_flow">${app.auth_code ? 'AuthCode' : ''} ${app.device_code ? 'DeviceCode' : ''} ${app.brk_refresh ? 'BrkRefresh' : ''}</td>
+                            <td class="p-3" data-column="foci">${app.foci || 'N/A'}</td>
+                        `;
+
+                        row.onclick = () => openModal(app);
+                        tableBody.appendChild(row);
+                    });
+                } else {
+                    // Just update row visibility instead of re-adding them
+                    document.querySelectorAll("#appTable tr").forEach(row => {
+                        const appId = row.getAttribute("data-client-id");
+                        const app = apps.find(a => a.client_id === appId);
+                        row.style.display = app ? "table-row" : "none";
+                    });
+                }
+            }
+
+
+            function openModal(app) {
+                document.getElementById('modalTitle').innerText = app.name || 'N/A';
+                document.getElementById('modalClientId').innerText = app.client_id || 'N/A';
+                document.getElementById('modalAppEnabled').innerText = app.enabled || 'N/A';
+                const permissionsDiv = document.getElementById('modalPermissions');
+                permissionsDiv.innerHTML = ''; // Clear previous content
+
+                if (app.graph_api_permissions && app.graph_api_permissions.length > 0) {
+                    const permissionsContainer = document.createElement("div");
+                    permissionsContainer.className = "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 bg-gray-700 p-3 rounded-lg"; 
+
+
+                    app.graph_api_permissions.forEach(permission => {
+                        if (permission.trim().toLowerCase() !== "[none]") { // Exclude "[None]"
+                            const permissionItem = document.createElement("span");
+                            permissionItem.className = "bg-gray-800 text-white px-3 py-1 rounded-lg text-sm break-words";
+
+                            permissionItem.innerText = permission.trim();
+                            permissionsContainer.appendChild(permissionItem);
+                        }
+                    });
+
+                    permissionsDiv.appendChild(permissionsContainer);
+                } else {
+                    permissionsDiv.innerHTML = '<p class="text-gray-400">No Graph API permissions assigned.</p>';
+                }
+
+                const authFlows = [];
+                    if (app.auth_code) authFlows.push("AuthCode");
+                    if (app.device_code) authFlows.push("DeviceCode");
+                    if (app.brk_refresh) authFlows.push("BrkRefresh");
+                document.getElementById('modalAuthFlow').innerText = authFlows.join(', ');
+                document.getElementById('modalFOCI').innerText = app.foci || 'N/A';
+                
+                const replyList = document.getElementById('modalReplyAddresses');
+                replyList.innerHTML = (app.reply_addresses || []).map(addr => `<li>${addr}</li>`).join('');
+                
+                const authCommandsDiv = document.getElementById('modalAuthCommands');
+                const generatedCommands = generateAuthCommands(app);
+                const commandEntries = Object.entries(generatedCommands)
+                .filter(([tool, commands]) => Object.values(commands).some(cmdList => cmdList.length > 0)); // Remove tools with no commands
+
+                // Auth command stuff
+                authCommandsDiv.innerHTML = commandEntries.length > 0
+                    ? commandEntries.map(([tool, commands]) => {
+                        let toolLink = toolDownloadLinks[tool] 
+                            ? ` <a target="_blank" href="${toolDownloadLinks[tool]}" class="text-blue-400 hover:text-blue-600">🌍</a>` 
+                            : "";
+                        let toolHTML = `<div class="p-3 rounded bg-gray-700"><p class="font-semibold text-lg mb-1">${tool}${toolLink}</p>`;
+                        
+                        // Hints for brk and foci
+                        Object.entries(commands).forEach(([authFlow, cmdList]) => {
+                            let hintIcon = "";
+                            if (authFlow === "BrkRefresh") {
+                                hintIcon = ` <span class="text-gray-400 cursor-help" title="This requires a valid refresh token from the Azure portal scoped to https://management.core.windows.net// (search in DEV tools)">ℹ️</span>`;
+                            } else if (authFlow === "Refresh from another FOCI") {
+                                hintIcon = ` <span class="text-gray-400 cursor-help" title="This requires a valid refresh token from another FOCI client">ℹ️</span>`;
+                            }
+
+                            toolHTML += `<p class="font-semibold mt-1 mb-1">${authFlow}:${hintIcon}</p>`;
+
+
+                            cmdList.forEach((cmd, index) => {
+                                const cmdId = `${tool}-${authFlow}-${index}`.replace(/\s+/g, '-');
+                                toolHTML += `
+                                    <div class="relative bg-gray-800 text-white p-2 rounded mb-1 flex items-center">
+                                        <pre id="${cmdId}" class="whitespace-normal break-words flex-1 m-0 p-0">${cmd.trim()}</pre>
+                                        <button onclick="copyToClipboard('${cmdId}')" class="absolute top-1 right-1 text-gray-400 hover:text-white">📋</button>
+                                    </div>
+                                `.trim();
+                            });
+                        });
+
+                        toolHTML += `</div>`; // Close tool card
+                        return toolHTML;
+                    }).join('')
+                    : '<p>No authentication commands available.</p>'; // Show this if no tools have commands
+
+                    // Handle Notes field (hide if empty)
+                    const notesField = document.getElementById('modalNotes');
+                    if (app.notes && app.notes.trim() !== "") {
+                        notesField.innerText = app.notes;
+                        notesField.parentElement.style.display = "block";
+                    } else {
+                        notesField.parentElement.style.display = "none"; // Hide if empty
+                    }
+                    document.getElementById('modal').classList.remove('hidden');
+                }
+
+                document.getElementById('closeModal').addEventListener('click', () => {
+                document.getElementById('modal').classList.add('hidden');
+            });
+            
+            function closeModal(event) {
+                if (event.target.id === "modal") {
+                    document.getElementById('modal').classList.add('hidden');
+                }
+            }
+
+
+            function generateAuthCommands(app) {
+                let commands = {};
+
+                if (!app.client_id) return commands; // Ensure there's a client_id
+
+                // Generate AuthCode commands for each valid redirect URL
+                if (app.auth_code && app.reply_addresses?.length) {
+                    commands["AuthCode"] = app.reply_addresses
+                        .filter(url => !url.startsWith("brk-")) // Exclude brk- URLs
+                        .map(url => `$tokens = Invoke-Auth -ClientID '${app.client_id}' -RedirectUrl '${url}'`);
+                }
+
+                // Generate Device Code Flow command
+                if (app.device_code) {
+                    commands["DeviceCode"] = [`$tokens = Invoke-DeviceCodeFlow -ClientID '${app.client_id}'`];
+                }
+
+                // Refresh to FOCI
+                if (String(app.foci).trim().toLowerCase() === "true") {
+                    commands["Refresh from another FOCI"] = [`$tokens = Invoke-Refresh -RefreshToken $tokens.refresh_token -ClientID '${app.client_id}'`];
+                }
+                
+                // Generate BrkRefresh command (static except for ClientID)
+                if (app.brk_refresh) {
+                    commands["BrkRefresh"] = [`$tokens = Invoke-Refresh -RefreshToken $PortalArmToken -ClientID '${app.client_id}' -BrkClientId 'c44b4083-3bb0-49c1-b47d-974e53cbdf3c' -RedirectUri 'brk-c44b4083-3bb0-49c1-b47d-974e53cbdf3c://portal.azure.com' -Origin 'https://portal.azure.com'`];
+                }
+
+                return { "EntraTokenAid": commands };
+            }
+
+            let showGraphPermissionsOnly = false; // Toggle state
+            document.getElementById('toggleGraphFilter').addEventListener('click', function() {
+                showGraphPermissionsOnly = !showGraphPermissionsOnly; // Toggle state
+
+                // Toggle button color to indicate active filter
+                if (showGraphPermissionsOnly) {
+                    this.classList.remove("bg-gray-800");
+                    this.classList.add("bg-blue-600");
+                } else {
+                    this.classList.remove("bg-blue-600");
+                    this.classList.add("bg-gray-800");
+                }
+
+                // Re-filter the apps
+                filterApps();
+            });
+
+            let showEnabledOnly = false;
+            document.getElementById('toggleEnabledFilter').addEventListener('click', function() {
+                showEnabledOnly = !showEnabledOnly; // Toggle state
+
+                // Toggle button color to indicate active filter
+                if (showEnabledOnly) {
+                    this.classList.remove("bg-gray-800");
+                    this.classList.add("bg-blue-600");
+                } else {
+                    this.classList.remove("bg-blue-600");
+                    this.classList.add("bg-gray-800");
+                }
+
+                // Reapply filtering
+                filterApps();
+            });
+
+            function filterApps() {
+                const tableRows = Array.from(document.querySelectorAll("#appTable tr")); // Get latest rows
+                let visibleAppsCount = 0;
+                let visiblePermissions = new Set();
+
+                tableRows.forEach(row => {
+                    const appId = row.getAttribute("data-client-id");
+                    const app = appData.find(app => app.client_id === appId);
+                    
+                    if (!app) {
+                        row.style.display = "none";
+                        return;
+                    }
+
+                    const searchText = document.getElementById('search').value.toLowerCase();
+                    const authFlowFilter = document.getElementById('authFlowFilter').value;
+                    const fociFilter = document.getElementById('fociFilter').value;
+                    const hasGraphPermissions = app.graph_api_permissions &&
+                        app.graph_api_permissions.some(perm => perm.trim().toLowerCase() !== "[none]" && perm.trim() !== "");
+                    const isEnabled = String(app.enabled).trim().toLowerCase() === "true";
+
+                    const shouldShow =
+                        (!searchText || app.name.toLowerCase().includes(searchText) || app.client_id.toLowerCase().includes(searchText) ||
+                            (app.graph_api_permissions.some(perm => perm.toLowerCase().includes(searchText)))) &&
+                        (!authFlowFilter || (app.auth_code && authFlowFilter === 'AuthCode') || (app.device_code && authFlowFilter === 'DeviceCode') || (app.brk_refresh && authFlowFilter === 'BrkRefresh')) &&
+                        (!fociFilter || (app.foci && app.foci.toString().toLowerCase() === fociFilter.toLowerCase())) &&
+                        (!showGraphPermissionsOnly || hasGraphPermissions) &&
+                        (!showEnabledOnly || isEnabled);
+
+                    row.style.display = shouldShow ? "table-row" : "none";
+
+                    if (shouldShow) {
+                        visibleAppsCount++;
+                        if (app.graph_api_permissions) {
+                            app.graph_api_permissions
+                                .filter(perm => perm.trim().toLowerCase() !== "[none]" && perm.trim() !== "")
+                                .forEach(perm => visiblePermissions.add(perm));
+                        }
+                    }
+                });
+
+                document.getElementById('stats').innerText = `Applications: ${visibleAppsCount} / Unique MS Graph permissions: ${visiblePermissions.size}`;
+            }
+
+            document.getElementById('search').addEventListener('input', filterApps);
+            document.getElementById('authFlowFilter').addEventListener('change', filterApps);
+            document.getElementById('fociFilter').addEventListener('change', filterApps);
+
+
+            // Hide upload text after file has been loaded
+            document.getElementById('fileInput').addEventListener('change', function(event) {
+                if (event.target.files.length > 0) {
+                    document.getElementById('fileLoadText').style.display = 'none';
+                }
+            });
+        </script>
+    </body>
+</html>
