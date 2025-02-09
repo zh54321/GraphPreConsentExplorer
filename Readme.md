@@ -1,13 +1,13 @@
 # GraphPreConsentExplorer 🔍
 
-During security assessments, I often rely on various pre-consented permissions for the Microsoft Graph API. To use these permissions, I need to know which Client IDs have specific pre-consented permissions on the Graph API. Additionally, as more organizations restrict the Device Code Flow, it is crucial to identify which clients still allow authentication via the OAuth Code Flow. This requires knowing which clients support different authentication methods, including:
+During security assessments, I often rely on various pre-consented scopes for the Microsoft Graph API. To use these scopes, I need to know which Client IDs have specific pre-consented scopes on the Graph API. Additionally, as more organizations restrict the Device Code Flow, it is crucial to identify which clients still allow authentication via the OAuth Code Flow. This requires knowing which clients support different authentication methods, including:
 - Device Code Flow
 - OAuth Code Flow
 - Special Refresh Flows (FOCI / BRK)
 
-To address this, I used [EntraTokenAid](https://github.com/zh54321/EntraTokenAid) to perform thousands of authentication attempts using ~1200 first party clients. This process helped identify which clients work with specific authentication flows and their corresponding pre-consented permissions on the Microsoft Graph API.
+To address this, I used [EntraTokenAid](https://github.com/zh54321/EntraTokenAid) to perform thousands of authentication attempts using ~1200 first party clients. This process helped identify which clients work with specific authentication flows and their corresponding pre-consented scopes on the Microsoft Graph API.
 
-The result is a fairly large list of nearly 200 Client IDs that have pre-consented permissions on the Graph API and can be used to authenticate without a client secret.  
+The result is a fairly large list of nearly 200 Client IDs that have pre-consented scopes on the Graph API and can be used to authenticate without a client secret.  
 All the information is stored in a YAML file, and there is a simple HTML GUI for easy search and filter navigation. It also provides easy copy-and-paste authentication commands for use with [EntraTokenAid](https://github.com/zh54321/EntraTokenAid).
 
 If you know of additional first-party clients or authentication methods, feel free to contribute!  
@@ -18,12 +18,12 @@ Note: The goal is not to list every valid redirect URL, but to have at least one
 **Data:**
 - Nearly 1200 enabled clients
 - 1071 present in my test tenant
-- Almost 200 clients with usable pre-consented permissions for the Microsoft Graph API
+- Almost 200 clients with usable pre-consented scopes for the Microsoft Graph API
 
 
 **GUI**:
 - Load and visualize Entra ID first party clients from YAML files
-- Display pre-consented Graph API permissions assigned to each application
+- Display pre-consented Graph API scopes assigned to each application
 - Filter, search and sorting capabilities (by name, client ID, FOCI, Auth Flow, etc.)
 - [EntraTokenAid](https://github.com/zh54321/EntraTokenAid) authentication command generator (OAuth, Device Code, BrkRefresh, etc.)
 - No external dependencies (All local, simple HTML + JavaScript)
