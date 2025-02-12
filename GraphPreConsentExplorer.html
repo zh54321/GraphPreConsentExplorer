@@ -104,12 +104,13 @@
                         <strong>Reply Addresses:</strong>
                         <ul id="modalReplyAddresses" class="list-disc pl-5"></ul>
                     </div>
-        
+                    <div id="modalSinglePageAppContainer" class="bg-gray-700 p-2 rounded hidden">
+                        <strong>Single Page App:</strong> <span id="modalSinglePageApp"></span>
+                    </div>    
                     <div id="modalAuthCommandsContainer" class="bg-gray-700 p-2 rounded">
                         <strong>Authentication Commands:</strong>
                         <div id="modalAuthCommands" class="text-sm whitespace-pre-wrap overflow-x-auto max-w-full"></div>
-                    </div>
-        
+                    </div>                
                     <div id="modalNotesContainer" class="bg-gray-700 p-2 rounded hidden">
                         <strong>Notes:</strong>
                         <p id="modalNotes"></p>
@@ -293,6 +294,16 @@
                     permissionsDiv.innerHTML = '<p class="text-gray-400">No Graph API permissions assigned.</p>';
                 }
 
+                // Add SinglePageApp field dynamically (only if not empty)
+                const modalSinglePageAppContainer = document.getElementById('modalSinglePageAppContainer');
+                if (app.single_page_app && app.single_page_app.trim() !== "") {
+                    document.getElementById('modalSinglePageApp').innerText = app.single_page_app;
+                    modalSinglePageAppContainer.style.display = "block";
+                } else {
+                    modalSinglePageAppContainer.style.display = "none"; // Hide if empty
+                }
+
+
                 const authFlows = [];
                     if (app.auth_code) authFlows.push("AuthCode");
                     if (app.device_code) authFlows.push("DeviceCode");
@@ -375,7 +386,13 @@
                 if (app.auth_code && app.reply_addresses?.length) {
                     commands["AuthCode"] = app.reply_addresses
                         .filter(url => !url.startsWith("brk-")) // Exclude brk- URLs
-                        .map(url => `$tokens = Invoke-Auth -ClientID '${app.client_id}' -RedirectUrl '${url}'`);
+                        .map(url => {
+                            let command = `$tokens = Invoke-Auth -ClientID '${app.client_id}' -RedirectUrl '${url}'`;
+                            if (String(app.single_page_app).trim().toLowerCase() === "true") { //handle Origin parameter
+                                command += " -Origin 'https://doesnotmatter'";
+                            }
+                            return command;
+                        });
                 }
 
                 // Generate Device Code Flow command

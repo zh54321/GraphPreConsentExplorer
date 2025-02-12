@@ -1,6 +1,6 @@
 # GraphPreConsentExplorer 🔍
 
-During security assessments, I often rely on various pre-consented scopes for the Microsoft Graph API. To use these scopes, I need to know which Client IDs have specific pre-consented scopes on the Graph API. Additionally, as more organizations restrict the Device Code Flow, it is crucial to identify which clients still allow authentication via the OAuth Code Flow. This requires knowing which clients support different authentication methods, including:
+During security assessments, I often rely on various pre-consented scopes for the Microsoft Graph API. To use these scopes, I need to know which Client IDs have specific pre-consented scopes on the Graph API. Additionally, as more organizations restrict the Device Code Flow, it is crucial to identify which clients allow authentication via the OAuth Code Flow. This requires knowing which clients support different authentication methods, including:
 - Device Code Flow
 - OAuth Code Flow
 - Special Refresh Flows (FOCI / BRK)
@@ -16,9 +16,10 @@ Note: The goal is not to list every valid redirect URL, but to have at least one
 ## 🚀 Features
 
 **Data:**
-- Nearly 1200 enabled clients
-- 1071 present in my test tenant
-- Almost 200 clients with usable pre-consented scopes for the Microsoft Graph API
+- Around 1350 enabled clients
+- Around 265 clients with usable pre-consented scopes for the Microsoft Graph API
+- Around 250 unique pre-consented scopes
+- Total 51 FOCI clients
 
 
 **GUI**:
@@ -34,11 +35,10 @@ Main table:
 
 ![alt text](images/mainview.png)
 
-Detail view of the app. Includes copy and paste authentication commands:
-
+Detail view of the app. Includes copy and paste authentication commands:  
 ![alt text](images/appdetails.png)
 
-Usage of the copy and paste commands to use with [EntraTokenAid](https://github.com/zh54321/EntraTokenAid):
+Usage of the copy and paste commands to use with [EntraTokenAid](https://github.com/zh54321/EntraTokenAid):  
 ![alt text](images/EntraTokenAid.png)
 
 ## 📥 Installation
@@ -62,11 +62,25 @@ apps:
     client_id: "1234-5678-9101"
     enabled: "True"
     graph_api_permissions: ["User.Read", "Directory.Read.All"]
-    auth_code: "Enabled"
-    device_code: "Enabled"
-    brk_refresh: "Enabled"
+    auth_code: "Yes"
+    device_code: "Yes"
+    brk_refresh: "Yes"
     foci: "True"
     reply_addresses:
       - "https://whatever/callback"
+    single_page_app: "True"
     notes: "This property is optional"
 ```
+
+## Changelog
+
+### 2025-02-12
+Data structure:
+- Added the *single_page_app* property for SPA applications, as they require the -origin parameter for authentication.
+
+Client list:
+- Added approximately 100 clients:
+  - The total number of clients with pre-consented MS Graph scopes is now around 265.
+  - In total there are now 50 FOCI clients (enabled). 
+
+Credits: Many of the additional clients were sourced from Dirk-Jan’s [ROADTools](https://github.com/dirkjanm/ROADtools).
