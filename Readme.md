@@ -74,6 +74,10 @@ apps:
 
 ## Changelog
 
+### 2025-03-01
+Client list:
+- Added approximately 31 first-party clients. However, no usable pre-consents on MS Graph were identified (some apps lack pre-consent, while others are confidential clients).
+
 ### 2025-02-12
 Data structure:
 - Added the *single_page_app* property for SPA applications, as they require the -origin parameter for authentication.

@@ -1,4 +1,4 @@
-﻿apps:
+apps:
   - name: "Office 365 Management"
     client_id: "00b41c95-dab0-4487-9791-b9d2c32c80f2"
     enabled: "True"
@@ -14667,6 +14667,216 @@
     single_page_app: ""
   - name: "Previous version CDS OBSOLETE - DO NOT USE"
     client_id: "82f77645-8a66-4745-bcdf-9706824f9ad0"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Office Online Service"
+    client_id: "e03a13ee-9730-4cae-8525-47559c8cf18a"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Azure API Connections"
+    client_id: "fe053c5f-3692-4f14-aef2-ee34fc081cae"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Microsoft Teams Analytics"
+    client_id: "5a128dfa-2ded-4deb-b088-fb73a9472488"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Windows Virtual Desktop Client"
+    client_id: "fa4345a4-a730-4230-84a8-7d9651b86739"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Microsoft Virtual Events Services"
+    client_id: "7fc21101-d09b-4343-8eb3-21187e0431a4"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Insights Apps Platform Prod"
+    client_id: "99ff962b-6252-4b98-8478-0c65a3ea1925"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Azure AI Studio App"
+    client_id: "cb2ff863-7f30-4ced-ab89-a00194bcf6d9"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Azure Machine Learning Workbench Web App"
+    client_id: "d7304df8-741f-47d3-9bc2-df0e24e2071f"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Augmentation Loop"
+    client_id: "4354e225-50c9-4423-9ece-2d5afd904870"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "O365 Diagnostic Service"
+    client_id: "57da3f69-2d82-4c17-9e57-2e6d78b2dc60"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Messaging Async Media"
+    client_id: "7084e364-df71-4a4a-9e8f-d375b5529913"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Security Copilot"
+    client_id: "bb5ffd56-39eb-458c-a53a-775ba21277da"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "App Center"
+    client_id: "6201c56d-46d7-4152-bdb6-e0c77193784b"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Microsoft Todo web app "
+    client_id: "3ff8e6ba-7dc3-4e9e-ba40-ee12b60d6d48"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Enterprise Copilot Platform"
+    client_id: "fb8d773d-7ef8-4ec0-a117-179f88add510"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Microsoft Planner Client"
+    client_id: "75f31797-37c9-498e-8dc9-53c16a36afca"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "M365ChatClient"
+    client_id: "c0ab8ce9-e9a0-42e7-b064-33d422df41f1"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "EnrichmentSvc"
+    client_id: "9ecb7e6d-4866-4950-a4fa-8612715d528f"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Microsoft Virtual Events Portal"
+    client_id: "392c0cd5-b73d-42f5-9e94-49904793f11c"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Microsoft Forms Web"
+    client_id: "5f00fd34-f302-417f-81ef-1adda179d8fd"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "AMC PROD"
+    client_id: "81feaced-5ddd-41e7-8bef-3e20a2689bb7"
     enabled: "True"
     graph_api_permissions: []
     auth_code: ""
