@@ -14885,4 +14885,974 @@ apps:
     foci: "False"
     reply_addresses: []
     single_page_app: ""
+  - name: "Microsoft Account (Windows Live)"
+    client_id: "490b1610-cf9c-400f-8021-6f8815c74517"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Microsoft Bing Ads"
+    client_id: "3ce62fca-4d6d-4d61-8359-5b558c2026d3"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Microsoft Entra SAML Toolkit"
+    client_id: "229946b9-a9fb-45b8-9531-efa47453ac9e"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Microsoft OneDrive"
+    client_id: "eb1cec80-a830-486e-b45b-f57094f163f9"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Confluence SAML SSO by Microsoft"
+    client_id: "c59eb87a-726c-4a73-b014-60961a4432aa"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "SharePoint on-premises"
+    client_id: "d0a58670-a05d-4f4d-936b-c7c8af7bf388"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Skype"
+    client_id: "633c01a0-cdd9-498e-be15-5f176a38628f"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Adobe Experience Manager"
+    client_id: "565e4f69-794b-4b7a-adc7-8fb1084970a0"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "JIRA SAML SSO by Microsoft"
+    client_id: "1f2ebea4-f478-4dfa-999a-d95fdb2d4847"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "ActionMethod"
+    client_id: "af634d96-c29b-45ec-b9b1-4f0b25059ad7"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Adobe Creative Cloud - DEPRECATED"
+    client_id: "40c18316-6500-4055-96ab-297095e792a1"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Info Trieve"
+    client_id: "6c38fb68-7e30-4a45-a740-df9d67833571"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Marketo"
+    client_id: "4601ed45-8ff3-4599-8377-b6649007e876"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Adobe Captivate Prime"
+    client_id: "b2f39ece-770e-4c25-99c5-a6048b6de974"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "CodePlex"
+    client_id: "c87fff9f-e1ef-425b-a324-034ca5bd86d9"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "SAML 1.1 Token enabled LOB App"
+    client_id: "226575a0-5520-4c5a-834d-ab473161fb84"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Send & Track"
+    client_id: "0ab2bc2c-204d-4f69-9f50-1a530defffe4"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Microsoft Developer Network (MSDN)"
+    client_id: "cfda68bd-ff94-4d80-9c36-cfd29e086a53"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Adobe Connect"
+    client_id: "99ab7ace-ee47-4716-be6d-832749afaf3d"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Adobe Sign"
+    client_id: "3a239e0d-7d9c-4f0a-a008-1672cd4a32e8"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Microsoft Commerce Tools Authentication Service"
+    client_id: "dae9ab2c-0d46-41d1-969c-15f3b5005024"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Microsoft Frontbridge"
+    client_id: "0fe2f700-2fcd-47cd-8347-d6b245233ffc"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Azure Active Directory Authentication Extensions"
+    client_id: "99045fe1-7639-4a75-9d4a-577b6ca3810f"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Split Experimentation Resource Provider ID"
+    client_id: "d3e90440-4ec9-4e8b-878b-c89e889e9fbc"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Windows Cloud Login"
+    client_id: "270efc09-cd0d-444b-a71f-39af4910ec45"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Active Directory to Azure Active Directory Provisioning"
+    client_id: "1a4721b3-e57f-4451-ae87-ef078703ec94"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Recreate a missing service principal"
+    client_id: "2565bd9d-da50-47d4-8b85-4c97f669dc36"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Fabrikam Template ID"
+    client_id: "518e5f48-1fc8-4c48-9387-9fdf28b0dfe7"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Redis client app"
+    client_id: "acca5fbb-b7e4-4009-81f1-37e38fd66d78"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Custom application in Microsoft Entra ID application ID"
+    client_id: "8adf8e6e-67b2-4cf2-a259-e3dc5476c621"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Fabric Client for Workloads"
+    client_id: "d2450708-699c-41e3-8077-b0c8341509aa"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Dynamics 365 Fraud Protection application ID"
+    client_id: "bf04bdab-e06f-44f3-9821-d3af64fc93a9"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Microsoft Managed Policy Manager"
+    client_id: "87e86b91-9ae3-4679-b68a-471fe50be746"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Microsoft's centralized Microsoft Entra application"
+    client_id: "7e97dcfb-bcdd-426e-8f0a-96439602627a"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Azure Communication Services app ID"
+    client_id: "c880d6fb-5c66-49ef-9cf5-e53e31900be5"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Omnichannel for Customer Service"
+    client_id: "a950df6d-e658-48fc-b494-ec69d8d9731b"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Microsoft Advertising app ID"
+    client_id: "d42ffc93-c136-491d-b4fd-6f18168c68fd"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Azure Arc service app ID"
+    client_id: "bc313c14-388c-4e7d-a58e-70017303ee3b"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Azure Cosmos DB principal ID - Azure Government"
+    client_id: "57506a73-e302-42a9-b869-6f12d9ec29e9"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Azure Lab Services principal ID (v2)"
+    client_id: "c7bb12bf-0b39-4f7f-9171-f418ff39b76a"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "HDInsight on AKS app ID"
+    client_id: "d3d1a4fe-edb2-4b09-bc39-e41d342323d6"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Project Synergy app ID"
+    client_id: "eb63d611-525e-4a31-abd7-0cb33f679599"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Confidential VM Orchestrator"
+    client_id: "bf7b6499-ff71-4aa2-97a4-f372087be7f0"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Azure API Management Data Plane"
+    client_id: "c8623e40-e6ab-4d2b-b123-2ca193542c65"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Partner Center Container Registries AppId"
+    client_id: "32597670-3e15-4def-8851-614ff48c1efa"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Microsoft Cloud for Sustainability API"
+    client_id: "c3163bf1-092f-436b-b260-7ade5973e5b9"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Environmental Credit Service (preview) app ID"
+    client_id: "b9b0ac19-f710-429d-b58e-dc3f73a330a9"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Azure Lighthouse monitoring appID 1"
+    client_id: "1215fb39-1d15-4c05-b2e3-d519ac3feab4"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Office 365 Exchange Microservices"
+    client_id: "ec156f81-f23a-47bd-b16f-9fb2c66420f9"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "O365 Suite UX"
+    client_id: "4dca1d4f-adcf-4dd2-a0a0-d2fa9d86b752"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Microsoft Teams-T4L Web Client"
+    client_id: "4b3e8f46-56d3-427f-b1e2-d239b2ea6bca"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Project Work Management_US Gov"
+    client_id: "5c8081f1-46af-4077-a0e2-b12ad052a0cb"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Microsoft365 Reporting Service"
+    client_id: "ba26d027-990d-468f-9bd1-576e149408fc"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Office Services Manager in US Gov"
+    client_id: "fdcc4bb8-c7a1-469c-87a5-bce687a5fdf9"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Device Management Service"
+    client_id: "cb58b23f-9a26-4ef4-9e9e-ca08567ef56c"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "IC3 Gateway Non CAE"
+    client_id: "93aca3ff-e61e-477f-b3e7-9fe10c6b97af"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Outlook Browser Extension"
+    client_id: "6a1a91a6-19f9-4a37-b68b-9bed3f4e6595"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Office Scripts Service-Test"
+    client_id: "ca29553d-93c6-4032-b5f6-e8adfdeaef51"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Office Scripts Service-INT"
+    client_id: "baf69396-6842-4148-b212-dc0471397fc2"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "M365 Auditing Public Protected Web API app"
+    client_id: "0fbd6821-7888-443f-821c-36471d94fda1"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Speedway (Groups Service)"
+    client_id: "86b4b4b4-db10-481c-876b-07447e7f204f"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Natural Language Editor"
+    client_id: "1eff577d-b871-4ec2-a30f-b7d43c927d20"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "SharePoint eSignature"
+    client_id: "37f6eaf4-3611-4fbc-9667-ee2ba7e889c0"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Office PowerPoint SGS"
+    client_id: "9d3a9ac8-5c8a-4d3f-9dc5-e214f8094ce5"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Augmentation Loop Test App"
+    client_id: "99f53064-85db-4f9f-ab36-118a009b8857"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Walkie Talkie App"
+    client_id: "f229df84-05da-4ca8-a893-6e514fca6157"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Walkie Talkie GCC App"
+    client_id: "94a119f7-d300-48d9-ae1f-bbdc7e893d37"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Loop Service"
+    client_id: "21e903d7-8d1b-423b-b5e9-4f2afe3b28e1"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Data Security Investigation App"
+    client_id: "33cf2d53-a7bd-4f62-98b2-32aaafc8872d"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Project Work Management"
+    client_id: "9ac8c0b3-2c30-497c-b4bc-cadfe9bd6eed"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Insights Services"
+    client_id: "79d1f229-c1e5-4bd5-b2fd-4764b025b103"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "US Gov Portal App Id"
+    client_id: "c836cbdb-7a5b-44cc-a54f-564b4b486fc6"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Global Secure Access Policy Service Resource Id"
+    client_id: "b3fa0115-39b3-4bec-8cc6-8c4fcd33e69d"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "1P Microsoft Entra application"
+    client_id: "4e1f8dc5-5a42-45ce-a096-700fa485ba20"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "CMS Bulk Operations - site builder app ID"
+    client_id: "3530b95b-aca8-4164-b78e-0c07cbfd0681"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Microsoft Dynamics ERP Microservices"
+    client_id: "0cdb527f-a8d1-4bf8-9436-b352c68682b2"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "e-Invoicing Service service principal"
+    client_id: "ecd93392-c922-4f48-9ddf-10741e4a9b65"
+    enabled: "True"
+    graph_api_permissions: ["[None]"]
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Dynamics 365 HR Virtual Table"
+    client_id: "f9be0c49-aa22-4ec6-911a-c5da515226ff"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "SuccessFactors to Active Directory User Provisioning"
+    client_id: "2b6de0e8-9fd8-4365-b4fa-d8c2b0ce890e"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "SafeGuard Cyber"
+    client_id: "8df5f198-9e47-435c-8dd9-7d3efce192f0"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Google Cloud / G Suite Connector by Microsoft"
+    client_id: "01303a13-8322-4e06-bee5-80d612907131"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Windows Live"
+    client_id: "49bffc52-0b36-4f70-901f-822b10615e32"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Workday to Microsoft Entra ID User Provisioning"
+    client_id: "d44e6d41-a8ef-4ef3-aeaf-6388016a2036"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Bing Ads"
+    client_id: "1b866a98-25f2-42fe-bcfe-c0122ef4cf33"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Zillah"
+    client_id: "60fda14e-f0a4-4fbb-b80a-47f03ffcac6e"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Workday Writeback"
+    client_id: "f1802a5e-4c25-4eec-a705-77592406c6cf"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "F5 BIG-IP APM Microsoft Entra integration"
+    client_id: "12f0b63d-efe6-4c9c-92ed-8b3f043b87a7"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Yammer"
+    client_id: "45a5c24a-83ac-4d38-8028-6006f5c07fef"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "On-premises ECMA app"
+    client_id: "cd5745bb-691f-4f5a-b646-8be48738c405"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "API-driven provisioning to Microsoft Entra ID"
+    client_id: "40d8f01e-b0d7-4b4f-938b-05190712e598"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Office 365 Mover"
+    client_id: "8012df52-4d39-4a39-8efa-7f46a89d0907"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "SuccessFactors to Microsoft Entra ID User Provisioning"
+    client_id: "9a06806a-c57c-40e2-857b-b05cc095c28d"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Workday to Active Directory User Provisioning"
+    client_id: "287e8686-a629-40b7-90cf-a0f072331de1"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "SuccessFactors Writeback"
+    client_id: "effae1d7-4371-4c65-9017-80bf8b44f1ba"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "Active Directory for GitHub Enterprise"
+    client_id: "2738cb1a-34dd-49c9-816c-129a54f443ef"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "On-premises SCIM app"
+    client_id: "5caf9de5-059d-4883-81ba-a385d5120f80"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
+  - name: "API-driven provisioning to on-premises Active Directory"
+    client_id: "ec7c5431-5d84-453f-80d3-e3385e284eef"
+    enabled: "True"
+    graph_api_permissions: []
+    auth_code: ""
+    device_code: ""
+    brk_refresh: ""
+    foci: "False"
+    reply_addresses: []
+    single_page_app: ""
 

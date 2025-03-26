@@ -73,6 +73,11 @@ apps:
 ```
 
 ## Changelog
+### 2025-03-26
+Client list:
+- Added 97 first-party clients. However, no usable pre-consents on MS Graph were identified (some apps lack pre-consent, while others are confidential clients).
+Misc:
+- Added a new folder `lists` which contains the data as CSV and JSON file as well.
 
 ### 2025-03-01
 Client list:
