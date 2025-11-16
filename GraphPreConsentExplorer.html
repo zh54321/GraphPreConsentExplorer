@@ -359,9 +359,9 @@
                         Object.entries(commands).forEach(([authFlow, cmdList]) => {
                             let hintIcon = "";
                             if (authFlow === "BroCi") {
-                                hintIcon = ` <span class="text-gray-400 cursor-help" title="This requires a valid refresh token from the Azure portal scoped to https://management.core.windows.net// (search in DEV tools)">ℹ️</span>`;
+                                hintIcon = ` <span class="text-gray-400 cursor-help" title="This requires a valid refresh token from the client 'Azure Portal'.">ℹ️</span>`;
                             } else if (authFlow === "Refresh from another FOCI") {
-                                hintIcon = ` <span class="text-gray-400 cursor-help" title="This requires a valid refresh token from another FOCI client">ℹ️</span>`;
+                                hintIcon = ` <span class="text-gray-400 cursor-help" title="This requires a valid refresh token from another FOCI client.">ℹ️</span>`;
                             }
 
                             toolHTML += `<p class="font-semibold mt-1 mb-1">${authFlow}:${hintIcon}</p>`;
@@ -444,7 +444,7 @@
                 
                 // Generate BroCi command (static except for ClientID)
                 if (app.broci) {
-                    commands["BroCi"] = [`$tokens = Invoke-Refresh -RefreshToken $PortalArmToken -ClientID '${app.client_id}' -BrkClientId 'c44b4083-3bb0-49c1-b47d-974e53cbdf3c' -RedirectUri 'brk-c44b4083-3bb0-49c1-b47d-974e53cbdf3c://portal.azure.com' -Origin 'https://portal.azure.com'`];
+                    commands["BroCi"] = [`$tokens = Invoke-Refresh -RefreshToken $tokens.refresh_token -ClientID '${app.client_id}' -BrkClientId 'c44b4083-3bb0-49c1-b47d-974e53cbdf3c' -RedirectUri 'brk-c44b4083-3bb0-49c1-b47d-974e53cbdf3c://portal.azure.com' -Origin 'https://portal.azure.com'`];
                 }
 
                 return { "EntraTokenAid": commands };

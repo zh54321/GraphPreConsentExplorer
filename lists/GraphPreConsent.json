@@ -775,7 +775,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "DeviceManagementServiceConfig.Read.All",
       "Group.Read.All",
@@ -831,7 +831,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "Files.ReadWrite",
@@ -850,7 +850,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "openid",
@@ -928,7 +928,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "openid",
@@ -945,7 +945,7 @@
     "enabled": true,
     "auth_code": true,
     "client_id": "c44b4083-3bb0-49c1-b47d-974e53cbdf3c",
-    "Notes": null
+    "Notes": "Can be brokered to other clients (BroCi)."
   },
   {
     "single_page_app": null,
@@ -987,7 +987,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "DeviceManagementConfiguration.Read.All",
       "DeviceManagementConfiguration.ReadWrite.All",
@@ -1168,7 +1168,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "CrossTenantInformation.ReadBasic.All",
       "Directory.Read.All",
@@ -1371,7 +1371,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "Files.Read.All",
@@ -2383,7 +2383,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "CrossTenantInformation.ReadBasic.All",
       "email",
@@ -3412,7 +3412,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "AppCatalog.ReadWrite.All",
       "Channel.Delete.All",
@@ -4339,7 +4339,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "openid",
@@ -4422,7 +4422,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "AllSites.Manage",
       "AllSites.Read",
@@ -4806,7 +4806,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "Files.Read",
@@ -5219,7 +5219,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Calendars.Read",
       "Calendars.ReadWrite",
@@ -6406,7 +6406,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "AppCatalog.Read.All",
       "AppCatalog.Submit",
@@ -6574,7 +6574,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "openid",
@@ -6806,7 +6806,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Channel.ReadBasic.All",
       "Chat.Read",
@@ -7068,7 +7068,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "AppCatalog.Read.All",
       "Calendars.Read",
@@ -7384,7 +7384,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "AccessReview.ReadWrite.All",
       "CrossTenantInformation.ReadBasic.All",
@@ -7504,7 +7504,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "AppCatalog.ReadWrite.All",
       "Application.Read.All",
@@ -7762,7 +7762,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "AccessReview.Read.All",
       "AuditLog.Read.All",
@@ -7878,7 +7878,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Application.Read.All",
       "AuditLog.Read.All",
@@ -8293,7 +8293,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "GroupMember.Read.All",
@@ -8485,7 +8485,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "openid",
@@ -8616,7 +8616,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Application.Read.All",
       "Channel.ReadBasic.All",
@@ -8683,7 +8683,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "Notes.Create",
@@ -9041,7 +9041,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "AppCatalog.Read.All",
       "email",
@@ -9217,7 +9217,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "AuditLog.Read.All",
       "CrossTenantInformation.ReadBasic.All",
@@ -9273,7 +9273,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "Mail.ReadWrite",
@@ -9354,7 +9354,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "ChannelMessage.Read.All",
       "Chat.Create",
@@ -9389,7 +9389,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Application.ReadWrite.All",
       "email",
@@ -9478,7 +9478,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Directory.Read.All",
       "email",
@@ -10387,7 +10387,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "AppCatalog.Read.All",
       "Calendars.ReadWrite",
@@ -14706,7 +14706,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": "user_impersonation",
     "device_code": true,
     "foci": false,
@@ -15449,7 +15449,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "AuditLog.Create",
       "Channel.ReadBasic.All",
@@ -15619,7 +15619,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Channel.Create",
       "Chat.Create",
@@ -15922,7 +15922,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "openid",
@@ -16356,7 +16356,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Channel.Create",
       "Channel.ReadBasic.All",
@@ -16405,7 +16405,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Application.Read.All",
       "email",
@@ -16480,7 +16480,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Application.ReadWrite.All",
       "email",
@@ -16500,7 +16500,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "openid",
@@ -16569,7 +16569,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Application.ReadWrite.All",
       "email",
@@ -16628,7 +16628,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "Group.Read.All",
@@ -16649,7 +16649,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "Group.Read.All",
@@ -16814,7 +16814,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "AppCatalog.ReadWrite.All",
       "Application.Read.All",
@@ -16973,7 +16973,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "AppCatalog.Read.All",
       "AppCatalog.ReadWrite.All",
@@ -17190,7 +17190,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Directory.Read.All",
       "email",
@@ -17391,7 +17391,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "ChannelMessage.Read.All",
       "Chat.Create",
@@ -17524,7 +17524,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "Group.Read.All",
@@ -17584,7 +17584,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "Group.Read.All",
@@ -17931,7 +17931,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Calendars.ReadWrite",
       "Calendars.ReadWrite.Shared",
@@ -18192,7 +18192,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": "user_impersonation",
     "device_code": true,
     "foci": false,
@@ -19017,7 +19017,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Application.Read.All",
       "email",
@@ -20430,7 +20430,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "Files.ReadWrite.All",
@@ -20699,7 +20699,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Application.Read.All",
       "Application-RemoteDesktopConfig.ReadWrite.All",
@@ -20733,7 +20733,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "GroupMember.Read.All",
@@ -21678,7 +21678,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Application.ReadWrite.All",
       "email",
@@ -21700,7 +21700,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "Files.Read.All",
@@ -21734,7 +21734,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Domain.Read.All",
       "email",
@@ -21794,7 +21794,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "openid",
@@ -21826,7 +21826,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Calendars.ReadBasic",
       "Directory.Read.All",
@@ -21855,7 +21855,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Calendars.Read",
       "Channel.ReadBasic.All",
@@ -21912,7 +21912,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Channel.ReadBasic.All",
       "ChannelMember.Read.All",
@@ -22359,7 +22359,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Application.ReadWrite.All",
       "AppRoleAssignment.ReadWrite.All",
@@ -23226,7 +23226,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": null,
     "device_code": null,
     "foci": false,
@@ -23239,7 +23239,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": null,
     "device_code": null,
     "foci": false,
@@ -23402,7 +23402,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Organization.Read.All",
       "RoleManagement.ReadWrite.Directory"
@@ -23418,7 +23418,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "CloudPC.Read.All",
       "Device.Read.All",
@@ -23514,7 +23514,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "openid",
@@ -23628,7 +23628,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Application.Read.All",
       "email",
@@ -23649,7 +23649,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": "User.Read",
     "device_code": null,
     "foci": false,
@@ -23662,7 +23662,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Group.Read.All",
       "Mail.ReadWrite",
@@ -23702,7 +23702,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Application.Read.All",
       "email",
@@ -23865,7 +23865,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Application.Read.All",
       "email",
@@ -23997,7 +23997,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "openid",
@@ -24844,6 +24844,72 @@
     "enabled": true,
     "auth_code": null,
     "client_id": "6e135f4a-4afc-4899-b453-26151edd13fb",
+    "Notes": null
+  },
+  {
+    "single_page_app": null,
+    "graph_api_permissions": [
+      "Application.Read.All",
+      "GroupMember.Read.All",
+      "User.Read.All",
+      "User.ReadBasic.All"
+    ],
+    "device_code": null,
+    "foci": false,
+    "broci": null,
+    "name": "Azure ExP",
+    "reply_addresses": "https://config.exp.microsoft.com/swagger/oauth2-redirect.html",
+    "enabled": true,
+    "auth_code": true,
+    "client_id": "e00d2f8a-f6c8-46e4-b379-e66082e28ca8",
+    "Notes": null
+  },
+  {
+    "single_page_app": null,
+    "graph_api_permissions": [
+      "AccessReview.Read.All",
+      "Application.Read.All",
+      "AuditLog.Read.All",
+      "AuthenticationContext.Read.All",
+      "CloudPC.Read.All",
+      "CustomSecAttributeAssignment.Read.All",
+      "Device.Read.All",
+      "DeviceManagementManagedDevices.Read.All",
+      "DirectoryRecommendations.Read.All",
+      "Domain.Read.All",
+      "EntitlementManagement.Read.All",
+      "GroupMember.Read.All",
+      "HealthMonitoringAlert.ReadWrite.All",
+      "HealthMonitoringAlertConfig.Read.All",
+      "HealthMonitoringAlertConfig.ReadWrite.All",
+      "IdentityRiskEvent.Read.All",
+      "IdentityRiskyServicePrincipal.Read.All",
+      "IdentityRiskyUser.Read.All",
+      "LicenseAssignment.Read.All",
+      "LifecycleWorkflows-Reports.Read.All",
+      "LifecycleWorkflows-Workflow.Read.All",
+      "NetworkAccess-Reports.Read.All",
+      "Organization.Read.All",
+      "Policy.Read.All",
+      "Policy.Read.AuthenticationMethod",
+      "Policy.ReadWrite.ConditionalAccess",
+      "Reports.Read.All",
+      "RoleAssignmentSchedule.Read.Directory",
+      "RoleAssignmentSchedule.ReadWrite.Directory",
+      "RoleEligibilitySchedule.Read.Directory",
+      "RoleManagement.Read.Directory",
+      "User.Read",
+      "User.Read.All",
+      "UserAuthenticationMethod.Read.All"
+    ],
+    "device_code": null,
+    "foci": false,
+    "broci": true,
+    "name": "Entra-Copilot-UX",
+    "reply_addresses": "brk-c44b4083-3bb0-49c1-b47d-974e53cbdf3c://portal.azure.com",
+    "enabled": true,
+    "auth_code": null,
+    "client_id": "ffe59ab3-5993-4931-863a-2e78afcf0d1f",
     "Notes": null
   }
 ]

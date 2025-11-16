@@ -425,7 +425,7 @@ apps:
     foci: "True"
     reply_addresses:
       - "https://partners.rooms.microsoft.com/signin-spa"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "OfficeHome"
     client_id: "4765445b-32c6-49b0-83e6-1d93765276ca"
     enabled: "True"
@@ -447,7 +447,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://eudb.webshell.suite.office.com/iframe/TokenFactoryIframe"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Microsoft Account Controls V2"
     client_id: "7eadcef8-456d-4611-9480-4fff72b8b9e2"
     enabled: "True"
@@ -458,7 +458,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://mem.gfx.ms/me/callgraph"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "My Apps"
     client_id: "2793995e-0a7d-40d7-bd35-6968ba142197"
     enabled: "True"
@@ -510,7 +510,8 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://startups.portal.azure.com/auth/login/"
-    single_page_app: ""
+    single_page_app: "True"
+    notes: "Can be brokered to other clients (BroCi)."
   - name: "Microsoft App Access Panel"
     client_id: "0000000c-0000-0000-c000-000000000000"
     enabled: "True"
@@ -551,7 +552,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://config.office.com/"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "SubscriptionRP"
     client_id: "e3335adb-5ca0-40dc-b8d3-bedc094e523b"
     enabled: "True"
@@ -682,7 +683,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://mystaff.microsoft.com"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Teams Approvals"
     client_id: "3e050dd7-7815-46a0-8263-b73168a42c10"
     enabled: "True"
@@ -833,7 +834,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://www.microsoftstream.com/authredirectmsal/"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Teams Admin Monitoring Alerting Platform"
     client_id: "f2537abf-644e-4a0d-9f7b-c91c45c643db"
     enabled: "True"
@@ -1604,7 +1605,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://my.visualstudio.com/_public/_MsalRedirect"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Managed Service Identity"
     client_id: "ef5d5c69-a5df-46bb-acaf-426f161a21a2"
     enabled: "True"
@@ -2368,7 +2369,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://canary.admin.cloud.microsoft/msal_redirect_aobo.html"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "teams contacts griffin processor"
     client_id: "e08ab642-962a-4175-913c-165f557d799a"
     enabled: "True"
@@ -3043,7 +3044,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://rsomanagement-prod-eu.trafficmanager.net/dashboard/login"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Omnichannel for CS CRM ClientApp Primary"
     client_id: "d9ce8cfa-8bd8-4ff1-b39b-5e5dd5742935"
     enabled: "True"
@@ -3104,7 +3105,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://planner.cloud.microsoft/auth/msalredirect2"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Office Shredding Service"
     client_id: "b97b6bd4-a49f-4a0c-af18-af507d1da76c"
     enabled: "True"
@@ -3359,7 +3360,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://local.flow.microsoft.com:44300/widgethosts/excel"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Dynamics Provision"
     client_id: "39e6ea5b-4aa4-4df2-808b-b6b5fb8ada6f"
     enabled: "True"
@@ -3670,7 +3671,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://fa000000138.resources.office.net/f7024bdc-7caf-4ca8-807d-2908f09640d6/1.0.2504.7028/en-us_web/meetingdetails.html"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Azure Support - Network Watcher"
     client_id: "341b7f3d-69b3-47f9-9ce7-5b7f4945fdbd"
     enabled: "True"
@@ -4534,7 +4535,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://onedrive.cloud.microsoft/_forms/spfxsinglesignon.aspx"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Power Platform Global Discovery Service"
     client_id: "93bd1aa4-c66b-4587-838c-ffc3174b5f13"
     enabled: "True"
@@ -4636,7 +4637,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://dataintegratorgccui.usgovtrafficmanager.net/dualWrite"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Dynamics Lifecycle services"
     client_id: "913c6de4-2a4a-4a61-a9ce-945d2b2ce2e0"
     enabled: "True"
@@ -4799,7 +4800,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://int.linkedinintegration.dynamics.com/Home/CollabAppAuthRedirect"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Microsoft Operations Management Suite"
     client_id: "d2a0a418-0aac-4541-82b2-b3142c89da77"
     enabled: "True"
@@ -4982,7 +4983,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://teams.cloud.microsoft/convene/townhall"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Azure SQL Managed Instance to Microsoft.Network"
     client_id: "76c7f279-7959-468f-8943-3954880e0d8c"
     enabled: "True"
@@ -5203,7 +5204,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://myaccess.microsoft.com/"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Skype for Business Name Dictionary Service"
     client_id: "e95d8bee-4725-4f59-910d-94d415da51b9"
     enabled: "True"
@@ -5275,7 +5276,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://copilotstudio.preview.microsoft.com/auth-redirect.html"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Microsoft Power BI Information Service"
     client_id: "0000001b-0000-0000-c000-000000000000"
     enabled: "True"
@@ -5456,7 +5457,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://myaccount.azure.us"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Microsoft Exchange Online Protection"
     client_id: "00000007-0000-0ff1-ce00-000000000000"
     enabled: "True"
@@ -5527,7 +5528,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://transition.security.microsoft.com/Blank"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Service Encryption"
     client_id: "dbc36ae1-c097-4df9-8d94-343c3d091a76"
     enabled: "True"
@@ -5743,7 +5744,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://dev.labs.azure.com/signin"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "ContactsInferencingEmailProcessor"
     client_id: "20a11fe0-faa8-4df5-baf2-f965f8f9972e"
     enabled: "True"
@@ -5886,7 +5887,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/identity-redirect.html"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Microsoft Dynamics ERP"
     client_id: "00000015-0000-0000-c000-000000000000"
     enabled: "True"
@@ -5980,7 +5981,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://pbi-wfe-malaysia-west-v3.powerbi.com/signin"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Microsoft Storefronts"
     client_id: "28b567f6-162c-4f54-99a0-6887f387bbcc"
     enabled: "True"
@@ -6021,7 +6022,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://scuprodprv.www.office.com/spalanding"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Office Online Add-in SSO"
     client_id: "93d53678-613d-4013-afc1-62e9e444a0a5"
     enabled: "True"
@@ -6285,7 +6286,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://engage.cloud.microsoft/teams-branded-exp/authredirect"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Yammer Web Embed"
     client_id: "e1ef36fd-b883-4dbf-97f0-9ece4b576fc6"
     enabled: "True"
@@ -6416,7 +6417,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://mysignins.azure.us"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Windows Sign In"
     client_id: "38aa3b87-a06d-4817-b275-7a316988d93b"
     enabled: "True"
@@ -6448,7 +6449,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://outlook.office.com/mail/messageRecall.html"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "MM_Reactions_PME_PROD"
     client_id: "e8e8fc40-94d5-4ed6-89f2-9e5ec6c1e11e"
     enabled: "True"
@@ -6502,7 +6503,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://apps.powerapps.com/teams/authv3/end"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "make.powerapps.com"
     client_id: "a8f7a65c-f5ba-4859-b2d6-df772c264e9d"
     enabled: "True"
@@ -6513,7 +6514,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://make.preview.powerapps.com/auth-redirect.html"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Microsoft Power Query for Excel"
     client_id: "a672d62c-fc7b-4e81-a576-e60dc46e951d"
     enabled: "True"
@@ -6558,7 +6559,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://admin.preview.powerplatform.microsoft.com/auth-redirect.html"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Message Header Analyzer"
     client_id: "62916641-fc48-44ae-a2a3-163811f1c945"
     enabled: "True"
@@ -7249,7 +7250,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://myabundledev.z22.web.core.windows.net/app-web-buddy.html"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Windows Notification Service"
     client_id: "04436913-cf0d-4d2a-9cc6-2ffe7f1d3d1c"
     enabled: "True"
@@ -9993,7 +9994,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://oauth.spops.microsoft.com"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Windows 365"
     client_id: "0af06dc6-e4b5-4f28-818e-e78e62d137a5"
     enabled: "True"
@@ -10556,7 +10557,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://sdf.outlook.cloud.microsoft/mail/oauthRedirect.html"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Microsoft Alchemy Service"
     client_id: "91ad134d-5284-4adc-a896-d7fd24e9fa15"
     enabled: "True"
@@ -10667,7 +10668,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://msteamstabintegration.dynamics.com/collaboration/auth.html"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Arc Public Cloud - Servers"
     client_id: "aacceff9-8ec3-413c-83eb-cb131aaf55c6"
     enabled: "True"
@@ -10888,7 +10889,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://lti.edu.cloud.microsoft/registration"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Microsoft Dynamics 365 Supply Chain Visibility"
     client_id: "d6037e40-282c-493d-8f63-f255e36c6ef4"
     enabled: "False"
@@ -11219,7 +11220,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://bizappsdemos.microsoft.com/blank.html"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Visual Studio"
     client_id: "04f0c124-f2bc-4f59-8241-bf6df9866bbd"
     enabled: "True"
@@ -11242,7 +11243,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://admin.test.powerplatform.microsoft.com/auth"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "make.test.powerapps.com"
     client_id: "719640cd-0337-4b0c-8e6a-431271371fab"
     enabled: "False"
@@ -11293,7 +11294,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://make.cse-cm001.gateway.prod.cm.powerapps.com/auth"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Cloud for Nonprofit Installer"
     client_id: "a0fe4328-8965-437b-a350-cf71409d002f"
     enabled: "True"
@@ -11304,7 +11305,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://installer.nonprofit.microsoft.com"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Minit Desktop for Windows"
     client_id: "5c17a0cf-5493-4b86-b23d-dabc1cc46f5a"
     enabled: "True"
@@ -11347,7 +11348,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://make.cse-cm001.gateway.prod.cm.powerapps.com/auth"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "SuplariDev"
     client_id: "38ec0b21-8bde-4473-950b-819ceb3ed233"
     enabled: "True"
@@ -11388,7 +11389,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://make.local.powerpages.microsoft.com:44300/auth"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "make.powerpages.microsoft.com"
     client_id: "75eb2b80-011a-4693-9a47-7971c853603c"
     enabled: "True"
@@ -11399,7 +11400,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://make.preview.powerpages.microsoft.com/auth-redirect.html"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Power Platform CLI - pac"
     client_id: "9cee029c-6210-4654-90bb-17e6e9d36617"
     enabled: "True"
@@ -11504,7 +11505,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://gcc.powerva.microsoft.us/auth"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "SharePointMigrationTool"
     client_id: "fdd7719f-d61e-4592-b501-793734eb8a0e"
     enabled: "True"
@@ -11605,7 +11606,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://app-mscloudsolutioncenter-dev.azurewebsites.net"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Power Automate Desktop DoD"
     client_id: "ae7deb89-ca76-4073-bf3e-b72165ac58e9"
     enabled: "True"
@@ -11758,7 +11759,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://prod-swzn-01.ci.ai.dynamics.com"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "MicrosoftUnifiedCustomerIntelligence"
     client_id: "38c77d00-5fcb-4cce-9d93-af4738258e3c"
     enabled: "True"
@@ -11909,7 +11910,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://apps.gov.powerapps.us/teams/authv3/end"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "mil.create.powerapps.us"
     client_id: "d7e0a6a1-dde5-4f6e-81ce-781fa7483834"
     enabled: "False"
@@ -12000,7 +12001,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://make.ugtx-cm001.gateway.gov.cm.powerapps.us/authframe"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Field Service Mobile"
     client_id: "0ef09fa7-413d-4a9f-a7a5-32f8f62b7598"
     enabled: "False"
@@ -12041,7 +12042,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://make.gov.powerautomate.us/auth-redirect.html"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "DYN365AISERVICEINSIHTSPPE"
     client_id: "11f6c209-c042-4da5-acb9-8d3546fe506f"
     enabled: "False"
@@ -12268,7 +12269,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://port.crm21.dynamics.com/G/ImplicitFlowAuthService/MSAL/auth.html"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Dynamics CRM Unified Service Desk"
     client_id: "4906f920-9f94-4f14-98aa-8456dd5f78a8"
     enabled: "True"
@@ -12442,7 +12443,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://aadrm.com/adminpowershell"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Microsoft Dynamics Document Routing Agent"
     client_id: "cf8f0657-7610-4b05-8723-a4322ae045c6"
     enabled: "True"
@@ -13027,7 +13028,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://adf.azure.com"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Form Recognizer Studio"
     client_id: "18e271e7-a818-46ad-8e73-07cb0ae64328"
     enabled: "True"
@@ -13884,7 +13885,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://fa000000043.mro1cdnstorage.gcc.cdn.office.net/mro1cdnstorage/033f92d3-bc6d-439a-858a-a17acf70360a/SDX/fa000000043/1.0.2307.31003/en-us_web/login.html"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "AADJ CSP"
     client_id: "b90d5b8f-5503-4153-b545-b31cecfaece2"
     enabled: "True"
@@ -14085,7 +14086,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://client-r1.wvd.microsoft.com/arm/webclient/index.html"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Microsoft Azure Data Catalog"
     client_id: "9d3e55ba-79e0-4b7c-af50-dc460b81dca1"
     enabled: "True"
@@ -14106,7 +14107,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://analysis.insights.cloud-debug.microsoft"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Microsoft AppSource"
     client_id: "a0e1e353-1a3e-42cf-a8ea-3a9746eec58c"
     enabled: "True"
@@ -14827,7 +14828,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://int.ai.azure.com/agents"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Azure Machine Learning Workbench Web App"
     client_id: "d7304df8-741f-47d3-9bc2-df0e24e2071f"
     enabled: "True"
@@ -14838,7 +14839,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://dev.ml.azure.com/redirect"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Augmentation Loop"
     client_id: "4354e225-50c9-4423-9ece-2d5afd904870"
     enabled: "True"
@@ -14859,7 +14860,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://ods-sdf.office.net"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Messaging Async Media"
     client_id: "7084e364-df71-4a4a-9e8f-d375b5529913"
     enabled: "True"
@@ -14900,7 +14901,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://outlook.office365.com/tasks/auth/callback"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Enterprise Copilot Platform"
     client_id: "fb8d773d-7ef8-4ec0-a117-179f88add510"
     enabled: "True"
@@ -14921,7 +14922,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://planner.cloud.microsoft/webui/blankmsalredirect"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "M365ChatClient"
     client_id: "c0ab8ce9-e9a0-42e7-b064-33d422df41f1"
     enabled: "True"
@@ -14932,7 +14933,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://fa000000128.resources.office.net/f7024bdc-7caf-4ca8-807d-2908f09640d6/1.0.2412.19011/en-us_web/login.html"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "EnrichmentSvc"
     client_id: "9ecb7e6d-4866-4950-a4fa-8612715d528f"
     enabled: "True"
@@ -14963,7 +14964,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://forms.cloud.microsoft/pages/SpaAuthPopupPage.html"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "AMC PROD"
     client_id: "81feaced-5ddd-41e7-8bef-3e20a2689bb7"
     enabled: "True"
@@ -15295,7 +15296,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://dfp.microsoft.com/api/auth"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Microsoft Managed Policy Manager"
     client_id: "87e86b91-9ae3-4679-b68a-471fe50be746"
     enabled: "True"
@@ -15956,7 +15957,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://outlook.office.com/mail/oauthRedirect.html"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Microsoft_Azure_SupportPortalExtension"
     client_id: "e6694c91-1590-4e35-9bb7-b865c638b9c1"
     enabled: "True"
@@ -15967,7 +15968,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "brk-c44b4083-3bb0-49c1-b47d-974e53cbdf3c://portal.azure.com"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Microsoft Developer Portal"
     client_id: "0140a36d-95e1-4df5-918c-ca7ccd1fafc9"
     enabled: "True"
@@ -16055,7 +16056,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://businessaccount.microsoft.com/msal.html"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Windows 365 Portal"
     client_id: "3b511579-5e00-46e1-a89e-a6f0870e2f5a"
     enabled: "True"
@@ -16066,7 +16067,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://prod-r1.windows.cloud.microsoft/spa-signin-oidc"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Azure Quantum Website"
     client_id: "4536f486-82f7-4cfc-bfcc-6cf40d5ba55a"
     enabled: "True"
@@ -16121,7 +16122,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://vscode.dev/redirect"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Viva Pulse PROD"
     client_id: "56233257-15ee-4d3d-bdcd-9aa975244e4c"
     enabled: "True"
@@ -16176,7 +16177,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://uasigniteprv.admin.cloud.microsoft/msal_redirect_aobo.html"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Azure Orbital Spatio"
     client_id: "6388acc4-795e-43a9-a320-33075c1eb83b"
     enabled: "True"
@@ -16187,7 +16188,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://login.westeurope.geocatalog.spatio.azure.com"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "M365 Copilot Prompt Library"
     client_id: "69e1409d-f9f8-4199-98e1-654df1626537"
     enabled: "True"
@@ -16198,7 +16199,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://copilot.cloud-dev.microsoft/tokengenerator"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "OfficeAIAppChatCopilot"
     client_id: "6d8f24e8-a97e-4bb5-bbee-a1949aba8fb4"
     enabled: "True"
@@ -16220,7 +16221,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://medeina-dev.defender.microsoft.com/"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "E2-PMW-Production"
     client_id: "7f5a85eb-674c-4dee-8c57-1544c5769cfb"
     enabled: "True"
@@ -16307,7 +16308,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "http://localhost"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Microsoft Teams Platform Monetization"
     client_id: "bf61aded-9a54-4603-be22-84d20158607b"
     enabled: "True"
@@ -16373,7 +16374,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://preview.partner.microsoft.com/_adal"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Zero Trust Segmentation"
     client_id: "dad37da6-229d-4bc0-8b94-fee8600589db"
     enabled: "True"
@@ -16954,5 +16955,27 @@ apps:
     broci: ""
     foci: "False"
     reply_addresses: []
+    single_page_app: ""
+  - name: "Azure ExP"
+    client_id: "e00d2f8a-f6c8-46e4-b379-e66082e28ca8"
+    enabled: "True"
+    graph_api_permissions: ["Application.Read.All", "GroupMember.Read.All", "User.Read.All", "User.ReadBasic.All"]
+    auth_code: "True"
+    device_code: ""
+    broci: ""
+    foci: "False"
+    reply_addresses:
+      - "https://config.exp.microsoft.com/swagger/oauth2-redirect.html"
+    single_page_app: ""
+  - name: "Entra-Copilot-UX"
+    client_id: "ffe59ab3-5993-4931-863a-2e78afcf0d1f"
+    enabled: "True"
+    graph_api_permissions: ["AccessReview.Read.All", "Application.Read.All", "AuditLog.Read.All", "AuthenticationContext.Read.All", "CloudPC.Read.All", "CustomSecAttributeAssignment.Read.All", "Device.Read.All", "DeviceManagementManagedDevices.Read.All", "DirectoryRecommendations.Read.All", "Domain.Read.All", "EntitlementManagement.Read.All", "GroupMember.Read.All", "HealthMonitoringAlert.ReadWrite.All", "HealthMonitoringAlertConfig.Read.All", "HealthMonitoringAlertConfig.ReadWrite.All", "IdentityRiskEvent.Read.All", "IdentityRiskyServicePrincipal.Read.All", "IdentityRiskyUser.Read.All", "LicenseAssignment.Read.All", "LifecycleWorkflows-Reports.Read.All", "LifecycleWorkflows-Workflow.Read.All", "NetworkAccess-Reports.Read.All", "Organization.Read.All", "Policy.Read.All", "Policy.Read.AuthenticationMethod", "Policy.ReadWrite.ConditionalAccess", "Reports.Read.All", "RoleAssignmentSchedule.Read.Directory", "RoleAssignmentSchedule.ReadWrite.Directory", "RoleEligibilitySchedule.Read.Directory", "RoleManagement.Read.Directory", "User.Read", "User.Read.All", "UserAuthenticationMethod.Read.All"]
+    auth_code: ""
+    device_code: ""
+    broci: "True"
+    foci: "False"
+    reply_addresses:
+      - "brk-c44b4083-3bb0-49c1-b47d-974e53cbdf3c://portal.azure.com"
     single_page_app: ""
 
