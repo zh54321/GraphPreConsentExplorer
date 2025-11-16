@@ -21,6 +21,7 @@
                 background: #9ca3af;
             }
         </style>
+	
         
     </head>
     <body class="bg-gray-900 text-white p-6" id="theme">
@@ -32,6 +33,13 @@
                 <label for="fileInput" class="px-4 py-2 bg-gray-700 text-white rounded border border-gray-500 cursor-pointer hover:bg-gray-600">
                     📂 Load YML File
                 </label>
+				
+				<!-- Export button (hidden until YAML loads) -->
+				<button id="exportCsv"
+						class="px-4 py-2 bg-gray-700 text-white rounded border border-gray-500 hover:bg-gray-600 hidden">
+					⬇️ Export View (CSV)
+				</button>				
+				
                 <span id="fileLoadText" class="text-red-400 text-sm"><-Click to load data</span>
             </div>
             <input type="file" id="fileInput" accept=".yaml" class="hidden">
@@ -47,25 +55,26 @@
                     <input type="text" id="search" class="p-2 border rounded w-3/5 min-w-[450px] bg-gray-800 text-white" placeholder="Search for Name, ID, Graph Permission...">
                 </div>
                 
-                <div class="flex gap-2">
-                    <button id="toggleEnabledFilter" class="p-2 border rounded bg-gray-800 text-white">
-                        Enabled only
-                    </button>
-                    <button id="toggleGraphFilter" class="p-2 border rounded bg-gray-800 text-white">
-                        With permission only
-                    </button>
-                    <select id="authFlowFilter" class="p-2 border rounded bg-gray-800 text-white">
-                        <option value="">Filter by Auth Flow</option>
-                        <option value="AuthCode">Auth Code Flow</option>
-                        <option value="DeviceCode">Device Code Flow</option>
-                        <option value="BrkRefresh">Brk Refresh Flow</option>
-                    </select>
-                    <select id="fociFilter" class="p-2 border rounded bg-gray-800 text-white">
-                        <option value="">Filter by FOCI</option>
-                        <option value="True">True</option>
-                        <option value="False">False</option>
-                    </select>
-                </div>
+				<div class="flex gap-2">
+					<button id="toggleEnabledFilter" class="p-2 border rounded bg-gray-800 text-white">
+						Enabled only
+					</button>
+					<button id="toggleGraphFilter" class="p-2 border rounded bg-gray-800 text-white">
+						With permission only
+					</button>
+					<select id="authFlowFilter" class="p-2 border rounded bg-gray-800 text-white">
+						<option value="">Filter by Auth Flow</option>
+						<option value="AuthCode">Auth Code Flow</option>
+						<option value="DeviceCode">Device Code Flow</option>
+						<option value="BroCi">BroCi Flow</option>
+					</select>
+					<select id="fociFilter" class="p-2 border rounded bg-gray-800 text-white">
+						<option value="">Filter by FOCI</option>
+						<option value="True">True</option>
+						<option value="False">False</option>
+					</select>
+				</div>
+
             </div>
 
             <table class="w-full bg-gray-800 shadow-md rounded-lg overflow-hidden text-white">
@@ -127,8 +136,19 @@
             let appData = [];
             const toolDownloadLinks = {
                 "EntraTokenAid": "https://github.com/zh54321/EntraTokenAid",
-                // Maybe add more tools and links as needed
             };
+			
+			//Focuse on keyboard input
+			document.addEventListener("keydown", (e) => {
+				if (e.key === "/") {
+					e.preventDefault();
+					document.getElementById('search').focus();
+				}
+				if (e.key === "Escape") {
+					document.getElementById('modal').classList.add('hidden');
+				}
+			});
+			
             document.getElementById('fileInput').addEventListener('change', function(event) {
                 const file = event.target.files[0];
                 if (!file) return;
@@ -163,6 +183,14 @@
                     
                     displayApps(appData);
                     filterApps(); // Update stats immediately after loading the file
+					
+					// Show the export button now that data is available
+					document.getElementById('exportCsv').classList.remove('hidden');
+
+					// Optionally also hide the "Click to load data" hint
+					document.getElementById('fileLoadText').style.display = 'none';					
+					
+					
                 };
                 reader.readAsText(file);
             });
@@ -249,7 +277,7 @@
                             <td class="p-3 whitespace-nowrap" data-column="client_id">${app.client_id || 'N/A'}</td>
                             <td class="p-3" data-column="enabled">${String(app.enabled).trim().toLowerCase() === "false" ? 'False' : 'True'}</td>
                             <td class="p-3" data-column="graph_api_permissions">${(app.graph_api_permissions || []).join(', ')}</td>
-                            <td class="p-3" data-column="auth_flow">${app.auth_code ? 'AuthCode' : ''} ${app.device_code ? 'DeviceCode' : ''} ${app.brk_refresh ? 'BrkRefresh' : ''}</td>
+                            <td class="p-3" data-column="auth_flow">${app.auth_code ? 'AuthCode' : ''} ${app.device_code ? 'DeviceCode' : ''} ${app.broci ? 'BroCi' : ''}</td>
                             <td class="p-3" data-column="foci">${app.foci || 'N/A'}</td>
                         `;
 
@@ -307,7 +335,7 @@
                 const authFlows = [];
                     if (app.auth_code) authFlows.push("AuthCode");
                     if (app.device_code) authFlows.push("DeviceCode");
-                    if (app.brk_refresh) authFlows.push("BrkRefresh");
+                    if (app.broci) authFlows.push("BroCi");
                 document.getElementById('modalAuthFlow').innerText = authFlows.join(', ');
                 document.getElementById('modalFOCI').innerText = app.foci || 'N/A';
                 
@@ -327,10 +355,10 @@
                             : "";
                         let toolHTML = `<div class="p-3 rounded bg-gray-700"><p class="font-semibold text-lg mb-1">${tool}${toolLink}</p>`;
                         
-                        // Hints for brk and foci
+                        // Hints for BroCi and foci
                         Object.entries(commands).forEach(([authFlow, cmdList]) => {
                             let hintIcon = "";
-                            if (authFlow === "BrkRefresh") {
+                            if (authFlow === "BroCi") {
                                 hintIcon = ` <span class="text-gray-400 cursor-help" title="This requires a valid refresh token from the Azure portal scoped to https://management.core.windows.net// (search in DEV tools)">ℹ️</span>`;
                             } else if (authFlow === "Refresh from another FOCI") {
                                 hintIcon = ` <span class="text-gray-400 cursor-help" title="This requires a valid refresh token from another FOCI client">ℹ️</span>`;
@@ -384,15 +412,24 @@
 
                 // Generate AuthCode commands for each valid redirect URL
                 if (app.auth_code && app.reply_addresses?.length) {
-                    commands["AuthCode"] = app.reply_addresses
-                        .filter(url => !url.startsWith("brk-")) // Exclude brk- URLs
-                        .map(url => {
-                            let command = `$tokens = Invoke-Auth -ClientID '${app.client_id}' -RedirectUrl '${url}'`;
-                            if (String(app.single_page_app).trim().toLowerCase() === "true") { //handle Origin parameter
-                                command += " -Origin 'https://doesnotmatter'";
-                            }
-                            return command;
-                        });
+					commands["AuthCode"] = app.reply_addresses
+						.filter(url => !url.startsWith("brk-"))
+						.map(url => {
+
+							// Replace localhost redirect URL to work with EntraTokenAid default port
+							let effectiveUrl = url.trim();
+							if (effectiveUrl === "http://localhost") {
+								effectiveUrl = "http://localhost:13824/";
+							}
+
+							let command = `$tokens = Invoke-Auth -ClientID '${app.client_id}' -RedirectUrl '${effectiveUrl}'`;
+
+							if (String(app.single_page_app).trim().toLowerCase() === "true") {
+								command += " -Origin 'https://doesnotmatter'";
+							}
+
+							return command;
+						});
                 }
 
                 // Generate Device Code Flow command
@@ -405,9 +442,9 @@
                     commands["Refresh from another FOCI"] = [`$tokens = Invoke-Refresh -RefreshToken $tokens.refresh_token -ClientID '${app.client_id}'`];
                 }
                 
-                // Generate BrkRefresh command (static except for ClientID)
-                if (app.brk_refresh) {
-                    commands["BrkRefresh"] = [`$tokens = Invoke-Refresh -RefreshToken $PortalArmToken -ClientID '${app.client_id}' -BrkClientId 'c44b4083-3bb0-49c1-b47d-974e53cbdf3c' -RedirectUri 'brk-c44b4083-3bb0-49c1-b47d-974e53cbdf3c://portal.azure.com' -Origin 'https://portal.azure.com'`];
+                // Generate BroCi command (static except for ClientID)
+                if (app.broci) {
+                    commands["BroCi"] = [`$tokens = Invoke-Refresh -RefreshToken $PortalArmToken -ClientID '${app.client_id}' -BrkClientId 'c44b4083-3bb0-49c1-b47d-974e53cbdf3c' -RedirectUri 'brk-c44b4083-3bb0-49c1-b47d-974e53cbdf3c://portal.azure.com' -Origin 'https://portal.azure.com'`];
                 }
 
                 return { "EntraTokenAid": commands };
@@ -471,7 +508,7 @@
                     const shouldShow =
                         (!searchText || app.name.toLowerCase().includes(searchText) || app.client_id.toLowerCase().includes(searchText) ||
                             (app.graph_api_permissions.some(perm => perm.toLowerCase().includes(searchText)))) &&
-                        (!authFlowFilter || (app.auth_code && authFlowFilter === 'AuthCode') || (app.device_code && authFlowFilter === 'DeviceCode') || (app.brk_refresh && authFlowFilter === 'BrkRefresh')) &&
+                        (!authFlowFilter || (app.auth_code && authFlowFilter === 'AuthCode') || (app.device_code && authFlowFilter === 'DeviceCode') || (app.broci && authFlowFilter === 'BroCi')) &&
                         (!fociFilter || (app.foci && app.foci.toString().toLowerCase() === fociFilter.toLowerCase())) &&
                         (!showGraphPermissionsOnly || hasGraphPermissions) &&
                         (!showEnabledOnly || isEnabled);
@@ -494,6 +531,9 @@
             document.getElementById('search').addEventListener('input', filterApps);
             document.getElementById('authFlowFilter').addEventListener('change', filterApps);
             document.getElementById('fociFilter').addEventListener('change', filterApps);
+			
+			document.getElementById('exportCsv').addEventListener('click', exportCurrentViewToCsv);
+
 
 
             // Hide upload text after file has been loaded
@@ -502,6 +542,133 @@
                     document.getElementById('fileLoadText').style.display = 'none';
                 }
             });
+			
+			function exportCurrentViewToCsv() {
+				if (!appData || appData.length === 0) {
+					alert("No data loaded to export.");
+					return;
+				}
+
+				// Column order for CSV
+				const headers = [
+					"name",
+					"client_id",
+					"enabled",
+					"graph_api_permissions",
+					"auth_code",
+					"device_code",
+					"broci",          // or brk_refresh if you still use that internally
+					"foci",
+					"reply_addresses",
+					"single_page_app",
+					"Notes"
+				];
+
+				const rows = [];
+
+				// First row: header
+				rows.push(headers.join(","));
+
+				// Visible rows = current view (respect search & filters)
+				const tableRows = document.querySelectorAll("#appTable tr");
+				tableRows.forEach(row => {
+					// If row is hidden by filters/search, skip
+					if (row.style.display === "none") return;
+
+					const clientId = row.getAttribute("data-client-id");
+					const app = appData.find(a => a.client_id === clientId);
+					if (!app) return;
+
+					// Normalize fields similar to your PowerShell script
+					const graphPerms = Array.isArray(app.graph_api_permissions)
+						? app.graph_api_permissions.filter(p => p && p.trim().toLowerCase() !== "[none]")
+						: [];
+
+					const replyAddrs = Array.isArray(app.reply_addresses)
+						? app.reply_addresses
+						: (app.reply_addresses ? [app.reply_addresses] : []);
+
+					const enabled = normalizeBool(app.enabled);
+					const authCode = normalizeBool(app.auth_code);
+					const deviceCode = normalizeBool(app.device_code);
+					const broci = normalizeBool(app.broci);  // or app.brk_refresh if you still use that
+					const foci = normalizeBool(app.foci);
+
+					const singlePageApp = app.single_page_app || null;
+					const notes = app.Notes || app.notes || null;
+
+					const values = [
+						app.name || "",
+						app.client_id || "",
+						enabled === null ? "" : String(enabled),
+						graphPerms.length ? graphPerms.join(";") : "",
+						authCode === null ? "" : String(authCode),
+						deviceCode === null ? "" : String(deviceCode),
+						broci === null ? "" : String(broci),
+						foci === null ? "" : String(foci),
+						replyAddrs.length ? replyAddrs.join(";") : "",
+						singlePageApp || "",
+						notes || ""
+					];
+
+					const csvLine = values
+						.map(v => csvEscape(v))
+						.join(",");
+
+					rows.push(csvLine);
+				});
+
+				if (rows.length === 1) { // only header
+					alert("No visible rows to export (check your filters/search).");
+					return;
+				}
+
+				const csvContent = rows.join("\r\n");
+				const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+
+				// Build filename: GraphPreConsentExport_YYYYMMDD_HHMMSS.csv
+				const now = new Date();
+				const pad = n => String(n).padStart(2, "0");
+				const fileName = `GraphPreConsentExport_${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}_${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}.csv`;
+
+				const link = document.createElement("a");
+				if (link.download !== undefined) {
+					const url = URL.createObjectURL(blob);
+					link.setAttribute("href", url);
+					link.setAttribute("download", fileName);
+					document.body.appendChild(link);
+					link.click();
+					document.body.removeChild(link);
+					URL.revokeObjectURL(url);
+				} else {
+					alert("CSV export is not supported in this browser.");
+				}
+			}
+
+			// Helper: normalize bool-ish values to true/false/null
+			function normalizeBool(value) {
+				if (value === null || value === undefined) return null;
+				if (typeof value === "boolean") return value;
+
+				const s = String(value).trim().toLowerCase();
+				if (["true", "yes", "y", "1"].includes(s)) return true;
+				if (["false", "no", "n", "0"].includes(s)) return false;
+				return null;
+			}
+
+			// Helper: CSV escaping for one field
+			function csvEscape(value) {
+				if (value == null) return "";
+				const str = String(value);
+				// If contains quote, comma or newline, wrap in quotes and escape quotes
+				if (/[",\r\n]/.test(str)) {
+					return `"${str.replace(/"/g, '""')}"`;
+				}
+				return str;
+			}
+			document.getElementById('exportCsv').addEventListener('click', exportCurrentViewToCsv);
+
+			
         </script>
     </body>
 </html>
