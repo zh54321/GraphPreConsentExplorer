@@ -181,6 +181,7 @@
                         };
                     });
                     
+                    document.getElementById('modal').classList.add('hidden');
                     displayApps(appData);
                     filterApps(); // Update stats immediately after loading the file
 					
@@ -265,33 +266,24 @@
 
             function displayApps(apps) {
                 const tableBody = document.getElementById('appTable');
+                const rows = apps.map(app => {
+                    const row = document.createElement('tr');
+                    row.setAttribute("data-client-id", app.client_id); // Unique identifier for filtering
+                    row.classList.add("border-b", "cursor-pointer", "hover:bg-gray-700", "hover:text-white");
+                    row.innerHTML = `
+                        <td class="p-3" data-column="name">${app.name || 'N/A'}</td>
+                        <td class="p-3 whitespace-nowrap" data-column="client_id">${app.client_id || 'N/A'}</td>
+                        <td class="p-3" data-column="enabled">${String(app.enabled).trim().toLowerCase() === "false" ? 'False' : 'True'}</td>
+                        <td class="p-3" data-column="graph_api_permissions">${(app.graph_api_permissions || []).join(', ')}</td>
+                        <td class="p-3" data-column="auth_flow">${app.auth_code ? 'AuthCode' : ''} ${app.device_code ? 'DeviceCode' : ''} ${app.broci ? 'BroCi' : ''}</td>
+                        <td class="p-3" data-column="foci">${app.foci || 'N/A'}</td>
+                    `;
 
-                if (tableBody.children.length === 0) {
-                    // First-time render (Create all rows once)
-                    apps.forEach(app => {
-                        const row = document.createElement('tr');
-                        row.setAttribute("data-client-id", app.client_id); // Unique identifier for filtering
-                        row.classList.add("border-b", "cursor-pointer", "hover:bg-gray-700", "hover:text-white");
-                        row.innerHTML = `
-                            <td class="p-3" data-column="name">${app.name || 'N/A'}</td>
-                            <td class="p-3 whitespace-nowrap" data-column="client_id">${app.client_id || 'N/A'}</td>
-                            <td class="p-3" data-column="enabled">${String(app.enabled).trim().toLowerCase() === "false" ? 'False' : 'True'}</td>
-                            <td class="p-3" data-column="graph_api_permissions">${(app.graph_api_permissions || []).join(', ')}</td>
-                            <td class="p-3" data-column="auth_flow">${app.auth_code ? 'AuthCode' : ''} ${app.device_code ? 'DeviceCode' : ''} ${app.broci ? 'BroCi' : ''}</td>
-                            <td class="p-3" data-column="foci">${app.foci || 'N/A'}</td>
-                        `;
+                    row.onclick = () => openModal(app);
+                    return row;
+                });
 
-                        row.onclick = () => openModal(app);
-                        tableBody.appendChild(row);
-                    });
-                } else {
-                    // Just update row visibility instead of re-adding them
-                    document.querySelectorAll("#appTable tr").forEach(row => {
-                        const appId = row.getAttribute("data-client-id");
-                        const app = apps.find(a => a.client_id === appId);
-                        row.style.display = app ? "table-row" : "none";
-                    });
-                }
+                tableBody.replaceChildren(...rows);
             }
 
 
