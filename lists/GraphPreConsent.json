@@ -5,10 +5,13 @@
       "Contacts.Read",
       "Contacts.ReadWrite",
       "Directory.AccessAsUser.All",
+      "email",
       "Mail.ReadWrite",
       "Mail.ReadWrite.All",
+      "openid",
       "People.Read",
       "People.ReadWrite",
+      "profile",
       "Tasks.ReadWrite",
       "User.ReadWrite",
       "User.ReadWrite.All"
@@ -42,7 +45,7 @@
       "User.ReadWrite.All"
     ],
     "device_code": true,
-    "foci": true,
+    "foci": false,
     "broci": null,
     "name": "Microsoft Azure CLI",
     "reply_addresses": [
@@ -70,7 +73,7 @@
       "User.Read.All"
     ],
     "device_code": true,
-    "foci": true,
+    "foci": false,
     "broci": null,
     "name": "Microsoft Azure PowerShell",
     "reply_addresses": [
@@ -88,7 +91,12 @@
     "single_page_app": null,
     "graph_api_permissions": [
       "AppCatalog.Read.All",
+      "Calendars.Read",
+      "Calendars.Read.Shared",
+      "Calendars.ReadWrite",
+      "Calendars.ReadWrite.Shared",
       "Channel.ReadBasic.All",
+      "ChatMessage.Send",
       "Contacts.ReadWrite.Shared",
       "email",
       "Files.ReadWrite.All",
@@ -126,8 +134,11 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
+      "email",
       "Files.Read.All",
       "Files.ReadWrite",
+      "openid",
+      "profile",
       "User.Read"
     ],
     "device_code": true,
@@ -143,13 +154,16 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
+      "email",
       "Files.ReadWrite.All",
       "FileStorageContainer.Selected",
       "Mail.Read",
       "Mail.Read.Shared",
+      "openid",
       "People.Read",
       "People.Read.All",
       "Presence.Read.All",
+      "profile",
       "Sites.ReadWrite.All",
       "User.Read",
       "User.ReadBasic.All",
@@ -168,9 +182,16 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
+      "email",
+      "openid",
       "Organization.Read.All",
+      "profile",
       "UserAuthenticationMethod.Read",
-      "UserAuthenticationMethod.ReadWrite"
+      "UserAuthenticationMethod.ReadWrite",
+      "UserAuthMethodAuthApp-MSAuthApp.Delete",
+      "UserAuthMethodAuthApp-Passkey.Create",
+      "UserAuthMethodAuthApp-Passkey.Delete",
+      "UserAuthMethodAuthApp-Policy.Read"
     ],
     "device_code": true,
     "foci": true,
@@ -185,7 +206,10 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
+      "email",
       "Files.Read",
+      "openid",
+      "profile",
       "Sites.Read.All",
       "User.Read"
     ],
@@ -263,6 +287,9 @@
     "graph_api_permissions": [
       "Application.ReadWrite.All",
       "Directory.Read.All",
+      "email",
+      "openid",
+      "profile",
       "User.Read"
     ],
     "device_code": true,
@@ -285,9 +312,12 @@
     "graph_api_permissions": [
       "Contacts.Read",
       "Directory.Read.All",
+      "email",
       "Files.ReadWrite",
       "Group.Read.All",
+      "openid",
       "People.Read",
+      "profile",
       "Sites.Read.All",
       "User.Read.All"
     ],
@@ -309,7 +339,7 @@
     "broci": null,
     "name": "Microsoft Bing Search for Microsoft Edge",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "2d7f3606-b07d-41d1-b9d2-0d0c9296a6e8",
     "Notes": null
@@ -343,6 +373,9 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
+      "email",
+      "openid",
+      "profile",
       "Sites.Read.All",
       "User.Read"
     ],
@@ -392,7 +425,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "User.Read",
+    "graph_api_permissions": [
+      "email",
+      "openid",
+      "profile",
+      "User.Read"
+    ],
     "device_code": true,
     "foci": true,
     "broci": null,
@@ -405,7 +443,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "User.Read",
+    "graph_api_permissions": [
+      "email",
+      "openid",
+      "profile",
+      "User.Read"
+    ],
     "device_code": true,
     "foci": true,
     "broci": null,
@@ -427,6 +470,7 @@
       "Device.Read.All",
       "Directory.Read.All",
       "EduRoster.ReadBasic",
+      "email",
       "Files.ReadWrite.All",
       "Group.Read.All",
       "Mail.ReadWrite",
@@ -434,9 +478,11 @@
       "Notes.Create",
       "Notes.Read",
       "Notes.ReadWrite",
+      "openid",
       "Organization.Read.All",
       "OrgContact.Read.All",
       "People.Read",
+      "profile",
       "RoleManagement.Read.Directory",
       "User.Read",
       "User.Read.All",
@@ -455,7 +501,10 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
+      "email",
       "Group.Read.All",
+      "openid",
+      "profile",
       "User.ReadBasic.All"
     ],
     "device_code": true,
@@ -472,9 +521,12 @@
     "single_page_app": null,
     "graph_api_permissions": [
       "Directory.Read.All",
+      "email",
       "Files.ReadWrite",
       "Files.ReadWrite.All",
       "Group.ReadWrite.All",
+      "openid",
+      "profile",
       "User.Read.All"
     ],
     "device_code": true,
@@ -491,8 +543,9 @@
     "single_page_app": null,
     "graph_api_permissions": [
       "Device.Read.All",
-      "DeviceManagementConfiguration.Read.All",
-      "DeviceManagementConfiguration.ReadWrite.All",
+      "email",
+      "openid",
+      "profile",
       "ServicePrincipalEndpoint.Read.All",
       "User.Read"
     ],
@@ -524,7 +577,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "User.ReadWrite",
+    "graph_api_permissions": [
+      "email",
+      "openid",
+      "profile",
+      "User.ReadWrite"
+    ],
     "device_code": true,
     "foci": true,
     "broci": null,
@@ -540,10 +598,13 @@
     "graph_api_permissions": [
       "Contacts.Read",
       "Directory.Read.All",
+      "email",
       "Family.Read",
       "Files.ReadWrite.All",
       "Group.Read.All",
+      "openid",
       "People.Read",
+      "profile",
       "Sites.Read.All",
       "User.Read.All"
     ],
@@ -580,9 +641,12 @@
     "graph_api_permissions": [
       "Contacts.Read",
       "Directory.Read.All",
+      "email",
       "Files.ReadWrite",
       "Group.Read.All",
+      "openid",
       "People.Read",
+      "profile",
       "Sites.Read.All",
       "User.Read.All"
     ],
@@ -600,7 +664,10 @@
     "single_page_app": null,
     "graph_api_permissions": [
       "EduRoster.ReadBasic",
+      "email",
       "Group.Read.All",
+      "openid",
+      "profile",
       "User.Read",
       "User.ReadBasic.All",
       "UserActivity.ReadWrite.CreatedByApp"
@@ -633,12 +700,15 @@
     "graph_api_permissions": [
       "Calendars.Read",
       "Content.Process.User",
+      "email",
       "Files.ReadWrite",
       "Files.ReadWrite.All",
       "Notes.Create",
       "Notes.ReadWrite",
       "Notes.ReadWrite.All",
+      "openid",
       "People.Read",
+      "profile",
       "ProtectionScopes.Compute.User",
       "User.Read",
       "User.ReadBasic.All"
@@ -661,10 +731,13 @@
     "graph_api_permissions": [
       "Contacts.Read",
       "Directory.Read.All",
+      "email",
       "Group.Read.All",
       "Member.Read.Hidden",
+      "openid",
       "Organization.Read.All",
       "People.Read",
+      "profile",
       "Sites.Read.All",
       "User.Read.All"
     ],
@@ -680,7 +753,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "User.Read",
+    "graph_api_permissions": [
+      "email",
+      "openid",
+      "profile",
+      "User.Read"
+    ],
     "device_code": true,
     "foci": true,
     "broci": null,
@@ -708,6 +786,9 @@
     "single_page_app": null,
     "graph_api_permissions": [
       "Device.Read.All",
+      "email",
+      "openid",
+      "profile",
       "User.Read"
     ],
     "device_code": true,
@@ -726,10 +807,13 @@
       "Calendars.Read",
       "Calendars.Read.Shared",
       "Contacts.Read",
+      "email",
       "Files.Read",
       "Files.Read.All",
       "Files.ReadWrite",
       "Mail.Read",
+      "openid",
+      "profile",
       "Tasks.ReadWrite",
       "User.Read",
       "User.Read.All",
@@ -750,7 +834,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "User.Read",
+    "graph_api_permissions": [
+      "email",
+      "openid",
+      "profile",
+      "User.Read"
+    ],
     "device_code": true,
     "foci": true,
     "broci": null,
@@ -763,7 +852,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "User.Read",
+    "graph_api_permissions": [
+      "email",
+      "openid",
+      "profile",
+      "User.Read"
+    ],
     "device_code": true,
     "foci": true,
     "broci": null,
@@ -778,10 +872,13 @@
     "single_page_app": "True",
     "graph_api_permissions": [
       "DeviceManagementServiceConfig.Read.All",
+      "email",
       "Group.Read.All",
       "LicenseAssignment.ReadWrite.All",
+      "openid",
       "Organization.Read.All",
       "Place.ReadWrite.All",
+      "profile",
       "RoleManagement.Read.Directory",
       "User.ManageIdentities.All",
       "User.Read",
@@ -798,7 +895,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Calendars.Read",
       "Contacts.Read",
@@ -814,6 +911,7 @@
       "People.Read",
       "Presence.Read.All",
       "profile",
+      "SensitivityLabel.Read",
       "Sites.Read.All",
       "Tasks.ReadWrite",
       "User.Read",
@@ -868,8 +966,9 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
+      "AgentIdentity.Read.All",
       "Application.ReadWrite.All",
       "CrossTenantInformation.ReadBasic.All",
       "Directory.Read.All",
@@ -1170,6 +1269,7 @@
   {
     "single_page_app": "True",
     "graph_api_permissions": [
+      "AgentIdentity.Read.All",
       "CrossTenantInformation.ReadBasic.All",
       "Directory.Read.All",
       "email",
@@ -1261,7 +1361,7 @@
     "broci": null,
     "name": "OCPS Admin Service",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "f416c5fc-9ac4-4f66-a8e5-cb203139cbe4",
     "Notes": null
@@ -1506,7 +1606,7 @@
     "broci": null,
     "name": "Microsoft Teams ADL",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "30e31aeb-977f-4f4f-a483-b61e8377b302",
     "Notes": null
@@ -1857,7 +1957,7 @@
     "broci": null,
     "name": "Production-DPS-1P-SQLIaaS",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "56a02f66-b2ce-4568-954b-907d5476c479",
     "Notes": null
@@ -1935,7 +2035,7 @@
     "broci": null,
     "name": "Microsoft Teams Web Client",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "e1829006-9cf1-4d05-8b48-2e665cb48e6a",
     "Notes": null
@@ -2007,7 +2107,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "Mail.ReadWrite",
+    "graph_api_permissions": [
+      "email",
+      "Mail.ReadWrite",
+      "openid",
+      "profile"
+    ],
     "device_code": true,
     "foci": false,
     "broci": null,
@@ -2091,7 +2196,7 @@
     "broci": null,
     "name": "Power Query Online GCC-L5",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "8c8fbf21-0ef3-4f60-81cf-0df811ff5d16",
     "Notes": null
@@ -2464,12 +2569,15 @@
       "AuditLog.Read.All",
       "Directory.AccessAsUser.All",
       "Directory.ReadWrite.All",
+      "email",
       "Group.ReadWrite.All",
       "IdentityProvider.ReadWrite.All",
+      "openid",
       "Policy.ReadWrite.TrustFramework",
       "PrivilegedAccess.ReadWrite.AzureAD",
       "PrivilegedAccess.ReadWrite.AzureADGroup",
       "PrivilegedAccess.ReadWrite.AzureResources",
+      "profile",
       "TrustFrameworkKeySet.ReadWrite.All",
       "User.Invite.All"
     ],
@@ -2618,7 +2726,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "user_impersonation",
+    "graph_api_permissions": [
+      "email",
+      "openid",
+      "profile",
+      "user_impersonation"
+    ],
     "device_code": true,
     "foci": false,
     "broci": null,
@@ -2935,6 +3048,7 @@
       "Directory.Read.All",
       "email",
       "Files.ReadWrite.All",
+      "FileStorageContainer.Selected",
       "Group.Read.All",
       "GroupMember.ReadWrite.All",
       "InformationProtectionPolicy.Read",
@@ -3393,7 +3507,7 @@
     "broci": null,
     "name": "Federated Profile Service",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "7e468355-e4db-46a9-8289-8d414c89c43c",
     "Notes": null
@@ -3414,6 +3528,7 @@
   {
     "single_page_app": "True",
     "graph_api_permissions": [
+      "_E.AN",
       "AppCatalog.ReadWrite.All",
       "Channel.Delete.All",
       "ChannelMember.Read.All",
@@ -3666,7 +3781,6 @@
       "Insights-GuestActivity.ReadWrite.All",
       "openid",
       "profile",
-      "User.EnableDisableAccount.All",
       "User.ReadWrite"
     ],
     "device_code": null,
@@ -3867,9 +3981,13 @@
       "Channel.Create",
       "Channel.ReadBasic.All",
       "ChannelMember.ReadWrite.All",
+      "email",
+      "openid",
+      "profile",
       "Team.Create",
       "Team.ReadBasic.All",
       "TeamMember.ReadWriteNonOwnerRole.All",
+      "TeamsAppInstallation.ManageSelectedForTeam",
       "TeamsAppInstallation.ReadWriteAndConsentSelfForTeam",
       "TeamsAppInstallation.ReadWriteSelfForTeam",
       "User.Read",
@@ -4192,7 +4310,7 @@
     "broci": null,
     "name": "Skype for Business Management Reporting and Analytics - Legacy",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "de17788e-c765-4d31-aba4-fb837cfff174",
     "Notes": null
@@ -4320,7 +4438,7 @@
     "broci": null,
     "name": "Microsoft Azure",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "15689b28-1333-4213-bb64-38407dde8a5e",
     "Notes": null
@@ -4350,9 +4468,9 @@
     "foci": false,
     "broci": null,
     "name": "Office 365 Enterprise Insights",
-    "reply_addresses": "https://rsomanagement-prod-eu.trafficmanager.net/dashboard/login",
+    "reply_addresses": null,
     "enabled": true,
-    "auth_code": true,
+    "auth_code": null,
     "client_id": "f9d02341-e7aa-456d-926d-4a0ca599fbee",
     "Notes": null
   },
@@ -4444,6 +4562,7 @@
       "openid",
       "Privilege.SkipClientAccessRules",
       "profile",
+      "SensitivityLabel.Read",
       "UnifiedGroupMember.Read.AsGuest",
       "User.Invite.All",
       "User.Read.All"
@@ -4486,7 +4605,7 @@
     "broci": null,
     "name": "Microsoft.SMIT",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "8fca0a66-c008-4564-a876-ab3ae0fd5cff",
     "Notes": null
@@ -4512,7 +4631,7 @@
     "broci": null,
     "name": "Yggdrasil",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "78e7bc61-0fab-4d35-8387-09a8d2f5a59d",
     "Notes": null
@@ -4533,6 +4652,7 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
+      "_D.AW",
       "Application.Read.All",
       "Application.ReadWrite.All",
       "Domain.Read.All",
@@ -4740,7 +4860,10 @@
     "single_page_app": null,
     "graph_api_permissions": [
       "Calendars.Read",
+      "email",
+      "openid",
       "Organization.Read.All",
+      "profile",
       "User.Read.All"
     ],
     "device_code": true,
@@ -4992,7 +5115,7 @@
     "broci": null,
     "name": "Microsoft Seller Dashboard",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "0000000b-0000-0000-c000-000000000000",
     "Notes": null
@@ -5449,7 +5572,7 @@
     "broci": null,
     "name": "SubstrateActionsService",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "06dd8193-75af-46d0-84bb-9b9bcaa89e8b",
     "Notes": null
@@ -5475,7 +5598,7 @@
     "broci": null,
     "name": "Microsoft Teams Bots",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "64f79cb9-9c82-4199-b85b-77e35b7dcbcb",
     "Notes": null
@@ -5651,7 +5774,7 @@
     "broci": null,
     "name": "CIWebService",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "e1335bb1-2aec-4f92-8140-0e6e61ae77e5",
     "Notes": null
@@ -5684,21 +5807,14 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": [
-      "Application.ReadWrite.All",
-      "email",
-      "GroupMember.Read.All",
-      "openid",
-      "profile",
-      "User.Read.All"
-    ],
+    "graph_api_permissions": null,
     "device_code": null,
     "foci": false,
     "broci": null,
     "name": "KaizalaActionsPlatform",
-    "reply_addresses": "http://localhost",
+    "reply_addresses": null,
     "enabled": true,
-    "auth_code": true,
+    "auth_code": null,
     "client_id": "9bb724a5-4639-438c-969b-e184b2b1e264",
     "Notes": null
   },
@@ -6062,7 +6178,7 @@
     "broci": null,
     "name": "ASM Campaign Servicing",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "0cb7b9ec-5336-483b-bc31-b15b5788de71",
     "Notes": null
@@ -6283,7 +6399,7 @@
     "broci": null,
     "name": "Microsoft Workplace Search Service",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "f3a218b7-5c8f-460b-93af-56b072788c15",
     "Notes": null
@@ -6387,7 +6503,7 @@
     "broci": null,
     "name": "OCPS Checkin Service",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "23c898c1-f7e8-41da-9501-f16571f8d097",
     "Notes": null
@@ -6549,7 +6665,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "Files.ReadWrite",
+    "graph_api_permissions": [
+      "email",
+      "Files.ReadWrite",
+      "openid",
+      "profile"
+    ],
     "device_code": true,
     "foci": false,
     "broci": null,
@@ -6730,10 +6851,13 @@
       "Directory.Read.All",
       "EduAssignments.Read",
       "EduRoster.ReadBasic",
+      "email",
       "Files.ReadWrite.All",
       "Group.Read.All",
+      "openid",
       "People.Read",
       "Presence.Read.All",
+      "profile",
       "Sites.Read.All",
       "Sites.ReadWrite.All",
       "Team.ReadBasic.All",
@@ -6881,6 +7005,8 @@
       "openid",
       "People.Read",
       "profile",
+      "ServicePrincipal.Create",
+      "TeamworkAppSettings.Read.All",
       "User.Read"
     ],
     "device_code": null,
@@ -7077,6 +7203,7 @@
       "Calendars.ReadWrite.Shared",
       "Channel.ReadBasic.All",
       "ChatMember.Read",
+      "ChatMessage.Send",
       "email",
       "Files.ReadWrite.All",
       "FileStorageContainer.Selected",
@@ -7170,7 +7297,7 @@
     "broci": null,
     "name": "Power Query Online GCC-L4",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "ef947699-9b52-4b31-9a37-ef325c6ffc47",
     "Notes": null
@@ -7248,7 +7375,7 @@
     "broci": null,
     "name": "Teams User Engagement Profile Service",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "0f54b75d-4d29-4a92-80ae-106a60cd8f5d",
     "Notes": null
@@ -7387,12 +7514,16 @@
     "single_page_app": "True",
     "graph_api_permissions": [
       "AccessReview.ReadWrite.All",
+      "Application.Read.All",
+      "AuthenticationContext.Read.All",
       "CrossTenantInformation.ReadBasic.All",
       "email",
       "GroupMember.Read.All",
       "openid",
       "People.Read",
       "profile",
+      "ResourcePolicyAssignment.ReadWrite.All",
+      "ResourcePolicyDefinition.ReadWrite.All",
       "User.Read",
       "User.ReadBasic.All"
     ],
@@ -7414,13 +7545,13 @@
     "broci": null,
     "name": "Skype for Business Name Dictionary Service",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "e95d8bee-4725-4f59-910d-94d415da51b9",
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Channel.ReadBasic.All",
       "ChannelSettings.Read.All",
@@ -7510,7 +7641,9 @@
       "Application.Read.All",
       "Calendars.Read",
       "Channel.ReadBasic.All",
+      "ChannelMessage.Send",
       "Chat.ReadBasic",
+      "ChatMessage.Send",
       "email",
       "ExternalItem.Read.All",
       "Files.Read.All",
@@ -7518,6 +7651,7 @@
       "FileStorageContainer.Selected",
       "Group.Read.All",
       "InformationProtectionPolicy.Read",
+      "MailboxSettings.Read",
       "openid",
       "Organization.Read.All",
       "People.Read",
@@ -7652,7 +7786,7 @@
     "broci": null,
     "name": "Microsoft To-Do",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "2087bd82-7206-4c0a-b305-1321a39e5926",
     "Notes": null
@@ -7765,11 +7899,15 @@
     "single_page_app": "True",
     "graph_api_permissions": [
       "AccessReview.Read.All",
+      "AgentIdentity.EnableDisable.All",
+      "AgentIdentity.Read.All",
+      "Application.Read.All",
       "AuditLog.Read.All",
       "BitlockerKey.Read.All",
       "Contacts.Read",
       "CrossTenantInformation.ReadBasic.All",
       "CrossTenantUserProfileSharing.ReadWrite.All",
+      "DelegatedPermissionGrant.Read.All",
       "Device.EnableDisableAccount.All",
       "Device.Read.All",
       "email",
@@ -7781,6 +7919,8 @@
       "openid",
       "Organization.Read.All",
       "Policy.Read.All",
+      "PrivilegedAssignmentSchedule.ReadWrite.AzureADGroup",
+      "PrivilegedEligibilitySchedule.Read.AzureADGroup",
       "profile",
       "RoleManagement.ReadWrite.Directory",
       "User.Invite.All",
@@ -7880,7 +8020,10 @@
   {
     "single_page_app": "True",
     "graph_api_permissions": [
+      "AgentCollection.Read.Global",
+      "AgentInstance.Read.All",
       "Application.Read.All",
+      "AppRoleAssignment.ReadWrite.All",
       "AuditLog.Read.All",
       "Channel.ReadBasic.All",
       "ChannelMessage.Send",
@@ -7890,13 +8033,17 @@
       "Directory.Read.All",
       "eDiscovery.Read.All",
       "eDiscovery.ReadWrite.All",
+      "email",
       "Group.Read.All",
+      "IdentityRiskyAgent.Read.All",
       "IdentityRiskyUser.Read.All",
       "InformationProtectionPolicy.Read",
       "MailboxSettings.Read",
+      "openid",
       "People.Read.All",
       "Policy.Read.All",
       "Policy.ReadWrite.ConditionalAccess",
+      "profile",
       "Reports.Read.All",
       "SecurityEvents.ReadWrite.All",
       "ServiceHealth.Read.All",
@@ -7970,56 +8117,15 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
-      "AccessReview.ReadWrite.All",
-      "Application.Read.All",
-      "AuditLog.Read.All",
-      "ChangeManagement.Read.All",
-      "ConsentRequest.Create",
-      "ConsentRequest.Read",
-      "ConsentRequest.ReadApprove.All",
-      "ConsentRequest.ReadWrite.All",
-      "CustomSecAttributeAssignment.Read.All",
-      "CustomSecAttributeAuditLogs.Read.All",
-      "Device-OrganizationalUnit.ReadWrite.All",
-      "Directory.AccessAsUser.All",
-      "Directory.Read.All",
-      "Directory.ReadWrite.All",
-      "Directory.Write.Restricted",
-      "DirectoryRecommendations.Read.All",
-      "DirectoryRecommendations.ReadWrite.All",
-      "Domain.ReadWrite.All",
+      "CustomSecAttributeDefinition.Read.All",
+      "CustomSecAttributeDefinition.ReadWrite.All",
       "email",
-      "EntitlementManagement.Read.All",
-      "Group.ReadWrite.All",
-      "HealthMonitoringAlert.ReadWrite.All",
-      "HealthMonitoringAlertConfig.ReadWrite.All",
-      "IdentityProvider.ReadWrite.All",
-      "IdentityRiskEvent.ReadWrite.All",
-      "IdentityRiskyServicePrincipal.ReadWrite.All",
-      "IdentityRiskyUser.ReadWrite.All",
-      "IdentityUserFlow.Read.All",
-      "LifecycleWorkflows.ReadWrite.All",
-      "OnPremDirectorySynchronization.Read.All",
+      "MS-RemoteTenantGroups.Read.All",
       "openid",
-      "OrganizationalUnit.ReadWrite.All",
-      "Policy.Read.All",
-      "Policy.Read.IdentityProtection",
-      "Policy.ReadWrite.AuthenticationFlows",
-      "Policy.ReadWrite.AuthenticationMethod",
-      "Policy.ReadWrite.Authorization",
-      "Policy.ReadWrite.ConditionalAccess",
-      "Policy.ReadWrite.ExternalIdentities",
-      "Policy.ReadWrite.IdentityProtection",
-      "Policy.ReadWrite.MobilityManagement",
+      "Organization.Read.All",
       "profile",
-      "Reports.Read.All",
-      "RoleManagement.ReadWrite.Directory",
-      "SecurityEvents.ReadWrite.All",
-      "TrustFrameworkKeySet.Read.All",
-      "User.Export.All",
-      "User.ReadWrite.All",
-      "UserAuthenticationMethod.ReadWrite.All",
-      "User-OrganizationalUnit.ReadWrite.All"
+      "User.Invite.All",
+      "User.Read.All"
     ],
     "device_code": null,
     "foci": false,
@@ -8185,7 +8291,13 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
+      "_C.A6",
+      "_C.AY",
       "AccessReview.ReadWrite.All",
+      "AgentCollection.Read.All",
+      "AgentCollection.Read.Global",
+      "AgentCollection.Read.Quarantined",
+      "AgentInstance.Read.All",
       "Application.Read.All",
       "AuditLog.Read.All",
       "ChangeManagement.Read.All",
@@ -8226,8 +8338,10 @@
       "Policy.ReadWrite.ExternalIdentities",
       "Policy.ReadWrite.IdentityProtection",
       "Policy.ReadWrite.MobilityManagement",
+      "PrivilegedEligibilitySchedule.Read.AzureADGroup",
       "profile",
       "Reports.Read.All",
+      "RoleEligibilitySchedule.Read.Directory",
       "RoleManagement.ReadWrite.Directory",
       "SecurityEvents.ReadWrite.All",
       "TrustFrameworkKeySet.Read.All",
@@ -8277,7 +8391,6 @@
     "graph_api_permissions": [
       "Application.Read.All",
       "email",
-      "GroupMember.ReadWrite.All",
       "openid",
       "profile",
       "User.ReadBasic.All"
@@ -8339,7 +8452,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "user_impersonation",
+    "graph_api_permissions": [
+      "email",
+      "openid",
+      "profile",
+      "user_impersonation"
+    ],
     "device_code": true,
     "foci": false,
     "broci": null,
@@ -8444,6 +8562,8 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
+      "email",
+      "openid",
       "profile",
       "User.Read",
       "User.ReadWrite"
@@ -8556,13 +8676,7 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": [
-      "email",
-      "openid",
-      "profile",
-      "User.Read.All",
-      "User-OnPremisesSyncBehavior.ReadWrite.All"
-    ],
+    "graph_api_permissions": null,
     "device_code": true,
     "foci": false,
     "broci": null,
@@ -8591,7 +8705,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "ServicePrincipalEndpoint.Read.All",
+    "graph_api_permissions": [
+      "email",
+      "openid",
+      "profile",
+      "ServicePrincipalEndpoint.Read.All"
+    ],
     "device_code": true,
     "foci": false,
     "broci": null,
@@ -8651,7 +8770,7 @@
     "broci": null,
     "name": "Microsoft Storefronts",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "28b567f6-162c-4f54-99a0-6887f387bbcc",
     "Notes": null
@@ -8693,6 +8812,7 @@
       "Organization.Read.All",
       "People.Read",
       "profile",
+      "SensitivityLabel.Read",
       "Sites.Read.All",
       "Sites.ReadWrite.All",
       "User.Read",
@@ -8729,7 +8849,7 @@
     "broci": null,
     "name": "Office Online Client Microsoft Entra ID- Augmentation Loop",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "2abdc806-e091-4495-9b10-b04d93c3f040",
     "Notes": null
@@ -8742,7 +8862,7 @@
     "broci": null,
     "name": "Office Online Client Microsoft Entra ID- Loki",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "b23dd4db-9142-4734-867f-3577f640ad0c",
     "Notes": null
@@ -8755,7 +8875,7 @@
     "broci": null,
     "name": "Office Online Client Microsoft Entra ID- Maker",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "17d5e35f-655b-4fb0-8ae6-86356e9a49f5",
     "Notes": null
@@ -8768,7 +8888,7 @@
     "broci": null,
     "name": "Office Online Client MSA- Loki",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "b6e69c34-5f1f-4c34-8cdf-7fea120b8670",
     "Notes": null
@@ -8814,7 +8934,7 @@
     "broci": null,
     "name": "Office.com",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "4b233688-031c-404b-9a80-a4f3f2351f90",
     "Notes": null
@@ -8827,7 +8947,7 @@
     "broci": null,
     "name": "OfficeShredderWacClient",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "4d5c2d63-cf83-4365-853c-925fd1a64357",
     "Notes": null
@@ -8990,7 +9110,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "user_impersonation",
+    "graph_api_permissions": [
+      "user_impersonation",
+      "profile",
+      "openid",
+      "email"
+    ],
     "device_code": true,
     "foci": false,
     "broci": null,
@@ -9029,7 +9154,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "user_impersonation",
+    "graph_api_permissions": [
+      "user_impersonation",
+      "profile",
+      "openid",
+      "email"
+    ],
     "device_code": true,
     "foci": false,
     "broci": null,
@@ -9185,7 +9315,7 @@
     "broci": null,
     "name": "Office Online OWLNest",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "d7d7af51-cdcd-4a4c-9467-86e7dc5d2b90",
     "Notes": null
@@ -9198,7 +9328,7 @@
     "broci": null,
     "name": "Office Online Search SSO",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "5a4eed13-c4c4-4b4c-9506-334ab200bf31",
     "Notes": null
@@ -9233,7 +9363,7 @@
     "foci": false,
     "broci": null,
     "name": "My Signins",
-    "reply_addresses": "https://mysignins.azure.us",
+    "reply_addresses": "https://mysignins.microsoft.com/",
     "enabled": true,
     "auth_code": true,
     "client_id": "19db86c3-b2b9-44cc-b339-36da233a3be2",
@@ -9241,7 +9371,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": null,
+    "graph_api_permissions": [
+      "user_impersonation",
+      "profile",
+      "openid",
+      "email"
+    ],
     "device_code": null,
     "foci": false,
     "broci": null,
@@ -9267,7 +9402,7 @@
     "broci": null,
     "name": "Office Online Print SSO",
     "reply_addresses": "ms-appx-web://Microsoft.AAD.BrokerPlugIn/S-1-15-2-930279079-3258969966-1203931420-3379063298-1496040207-3203565093-3038441310",
-    "enabled": true,
+    "enabled": false,
     "auth_code": true,
     "client_id": "3ce44149-e365-40e4-9bb4-8c0ecb710fe6",
     "Notes": null
@@ -9300,7 +9435,7 @@
     "broci": null,
     "name": "MM_Reactions_PME_PROD",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "e8e8fc40-94d5-4ed6-89f2-9e5ec6c1e11e",
     "Notes": null
@@ -9324,8 +9459,11 @@
       "Application.ReadWrite.All",
       "Directory.Read.All",
       "Domain.ReadWrite.All",
+      "email",
       "OnPremDirectorySynchronization.ReadWrite.All",
-      "Organization.ReadWrite.All"
+      "openid",
+      "Organization.ReadWrite.All",
+      "profile"
     ],
     "device_code": true,
     "foci": false,
@@ -9342,7 +9480,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "mdm_delegation",
+    "graph_api_permissions": [
+      "mdm_delegation",
+      "profile",
+      "openid",
+      "email"
+    ],
     "device_code": true,
     "foci": false,
     "broci": null,
@@ -10050,7 +10193,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "user_impersonation",
+    "graph_api_permissions": [
+      "email",
+      "openid",
+      "profile",
+      "user_impersonation"
+    ],
     "device_code": true,
     "foci": false,
     "broci": null,
@@ -10290,7 +10438,7 @@
     "broci": null,
     "name": "Office Online Third Party Storage",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "c1f33bc0-bdb4-4248-ba9b-096807ddb43e",
     "Notes": null
@@ -10355,7 +10503,7 @@
     "broci": null,
     "name": "SmartList Designer",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "c9d254a9-346a-4c00-95eb-950cb62a58f0",
     "Notes": null
@@ -10406,7 +10554,7 @@
     "foci": false,
     "broci": null,
     "name": "Weve",
-    "reply_addresses": "https://myabundledev.z22.web.core.windows.net/app-web-buddy.html",
+    "reply_addresses": "https://insights.cloud.microsoft",
     "enabled": true,
     "auth_code": true,
     "client_id": "71a7c376-13e6-4100-968e-92ce98c5d3d2",
@@ -10795,8 +10943,10 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
-      "Application.Read.All",
-      "Application.ReadWrite.All"
+      "Application.ReadWrite.All",
+      "email",
+      "openid",
+      "profile"
     ],
     "device_code": null,
     "foci": false,
@@ -10920,9 +11070,29 @@
     "graph_api_permissions": [
       "AdministrativeUnit.Read.All",
       "AdministrativeUnit.ReadWrite.All",
+      "AgentCardManifest.Read.All",
+      "AgentCardManifest.ReadWrite.All",
+      "AgentCollection.Read.All",
+      "AgentCollection.Read.Global",
+      "AgentCollection.Read.Quarantined",
+      "AgentCollection.ReadWrite.All",
+      "AgentCollection.ReadWrite.Global",
+      "AgentCollection.ReadWrite.Quarantined",
+      "AgentIdentity.EnableDisable.All",
+      "AgentIdentity.Read.All",
+      "AgentIdentity.ReadWrite.All",
+      "AgentIdentityBlueprintPrincipal.EnableDisable.All",
+      "AgentIdentityBlueprintPrincipal.Read.All",
+      "AgentIdentityBlueprintPrincipal.ReadWrite.All",
+      "AgentInstance.Read.All",
+      "AgentInstance.ReadWrite.All",
       "Application.Read.All",
       "Application.ReadWrite.All",
       "AppRoleAssignment.ReadWrite.All",
+      "AuditLog.Read.All",
+      "CrossTenantInformation.ReadBasic.All",
+      "CustomSecAttributeAssignment.ReadWrite.All",
+      "CustomSecAttributeDefinition.ReadWrite.All",
       "DelegatedPermissionGrant.ReadWrite.All",
       "Domain.Read.All",
       "email",
@@ -10933,6 +11103,7 @@
       "Policy.ReadWrite.ApplicationConfiguration",
       "Policy.ReadWrite.MobilityManagement",
       "profile",
+      "RoleManagement.ReadWrite.Directory",
       "User.Read",
       "User.Read.All"
     ],
@@ -10971,19 +11142,14 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": [
-      "email",
-      "openid",
-      "Organization.Read.All",
-      "profile"
-    ],
+    "graph_api_permissions": null,
     "device_code": null,
     "foci": false,
     "broci": true,
     "name": "Microsoft_Entra_PM_Dashboard",
-    "reply_addresses": "brk-c44b4083-3bb0-49c1-b47d-974e53cbdf3c://portal.azure.com",
+    "reply_addresses": "0",
     "enabled": true,
-    "auth_code": null,
+    "auth_code": true,
     "client_id": "657f475f-6af7-4958-a07d-84ce676716d9",
     "Notes": null
   },
@@ -11054,6 +11220,7 @@
     "single_page_app": null,
     "graph_api_permissions": [
       "Application.Read.All",
+      "AuditLog.Read.All",
       "CustomSecAttributeDefinition.Read.All",
       "email",
       "Group.Read.All",
@@ -11063,9 +11230,13 @@
       "PrivilegedAssignmentSchedule.ReadWrite.AzureADGroup",
       "PrivilegedEligibilitySchedule.ReadWrite.AzureADGroup",
       "profile",
+      "ResourcePolicyAssignment.ReadWrite.All",
+      "ResourcePolicyDefinition.ReadWrite.All",
       "RoleAssignmentSchedule.ReadWrite.Directory",
       "RoleEligibilitySchedule.ReadWrite.Directory",
+      "RoleManagement.Read.Applications",
       "RoleManagement.Read.Directory",
+      "RoleManagementAlert.ReadWrite.Directory",
       "RoleManagementPolicy.ReadWrite.AzureADGroup",
       "RoleManagementPolicy.ReadWrite.Directory"
     ],
@@ -11112,6 +11283,7 @@
       "AccessReview.ReadWrite.All",
       "Application.Read.All",
       "AuditLog.Read.All",
+      "AuthenticationContext.Read.All",
       "DirectoryRecommendations.Read.All",
       "email",
       "EntitlementManagement.Read.All",
@@ -11148,7 +11320,7 @@
     "broci": true,
     "name": "ChangeManagementHub",
     "reply_addresses": "brk-c44b4083-3bb0-49c1-b47d-974e53cbdf3c://portal.azure.com",
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "9d15ec9c-4104-48aa-9688-c907238f257b",
     "Notes": null
@@ -11317,7 +11489,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "Application.Read.All",
+    "graph_api_permissions": [
+      "Application.Read.All",
+      "email",
+      "openid",
+      "profile"
+    ],
     "device_code": true,
     "foci": false,
     "broci": true,
@@ -11357,6 +11534,7 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
+      "AdministrativeUnit.Read.All",
       "Application.Read.All",
       "CustomSecAttributeAssignment.Read.All",
       "CustomSecAttributeDefinition.Read.All",
@@ -11369,6 +11547,8 @@
       "Organization.Read.All",
       "Policy.Read.All",
       "profile",
+      "RoleManagement.Read.Directory",
+      "User.Read.All",
       "User.ReadBasic.All"
     ],
     "device_code": null,
@@ -11401,7 +11581,8 @@
       "Domain.Read.All",
       "email",
       "openid",
-      "profile"
+      "profile",
+      "User.Read"
     ],
     "device_code": null,
     "foci": false,
@@ -11427,7 +11608,7 @@
     "broci": true,
     "name": "Liftr-LZ-FPA-PRT-AME",
     "reply_addresses": "brk-c44b4083-3bb0-49c1-b47d-974e53cbdf3c://portal.azure.com",
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "f3ffc46c-a723-4752-9bf5-899adb285bf7",
     "Notes": null
@@ -11544,11 +11725,13 @@
     "graph_api_permissions": [
       "Application.ReadWrite.All",
       "Directory.ReadWrite.All",
+      "DirectoryRecommendations.ReadWrite.All",
       "email",
       "openid",
       "Policy.Read.All",
       "Policy.ReadWrite.ConditionalAccess",
-      "profile"
+      "profile",
+      "SecurityEvents.ReadWrite.All"
     ],
     "device_code": null,
     "foci": false,
@@ -11573,7 +11756,7 @@
     "broci": true,
     "name": "liftr-split-portal-fpa-prod",
     "reply_addresses": "brk-c44b4083-3bb0-49c1-b47d-974e53cbdf3c://portal.azure.com",
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "73b67c52-525b-4470-9c5c-1e02c60b8a05",
     "Notes": null
@@ -11698,6 +11881,7 @@
       "Policy.ReadWrite.Authorization",
       "profile",
       "PublicKeyInfrastructure.ReadWrite.All",
+      "RoleEligibilitySchedule.Read.Directory",
       "User.EnableDisableAccount.All",
       "User.ReadWrite.All"
     ],
@@ -11847,7 +12031,9 @@
       "openid",
       "Organization.ReadWrite.All",
       "Policy.Read.All",
-      "profile"
+      "profile",
+      "RiskPreventionProviders.ReadWrite.All",
+      "SignInIdentifier.ReadWrite.All"
     ],
     "device_code": null,
     "foci": false,
@@ -11862,15 +12048,23 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
+      "AgentIdentity.EnableDisable.All",
       "Application.Read.All",
+      "Application.ReadWrite.All",
       "AuditLog.Read.All",
+      "email",
       "IdentityRiskEvent.ReadWrite.All",
+      "IdentityRiskyAgent.ReadWrite.All",
       "IdentityRiskyServicePrincipal.ReadWrite.All",
       "IdentityRiskyUser.ReadWrite.All",
+      "openid",
       "Organization.Read.All",
       "Policy.Read.All",
+      "Policy.ReadWrite.ConditionalAccess",
       "Policy.ReadWrite.IdentityProtection",
+      "profile",
       "RoleManagement.Read.Directory",
+      "ThreatHunting.Read.All",
       "User.EnableDisableAccount.All",
       "User.Read.All",
       "User.RevokeSessions.All",
@@ -12009,7 +12203,7 @@
     "broci": null,
     "name": "Azure Modeling and Simulation Workbench",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "5bd9995f-b6f8-4c7a-a024-e8c5eab9c85d",
     "Notes": null
@@ -12019,15 +12213,17 @@
     "graph_api_permissions": [
       "AdministrativeUnit.Read.All",
       "AdministrativeUnit.ReadWrite.All",
+      "Application-RemoteDesktopConfig.ReadWrite.All",
       "AuditLog.Read.All",
       "BitlockerKey.Read.All",
       "Device.Read.All",
       "DeviceLocalCredential.Read.All",
       "DeviceManagementManagedDevices.Read.All",
-      "Directory.Write.Restricted",
+      "Device-OrganizationalUnit.ReadWrite.All",
       "email",
       "GroupMember.Read.All",
       "openid",
+      "OrganizationalUnit.Read.All",
       "Policy.Read.All",
       "Policy.ReadWrite.Authorization",
       "Policy.ReadWrite.DeviceConfiguration",
@@ -12156,7 +12352,9 @@
       "email",
       "GroupMember.Read.All",
       "openid",
+      "People.Read",
       "profile",
+      "User.Read.All",
       "User.ReadBasic.All"
     ],
     "device_code": null,
@@ -12251,7 +12449,7 @@
     "broci": null,
     "name": "Azure Certified for IoT Device Catalog",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "822c8694-ad95-4735-9c55-256f7db2f9b4",
     "Notes": null
@@ -12282,7 +12480,9 @@
       "Policy.ReadWrite.AuthenticationMethod",
       "profile",
       "RoleManagement.Read.Directory",
-      "User.Read.All"
+      "User.Read.All",
+      "UserAuthenticationMethod.ReadWrite.All",
+      "VerifiedId-Profile.ReadWrite.All"
     ],
     "device_code": null,
     "foci": false,
@@ -12331,7 +12531,7 @@
     "broci": true,
     "name": "Microsoft_AAD_HybridAuthentication",
     "reply_addresses": "brk-c44b4083-3bb0-49c1-b47d-974e53cbdf3c://portal.azure.com",
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "8062e3ed-4248-451f-a2af-0404e0362a39",
     "Notes": null
@@ -12472,6 +12672,8 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
+      "Application.Read.All",
+      "AuthenticationContext.Read.All",
       "CloudPC.ReadWrite.All",
       "DeviceManagementApps.Read.All",
       "DeviceManagementConfiguration.Read.All",
@@ -12684,7 +12886,10 @@
     "single_page_app": null,
     "graph_api_permissions": [
       "Application.Read.All",
+      "email",
       "GroupMember.Read.All",
+      "openid",
+      "profile",
       "User.Read.All"
     ],
     "device_code": true,
@@ -12777,7 +12982,7 @@
     "broci": true,
     "name": "Microsoft Azure MediaServices Portal Extension",
     "reply_addresses": "brk-c44b4083-3bb0-49c1-b47d-974e53cbdf3c://portal.azure.com",
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "e26464aa-f675-4313-a499-89e9db930949",
     "Notes": null
@@ -12890,6 +13095,9 @@
       "DeviceManagementConfiguration.Read.All",
       "DeviceManagementManagedDevices.Read.All",
       "DeviceManagementRBAC.Read.All",
+      "email",
+      "openid",
+      "profile",
       "User.Read"
     ],
     "device_code": true,
@@ -12905,6 +13113,7 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
+      "AuthenticationContext.Read.All",
       "email",
       "Group.Read.All",
       "GroupMember.Read.All",
@@ -12934,7 +13143,8 @@
       "Directory.Read.All",
       "email",
       "openid",
-      "profile"
+      "profile",
+      "WindowsUpdates.ReadWrite.All"
     ],
     "device_code": null,
     "foci": false,
@@ -12965,16 +13175,18 @@
       "CloudPC.Read.All",
       "CloudPC.ReadWrite.All",
       "DeviceManagementApps.ReadWrite.All",
+      "DeviceManagementCloudCA.Read.All",
+      "DeviceManagementCloudCA.ReadWrite.All",
       "DeviceManagementConfiguration.ReadWrite.All",
       "DeviceManagementManagedDevices.PrivilegedOperations.All",
       "DeviceManagementManagedDevices.ReadWrite.All",
       "DeviceManagementRBAC.ReadWrite.All",
+      "DeviceManagementScripts.ReadWrite.All",
       "DeviceManagementServiceConfiguration.ReadWrite.All",
       "Directory.AccessAsUser.All",
       "email",
       "openid",
-      "profile",
-      "Sites.Read.All"
+      "profile"
     ],
     "device_code": null,
     "foci": false,
@@ -13014,6 +13226,7 @@
       "DeviceManagementManagedDevices.PrivilegedOperations.All",
       "DeviceManagementManagedDevices.ReadWrite.All",
       "DeviceManagementRBAC.ReadWrite.All",
+      "DeviceManagementScripts.ReadWrite.All",
       "DeviceManagementServiceConfiguration.ReadWrite.All",
       "Directory.AccessAsUser.All",
       "Directory.Read.All",
@@ -13064,12 +13277,14 @@
       "email",
       "Group.Read.All",
       "openid",
+      "PrintAlertSettings.ReadWrite.All",
       "PrintConnector.Read.All",
       "Printer.FullControl.All",
       "PrinterShare.ReadWrite.All",
       "PrintJob.ReadWrite.All",
       "PrintSettings.ReadWrite.All",
       "profile",
+      "PullPrintPrinter.FullControl.All",
       "PullPrintQueue.FullControl.All",
       "Reports.Read.All",
       "User.ReadBasic.All"
@@ -14200,7 +14415,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "User.Read",
+    "graph_api_permissions": [
+      "email",
+      "openid",
+      "profile",
+      "User.Read"
+    ],
     "device_code": true,
     "foci": false,
     "broci": null,
@@ -14223,10 +14443,13 @@
       "DeviceManagementRBAC.ReadWrite.All",
       "DeviceManagementServiceConfig.ReadWrite.All",
       "Directory.AccessAsUser.All",
+      "email",
       "Group.ReadWrite.All",
       "Mail.Send",
+      "openid",
       "Policy.Read.All",
       "Policy.ReadWrite.ConditionalAccess",
+      "profile",
       "Reports.Read.All",
       "User.ReadWrite.All",
       "WindowsUpdates.ReadWrite.All"
@@ -14298,7 +14521,7 @@
     "broci": null,
     "name": "Office Online Speech SSO",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "467423d3-dc5d-4c1e-b0e7-12d85ade8da8",
     "Notes": null
@@ -14339,7 +14562,10 @@
     "graph_api_permissions": [
       "Device.Read.All",
       "DeviceManagementRBAC.Read.All",
+      "email",
+      "openid",
       "Organization.Read.All",
+      "profile",
       "ServiceHealth.Read.All"
     ],
     "device_code": true,
@@ -14439,11 +14665,14 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
+      "email",
       "GroupMember.Read.All",
+      "openid",
       "PrintConnector.ReadWrite.All",
       "Printer.FullControl.All",
       "PrinterShare.ReadWrite.All",
       "PrintJob.ReadBasic.All",
+      "profile",
       "Reports.Read.All",
       "User.Read",
       "User.ReadBasic.All"
@@ -14461,86 +14690,13 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
-      "AccessReview.Read.All",
-      "AdministrativeUnit.Read.All",
-      "Agreement.Read.All",
-      "AgreementAcceptance.Read.All",
-      "AppCatalog.Read.All",
-      "Application.Read.All",
-      "AuditLog.Read.All",
-      "Bookings.Read.All",
-      "Calendars.Read.Shared",
-      "ChannelMember.Read.All",
-      "ChannelMessage.Read.All",
-      "Chat.Read",
-      "ChatMember.Read",
-      "ChatMessage.Read",
-      "CloudPC.Read.All",
-      "Contacts.Read",
-      "CrossTenantInformation.ReadBasic.All",
-      "CustomSecAttributeAssignment.Read.All",
-      "CustomSecAttributeDefinition.Read.All",
-      "DelegatedPermissionGrant.Read.All",
-      "Device.Read.All",
-      "DeviceManagementApps.Read.All",
-      "DeviceManagementConfiguration.Read.All",
-      "DeviceManagementManagedDevices.Read.All",
-      "DeviceManagementRBAC.Read.All",
-      "DeviceManagementServiceConfig.Read.All",
-      "DirectoryRecommendations.Read.All",
-      "Domain.Read.All",
-      "EduAssignments.Read",
       "email",
-      "EntitlementManagement.Read.All",
-      "ExternalItem.Read.All",
-      "Files.Read.All",
-      "Group.Read.All",
-      "GroupMember.Read.All",
-      "IdentityRiskEvent.Read.All",
-      "IdentityRiskyServicePrincipal.Read.All",
-      "IdentityRiskyUser.Read.All",
-      "IdentityUserFlow.Read.All",
-      "InformationProtectionPolicy.Read",
-      "LicenseAssignment.Read.All",
-      "Mail.Read.Shared",
-      "Mail.ReadWrite",
       "Mail.Send",
-      "MailboxSettings.Read",
-      "Member.Read.Hidden",
-      "NetworkAccess.Read.All",
-      "OnlineMeetingArtifact.Read.All",
-      "OnlineMeetings.Read",
-      "OnlineMeetingTranscript.Read.All",
-      "OnPremDirectorySynchronization.Read.All",
       "openid",
-      "Organization.Read.All",
-      "People.Read.All",
-      "Place.Read.All",
-      "Policy.Read.All",
-      "Policy.Read.PermissionGrant",
-      "Presence.Read.All",
-      "PrinterShare.Read.All",
       "profile",
-      "ProfilePhoto.Read.All",
-      "RecordsManagement.Read.All",
-      "Reports.Read.All",
-      "ReportSettings.Read.All",
-      "RoleAssignmentSchedule.Read.Directory",
-      "RoleEligibilitySchedule.Read.Directory",
-      "RoleManagement.Read.Directory",
-      "RoleManagementPolicy.Read.Directory",
-      "SecurityAlert.Read.All",
-      "SecurityEvents.Read.All",
-      "SecurityIncident.Read.All",
-      "ServiceHealth.Read.All",
-      "ServicePrincipalEndpoint.Read.All",
-      "Sites.Read.All",
       "Tasks.ReadWrite",
-      "ThreatIntelligence.Read.All",
       "User.Read",
-      "User.Read.All",
-      "User.ReadBasic.All",
-      "User-LifeCycleInfo.Read.All"
+      "User.ReadBasic.All"
     ],
     "device_code": true,
     "foci": false,
@@ -14590,7 +14746,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "Tasks.ReadWrite",
+    "graph_api_permissions": [
+      "email",
+      "openid",
+      "profile",
+      "Tasks.ReadWrite"
+    ],
     "device_code": true,
     "foci": false,
     "broci": null,
@@ -14680,7 +14841,8 @@
       "openid",
       "profile",
       "Sites.ReadWrite.All",
-      "User.Read"
+      "User.Read",
+      "User.Read.All"
     ],
     "device_code": true,
     "foci": false,
@@ -14707,7 +14869,12 @@
   },
   {
     "single_page_app": "True",
-    "graph_api_permissions": "user_impersonation",
+    "graph_api_permissions": [
+      "user_impersonation",
+      "profile",
+      "openid",
+      "email"
+    ],
     "device_code": true,
     "foci": false,
     "broci": null,
@@ -14879,19 +15046,22 @@
     "graph_api_permissions": [
       "EduAssignments.ReadBasic",
       "email",
+      "Files.ReadWrite.All",
       "GroupMember.Read.All",
       "Notes.Read.All",
       "openid",
       "profile",
       "Sites.Manage.All",
       "Sites.ReadWrite.All",
-      "User.Read"
+      "Team.ReadBasic.All",
+      "User.Read",
+      "User.ReadBasic.All"
     ],
     "device_code": null,
     "foci": false,
     "broci": null,
     "name": "Reading Assignments",
-    "reply_addresses": "https://readalongauthenticator.azurewebsites.net",
+    "reply_addresses": "https://learningactivities.edu.cloud.microsoft",
     "enabled": true,
     "auth_code": true,
     "client_id": "22d27567-b3f0-4dc2-9ec2-46ed368ba538",
@@ -15009,7 +15179,7 @@
     "broci": null,
     "name": "TeamsLinkedInLiveApp",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "31ba6d5c-2e14-40fb-bbcb-27dc8a1bfaf5",
     "Notes": null
@@ -15300,7 +15470,7 @@
     "broci": null,
     "name": "Funnel and Engagement Data Service",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "707aa1ac-be0a-478d-9ce7-0d2765a5c1d6",
     "Notes": null
@@ -15326,7 +15496,7 @@
     "broci": null,
     "name": "Grade Sync",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "75cba773-c367-4ba4-8d4f-65f91b68c384",
     "Notes": null
@@ -15708,7 +15878,7 @@
     "broci": null,
     "name": "Dynamics 365 Universal Resource Scheduling",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "b2b4502c-fedd-4748-8828-09e1eae11d6a",
     "Notes": null
@@ -16571,18 +16741,19 @@
   {
     "single_page_app": "True",
     "graph_api_permissions": [
-      "Application.ReadWrite.All",
       "email",
       "Group.Read.All",
       "openid",
       "profile",
-      "User.Read.All"
+      "User.Read",
+      "User.Read.All",
+      "User.ReadBasic.All"
     ],
     "device_code": null,
     "foci": false,
     "broci": null,
     "name": "make.gov.powerpages.microsoft.us",
-    "reply_addresses": "https://make.cse-cm001.gateway.prod.cm.powerapps.com/auth",
+    "reply_addresses": "https://make.gov.powerpages.microsoft.us/auth-redirect.html",
     "enabled": true,
     "auth_code": true,
     "client_id": "929cb005-cba1-40c4-a962-ef441029cb6c",
@@ -16596,7 +16767,7 @@
     "broci": null,
     "name": "SuplariDev",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "38ec0b21-8bde-4473-950b-819ceb3ed233",
     "Notes": null
@@ -16642,7 +16813,7 @@
     "foci": false,
     "broci": null,
     "name": "make.test.powerpages.microsoft.com",
-    "reply_addresses": "https://make.local.powerpages.microsoft.com:44300/auth",
+    "reply_addresses": "https://ppux.wus-cm100.gateway.test.cm.powerapps.com/auth",
     "enabled": true,
     "auth_code": true,
     "client_id": "f9a5ac11-cab3-45f0-9d0f-83463ba2e34c",
@@ -16808,7 +16979,7 @@
     "broci": true,
     "name": "BAGSolutionsInstaller",
     "reply_addresses": "brk-c44b4083-3bb0-49c1-b47d-974e53cbdf3c://portal.azure.com",
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "de490f5e-b798-48d8-ae3b-c220d7494cef",
     "Notes": null
@@ -16820,7 +16991,9 @@
       "Application.Read.All",
       "Calendars.Read",
       "Channel.ReadBasic.All",
+      "ChannelMessage.Send",
       "Chat.ReadBasic",
+      "ChatMessage.Send",
       "email",
       "ExternalItem.Read.All",
       "Files.Read.All",
@@ -16828,6 +17001,7 @@
       "Group.Read.All",
       "GroupMember.Read.All",
       "InformationProtectionPolicy.Read",
+      "MailboxSettings.Read",
       "openid",
       "Organization.Read.All",
       "People.Read",
@@ -16853,8 +17027,11 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
+      "email",
       "Group.Read.All",
+      "openid",
       "Organization.Read.All",
+      "profile",
       "Sites.Read.All",
       "User.Read.All"
     ],
@@ -16973,24 +17150,15 @@
     "Notes": null
   },
   {
-    "single_page_app": "True",
-    "graph_api_permissions": [
-      "AppCatalog.Read.All",
-      "AppCatalog.ReadWrite.All",
-      "AppCatalog.Submit",
-      "email",
-      "openid",
-      "Organization.Read.All",
-      "profile",
-      "User.Read"
-    ],
+    "single_page_app": null,
+    "graph_api_permissions": null,
     "device_code": null,
     "foci": false,
     "broci": null,
     "name": "BAGSolutionsInstallerTest",
-    "reply_addresses": "https://app-mscloudsolutioncenter-dev.azurewebsites.net",
+    "reply_addresses": null,
     "enabled": true,
-    "auth_code": true,
+    "auth_code": null,
     "client_id": "8ad75a3e-ae97-457c-baab-65bd5c95389f",
     "Notes": null
   },
@@ -17002,7 +17170,7 @@
     "broci": null,
     "name": "Power Automate Desktop DoD",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "ae7deb89-ca76-4073-bf3e-b72165ac58e9",
     "Notes": null
@@ -17015,7 +17183,7 @@
     "broci": null,
     "name": "Power Automate Desktop GCC High",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "f1a1e36a-d61f-4283-9f48-0867636e332c",
     "Notes": null
@@ -17092,9 +17260,9 @@
     "foci": false,
     "broci": null,
     "name": "Power Automate Desktop",
-    "reply_addresses": "https://login.microsoftonline.com/common/oauth2/nativeclient",
+    "reply_addresses": null,
     "enabled": true,
-    "auth_code": true,
+    "auth_code": null,
     "client_id": "ee90a17f-1cb7-4909-be27-dfc2dcc4dc15",
     "Notes": null
   },
@@ -17346,7 +17514,7 @@
     "broci": null,
     "name": "PrcessSimpleGCCHigh",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "9856e8dd-37b6-4749-a54b-8f6503ea93b7",
     "Notes": null
@@ -17505,7 +17673,7 @@
     "broci": null,
     "name": "make.mil.powerapps.us",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "fac5b0fe-9b16-4ae3-b20b-324ec3f033d3",
     "Notes": null
@@ -17518,7 +17686,7 @@
     "broci": null,
     "name": "make.high.powerapps.us",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "5d21c8e8-6d68-4b62-a3a5-bc1900513fad",
     "Notes": null
@@ -17538,7 +17706,7 @@
     "foci": false,
     "broci": null,
     "name": "make.gov.powerapps.us",
-    "reply_addresses": "https://make.ugtx-cm001.gateway.gov.cm.powerapps.us/authframe",
+    "reply_addresses": "https://make.gov.powerapps.us/teams-tab-auth/end",
     "enabled": true,
     "auth_code": true,
     "client_id": "feb2c8aa-4f70-4881-abec-521141627b04",
@@ -17703,6 +17871,7 @@
       "ChannelMessage.Send",
       "Chat.ReadBasic",
       "ChatMessage.Send",
+      "email",
       "ExternalItem.Read.All",
       "Files.Read.All",
       "Files.ReadWrite",
@@ -17710,8 +17879,11 @@
       "FileStorageContainer.Selected",
       "Group.Read.All",
       "InformationProtectionPolicy.Read",
+      "MailboxSettings.Read",
+      "openid",
       "Organization.Read.All",
       "People.Read",
+      "profile",
       "SensitivityLabel.Read",
       "Sites.Read.All",
       "Sites.ReadWrite.All",
@@ -17751,7 +17923,7 @@
     "broci": null,
     "name": "DYN365AISERVICEINSIGHTS",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "60d240cc-7621-469e-80f1-584c53e9cafa",
     "Notes": null
@@ -17851,7 +18023,10 @@
     "single_page_app": null,
     "graph_api_permissions": [
       "Calendars.ReadWrite",
+      "email",
       "Mail.Read",
+      "openid",
+      "profile",
       "User.Read"
     ],
     "device_code": true,
@@ -17899,9 +18074,12 @@
     "single_page_app": null,
     "graph_api_permissions": [
       "Application.Read.All",
+      "email",
       "Group.Read.All",
       "Member.Read.Hidden",
+      "openid",
       "Organization.Read.All",
+      "profile",
       "RoleManagement.Read.Directory"
     ],
     "device_code": true,
@@ -18068,7 +18246,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "User.Read",
+    "graph_api_permissions": [
+      "email",
+      "openid",
+      "profile",
+      "User.Read"
+    ],
     "device_code": true,
     "foci": false,
     "broci": null,
@@ -18081,7 +18264,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "user_impersonation",
+    "graph_api_permissions": [
+      "user_impersonation",
+      "profile",
+      "openid",
+      "email"
+    ],
     "device_code": true,
     "foci": false,
     "broci": null,
@@ -18173,7 +18361,7 @@
     "broci": null,
     "name": "Dynamics RCS Workload",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "091c98b0-a1c9-4b02-b62c-7753395ccabe",
     "Notes": null
@@ -18193,7 +18381,12 @@
   },
   {
     "single_page_app": "True",
-    "graph_api_permissions": "user_impersonation",
+    "graph_api_permissions": [
+      "user_impersonation",
+      "profile",
+      "openid",
+      "email"
+    ],
     "device_code": true,
     "foci": false,
     "broci": null,
@@ -18219,7 +18412,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "user_impersonation",
+    "graph_api_permissions": [
+      "user_impersonation",
+      "profile",
+      "openid",
+      "email"
+    ],
     "device_code": true,
     "foci": false,
     "broci": null,
@@ -18654,7 +18852,7 @@
     "broci": null,
     "name": "Product Insights - CDS to Azure data lake - app",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "ffa7d2fe-fc04-4599-9f6d-7ca06dd0c4fd",
     "Notes": null
@@ -18818,7 +19016,7 @@
     "broci": null,
     "name": "Microsoft Forms",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "038ed4f5-da78-47bc-8176-9153c79e0edb",
     "Notes": null
@@ -18845,12 +19043,15 @@
     "single_page_app": null,
     "graph_api_permissions": [
       "Contacts.Read",
+      "email",
       "Files.ReadWrite.All",
       "FileStorageContainer.Selected",
       "InformationProtectionPolicy.Read",
       "Mail.Send",
+      "openid",
       "Organization.Read.All",
       "People.Read",
+      "profile",
       "RecordsManagement.Read.All",
       "Tasks.ReadWrite",
       "User.Invite.All",
@@ -18870,7 +19071,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "User.ReadBasic.All",
+    "graph_api_permissions": [
+      "email",
+      "openid",
+      "profile",
+      "User.ReadBasic.All"
+    ],
     "device_code": true,
     "foci": false,
     "broci": null,
@@ -18883,7 +19089,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "user_impersonation",
+    "graph_api_permissions": [
+      "user_impersonation",
+      "profile",
+      "openid",
+      "email"
+    ],
     "device_code": true,
     "foci": false,
     "broci": null,
@@ -18899,10 +19110,13 @@
     "graph_api_permissions": [
       "AuditLog.Read.All",
       "Directory.Read.All",
+      "email",
       "Group.ReadWrite.All",
       "GroupMember.ReadWrite.All",
       "IdentityRiskyUser.ReadWrite.All",
+      "openid",
       "PrivilegedAccess.ReadWrite.AzureAD",
+      "profile",
       "RoleAssignmentSchedule.ReadWrite.Directory",
       "RoleEligibilitySchedule.ReadWrite.Directory",
       "RoleManagement.ReadWrite.Directory",
@@ -18994,10 +19208,12 @@
       "Contacts.Read",
       "email",
       "Files.ReadWrite.All",
+      "InformationProtectionPolicy.Read",
       "openid",
       "Organization.Read.All",
       "People.Read",
       "profile",
+      "SensitivityLabel.Read",
       "Sites.ReadWrite.All",
       "Team.ReadBasic.All",
       "User.Read",
@@ -19049,7 +19265,7 @@
     "foci": false,
     "broci": null,
     "name": "Form Recognizer Studio",
-    "reply_addresses": "https://documentintelligence.ai.azure.com",
+    "reply_addresses": "https://formrecognizer-staging.appliedai.azure.com/studio",
     "enabled": true,
     "auth_code": true,
     "client_id": "18e271e7-a818-46ad-8e73-07cb0ae64328",
@@ -19115,8 +19331,11 @@
   {
     "single_page_app": "True",
     "graph_api_permissions": [
+      "email",
       "Files.Read",
-      "Files.Read.All"
+      "Files.Read.All",
+      "openid",
+      "profile"
     ],
     "device_code": true,
     "foci": false,
@@ -19143,7 +19362,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": null,
+    "graph_api_permissions": [
+      "email",
+      "MultiTenantOrganization.ReadBasic.All",
+      "openid",
+      "profile"
+    ],
     "device_code": null,
     "foci": false,
     "broci": null,
@@ -19174,7 +19398,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "User.Read",
+    "graph_api_permissions": [
+      "email",
+      "openid",
+      "profile",
+      "User.Read"
+    ],
     "device_code": true,
     "foci": false,
     "broci": null,
@@ -19208,6 +19437,9 @@
     "single_page_app": null,
     "graph_api_permissions": [
       "CloudPC.Read.All",
+      "email",
+      "openid",
+      "profile",
       "User.Read"
     ],
     "device_code": true,
@@ -19256,7 +19488,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "User.Read",
+    "graph_api_permissions": [
+      "email",
+      "openid",
+      "profile",
+      "User.Read"
+    ],
     "device_code": true,
     "foci": false,
     "broci": null,
@@ -19286,6 +19523,8 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
+      "Application.ReadWrite.All",
+      "AppRoleAssignment.ReadWrite.All",
       "Calendars.Read.Shared",
       "Calendars.ReadWrite",
       "Contacts.ReadWrite",
@@ -19330,7 +19569,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "ServicePrincipalEndpoint.Read.All",
+    "graph_api_permissions": [
+      "email",
+      "openid",
+      "profile",
+      "ServicePrincipalEndpoint.Read.All"
+    ],
     "device_code": true,
     "foci": false,
     "broci": null,
@@ -19382,8 +19626,11 @@
       "Calendars.Read",
       "Contacts.Read",
       "Directory.Read.All",
+      "email",
       "Group.Read.All",
+      "openid",
       "People.Read",
+      "profile",
       "Sites.FullControl.All",
       "User.Read.All",
       "User.ReadBasic.All"
@@ -19483,7 +19730,7 @@
     "foci": false,
     "broci": null,
     "name": "Engagement Insights",
-    "reply_addresses": "https://eu.portal.aria.ms/frame-redirect.html",
+    "reply_addresses": "https://int.aria.ms/auth-3p.html",
     "enabled": true,
     "auth_code": true,
     "client_id": "5a9cece4-4e66-4a74-9286-da0f62578dd8",
@@ -19523,9 +19770,12 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
+      "email",
       "Mail.ReadBasic",
+      "openid",
       "Presence.Read",
       "Presence.ReadWrite",
+      "profile",
       "User.Read",
       "User.ReadBasic.All"
     ],
@@ -19543,6 +19793,9 @@
     "single_page_app": null,
     "graph_api_permissions": [
       "CloudPC.Read.All",
+      "email",
+      "openid",
+      "profile",
       "User.Read"
     ],
     "device_code": true,
@@ -19605,8 +19858,11 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
+      "email",
+      "openid",
       "PrinterShare.ReadBasic.All",
-      "PrintJob.ReadBasic"
+      "PrintJob.ReadBasic",
+      "profile"
     ],
     "device_code": true,
     "foci": false,
@@ -19714,6 +19970,9 @@
       "Calendars.Read",
       "Contacts.Read",
       "Directory.Read.All",
+      "email",
+      "openid",
+      "profile",
       "User.Read",
       "User.ReadBasic.All"
     ],
@@ -19817,7 +20076,10 @@
     "single_page_app": null,
     "graph_api_permissions": [
       "Contacts.ReadWrite",
+      "email",
+      "openid",
       "People.Read",
+      "profile",
       "User.Read",
       "User.ReadBasic.All"
     ],
@@ -19834,8 +20096,11 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
+      "email",
       "GroupMember.Read.All",
+      "openid",
       "People.Read",
+      "profile",
       "User.Read.All",
       "User.ReadBasic.All"
     ],
@@ -19922,6 +20187,7 @@
       "openid",
       "People.Read",
       "profile",
+      "ProfilePhoto.Read.All",
       "Sites.ReadWrite.All",
       "User.Read",
       "User.Read.All",
@@ -19943,10 +20209,13 @@
       "Application.Read.All",
       "Device.Read.All",
       "Directory.Read.All",
+      "email",
       "Group.Read.All",
       "Member.Read.Hidden",
+      "openid",
       "Organization.Read.All",
       "OrgContact.Read.All",
+      "profile",
       "RoleManagement.Read.Directory",
       "User.Read.All"
     ],
@@ -19985,6 +20254,9 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
+      "email",
+      "openid",
+      "profile",
       "ServicePrincipalEndpoint.Read.All",
       "User.Read"
     ],
@@ -20036,8 +20308,10 @@
     "graph_api_permissions": [
       "Channel.ReadBasic.All",
       "email",
+      "Family.Read",
       "Files.Read",
       "openid",
+      "People.Read",
       "profile",
       "User.Read"
     ],
@@ -20075,6 +20349,9 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
+      "email",
+      "openid",
+      "profile",
       "User.Read",
       "User.ReadBasic.All"
     ],
@@ -20092,11 +20369,14 @@
     "single_page_app": null,
     "graph_api_permissions": [
       "email",
+      "Group.Read.All",
       "openid",
+      "Organization.Read.All",
       "People.Read",
       "Presence.Read.All",
       "profile",
-      "User.Read"
+      "User.Read",
+      "User.Read.All"
     ],
     "device_code": true,
     "foci": false,
@@ -20112,6 +20392,9 @@
     "single_page_app": null,
     "graph_api_permissions": [
       "CloudPC.Read.All",
+      "email",
+      "openid",
+      "profile",
       "User.Read"
     ],
     "device_code": true,
@@ -20175,7 +20458,7 @@
     "broci": null,
     "name": "CortanaUWPClient",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "d0df5b7c-9183-4f34-89de-c64ef4a5e1f3",
     "Notes": null
@@ -20183,7 +20466,10 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
+      "email",
       "Files.ReadWrite.All",
+      "openid",
+      "profile",
       "Sites.ReadWrite.All"
     ],
     "device_code": true,
@@ -20292,7 +20578,7 @@
     "foci": false,
     "broci": null,
     "name": "Azure OpenAI Studio",
-    "reply_addresses": "https://dev.oai.azure.com",
+    "reply_addresses": "https://oai.azure.com/sunset",
     "enabled": true,
     "auth_code": true,
     "client_id": "dc807dec-d211-4b3f-bc8a-43b3443c4874",
@@ -20348,7 +20634,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "openid",
@@ -20370,6 +20656,9 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
+      "email",
+      "openid",
+      "profile",
       "Tasks.ReadWrite",
       "User.Read"
     ],
@@ -20409,6 +20698,8 @@
       "EduAssignments.ReadWriteBasic",
       "EduRoster.ReadBasic",
       "email",
+      "Files.Read.All",
+      "Files.ReadWrite",
       "Group.Read.All",
       "Notes.Read",
       "openid",
@@ -20453,7 +20744,12 @@
   },
   {
     "single_page_app": null,
-    "graph_api_permissions": "mdm_delegation",
+    "graph_api_permissions": [
+      "mdm_delegation",
+      "profile",
+      "openid",
+      "email"
+    ],
     "device_code": true,
     "foci": false,
     "broci": null,
@@ -20727,7 +21023,7 @@
     "broci": null,
     "name": "Microsoft Azure Data Catalog",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "9d3e55ba-79e0-4b7c-af50-dc460b81dca1",
     "Notes": null
@@ -20748,15 +21044,20 @@
     "foci": false,
     "broci": null,
     "name": "Workplace Analytics",
-    "reply_addresses": "https://analysis.insights.cloud-debug.microsoft",
+    "reply_addresses": "https://df.analysis.insights.cloud.microsoft",
     "enabled": true,
     "auth_code": true,
     "client_id": "9d827643-d003-4cca-9dc8-71213a8f1644",
     "Notes": null
   },
   {
-    "single_page_app": null,
-    "graph_api_permissions": null,
+    "single_page_app": "True",
+    "graph_api_permissions": [
+      "email",
+      "openid",
+      "profile",
+      "User.Read"
+    ],
     "device_code": null,
     "foci": false,
     "broci": null,
@@ -20892,7 +21193,7 @@
     "broci": null,
     "name": "Azure Media Services",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "374b2a64-3b6b-436b-934c-b820eacca870",
     "Notes": null
@@ -21399,7 +21700,7 @@
     "broci": null,
     "name": "Microsoft Mixed Reality",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "c7ddd9b4-5172-4e28-bd29-1e0792947d18",
     "Notes": null
@@ -21529,7 +21830,7 @@
     "broci": null,
     "name": "BillingExtension",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "0c8139b5-d545-4448-8d2b-2121bb242680",
     "Notes": null
@@ -21581,7 +21882,7 @@
     "broci": null,
     "name": "Office Agent Service",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "5225545c-3ebd-400f-b668-c8d78550d776",
     "Notes": null
@@ -21714,7 +22015,7 @@
     "foci": false,
     "broci": null,
     "name": "Azure Machine Learning Workbench Web App",
-    "reply_addresses": "https://dev.ml.azure.com/redirect",
+    "reply_addresses": "https://int.ml.azureml-test.ms/oauth",
     "enabled": true,
     "auth_code": true,
     "client_id": "d7304df8-741f-47d3-9bc2-df0e24e2071f",
@@ -21829,6 +22130,8 @@
     "single_page_app": "True",
     "graph_api_permissions": [
       "Calendars.ReadBasic",
+      "ChannelMember.Read.All",
+      "Chat.ReadBasic",
       "Directory.Read.All",
       "email",
       "Files.ReadWrite.All",
@@ -21839,6 +22142,7 @@
       "openid",
       "Organization.Read.All",
       "profile",
+      "SensitivityLabel.Read",
       "Tasks.ReadWrite",
       "UnifiedGroupMember.Read.AsGuest",
       "User.Read.All",
@@ -21857,14 +22161,17 @@
   {
     "single_page_app": "True",
     "graph_api_permissions": [
+      "AppCatalog.Read.All",
       "Calendars.Read",
       "Channel.ReadBasic.All",
       "Chat.ReadBasic",
+      "ChatMessage.Send",
       "email",
       "Files.ReadWrite.All",
       "FileStorageContainer.Selected",
       "Group.Read.All",
       "InformationProtectionPolicy.Read",
+      "MailboxSettings.Read",
       "openid",
       "Organization.Read.All",
       "People.Read",
@@ -21937,7 +22244,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "openid",
@@ -22262,7 +22569,7 @@
     "broci": null,
     "name": "Split Experimentation Resource Provider ID",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "d3e90440-4ec9-4e8b-878b-c89e889e9fbc",
     "Notes": null
@@ -22427,7 +22734,7 @@
     "broci": null,
     "name": "Omnichannel for Customer Service",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "a950df6d-e658-48fc-b494-ec69d8d9731b",
     "Notes": null
@@ -22557,7 +22864,7 @@
     "broci": null,
     "name": "Microsoft Cloud for Sustainability API",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "c3163bf1-092f-436b-b260-7ade5973e5b9",
     "Notes": null
@@ -22570,7 +22877,7 @@
     "broci": null,
     "name": "Environmental Credit Service (preview) app ID",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "b9b0ac19-f710-429d-b58e-dc3f73a330a9",
     "Notes": null
@@ -22635,7 +22942,7 @@
     "broci": null,
     "name": "Project Work Management_US Gov",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "5c8081f1-46af-4077-a0e2-b12ad052a0cb",
     "Notes": null
@@ -23252,7 +23559,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Application.Read.All",
       "email",
@@ -23272,7 +23579,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "openid",
@@ -23309,7 +23616,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Device.Read.All",
       "DeviceManagementConfiguration.Read.All",
@@ -23345,14 +23652,14 @@
     "foci": false,
     "broci": null,
     "name": "Cosmos Explorer",
-    "reply_addresses": "https://dataexplorer-preview.azurewebsites.net/explorer.html",
+    "reply_addresses": "https://cosmos.azure.com/mpac/explorer.html",
     "enabled": true,
     "auth_code": true,
     "client_id": "203f1145-856a-4232-83d4-a43568fba23d",
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "Files.Read.All",
@@ -23378,7 +23685,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Calendars.Read",
       "Chat.Read",
@@ -23404,7 +23711,10 @@
   {
     "single_page_app": "True",
     "graph_api_permissions": [
+      "email",
+      "openid",
       "Organization.Read.All",
+      "profile",
       "RoleManagement.ReadWrite.Directory"
     ],
     "device_code": null,
@@ -23437,7 +23747,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "openid",
@@ -23455,7 +23765,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Channel.Create",
       "ChannelMember.ReadWrite.All",
@@ -23495,7 +23805,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "openid",
@@ -23525,14 +23835,14 @@
     "foci": false,
     "broci": null,
     "name": "Visual Studio Code for Education",
-    "reply_addresses": "https://vscode.dev/redirect",
+    "reply_addresses": "https://vscodeedu.com/signin",
     "enabled": true,
     "auth_code": true,
     "client_id": "4e514f29-41ca-409b-bf52-e774670e54ec",
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "AppCatalog.Read.All",
       "Channel.ReadBasic.All",
@@ -23562,7 +23872,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "GroupMember.Read.All",
@@ -23582,7 +23892,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "AuditLog.Read.All",
       "Calendars.Read.Shared",
@@ -23610,7 +23920,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "user_impersonation",
       "profile",
@@ -23650,7 +23960,12 @@
   },
   {
     "single_page_app": "True",
-    "graph_api_permissions": "User.Read",
+    "graph_api_permissions": [
+      "email",
+      "openid",
+      "profile",
+      "User.Read"
+    ],
     "device_code": null,
     "foci": false,
     "broci": null,
@@ -23674,13 +23989,13 @@
     "broci": null,
     "name": "M365 Copilot Prompt Library",
     "reply_addresses": "https://copilot.cloud-dev.microsoft/tokengenerator",
-    "enabled": true,
+    "enabled": false,
     "auth_code": true,
     "client_id": "69e1409d-f9f8-4199-98e1-654df1626537",
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Channel.ReadBasic.All",
       "email",
@@ -23704,10 +24019,13 @@
   {
     "single_page_app": "True",
     "graph_api_permissions": [
+      "_H.AB",
       "Application.Read.All",
       "email",
+      "GroupMember.Read.All",
       "openid",
-      "profile"
+      "profile",
+      "User.Read.All"
     ],
     "device_code": null,
     "foci": false,
@@ -23720,7 +24038,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Application.Read.All",
       "email",
@@ -23751,14 +24069,14 @@
     "foci": false,
     "broci": null,
     "name": "Azure Commercial Services Tool - CST",
-    "reply_addresses": "https://cst-canarytesting.azure.com/cst/",
+    "reply_addresses": "https://azapp-cst-nx-southindia-staging.azurewebsites.net/",
     "enabled": true,
     "auth_code": true,
     "client_id": "801546d2-55cc-4ff4-b66d-134b1208deb5",
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "Files.Read.All",
@@ -23778,7 +24096,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "openid",
@@ -23796,7 +24114,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Calendars.Read",
       "ChatMessage.Send",
@@ -23845,7 +24163,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "Files.Read",
@@ -23885,7 +24203,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "AppCatalog.Read.All",
       "email",
@@ -23907,7 +24225,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "Files.ReadWrite.All",
@@ -23931,7 +24249,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "openid",
@@ -23949,7 +24267,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "openid",
@@ -23967,7 +24285,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "AppCatalog.Read.All",
       "Application.Read.All",
@@ -24033,7 +24351,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "openid",
@@ -24051,8 +24369,9 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
+      "Device.Read.All",
       "email",
       "GroupMember.Read.All",
       "openid",
@@ -24071,7 +24390,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "Files.ReadWrite",
@@ -24089,7 +24408,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Channel.ReadBasic.All",
       "Chat.ReadBasic",
@@ -24111,7 +24430,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Application.Read.All",
       "email",
@@ -24132,7 +24451,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "Calendars.Read",
       "Calendars.ReadWrite.Shared",
@@ -24187,7 +24506,7 @@
     ],
     "device_code": null,
     "foci": false,
-    "broci": null,
+    "broci": true,
     "name": "ADIbizaUX-AsyncProcessor",
     "reply_addresses": "brk-c44b4083-3bb0-49c1-b47d-974e53cbdf3c://rc.portal.azure.com",
     "enabled": true,
@@ -24216,7 +24535,7 @@
     "Notes": null
   },
   {
-    "single_page_app": null,
+    "single_page_app": "True",
     "graph_api_permissions": [
       "email",
       "Group.Read.All",
@@ -24269,7 +24588,7 @@
     "broci": null,
     "name": "Microsoft Enterprise Skills Initiative",
     "reply_addresses": null,
-    "enabled": true,
+    "enabled": false,
     "auth_code": null,
     "client_id": "b0ee3e94-4d3f-493c-91c3-a640229e47b8",
     "Notes": null
@@ -24849,6 +25168,9 @@
   {
     "single_page_app": null,
     "graph_api_permissions": [
+      "email",
+      "openid",
+      "profile",
       "Application.Read.All",
       "GroupMember.Read.All",
       "User.Read.All",
@@ -24874,10 +25196,15 @@
       "CloudPC.Read.All",
       "CustomSecAttributeAssignment.Read.All",
       "Device.Read.All",
+      "DeviceManagementApps.Read.All",
+      "DeviceManagementConfiguration.Read.All",
       "DeviceManagementManagedDevices.Read.All",
+      "DeviceManagementRBAC.Read.All",
       "DirectoryRecommendations.Read.All",
       "Domain.Read.All",
+      "email",
       "EntitlementManagement.Read.All",
+      "Group.ReadWrite.All",
       "GroupMember.Read.All",
       "HealthMonitoringAlert.ReadWrite.All",
       "HealthMonitoringAlertConfig.Read.All",
@@ -24889,10 +25216,12 @@
       "LifecycleWorkflows-Reports.Read.All",
       "LifecycleWorkflows-Workflow.Read.All",
       "NetworkAccess-Reports.Read.All",
+      "openid",
       "Organization.Read.All",
       "Policy.Read.All",
       "Policy.Read.AuthenticationMethod",
       "Policy.ReadWrite.ConditionalAccess",
+      "profile",
       "Reports.Read.All",
       "RoleAssignmentSchedule.Read.Directory",
       "RoleAssignmentSchedule.ReadWrite.Directory",
@@ -24910,6 +25239,110 @@
     "enabled": true,
     "auth_code": null,
     "client_id": "ffe59ab3-5993-4931-863a-2e78afcf0d1f",
+    "Notes": null
+  },
+  {
+    "single_page_app": null,
+    "graph_api_permissions": null,
+    "device_code": null,
+    "foci": false,
+    "broci": null,
+    "name": "Intune MonoDeviceService ConfidentialClient",
+    "reply_addresses": "0",
+    "enabled": true,
+    "auth_code": true,
+    "client_id": "b8566c1c-2b37-4f6b-97ad-9aaf1fc20560",
+    "Notes": null
+  },
+  {
+    "single_page_app": null,
+    "graph_api_permissions": null,
+    "device_code": null,
+    "foci": false,
+    "broci": null,
+    "name": "Defender for Cloud Apps - Microsoft Copilot Collector",
+    "reply_addresses": "0",
+    "enabled": true,
+    "auth_code": true,
+    "client_id": "6d81daa3-fdfe-4d42-a619-5b89358c3838",
+    "Notes": null
+  },
+  {
+    "single_page_app": null,
+    "graph_api_permissions": null,
+    "device_code": null,
+    "foci": false,
+    "broci": null,
+    "name": "Power Platform Authorization Service PROD",
+    "reply_addresses": "0",
+    "enabled": true,
+    "auth_code": true,
+    "client_id": "8d605dfc-1a04-4da6-9be2-8426724af3f3",
+    "Notes": null
+  },
+  {
+    "single_page_app": null,
+    "graph_api_permissions": null,
+    "device_code": null,
+    "foci": false,
+    "broci": null,
+    "name": "Microsoft Defender For Cloud Apps - Data Loss Prevention - SPO",
+    "reply_addresses": "0",
+    "enabled": true,
+    "auth_code": true,
+    "client_id": "71559765-2fa9-4207-b59f-a8bd85269d4a",
+    "Notes": null
+  },
+  {
+    "single_page_app": null,
+    "graph_api_permissions": null,
+    "device_code": null,
+    "foci": false,
+    "broci": null,
+    "name": "Safelinks",
+    "reply_addresses": "0",
+    "enabled": true,
+    "auth_code": true,
+    "client_id": "85eced78-2127-4b24-9418-95f0bbe3d145",
+    "Notes": null
+  },
+  {
+    "single_page_app": null,
+    "graph_api_permissions": null,
+    "device_code": null,
+    "foci": false,
+    "broci": null,
+    "name": "Privacy Management",
+    "reply_addresses": "0",
+    "enabled": true,
+    "auth_code": true,
+    "client_id": "5a4a238f-f186-4fff-95bd-d3e70f9e1a08",
+    "Notes": null
+  },
+  {
+    "single_page_app": null,
+    "graph_api_permissions": null,
+    "device_code": null,
+    "foci": false,
+    "broci": null,
+    "name": "Power Apps Service Data Plane Backend",
+    "reply_addresses": "0",
+    "enabled": true,
+    "auth_code": true,
+    "client_id": "b6fb6bd6-f0fb-4a60-beb1-4e50afd0eaa9",
+    "Notes": null
+  },
+  {
+    "single_page_app": null,
+    "graph_api_permissions": null,
+    "device_code": null,
+    "foci": false,
+    "broci": null,
+    "name": "Viva Skills",
+    "reply_addresses": "0",
+    "enabled": true,
+    "auth_code": true,
+    "client_id": "75d4238e-b142-4d2d-aed9-232b830b8706",
     "Notes": null
   }
 ]
