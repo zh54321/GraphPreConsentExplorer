@@ -28,6 +28,10 @@
                 border-radius: 0.2rem;
                 box-shadow: inset 0 0 0 1px rgba(251, 191, 36, 0.18);
             }
+
+            .search-clear-button.hidden {
+                display: none;
+            }
         </style>
 	
         
@@ -60,7 +64,17 @@
             <!-- Filters -->
             <div class="mb-4 flex justify-between items-center">
                 <div class="flex flex-1">
-                    <input type="text" id="search" class="p-2 border rounded w-3/5 min-w-[450px] bg-gray-800 text-white" placeholder="Search for Name, ID, Graph Permission...">
+                    <div class="relative w-3/5 min-w-[450px]">
+                        <input type="text" id="search" class="p-2 pr-9 border rounded w-full bg-gray-800 text-white" placeholder="Search for Name, ID, Graph Permission...">
+                        <button
+                            id="clearSearch"
+                            type="button"
+                            class="search-clear-button hidden absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
+                            aria-label="Clear search"
+                            title="Clear search">
+                            ×
+                        </button>
+                    </div>
                 </div>
                 
 				<div class="flex gap-2">
@@ -337,6 +351,12 @@
                 });
             }
 
+            function updateSearchClearButton() {
+                const clearSearchButton = document.getElementById('clearSearch');
+                const hasSearchText = document.getElementById('search').value.trim().length > 0;
+                clearSearchButton.classList.toggle('hidden', !hasSearchText);
+            }
+
 
             function displayApps(apps) {
                 const tableBody = document.getElementById('appTable');
@@ -593,11 +613,17 @@
 
                 document.getElementById('stats').innerText = `Applications: ${visibleAppsCount} / Unique MS Graph permissions: ${visiblePermissions.size}`;
                 updateTableHighlights(searchText);
+                updateSearchClearButton();
             }
 
             document.getElementById('search').addEventListener('input', filterApps);
             document.getElementById('authFlowFilter').addEventListener('change', filterApps);
             document.getElementById('fociFilter').addEventListener('change', filterApps);
+            document.getElementById('clearSearch').addEventListener('click', function() {
+                document.getElementById('search').value = '';
+                filterApps();
+                document.getElementById('search').focus();
+            });
 			
 			document.getElementById('exportCsv').addEventListener('click', exportCurrentViewToCsv);
 
