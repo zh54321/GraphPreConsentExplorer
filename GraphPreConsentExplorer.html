@@ -32,6 +32,10 @@
             .search-clear-button.hidden {
                 display: none;
             }
+
+            .search-help-popover {
+                min-width: 18rem;
+            }
         </style>
 	
         
@@ -64,16 +68,37 @@
             <!-- Filters -->
             <div class="mb-4 flex justify-between items-center">
                 <div class="flex flex-1">
-                    <div class="relative w-3/5 min-w-[450px]">
-                        <input type="text" id="search" class="p-2 pr-9 border rounded w-full bg-gray-800 text-white" placeholder="Search for Name, ID, Graph Permission...">
-                        <button
-                            id="clearSearch"
-                            type="button"
-                            class="search-clear-button hidden absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
-                            aria-label="Clear search"
-                            title="Clear search">
-                            ×
-                        </button>
+                    <div class="flex items-center gap-2 w-3/5 min-w-[450px]">
+                        <div class="relative flex-1">
+                            <input type="text" id="search" class="p-2 pr-9 border rounded w-full bg-gray-800 text-white" placeholder="Search name, client ID, or permission...">
+                            <button
+                                id="clearSearch"
+                                type="button"
+                                class="search-clear-button hidden absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
+                                aria-label="Clear search"
+                                title="Clear search">
+                                ×
+                            </button>
+                        </div>
+                        <div class="relative flex items-center">
+                            <button
+                                id="searchHelpButton"
+                                type="button"
+                                class="search-help-button h-8 w-8 rounded-full border border-gray-600 bg-gray-800 text-sm font-semibold text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-500"
+                                aria-label="Search help"
+                                aria-expanded="false"
+                                title="Search help">
+                                ?
+                            </button>
+                            <div id="searchHelpPopover" class="search-help-popover hidden absolute right-0 top-full z-10 mt-2 w-72 rounded-lg border border-gray-600 bg-gray-900 p-3 text-sm text-gray-200 shadow-xl">
+                                <div class="font-semibold mb-1">Advanced search</div>
+                                <div>Use <code>&amp;&amp;</code>, <code>||</code>, and parentheses.</div>
+                                <div class="mt-2 text-gray-400">Examples:</div>
+                                <div><code>mail.read &amp;&amp; planner</code></div>
+                                <div><code>planner || outlook</code></div>
+                                <div><code>(mail.read || files.read) &amp;&amp; teams</code></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
@@ -159,6 +184,8 @@
             const toolDownloadLinks = {
                 "EntraTokenAid": "https://github.com/zh54321/EntraTokenAid",
             };
+            const searchHelpButton = document.getElementById('searchHelpButton');
+            const searchHelpPopover = document.getElementById('searchHelpPopover');
 			
 			//Focuse on keyboard input
 			document.addEventListener("keydown", (e) => {
@@ -167,6 +194,7 @@
 					document.getElementById('search').focus();
 				}
 				if (e.key === "Escape") {
+                    closeSearchHelpPopover();
 					document.getElementById('modal').classList.add('hidden');
 				}
 			});
@@ -307,15 +335,216 @@
                 return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             }
 
-            function highlightText(value, searchText) {
-                const text = String(value ?? '');
-                const query = searchText.trim();
+            function tokenizeSearchExpression(query) {
+                const tokens = [];
+                let index = 0;
 
-                if (!query) {
+                while (index < query.length) {
+                    const char = query[index];
+
+                    if (/\s/.test(char)) {
+                        index++;
+                        continue;
+                    }
+
+                    if (query.startsWith('&&', index)) {
+                        tokens.push({ type: 'AND' });
+                        index += 2;
+                        continue;
+                    }
+
+                    if (query.startsWith('||', index)) {
+                        tokens.push({ type: 'OR' });
+                        index += 2;
+                        continue;
+                    }
+
+                    if (char === '(') {
+                        tokens.push({ type: 'LPAREN' });
+                        index++;
+                        continue;
+                    }
+
+                    if (char === ')') {
+                        tokens.push({ type: 'RPAREN' });
+                        index++;
+                        continue;
+                    }
+
+                    let endIndex = index;
+                    while (
+                        endIndex < query.length &&
+                        !/\s/.test(query[endIndex]) &&
+                        !query.startsWith('&&', endIndex) &&
+                        !query.startsWith('||', endIndex) &&
+                        query[endIndex] !== '(' &&
+                        query[endIndex] !== ')'
+                    ) {
+                        endIndex++;
+                    }
+
+                    tokens.push({
+                        type: 'TERM',
+                        value: query.slice(index, endIndex),
+                    });
+                    index = endIndex;
+                }
+
+                return tokens;
+            }
+
+            function parseSearchExpression(query) {
+                const trimmedQuery = query.trim();
+                const usesExpressionSyntax = /&&|\|\||[()]/.test(trimmedQuery);
+
+                if (!trimmedQuery) {
+                    return {
+                        mode: 'empty',
+                        ast: null,
+                        terms: [],
+                    };
+                }
+
+                if (!usesExpressionSyntax) {
+                    return {
+                        mode: 'simple',
+                        ast: null,
+                        terms: [trimmedQuery],
+                    };
+                }
+
+                const tokens = tokenizeSearchExpression(trimmedQuery);
+                let index = 0;
+
+                function parseOrExpression() {
+                    let node = parseAndExpression();
+
+                    while (tokens[index]?.type === 'OR') {
+                        index++;
+                        node = {
+                            type: 'OR',
+                            left: node,
+                            right: parseAndExpression(),
+                        };
+                    }
+
+                    return node;
+                }
+
+                function parseAndExpression() {
+                    let node = parsePrimaryExpression();
+
+                    while (tokens[index]?.type === 'AND') {
+                        index++;
+                        node = {
+                            type: 'AND',
+                            left: node,
+                            right: parsePrimaryExpression(),
+                        };
+                    }
+
+                    return node;
+                }
+
+                function parsePrimaryExpression() {
+                    const token = tokens[index];
+
+                    if (!token) {
+                        throw new Error('Unexpected end of expression');
+                    }
+
+                    if (token.type === 'TERM') {
+                        index++;
+                        return {
+                            type: 'TERM',
+                            value: token.value,
+                        };
+                    }
+
+                    if (token.type === 'LPAREN') {
+                        index++;
+                        const node = parseOrExpression();
+
+                        if (tokens[index]?.type !== 'RPAREN') {
+                            throw new Error('Missing closing parenthesis');
+                        }
+
+                        index++;
+                        return node;
+                    }
+
+                    throw new Error(`Unexpected token: ${token.type}`);
+                }
+
+                try {
+                    const ast = parseOrExpression();
+
+                    if (index !== tokens.length) {
+                        throw new Error('Unexpected trailing tokens');
+                    }
+
+                    return {
+                        mode: 'expression',
+                        ast,
+                        terms: tokens.filter(token => token.type === 'TERM').map(token => token.value),
+                    };
+                } catch {
+                    return {
+                        mode: 'simple',
+                        ast: null,
+                        terms: [trimmedQuery],
+                    };
+                }
+            }
+
+            function appMatchesSearchTerm(app, term) {
+                const normalizedTerm = String(term ?? '').trim().toLowerCase();
+
+                if (!normalizedTerm) {
+                    return true;
+                }
+
+                const searchableValues = [
+                    String(app.name || ''),
+                    String(app.client_id || ''),
+                    ...(app.graph_api_permissions || []).map(permission => String(permission || '')),
+                ];
+
+                return searchableValues.some(value => value.toLowerCase().includes(normalizedTerm));
+            }
+
+            function evaluateSearchExpression(ast, app) {
+                if (!ast) {
+                    return true;
+                }
+
+                if (ast.type === 'TERM') {
+                    return appMatchesSearchTerm(app, ast.value);
+                }
+
+                if (ast.type === 'AND') {
+                    return evaluateSearchExpression(ast.left, app) && evaluateSearchExpression(ast.right, app);
+                }
+
+                if (ast.type === 'OR') {
+                    return evaluateSearchExpression(ast.left, app) || evaluateSearchExpression(ast.right, app);
+                }
+
+                return false;
+            }
+
+            function highlightText(value, searchTerms) {
+                const text = String(value ?? '');
+                const terms = [...new Set((Array.isArray(searchTerms) ? searchTerms : [searchTerms])
+                    .map(term => String(term ?? '').trim())
+                    .filter(term => term.length > 0))]
+                    .sort((left, right) => right.length - left.length);
+
+                if (terms.length === 0) {
                     return escapeHtml(text);
                 }
 
-                const regex = new RegExp(escapeRegExp(query), 'ig');
+                const regex = new RegExp(terms.map(term => escapeRegExp(term)).join('|'), 'ig');
                 let result = '';
                 let lastIndex = 0;
                 let hasMatch = false;
@@ -336,15 +565,15 @@
                 return result;
             }
 
-            function updateTableHighlights(searchText) {
+            function updateTableHighlights(searchTerms) {
                 const searchableColumns = new Set(['name', 'client_id', 'graph_api_permissions']);
 
                 document.querySelectorAll('#appTable td[data-raw-value]').forEach(cell => {
                     const rawValue = cell.dataset.rawValue || '';
                     const column = cell.dataset.column || '';
 
-                    if (searchText && searchableColumns.has(column)) {
-                        cell.innerHTML = highlightText(rawValue, searchText);
+                    if (searchTerms.length > 0 && searchableColumns.has(column)) {
+                        cell.innerHTML = highlightText(rawValue, searchTerms);
                     } else {
                         cell.textContent = rawValue;
                     }
@@ -355,6 +584,26 @@
                 const clearSearchButton = document.getElementById('clearSearch');
                 const hasSearchText = document.getElementById('search').value.trim().length > 0;
                 clearSearchButton.classList.toggle('hidden', !hasSearchText);
+            }
+
+            function openSearchHelpPopover() {
+                searchHelpPopover.classList.remove('hidden');
+                searchHelpButton.setAttribute('aria-expanded', 'true');
+            }
+
+            function closeSearchHelpPopover() {
+                searchHelpPopover.classList.add('hidden');
+                searchHelpButton.setAttribute('aria-expanded', 'false');
+            }
+
+            function toggleSearchHelpPopover() {
+                const isHidden = searchHelpPopover.classList.contains('hidden');
+
+                if (isHidden) {
+                    openSearchHelpPopover();
+                } else {
+                    closeSearchHelpPopover();
+                }
             }
 
 
@@ -574,7 +823,8 @@
                 const tableRows = Array.from(document.querySelectorAll("#appTable tr")); // Get latest rows
                 let visibleAppsCount = 0;
                 let visiblePermissions = new Set();
-                const searchText = document.getElementById('search').value.toLowerCase();
+                const searchInput = document.getElementById('search').value;
+                const parsedSearch = parseSearchExpression(searchInput);
 
                 tableRows.forEach(row => {
                     const appId = row.getAttribute("data-client-id");
@@ -590,10 +840,12 @@
                     const hasGraphPermissions = app.graph_api_permissions &&
                         app.graph_api_permissions.some(perm => perm.trim().toLowerCase() !== "[none]" && perm.trim() !== "");
                     const isEnabled = String(app.enabled).trim().toLowerCase() === "true";
+                    const matchesSearch = parsedSearch.mode === 'expression'
+                        ? evaluateSearchExpression(parsedSearch.ast, app)
+                        : appMatchesSearchTerm(app, parsedSearch.terms[0] || '');
 
                     const shouldShow =
-                        (!searchText || app.name.toLowerCase().includes(searchText) || app.client_id.toLowerCase().includes(searchText) ||
-                            (app.graph_api_permissions.some(perm => perm.toLowerCase().includes(searchText)))) &&
+                        matchesSearch &&
                         (!authFlowFilter || (app.auth_code && authFlowFilter === 'AuthCode') || (app.device_code && authFlowFilter === 'DeviceCode') || (app.broci && authFlowFilter === 'BroCi')) &&
                         (!fociFilter || (app.foci && app.foci.toString().toLowerCase() === fociFilter.toLowerCase())) &&
                         (!showGraphPermissionsOnly || hasGraphPermissions) &&
@@ -612,7 +864,7 @@
                 });
 
                 document.getElementById('stats').innerText = `Applications: ${visibleAppsCount} / Unique MS Graph permissions: ${visiblePermissions.size}`;
-                updateTableHighlights(searchText);
+                updateTableHighlights(parsedSearch.terms);
                 updateSearchClearButton();
             }
 
@@ -623,6 +875,20 @@
                 document.getElementById('search').value = '';
                 filterApps();
                 document.getElementById('search').focus();
+            });
+            searchHelpButton.addEventListener('click', function(event) {
+                event.stopPropagation();
+                toggleSearchHelpPopover();
+            });
+            searchHelpPopover.addEventListener('click', function(event) {
+                event.stopPropagation();
+            });
+            document.addEventListener('click', function(event) {
+                if (!searchHelpPopover.classList.contains('hidden') &&
+                    !searchHelpButton.contains(event.target) &&
+                    !searchHelpPopover.contains(event.target)) {
+                    closeSearchHelpPopover();
+                }
             });
 			
 			document.getElementById('exportCsv').addEventListener('click', exportCurrentViewToCsv);
