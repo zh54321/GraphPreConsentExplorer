@@ -7,7 +7,7 @@ During security assessments, I often rely on various pre-consented scopes for th
 
 To address this, I used [EntraTokenAid](https://github.com/zh54321/EntraTokenAid) to perform thousands of authentication attempts using ~1600 first party clients. This process helped identify which clients work with specific authentication flows and their corresponding pre-consented scopes on the Microsoft Graph API.
 
-The result is a fairly large list of 378 Client IDs that have pre-consented scopes on the Graph API and can be used to authenticate without a client secret.  
+The result is a fairly large list of 368 Client IDs that have pre-consented scopes on the Graph API and can be used to authenticate without a client secret.  
 All the information is stored in a YAML file, and there is a simple HTML GUI for easy search and filter navigation. It also provides easy copy-and-paste authentication commands for use with [EntraTokenAid](https://github.com/zh54321/EntraTokenAid).
 
 If you know of additional first-party clients or authentication methods, feel free to contribute!  
@@ -16,10 +16,10 @@ Note: The goal is not to list every valid redirect URL, but to have at least one
 ## 🚀 Features
 
 **Data:**
-- Around 1655 clients
-- Around 378 clients with usable pre-consented scopes for the Microsoft Graph API
-- Around 307 unique pre-consented scopes
-- Total 51 FOCI clients
+- Around 1664 clients
+- Around 368 clients with usable pre-consented scopes for the Microsoft Graph API
+- Around 342 unique pre-consented scopes
+- Total 49 FOCI clients
 
 
 **GUI**:
@@ -76,6 +76,18 @@ apps:
 
 
 ## 📝 Changelog
+
+### 2026-03-20
+
+UI/UX
+- Search matches in the main table are now gently highlighted.
+- The search field now supports boolean expressions with `&&`, `||`, and parentheses.
+- A small inline `x` button was added to clear the current search quickly.
+
+Client list
+- Added a few additional first-party clients.
+- Added more ReplyURLs and fixed so SPA flags
+- Updated pre-consented permissions for all apps
 
 ### 2025-11-26
 
