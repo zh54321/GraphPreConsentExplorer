@@ -20,6 +20,14 @@
             #modalContent::-webkit-scrollbar-thumb:hover {
                 background: #9ca3af;
             }
+
+            .search-highlight {
+                background: rgba(251, 191, 36, 0.28);
+                color: inherit;
+                padding: 0 0.1em;
+                border-radius: 0.2rem;
+                box-shadow: inset 0 0 0 1px rgba(251, 191, 36, 0.18);
+            }
         </style>
 	
         
@@ -263,6 +271,72 @@
                 rows.forEach(row => tableBody.appendChild(row)); // Moves existing rows in sorted order
             }
 
+            function createTableCell(column, text, extraClasses = []) {
+                const cell = document.createElement('td');
+                cell.classList.add('p-3', ...extraClasses);
+                cell.dataset.column = column;
+                cell.dataset.rawValue = text ?? '';
+                cell.textContent = text ?? '';
+                return cell;
+            }
+
+            function escapeHtml(value) {
+                return String(value)
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#39;');
+            }
+
+            function escapeRegExp(value) {
+                return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            }
+
+            function highlightText(value, searchText) {
+                const text = String(value ?? '');
+                const query = searchText.trim();
+
+                if (!query) {
+                    return escapeHtml(text);
+                }
+
+                const regex = new RegExp(escapeRegExp(query), 'ig');
+                let result = '';
+                let lastIndex = 0;
+                let hasMatch = false;
+                let match;
+
+                while ((match = regex.exec(text)) !== null) {
+                    hasMatch = true;
+                    result += escapeHtml(text.slice(lastIndex, match.index));
+                    result += `<mark class="search-highlight">${escapeHtml(match[0])}</mark>`;
+                    lastIndex = match.index + match[0].length;
+                }
+
+                if (!hasMatch) {
+                    return escapeHtml(text);
+                }
+
+                result += escapeHtml(text.slice(lastIndex));
+                return result;
+            }
+
+            function updateTableHighlights(searchText) {
+                const searchableColumns = new Set(['name', 'client_id', 'graph_api_permissions']);
+
+                document.querySelectorAll('#appTable td[data-raw-value]').forEach(cell => {
+                    const rawValue = cell.dataset.rawValue || '';
+                    const column = cell.dataset.column || '';
+
+                    if (searchText && searchableColumns.has(column)) {
+                        cell.innerHTML = highlightText(rawValue, searchText);
+                    } else {
+                        cell.textContent = rawValue;
+                    }
+                });
+            }
+
 
             function displayApps(apps) {
                 const tableBody = document.getElementById('appTable');
@@ -270,14 +344,14 @@
                     const row = document.createElement('tr');
                     row.setAttribute("data-client-id", app.client_id); // Unique identifier for filtering
                     row.classList.add("border-b", "cursor-pointer", "hover:bg-gray-700", "hover:text-white");
-                    row.innerHTML = `
-                        <td class="p-3" data-column="name">${app.name || 'N/A'}</td>
-                        <td class="p-3 whitespace-nowrap" data-column="client_id">${app.client_id || 'N/A'}</td>
-                        <td class="p-3" data-column="enabled">${String(app.enabled).trim().toLowerCase() === "false" ? 'False' : 'True'}</td>
-                        <td class="p-3" data-column="graph_api_permissions">${(app.graph_api_permissions || []).join(', ')}</td>
-                        <td class="p-3" data-column="auth_flow">${app.auth_code ? 'AuthCode' : ''} ${app.device_code ? 'DeviceCode' : ''} ${app.broci ? 'BroCi' : ''}</td>
-                        <td class="p-3" data-column="foci">${app.foci || 'N/A'}</td>
-                    `;
+                    const authFlowText = `${app.auth_code ? 'AuthCode' : ''} ${app.device_code ? 'DeviceCode' : ''} ${app.broci ? 'BroCi' : ''}`.trim();
+
+                    row.appendChild(createTableCell('name', app.name || 'N/A'));
+                    row.appendChild(createTableCell('client_id', app.client_id || 'N/A', ['whitespace-nowrap']));
+                    row.appendChild(createTableCell('enabled', String(app.enabled).trim().toLowerCase() === "false" ? 'False' : 'True'));
+                    row.appendChild(createTableCell('graph_api_permissions', (app.graph_api_permissions || []).join(', ')));
+                    row.appendChild(createTableCell('auth_flow', authFlowText));
+                    row.appendChild(createTableCell('foci', app.foci || 'N/A'));
 
                     row.onclick = () => openModal(app);
                     return row;
@@ -480,6 +554,7 @@
                 const tableRows = Array.from(document.querySelectorAll("#appTable tr")); // Get latest rows
                 let visibleAppsCount = 0;
                 let visiblePermissions = new Set();
+                const searchText = document.getElementById('search').value.toLowerCase();
 
                 tableRows.forEach(row => {
                     const appId = row.getAttribute("data-client-id");
@@ -490,7 +565,6 @@
                         return;
                     }
 
-                    const searchText = document.getElementById('search').value.toLowerCase();
                     const authFlowFilter = document.getElementById('authFlowFilter').value;
                     const fociFilter = document.getElementById('fociFilter').value;
                     const hasGraphPermissions = app.graph_api_permissions &&
@@ -518,6 +592,7 @@
                 });
 
                 document.getElementById('stats').innerText = `Applications: ${visibleAppsCount} / Unique MS Graph permissions: ${visiblePermissions.size}`;
+                updateTableHighlights(searchText);
             }
 
             document.getElementById('search').addEventListener('input', filterApps);
