@@ -6,6 +6,10 @@
         <title>GraphPreConsentExplorer</title>
         <script src="style.js"></script>
         <style>
+            html {
+                scrollbar-gutter: stable;
+            }
+
             /* Custom scrollbar (not possible with Tailwind */
             #modalContent::-webkit-scrollbar {
                 width: 8px; /* Adjust scrollbar width */
@@ -85,17 +89,14 @@
             <input type="file" id="fileInput" accept=".yaml" class="hidden">
 
             <!-- Stats -->
-            <div class="flex items-center justify-end gap-3 mb-2 min-h-[32px]">
-                <button id="resetFilters" type="button" class="hidden px-3 py-1 border border-gray-500 rounded bg-gray-800 text-sm text-white hover:bg-gray-700">
-                    Reset filters
-                </button>
-                <div id="stats" class="text-right text-gray-400 text-sm" aria-live="polite" aria-atomic="true">
+            <div class="flex items-center justify-end mb-2 min-h-[32px]">
+                <div id="stats" class="flex-1 min-w-0 text-right text-gray-400 text-sm tabular-nums" aria-live="polite" aria-atomic="true">
                     Showing 0 of 0 applications / Unique MS Graph permissions: 0
                 </div>
             </div>
 
             <!-- Filters -->
-            <div class="mb-4 flex justify-between items-center">
+            <div class="mb-4 flex flex-wrap justify-between items-center gap-3">
                 <div class="flex flex-1">
                     <div class="flex items-center gap-2 w-3/5 min-w-[450px]">
                         <div class="relative flex-1">
@@ -131,7 +132,7 @@
                     </div>
                 </div>
                 
-				<div class="flex gap-2">
+				<div class="flex flex-wrap items-center gap-2">
 					<button id="toggleEnabledFilter" class="p-2 border rounded bg-gray-800 text-white" aria-pressed="false">
 						Enabled only
 					</button>
@@ -149,6 +150,9 @@
 						<option value="True">True</option>
 						<option value="False">False</option>
 					</select>
+					<button id="resetFilters" type="button" disabled title="Reset search and filters" class="p-2 border rounded bg-gray-800 text-white whitespace-nowrap enabled:hover:bg-gray-700 disabled:opacity-40 disabled:cursor-not-allowed">
+						Reset filters
+					</button>
 				</div>
 
             </div>
@@ -688,7 +692,7 @@
                     showEnabledOnly || showGraphPermissionsOnly ||
                     document.getElementById('authFlowFilter').value !== '' ||
                     document.getElementById('fociFilter').value !== '';
-                document.getElementById('resetFilters').classList.toggle('hidden', !hasFilters);
+                document.getElementById('resetFilters').disabled = !hasFilters;
             }
 
             function openSearchHelpPopover() {
