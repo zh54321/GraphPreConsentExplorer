@@ -294,8 +294,8 @@
 
                     // Special handling for Graph API Permissions (sort by count)
                     if (column === "graph_api_permissions") {
-                        valA = valA.split(",").length; // Count of unique permissions
-                        valB = valB.split(",").length;
+                        valA = Number(rowA.dataset.permissionCount || 0);
+                        valB = Number(rowB.dataset.permissionCount || 0);
                         return currentSortOrder === "asc" ? valA - valB : valB - valA;
                     }
 
@@ -620,6 +620,8 @@
                 const rows = apps.map(app => {
                     const row = document.createElement('tr');
                     row.setAttribute("data-client-id", app.client_id); // Unique identifier for filtering
+                    row.dataset.permissionCount = (app.graph_api_permissions || [])
+                        .filter(permission => permission.trim() !== '' && permission.trim().toLowerCase() !== '[none]').length;
                     row.classList.add("border-b", "cursor-pointer", "hover:bg-gray-700", "hover:text-white");
                     const authFlowText = `${app.auth_code ? 'AuthCode' : ''} ${app.device_code ? 'DeviceCode' : ''} ${app.broci ? 'BroCi' : ''}`.trim();
 
