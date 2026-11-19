@@ -65,7 +65,7 @@
         
     </head>
     <body class="bg-gray-900 text-white p-6" id="theme">
-        <div class="container mx-auto">
+        <div id="appContent" class="container mx-auto">
             <h1 class="text-4xl font-bold mb-4">GraphPreConsentExplorer 🔍</h1>
             
             <!-- File Upload for YAML -->
@@ -175,13 +175,18 @@
 
         <!-- Modal -->
         <div id="modal" class="fixed inset-0 z-20 bg-black bg-opacity-50 hidden flex items-center justify-center p-4" onclick="closeModal(event)">
-            <div id="modalContent" class="bg-gray-800 text-white p-6 rounded-lg shadow-lg w-full max-w-7xl max-h-[95vh] overflow-y-auto">
-                <h2 id="modalTitle" class="text-2xl font-semibold mb-4 text-center"></h2>
+            <div id="modalContent" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1" class="bg-gray-800 text-white p-6 rounded-lg shadow-lg w-full max-w-7xl max-h-[95vh] overflow-y-auto">
+                <div class="flex items-start justify-between gap-3 mb-4">
+                    <h2 id="modalTitle" class="flex-1 text-2xl font-semibold text-center"></h2>
+                    <button id="closeModalTop" type="button" aria-label="Close application details" title="Close application details" class="shrink-0 h-8 w-8 border border-gray-500 rounded text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
                 <div class="space-y-2">
                     <div class="bg-gray-700 p-2 rounded flex justify-between items-center relative">
                         <strong>Client ID:</strong> 
                         <span id="modalClientId" class="flex-1 mx-2 break-all"></span>
-                        <button onclick="copyToClipboard('modalClientId')" class="absolute right-2 text-gray-400 hover:text-white">📋</button>
+                        <button type="button" onclick="copyToClipboard('modalClientId')" aria-label="Copy client ID" title="Copy client ID" class="absolute right-2 text-gray-400 hover:text-white">📋</button>
                     </div>
                     
                     <p class="bg-gray-700 p-2 rounded"><strong>Enabled:</strong> <span id="modalAppEnabled"></span></p>
@@ -206,7 +211,7 @@
                     </div>
                 </div>
         
-                <button id="closeModal" class="mt-4 w-full py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
+                <button id="closeModal" type="button" class="mt-4 w-full py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
                     Close
                 </button>
             </div>
@@ -218,6 +223,8 @@
             let appById = new Map();
             let searchDebounceTimer = null;
             const highlightedCellContent = new WeakMap();
+            let modalOpener = null;
+            let previousBodyOverflow = '';
             const toolDownloadLinks = {
                 "EntraTokenAid": "https://github.com/zh54321/EntraTokenAid",
             };
@@ -226,6 +233,26 @@
 			
 			// Focus search with "/" when no editable control is active.
 			document.addEventListener("keydown", (e) => {
+                if (!document.getElementById('modal').classList.contains('hidden')) {
+                    if (e.key === 'Escape' && !e.isComposing) {
+                        e.preventDefault();
+                        closeModal();
+                    } else if (e.key === 'Tab' && !e.defaultPrevented) {
+                        const focusable = getModalFocusableElements();
+                        const first = focusable[0];
+                        const last = focusable[focusable.length - 1];
+                        if (!first) {
+                            e.preventDefault();
+                            document.getElementById('modalContent').focus();
+                        } else if (!focusable.includes(document.activeElement) ||
+                            (e.shiftKey && document.activeElement === first) ||
+                            (!e.shiftKey && document.activeElement === last)) {
+                            e.preventDefault();
+                            (e.shiftKey ? last : first).focus();
+                        }
+                    }
+                    return;
+                }
 				const target = e.target;
 				const isEditable = target instanceof Element &&
 					(target.matches('input, textarea, select') || target.isContentEditable);
@@ -235,9 +262,15 @@
 				}
 				if (e.key === "Escape") {
                     closeSearchHelpPopover();
-					document.getElementById('modal').classList.add('hidden');
 				}
 			});
+
+            document.addEventListener('focusin', function(event) {
+                if (!document.getElementById('modal').classList.contains('hidden') &&
+                    !document.getElementById('modalContent').contains(event.target)) {
+                    (getModalFocusableElements()[0] || document.getElementById('modalContent')).focus({ preventScroll: true });
+                }
+            });
 			
             document.getElementById('fileInput').addEventListener('change', function(event) {
                 const file = event.target.files[0];
@@ -278,8 +311,8 @@
                     }
                     hasLoadedData = true;
 
-                    document.getElementById('modal').classList.add('hidden');
                     displayApps(appData);
+                    closeModal();
                     filterApps(); // Update stats immediately after loading the file
 					
 					// Show the export button now that data is available
@@ -696,7 +729,8 @@
                     row.appendChild(createTableCell('auth_flow', authFlowText));
                     row.appendChild(createTableCell('foci', app.foci || 'N/A'));
 
-                    row.onclick = () => openModal(app);
+                    row.tabIndex = -1;
+                    row.onclick = () => openModal(app, row);
                     return row;
                 });
 
@@ -707,7 +741,12 @@
             }
 
 
-            function openModal(app) {
+            function openModal(app, opener = document.activeElement) {
+                const wasClosed = document.getElementById('modal').classList.contains('hidden');
+                if (wasClosed) {
+                    modalOpener = opener;
+                    previousBodyOverflow = document.body.style.overflow;
+                }
                 document.getElementById('modalTitle').innerText = app.name || 'N/A';
                 document.getElementById('modalClientId').innerText = app.client_id || 'N/A';
                 document.getElementById('modalAppEnabled').innerText = app.enabled || 'N/A';
@@ -763,7 +802,7 @@
                 authCommandsDiv.innerHTML = commandEntries.length > 0
                     ? commandEntries.map(([tool, commands]) => {
                         let toolLink = toolDownloadLinks[tool] 
-                            ? ` <a target="_blank" href="${toolDownloadLinks[tool]}" class="text-blue-400 hover:text-blue-600">🌍</a>` 
+                            ? ` <a target="_blank" href="${toolDownloadLinks[tool]}" aria-label="Open ${escapeHtml(tool)} project page" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-600">🌍</a>`
                             : "";
                         let toolHTML = `<div class="p-3 rounded bg-gray-700"><p class="font-semibold text-lg mb-1">${tool}${toolLink}</p>`;
                         
@@ -781,10 +820,11 @@
 
                             cmdList.forEach((cmd, index) => {
                                 const cmdId = `${tool}-${authFlow}-${index}`.replace(/\s+/g, '-');
+                                const copyLabel = escapeHtml(`Copy ${tool} ${authFlow} command ${index + 1}`);
                                 toolHTML += `
                                     <div class="relative bg-gray-800 text-white p-2 rounded mb-1 flex items-center">
                                         <pre id="${cmdId}" class="whitespace-normal break-words flex-1 m-0 p-0">${cmd.trim()}</pre>
-                                        <button onclick="copyToClipboard('${cmdId}')" class="absolute top-1 right-1 text-gray-400 hover:text-white">📋</button>
+                                        <button type="button" onclick="copyToClipboard('${cmdId}')" aria-label="${copyLabel}" title="${copyLabel}" class="absolute top-1 right-1 text-gray-400 hover:text-white">📋</button>
                                     </div>
                                 `.trim();
                             });
@@ -803,16 +843,37 @@
                     } else {
                         notesField.parentElement.style.display = "none"; // Hide if empty
                     }
+                    closeSearchHelpPopover();
                     document.getElementById('modal').classList.remove('hidden');
+                    document.getElementById('appContent').inert = true;
+                    document.body.style.overflow = 'hidden';
+                    document.getElementById('modalContent').scrollTop = 0;
+                    document.getElementById('closeModalTop').focus({ preventScroll: true });
                 }
 
-                document.getElementById('closeModal').addEventListener('click', () => {
-                document.getElementById('modal').classList.add('hidden');
-            });
-            
+            document.getElementById('closeModal').addEventListener('click', () => closeModal());
+            document.getElementById('closeModalTop').addEventListener('click', () => closeModal());
+
+            function getModalFocusableElements() {
+                return [...document.getElementById('modalContent').querySelectorAll('a[href], button, input, select, textarea, [tabindex]')]
+                    .filter(element => !element.disabled && element.tabIndex >= 0 && element.getClientRects().length > 0);
+            }
+
             function closeModal(event) {
-                if (event.target.id === "modal") {
-                    document.getElementById('modal').classList.add('hidden');
+                if (event && event.target.id !== 'modal') return;
+                const modal = document.getElementById('modal');
+                if (modal.classList.contains('hidden')) return;
+                modal.classList.add('hidden');
+                closeSearchHelpPopover();
+                document.getElementById('appContent').inert = false;
+                document.body.style.overflow = previousBodyOverflow;
+                const opener = modalOpener;
+                modalOpener = null;
+                if (opener instanceof HTMLElement && opener.isConnected && opener.getClientRects().length > 0) {
+                    opener.focus({ preventScroll: true });
+                }
+                if (document.activeElement !== opener || !opener?.isConnected) {
+                    document.getElementById('search').focus({ preventScroll: true });
                 }
             }
 
