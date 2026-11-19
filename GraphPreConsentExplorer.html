@@ -181,6 +181,8 @@
 
         <script>
             let appData = [];
+            let appById = new Map();
+            let searchDebounceTimer = null;
             const toolDownloadLinks = {
                 "EntraTokenAid": "https://github.com/zh54321/EntraTokenAid",
             };
@@ -231,6 +233,12 @@
                         };
                     });
                     
+                    appById = new Map();
+                    for (const app of appData) {
+                        // Match Array.find: keep the first application for a repeated ID.
+                        if (!appById.has(app.client_id)) appById.set(app.client_id, app);
+                    }
+
                     document.getElementById('modal').classList.add('hidden');
                     displayApps(appData);
                     filterApps(); // Update stats immediately after loading the file
@@ -820,6 +828,8 @@
             });
 
             function filterApps() {
+                clearTimeout(searchDebounceTimer);
+                searchDebounceTimer = null;
                 const tableRows = Array.from(document.querySelectorAll("#appTable tr")); // Get latest rows
                 let visibleAppsCount = 0;
                 let visiblePermissions = new Set();
@@ -828,7 +838,7 @@
 
                 tableRows.forEach(row => {
                     const appId = row.getAttribute("data-client-id");
-                    const app = appData.find(app => app.client_id === appId);
+                    const app = appById.get(appId);
                     
                     if (!app) {
                         row.style.display = "none";
@@ -868,7 +878,15 @@
                 updateSearchClearButton();
             }
 
-            document.getElementById('search').addEventListener('input', filterApps);
+            document.getElementById('search').addEventListener('input', function() {
+                clearTimeout(searchDebounceTimer);
+                updateSearchClearButton();
+                if (this.value === '') {
+                    filterApps();
+                    return;
+                }
+                searchDebounceTimer = setTimeout(filterApps, 350);
+            });
             document.getElementById('authFlowFilter').addEventListener('change', filterApps);
             document.getElementById('fociFilter').addEventListener('change', filterApps);
             document.getElementById('clearSearch').addEventListener('click', function() {
@@ -935,7 +953,7 @@
 					if (row.style.display === "none") return;
 
 					const clientId = row.getAttribute("data-client-id");
-					const app = appData.find(a => a.client_id === clientId);
+					const app = appById.get(clientId);
 					if (!app) return;
 
 					// Normalize fields similar to your PowerShell script
