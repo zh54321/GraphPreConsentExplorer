@@ -36,6 +36,30 @@
             .search-help-popover {
                 min-width: 18rem;
             }
+
+            #applicationsTable thead {
+                position: sticky;
+                top: 0;
+                z-index: 1;
+            }
+
+            #applicationsTable thead th {
+                background-color: #374151;
+            }
+
+            #applicationsTable thead th:first-child {
+                border-top-left-radius: 0.5rem;
+            }
+
+            #applicationsTable thead th:last-child {
+                border-top-right-radius: 0.5rem;
+            }
+
+            #applicationsTable th[aria-sort="ascending"],
+            #applicationsTable th[aria-sort="descending"] {
+                background-color: #1e3a5f;
+                color: #93c5fd;
+            }
         </style>
 	
         
@@ -61,8 +85,13 @@
             <input type="file" id="fileInput" accept=".yaml" class="hidden">
 
             <!-- Stats -->
-            <div id="stats" class="text-right text-gray-400 text-sm mb-2">
-                Applications: 0 / Unique MS Graph permissions: 0
+            <div class="flex items-center justify-end gap-3 mb-2 min-h-[32px]">
+                <button id="resetFilters" type="button" class="hidden px-3 py-1 border border-gray-500 rounded bg-gray-800 text-sm text-white hover:bg-gray-700">
+                    Reset filters
+                </button>
+                <div id="stats" class="text-right text-gray-400 text-sm" aria-live="polite" aria-atomic="true">
+                    Showing 0 of 0 applications / Unique MS Graph permissions: 0
+                </div>
             </div>
 
             <!-- Filters -->
@@ -103,10 +132,10 @@
                 </div>
                 
 				<div class="flex gap-2">
-					<button id="toggleEnabledFilter" class="p-2 border rounded bg-gray-800 text-white">
+					<button id="toggleEnabledFilter" class="p-2 border rounded bg-gray-800 text-white" aria-pressed="false">
 						Enabled only
 					</button>
-					<button id="toggleGraphFilter" class="p-2 border rounded bg-gray-800 text-white">
+					<button id="toggleGraphFilter" class="p-2 border rounded bg-gray-800 text-white" aria-pressed="false">
 						With permission only
 					</button>
 					<select id="authFlowFilter" class="p-2 border rounded bg-gray-800 text-white">
@@ -124,24 +153,28 @@
 
             </div>
 
-            <table class="w-full bg-gray-800 shadow-md rounded-lg overflow-hidden text-white">
+            <table id="applicationsTable" class="w-full bg-gray-800 shadow-md rounded-lg text-white">
                 <thead>
-                    <tr class="bg-gray-700">
-                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" data-column="name" onclick="sortTable('name')">App Name ⬍</th>
-                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" data-column="client_id" onclick="sortTable('client_id')">Client ID ⬍</th>
-                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" data-column="enabled" onclick="sortTable('enabled')">Enabled ⬍</th>
-                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" data-column="graph_api_permissions" onclick="sortTable('graph_api_permissions')">Graph API Permissions ⬍</th>
-                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" data-column="auth_flow" onclick="sortTable('auth_flow')">Auth Flow ⬍</th>
-                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" data-column="foci" onclick="sortTable('foci')">FOCI ⬍</th>
+                    <tr>
+                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" scope="col" data-column="name" aria-sort="none" onclick="sortTable('name')">App Name <span data-sort-indicator aria-hidden="true">⬍</span></th>
+                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" scope="col" data-column="client_id" aria-sort="none" onclick="sortTable('client_id')">Client ID <span data-sort-indicator aria-hidden="true">⬍</span></th>
+                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" scope="col" data-column="enabled" aria-sort="none" onclick="sortTable('enabled')">Enabled <span data-sort-indicator aria-hidden="true">⬍</span></th>
+                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" scope="col" data-column="graph_api_permissions" aria-sort="none" onclick="sortTable('graph_api_permissions')">Graph API Permissions <span data-sort-indicator aria-hidden="true">⬍</span></th>
+                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" scope="col" data-column="auth_flow" aria-sort="none" onclick="sortTable('auth_flow')">Auth Flow <span data-sort-indicator aria-hidden="true">⬍</span></th>
+                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" scope="col" data-column="foci" aria-sort="none" onclick="sortTable('foci')">FOCI <span data-sort-indicator aria-hidden="true">⬍</span></th>
                     </tr>
                 </thead>
                                 
                 <tbody id="appTable"></tbody>
             </table>
+            <div id="emptyState" class="hidden p-6 mt-3 text-center rounded-lg border border-gray-700 bg-gray-800" role="status">
+                <p id="emptyStateTitle" class="font-semibold">No matching applications.</p>
+                <p id="emptyStateHint" class="mt-1 text-sm text-gray-400">Try a different search or reset the filters.</p>
+            </div>
         </div>
 
         <!-- Modal -->
-        <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center p-4" onclick="closeModal(event)">
+        <div id="modal" class="fixed inset-0 z-20 bg-black bg-opacity-50 hidden flex items-center justify-center p-4" onclick="closeModal(event)">
             <div id="modalContent" class="bg-gray-800 text-white p-6 rounded-lg shadow-lg w-full max-w-7xl max-h-[95vh] overflow-y-auto">
                 <h2 id="modalTitle" class="text-2xl font-semibold mb-4 text-center"></h2>
                 <div class="space-y-2">
@@ -181,6 +214,7 @@
 
         <script>
             let appData = [];
+            let hasLoadedData = false;
             let appById = new Map();
             let searchDebounceTimer = null;
             const highlightedCellContent = new WeakMap();
@@ -190,9 +224,12 @@
             const searchHelpButton = document.getElementById('searchHelpButton');
             const searchHelpPopover = document.getElementById('searchHelpPopover');
 			
-			//Focuse on keyboard input
+			// Focus search with "/" when no editable control is active.
 			document.addEventListener("keydown", (e) => {
-				if (e.key === "/") {
+				const target = e.target;
+				const isEditable = target instanceof Element &&
+					(target.matches('input, textarea, select') || target.isContentEditable);
+				if (e.key === "/" && !isEditable && !e.ctrlKey && !e.metaKey && !e.altKey && !e.isComposing && !e.defaultPrevented) {
 					e.preventDefault();
 					document.getElementById('search').focus();
 				}
@@ -239,6 +276,7 @@
                         // Match Array.find: keep the first application for a repeated ID.
                         if (!appById.has(app.client_id)) appById.set(app.client_id, app);
                     }
+                    hasLoadedData = true;
 
                     document.getElementById('modal').classList.add('hidden');
                     displayApps(appData);
@@ -320,6 +358,19 @@
 
                 // Reorder rows in the table
                 rows.forEach(row => tableBody.appendChild(row)); // Moves existing rows in sorted order
+                updateSortIndicators();
+            }
+
+            function updateSortIndicators() {
+                document.querySelectorAll('th[data-column]').forEach(header => {
+                    const isActive = header.dataset.column === currentSortColumn;
+                    header.setAttribute('aria-sort', isActive
+                        ? (currentSortOrder === 'asc' ? 'ascending' : 'descending')
+                        : 'none');
+                    header.querySelector('[data-sort-indicator]').textContent = isActive
+                        ? (currentSortOrder === 'asc' ? '↑' : '↓')
+                        : '⬍';
+                });
             }
 
             function createTableCell(column, text, extraClasses = []) {
@@ -599,6 +650,14 @@
                 clearSearchButton.classList.toggle('hidden', !hasSearchText);
             }
 
+            function updateResetFiltersButton() {
+                const hasFilters = document.getElementById('search').value.trim().length > 0 ||
+                    showEnabledOnly || showGraphPermissionsOnly ||
+                    document.getElementById('authFlowFilter').value !== '' ||
+                    document.getElementById('fociFilter').value !== '';
+                document.getElementById('resetFilters').classList.toggle('hidden', !hasFilters);
+            }
+
             function openSearchHelpPopover() {
                 searchHelpPopover.classList.remove('hidden');
                 searchHelpButton.setAttribute('aria-expanded', 'true');
@@ -642,6 +701,9 @@
                 });
 
                 tableBody.replaceChildren(...rows);
+                currentSortColumn = null;
+                currentSortOrder = 'asc';
+                updateSortIndicators();
             }
 
 
@@ -803,6 +865,7 @@
             let showGraphPermissionsOnly = false; // Toggle state
             document.getElementById('toggleGraphFilter').addEventListener('click', function() {
                 showGraphPermissionsOnly = !showGraphPermissionsOnly; // Toggle state
+                this.setAttribute('aria-pressed', String(showGraphPermissionsOnly));
 
                 // Toggle button color to indicate active filter
                 if (showGraphPermissionsOnly) {
@@ -820,6 +883,7 @@
             let showEnabledOnly = false;
             document.getElementById('toggleEnabledFilter').addEventListener('click', function() {
                 showEnabledOnly = !showEnabledOnly; // Toggle state
+                this.setAttribute('aria-pressed', String(showEnabledOnly));
 
                 // Toggle button color to indicate active filter
                 if (showEnabledOnly) {
@@ -882,14 +946,25 @@
                     }
                 });
 
-                document.getElementById('stats').innerText = `Applications: ${visibleAppsCount} / Unique MS Graph permissions: ${visiblePermissions.size}`;
+                document.getElementById('stats').innerText = `Showing ${visibleAppsCount.toLocaleString('en-US')} of ${appData.length.toLocaleString('en-US')} applications / Unique MS Graph permissions: ${visiblePermissions.size.toLocaleString('en-US')}`;
+                const showEmptyState = hasLoadedData && visibleAppsCount === 0;
+                document.getElementById('emptyState').classList.toggle('hidden', !showEmptyState);
+                if (showEmptyState) {
+                    document.getElementById('emptyStateTitle').textContent = appData.length === 0
+                        ? 'No applications in this file.' : 'No matching applications.';
+                    document.getElementById('emptyStateHint').textContent = appData.length === 0
+                        ? 'Load another YAML file to explore applications.'
+                        : 'Try a different search or reset the filters.';
+                }
                 updateTableHighlights(parsedSearch.terms, visibleRows);
                 updateSearchClearButton();
+                updateResetFiltersButton();
             }
 
             document.getElementById('search').addEventListener('input', function() {
                 clearTimeout(searchDebounceTimer);
                 updateSearchClearButton();
+                updateResetFiltersButton();
                 if (this.value === '') {
                     filterApps();
                     return;
@@ -898,6 +973,21 @@
             });
             document.getElementById('authFlowFilter').addEventListener('change', filterApps);
             document.getElementById('fociFilter').addEventListener('change', filterApps);
+            document.getElementById('resetFilters').addEventListener('click', function() {
+                document.getElementById('search').value = '';
+                document.getElementById('authFlowFilter').value = '';
+                document.getElementById('fociFilter').value = '';
+                showEnabledOnly = false;
+                showGraphPermissionsOnly = false;
+                for (const id of ['toggleEnabledFilter', 'toggleGraphFilter']) {
+                    const button = document.getElementById(id);
+                    button.classList.remove('bg-blue-600');
+                    button.classList.add('bg-gray-800');
+                    button.setAttribute('aria-pressed', 'false');
+                }
+                filterApps();
+                document.getElementById('search').focus();
+            });
             document.getElementById('clearSearch').addEventListener('click', function() {
                 document.getElementById('search').value = '';
                 filterApps();
