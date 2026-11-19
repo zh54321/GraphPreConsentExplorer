@@ -183,6 +183,7 @@
             let appData = [];
             let appById = new Map();
             let searchDebounceTimer = null;
+            const highlightedCellContent = new WeakMap();
             const toolDownloadLinks = {
                 "EntraTokenAid": "https://github.com/zh54321/EntraTokenAid",
             };
@@ -327,6 +328,7 @@
                 cell.dataset.column = column;
                 cell.dataset.rawValue = text ?? '';
                 cell.textContent = text ?? '';
+                highlightedCellContent.set(cell, escapeHtml(text ?? ''));
                 return cell;
             }
 
@@ -541,18 +543,13 @@
                 return false;
             }
 
-            function highlightText(value, searchTerms) {
+            function highlightText(value, regex) {
                 const text = String(value ?? '');
-                const terms = [...new Set((Array.isArray(searchTerms) ? searchTerms : [searchTerms])
-                    .map(term => String(term ?? '').trim())
-                    .filter(term => term.length > 0))]
-                    .sort((left, right) => right.length - left.length);
-
-                if (terms.length === 0) {
+                if (!regex) {
                     return escapeHtml(text);
                 }
 
-                const regex = new RegExp(terms.map(term => escapeRegExp(term)).join('|'), 'ig');
+                regex.lastIndex = 0;
                 let result = '';
                 let lastIndex = 0;
                 let hasMatch = false;
@@ -573,19 +570,27 @@
                 return result;
             }
 
-            function updateTableHighlights(searchTerms) {
+            function updateTableHighlights(searchTerms, rows = document.querySelectorAll('#appTable tr')) {
+                const terms = [...new Set((Array.isArray(searchTerms) ? searchTerms : [searchTerms])
+                    .map(term => String(term ?? '').trim())
+                    .filter(term => term.length > 0))]
+                    .sort((left, right) => right.length - left.length);
+                const regex = terms.length > 0
+                    ? new RegExp(terms.map(term => escapeRegExp(term)).join('|'), 'ig')
+                    : null;
                 const searchableColumns = new Set(['name', 'client_id', 'graph_api_permissions']);
 
-                document.querySelectorAll('#appTable td[data-raw-value]').forEach(cell => {
-                    const rawValue = cell.dataset.rawValue || '';
-                    const column = cell.dataset.column || '';
-
-                    if (searchTerms.length > 0 && searchableColumns.has(column)) {
-                        cell.innerHTML = highlightText(rawValue, searchTerms);
-                    } else {
-                        cell.textContent = rawValue;
+                for (const row of rows) {
+                    if (row.style.display === 'none') continue;
+                    for (const cell of row.cells) {
+                        if (!searchableColumns.has(cell.dataset.column)) continue;
+                        const html = highlightText(cell.dataset.rawValue || '', regex);
+                        if (highlightedCellContent.get(cell) !== html) {
+                            cell.innerHTML = html;
+                            highlightedCellContent.set(cell, html);
+                        }
                     }
-                });
+                }
             }
 
             function updateSearchClearButton() {
@@ -834,6 +839,7 @@
                 searchDebounceTimer = null;
                 const tableRows = Array.from(document.querySelectorAll("#appTable tr")); // Get latest rows
                 let visibleAppsCount = 0;
+                const visibleRows = [];
                 let visiblePermissions = new Set();
                 const searchInput = document.getElementById('search').value;
                 const parsedSearch = parseSearchExpression(searchInput);
@@ -866,6 +872,7 @@
                     row.style.display = shouldShow ? "table-row" : "none";
 
                     if (shouldShow) {
+                        visibleRows.push(row);
                         visibleAppsCount++;
                         if (app.graph_api_permissions) {
                             app.graph_api_permissions
@@ -876,7 +883,7 @@
                 });
 
                 document.getElementById('stats').innerText = `Applications: ${visibleAppsCount} / Unique MS Graph permissions: ${visiblePermissions.size}`;
-                updateTableHighlights(parsedSearch.terms);
+                updateTableHighlights(parsedSearch.terms, visibleRows);
                 updateSearchClearButton();
             }
 
