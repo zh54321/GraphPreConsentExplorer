@@ -11,6 +11,67 @@
             }
 
             /* Custom scrollbar (not possible with Tailwind */
+            #modalContent {
+                max-width: 1440px;
+            }
+
+            #modalAppInfo {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 12px 0;
+                font-size: 14px;
+                line-height: 20px;
+            }
+
+            #modalAppInfo > * {
+                margin: 0;
+                padding: 0 16px;
+            }
+
+            #modalAppInfo > * + * {
+                border-left: 1px solid #6b7280;
+            }
+
+            #modalAppInfo > :first-child {
+                padding-left: 0;
+            }
+
+            #modalAppInfo > :last-child {
+                padding-right: 0;
+            }
+
+            #modalAppInfo strong {
+                color: #d1d5db;
+                font-weight: 400;
+            }
+
+            #modalAppInfo span {
+                font-weight: 600;
+            }
+
+            @media (max-width: 600px) {
+                #modalAppInfo {
+                    display: block;
+                }
+
+                #modalAppInfo > * {
+                    padding: 8px 0;
+                }
+
+                #modalAppInfo > * + * {
+                    border-left: 0;
+                    border-top: 1px solid #6b7280;
+                }
+
+                #modalAppInfo > :first-child {
+                    padding-top: 0;
+                }
+
+                #modalAppInfo > :last-child {
+                    padding-bottom: 0;
+                }
+            }
+
             #modalContent::-webkit-scrollbar {
                 width: 8px; /* Adjust scrollbar width */
             }
@@ -59,10 +120,162 @@
                 border-top-right-radius: 0.5rem;
             }
 
-            #applicationsTable th[aria-sort="ascending"],
-            #applicationsTable th[aria-sort="descending"] {
-                background-color: #1e3a5f;
-                color: #93c5fd;
+            #filterToolbar > .search-container {
+                flex: 1 1 280px;
+                min-width: 240px;
+            }
+
+            .search-controls {
+                width: 100%;
+                max-width: 440px;
+                min-width: 0;
+            }
+
+            #filterControls > button,
+            #filterControls > select,
+            #search {
+                height: 32px;
+                font-size: 13px;
+                line-height: 20px;
+            }
+
+            #filterControls > button,
+            #filterControls > select {
+                padding: 0 10px;
+            }
+
+            #search {
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+
+            #applicationsTable {
+                table-layout: fixed;
+                min-width: 880px;
+            }
+
+            #applicationsTable .app-name-column { width: 19%; }
+            #applicationsTable .client-id-column { width: 200px; }
+            #applicationsTable .enabled-column { width: 92px; }
+            #applicationsTable .auth-flow-column { width: 112px; }
+            #applicationsTable .foci-column { width: 76px; }
+
+            #applicationsTable thead th,
+            #appTable td {
+                padding: 10px 12px;
+                font-size: 14px;
+                line-height: 20px;
+            }
+
+            #appTable > tr {
+                border-color: #374151;
+            }
+
+            #appTable td {
+                vertical-align: top;
+                overflow-wrap: anywhere;
+            }
+
+            #applicationsTable .table-action {
+                width: 100%;
+                padding: 0;
+                border: 0;
+                background: transparent;
+                color: inherit;
+                font: inherit;
+                text-align: left;
+                cursor: pointer;
+            }
+
+            #applicationsTable .table-action:focus-visible {
+                outline: 2px solid #9ca3af;
+                outline-offset: 3px;
+                border-radius: 2px;
+            }
+
+            #appTable tr:focus-within {
+                background-color: #374151;
+            }
+
+            #appTable .app-details-button {
+                scroll-margin-top: 56px;
+                scroll-margin-bottom: 16px;
+            }
+
+            #appTable td[data-column="client_id"] {
+                white-space: normal;
+                word-break: normal;
+                font-family: "Cascadia Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+                font-size: 12px;
+                font-variant-numeric: tabular-nums;
+                line-height: 18px;
+            }
+
+            @media (max-width: 900px) {
+                #applicationsTable .app-name-column { width: 170px; }
+                #applicationsTable .client-id-column { width: 180px; }
+            }
+
+            .auth-tool-header {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 8px 16px;
+                margin-bottom: 8px;
+            }
+
+            .auth-tool-title {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .auth-tool-language {
+                padding: 1px 7px;
+                border: 1px solid #6b7280;
+                border-radius: 4px;
+                color: #d1d5db;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 18px;
+            }
+
+            .auth-tool-link {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                width: 24px;
+                height: 24px;
+                border-radius: 4px;
+                color: #d1d5db;
+            }
+
+            .auth-tool-link svg {
+                display: block;
+                width: 16px;
+                height: 16px;
+                fill: currentColor;
+            }
+
+            .auth-tool-link:hover,
+            .auth-tool-link:focus-visible {
+                background-color: #4b5563;
+                color: #fff;
+            }
+
+            .broci-setup {
+                margin: 6px 0 8px;
+                padding: 8px 10px;
+                border: 1px solid #6b7280;
+                border-radius: 4px;
+            }
+
+            .broci-setup summary {
+                cursor: pointer;
+                color: #d1d5db;
+                font-size: 13px;
             }
         </style>
 	
@@ -73,16 +286,22 @@
             <h1 class="text-4xl font-bold mb-4">GraphPreConsentExplorer 🔍</h1>
             
             <!-- File Upload for YAML -->
-            <div class="flex items-center gap-3">
+            <div class="flex flex-wrap items-center gap-3">
                 <label for="fileInput" class="px-4 py-2 bg-gray-700 text-white rounded border border-gray-500 cursor-pointer hover:bg-gray-600">
                     📂 Load YML File
                 </label>
 				
-				<!-- Export button (hidden until YAML loads) -->
-				<button id="exportCsv"
-						class="px-4 py-2 bg-gray-700 text-white rounded border border-gray-500 hover:bg-gray-600 hidden">
-					⬇️ Export View (CSV)
-				</button>				
+                <!-- Export choices (hidden until YAML loads) -->
+                <div id="exportControls" class="relative hidden">
+                    <button id="exportButton" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="exportMenu" class="px-4 py-2 bg-gray-700 text-white rounded border border-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                        ⬇️ Export View <span aria-hidden="true">▾</span>
+                    </button>
+                    <div id="exportMenu" role="menu" aria-labelledby="exportButton" class="hidden absolute left-0 top-full z-10 mt-2 w-44 rounded-lg border border-gray-600 bg-gray-800 p-1 shadow-xl">
+                        <button id="exportCsv" type="button" role="menuitem" tabindex="-1" data-export-format="csv" class="block w-full px-3 py-2 text-left rounded hover:bg-gray-700 focus:bg-gray-700 focus:outline-none">CSV</button>
+                        <button id="exportJson" type="button" role="menuitem" tabindex="-1" data-export-format="json" class="block w-full px-3 py-2 text-left rounded hover:bg-gray-700 focus:bg-gray-700 focus:outline-none">JSON</button>
+                        <button id="exportYaml" type="button" role="menuitem" tabindex="-1" data-export-format="yaml" class="block w-full px-3 py-2 text-left rounded hover:bg-gray-700 focus:bg-gray-700 focus:outline-none">YAML</button>
+                    </div>
+                </div>
 				
                 <span id="fileLoadText" class="text-red-400 text-sm"><-Click to load data</span>
             </div>
@@ -96,9 +315,9 @@
             </div>
 
             <!-- Filters -->
-            <div class="mb-4 flex flex-wrap justify-between items-center gap-3">
-                <div class="flex flex-1">
-                    <div class="flex items-center gap-2 w-3/5 min-w-[450px]">
+            <div id="filterToolbar" class="mb-4 flex flex-wrap justify-between items-center gap-3">
+                <div class="search-container flex flex-1">
+                    <div class="search-controls flex items-center gap-2">
                         <div class="relative flex-1">
                             <input type="text" id="search" class="p-2 pr-9 border rounded w-full bg-gray-800 text-white" placeholder="Search name, client ID, or permission...">
                             <button
@@ -122,6 +341,12 @@
                             </button>
                             <div id="searchHelpPopover" class="search-help-popover hidden absolute right-0 top-full z-10 mt-2 w-72 rounded-lg border border-gray-600 bg-gray-900 p-3 text-sm text-gray-200 shadow-xl">
                                 <div class="font-semibold mb-1">Advanced search</div>
+                                <div>All matching ignores capitalization.</div>
+                                <div class="mt-2"><code>user.read</code> — contains</div>
+                                <div><code>^microsoft</code> — starts with</div>
+                                <div><code>$.read</code> — ends with</div>
+                                <div><code>"User.read"</code> — exact match</div>
+                                <div class="mt-1 text-gray-400">Matches names, client IDs, or individual permissions.</div>
                                 <div>Use <code>&amp;&amp;</code>, <code>||</code>, and parentheses.</div>
                                 <div class="mt-2 text-gray-400">Examples:</div>
                                 <div><code>mail.read &amp;&amp; planner</code></div>
@@ -132,21 +357,21 @@
                     </div>
                 </div>
                 
-				<div class="flex flex-wrap items-center gap-2">
+				<div id="filterControls" class="flex flex-wrap items-center gap-2">
 					<button id="toggleEnabledFilter" class="p-2 border rounded bg-gray-800 text-white" aria-pressed="false">
 						Enabled only
 					</button>
 					<button id="toggleGraphFilter" class="p-2 border rounded bg-gray-800 text-white" aria-pressed="false">
-						With permission only
+						With permissions
 					</button>
-					<select id="authFlowFilter" class="p-2 border rounded bg-gray-800 text-white">
-						<option value="">Filter by Auth Flow</option>
-						<option value="AuthCode">Auth Code Flow</option>
-						<option value="DeviceCode">Device Code Flow</option>
-						<option value="BroCi">BroCi Flow</option>
+					<select id="authFlowFilter" aria-label="Authentication flow" class="p-2 border rounded bg-gray-800 text-white">
+						<option value="">All auth flows</option>
+						<option value="AuthCode">Auth code</option>
+						<option value="DeviceCode">Device code</option>
+						<option value="BroCi">BroCi</option>
 					</select>
-					<select id="fociFilter" class="p-2 border rounded bg-gray-800 text-white">
-						<option value="">Filter by FOCI</option>
+					<select id="fociFilter" aria-label="FOCI filter" class="p-2 border rounded bg-gray-800 text-white">
+						<option value="">All FOCI values</option>
 						<option value="True">True</option>
 						<option value="False">False</option>
 					</select>
@@ -158,14 +383,22 @@
             </div>
 
             <table id="applicationsTable" class="w-full bg-gray-800 shadow-md rounded-lg text-white">
+                <colgroup>
+                    <col class="app-name-column">
+                    <col class="client-id-column">
+                    <col class="enabled-column">
+                    <col>
+                    <col class="auth-flow-column">
+                    <col class="foci-column">
+                </colgroup>
                 <thead>
                     <tr>
-                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" scope="col" data-column="name" aria-sort="none" onclick="sortTable('name')">App Name <span data-sort-indicator aria-hidden="true">⬍</span></th>
-                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" scope="col" data-column="client_id" aria-sort="none" onclick="sortTable('client_id')">Client ID <span data-sort-indicator aria-hidden="true">⬍</span></th>
-                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" scope="col" data-column="enabled" aria-sort="none" onclick="sortTable('enabled')">Enabled <span data-sort-indicator aria-hidden="true">⬍</span></th>
-                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" scope="col" data-column="graph_api_permissions" aria-sort="none" onclick="sortTable('graph_api_permissions')">Graph API Permissions <span data-sort-indicator aria-hidden="true">⬍</span></th>
-                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" scope="col" data-column="auth_flow" aria-sort="none" onclick="sortTable('auth_flow')">Auth Flow <span data-sort-indicator aria-hidden="true">⬍</span></th>
-                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" scope="col" data-column="foci" aria-sort="none" onclick="sortTable('foci')">FOCI <span data-sort-indicator aria-hidden="true">⬍</span></th>
+                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" scope="col" data-column="name" aria-sort="none" onclick="sortTable('name')"><button type="button" class="table-action" aria-label="Sort by app name">App Name <span data-sort-indicator aria-hidden="true">⬍</span></button></th>
+                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" scope="col" data-column="client_id" aria-sort="none" onclick="sortTable('client_id')"><button type="button" class="table-action" aria-label="Sort by client ID">Client ID <span data-sort-indicator aria-hidden="true">⬍</span></button></th>
+                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" scope="col" data-column="enabled" aria-sort="none" onclick="sortTable('enabled')"><button type="button" class="table-action" aria-label="Sort by enabled status">Enabled <span data-sort-indicator aria-hidden="true">⬍</span></button></th>
+                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" scope="col" data-column="graph_api_permissions" aria-sort="none" onclick="sortTable('graph_api_permissions')"><button type="button" class="table-action" aria-label="Sort by Graph API permission count">Graph API Permissions <span data-sort-indicator aria-hidden="true">⬍</span></button></th>
+                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" scope="col" data-column="auth_flow" aria-sort="none" onclick="sortTable('auth_flow')"><button type="button" class="table-action" aria-label="Sort by auth flow">Auth Flow <span data-sort-indicator aria-hidden="true">⬍</span></button></th>
+                        <th class="p-3 text-left cursor-pointer whitespace-nowrap" scope="col" data-column="foci" aria-sort="none" onclick="sortTable('foci')"><button type="button" class="table-action" aria-label="Sort by FOCI">FOCI <span data-sort-indicator aria-hidden="true">⬍</span></button></th>
                     </tr>
                 </thead>
                                 
@@ -179,7 +412,7 @@
 
         <!-- Modal -->
         <div id="modal" class="fixed inset-0 z-20 bg-black bg-opacity-50 hidden flex items-center justify-center p-4" onclick="closeModal(event)">
-            <div id="modalContent" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1" class="bg-gray-800 text-white p-6 rounded-lg shadow-lg w-full max-w-7xl max-h-[95vh] overflow-y-auto">
+            <div id="modalContent" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1" class="bg-gray-800 text-white p-6 rounded-lg shadow-lg w-full max-h-[95vh] overflow-y-auto">
                 <div class="flex items-start justify-between gap-3 mb-4">
                     <h2 id="modalTitle" class="flex-1 text-2xl font-semibold text-center"></h2>
                     <button id="closeModalTop" type="button" aria-label="Close application details" title="Close application details" class="shrink-0 h-8 w-8 border border-gray-500 rounded text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400">
@@ -193,18 +426,26 @@
                         <button type="button" onclick="copyToClipboard('modalClientId')" aria-label="Copy client ID" title="Copy client ID" class="absolute right-2 text-gray-400 hover:text-white">📋</button>
                     </div>
                     
-                    <p class="bg-gray-700 p-2 rounded"><strong>Enabled:</strong> <span id="modalAppEnabled"></span></p>
-                    <p class="bg-gray-700 p-2 rounded"><strong>Graph API Permissions:</strong> <span id="modalPermissions"></span></p>
-                    <p class="bg-gray-700 p-2 rounded"><strong>Auth Flow:</strong> <span id="modalAuthFlow"></span></p>
-                    <p class="bg-gray-700 p-2 rounded"><strong>FOCI:</strong> <span id="modalFOCI"></span></p>
+                    <div id="modalAppInfo" class="bg-gray-700 p-2 rounded">
+                        <p><strong>Enabled:</strong> <span id="modalAppEnabled"></span></p>
+                        <p><strong>FOCI:</strong> <span id="modalFOCI"></span></p>
+                        <p><strong>Auth Flow:</strong> <span id="modalAuthFlow"></span></p>
+                        <div id="modalSinglePageAppContainer" class="hidden">
+                            <strong title="Single Page App">SPA:</strong> <span id="modalSinglePageApp"></span>
+                        </div>
+                    </div>
+                    <div class="bg-gray-700 p-2 rounded">
+                        <div class="flex items-center justify-between gap-2">
+                            <strong>Graph API Permissions:</strong>
+                            <button id="copyModalPermissions" type="button" onclick="copyToClipboard('modalPermissions')" aria-label="Copy Graph API permissions" title="Copy Graph API permissions" class="text-gray-400 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed">📋</button>
+                        </div>
+                        <div id="modalPermissions"></div>
+                    </div>
                     
                     <div id="modalReplyAddressesContainer" class="bg-gray-700 p-2 rounded">
                         <strong>Reply Addresses:</strong>
-                        <ul id="modalReplyAddresses" class="list-disc pl-5"></ul>
+                        <ul id="modalReplyAddresses" class="list-disc pl-5 break-words"></ul>
                     </div>
-                    <div id="modalSinglePageAppContainer" class="bg-gray-700 p-2 rounded hidden">
-                        <strong>Single Page App:</strong> <span id="modalSinglePageApp"></span>
-                    </div>    
                     <div id="modalAuthCommandsContainer" class="bg-gray-700 p-2 rounded">
                         <strong>Authentication Commands:</strong>
                         <div id="modalAuthCommands" class="text-sm whitespace-pre-wrap overflow-x-auto max-w-full"></div>
@@ -227,15 +468,47 @@
             let appById = new Map();
             let searchDebounceTimer = null;
             const highlightedCellContent = new WeakMap();
+            const permissionCellValues = new WeakMap();
             let modalOpener = null;
             let previousBodyOverflow = '';
             const toolDownloadLinks = {
                 "EntraTokenAid": "https://github.com/zh54321/EntraTokenAid",
+                "ROADtx": "https://github.com/dirkjanm/ROADtools/",
             };
+            const toolLanguages = {
+                "EntraTokenAid": "PowerShell",
+                "ROADtx": "Python",
+            };
+            /*
+             * GitHub mark from https://github.com/primer/octicons (MIT License).
+             * Copyright (c) 2026 GitHub Inc.
+             *
+             * Permission is hereby granted, free of charge, to any person obtaining a copy
+             * of this software and associated documentation files (the "Software"), to deal
+             * in the Software without restriction, including without limitation the rights
+             * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+             * copies of the Software, and to permit persons to whom the Software is
+             * furnished to do so, subject to the following conditions:
+             *
+             * The above copyright notice and this permission notice shall be included in all
+             * copies or substantial portions of the Software.
+             *
+             * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+             * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+             * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+             * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+             * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+             * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+             * SOFTWARE.
+             */
+            const githubMark = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M6.766 11.328c-2.063-.25-3.516-1.734-3.516-3.656 0-.781.281-1.625.75-2.188-.203-.515-.172-1.609.063-2.062.625-.078 1.468.25 1.968.703.594-.187 1.219-.281 1.985-.281.765 0 1.39.094 1.953.265.484-.437 1.344-.765 1.969-.687.218.422.25 1.515.046 2.047.5.593.766 1.39.766 2.203 0 1.922-1.453 3.375-3.547 3.64.531.344.89 1.094.89 1.954v1.625c0 .468.391.734.86.547C13.781 14.359 16 11.53 16 8.03 16 3.61 12.406 0 7.984 0 3.563 0 0 3.61 0 8.031a7.88 7.88 0 0 0 5.172 7.422c.422.156.828-.125.828-.547v-1.25c-.219.094-.5.156-.75.156-1.031 0-1.64-.562-2.078-1.609-.172-.422-.36-.672-.719-.719-.187-.015-.25-.093-.25-.187 0-.188.313-.328.625-.328.453 0 .844.281 1.25.86.313.452.64.655 1.031.655s.641-.14 1-.5c.266-.265.47-.5.657-.656"/></svg>';
             const searchHelpButton = document.getElementById('searchHelpButton');
             const searchHelpPopover = document.getElementById('searchHelpPopover');
+            const exportControls = document.getElementById('exportControls');
+            const exportButton = document.getElementById('exportButton');
+            const exportMenu = document.getElementById('exportMenu');
 			
-			// Focus search with "/" when no editable control is active.
+			// Keyboard shortcuts for search and entering the application list.
 			document.addEventListener("keydown", (e) => {
                 if (!document.getElementById('modal').classList.contains('hidden')) {
                     if (e.key === 'Escape' && !e.isComposing) {
@@ -260,19 +533,54 @@
 				const target = e.target;
 				const isEditable = target instanceof Element &&
 					(target.matches('input, textarea, select') || target.isContentEditable);
+                if (e.key === 'ArrowDown' && (!isEditable || target.id === 'search') &&
+                    !e.ctrlKey && !e.metaKey && !e.altKey && !e.shiftKey && !e.isComposing && !e.defaultPrevented) {
+                    e.preventDefault();
+                    if (searchDebounceTimer !== null) filterApps();
+                    let firstRow = document.getElementById('appTable').firstElementChild;
+                    while (firstRow && (firstRow.hidden || firstRow.style.display === 'none')) {
+                        firstRow = firstRow.nextElementSibling;
+                    }
+                    const firstButton = firstRow?.querySelector('.app-details-button');
+                    if (firstButton) {
+                        firstButton.focus({ preventScroll: true });
+                        firstButton.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+                    }
+                    return;
+                }
 				if (e.key === "/" && !isEditable && !e.ctrlKey && !e.metaKey && !e.altKey && !e.isComposing && !e.defaultPrevented) {
 					e.preventDefault();
 					document.getElementById('search').focus();
 				}
 				if (e.key === "Escape") {
                     closeSearchHelpPopover();
+                    closeExportMenu(true);
 				}
 			});
 
             document.addEventListener('focusin', function(event) {
+                if (!exportControls.contains(event.target)) closeExportMenu();
                 if (!document.getElementById('modal').classList.contains('hidden') &&
                     !document.getElementById('modalContent').contains(event.target)) {
                     (getModalFocusableElements()[0] || document.getElementById('modalContent')).focus({ preventScroll: true });
+                }
+            });
+
+            document.getElementById('appTable').addEventListener('keydown', function(event) {
+                if (!['ArrowUp', 'ArrowDown'].includes(event.key) || event.defaultPrevented ||
+                    event.isComposing || event.ctrlKey || event.metaKey || event.altKey || event.shiftKey) return;
+                const row = event.target.closest('tr');
+                if (!row) return;
+                event.preventDefault();
+                const direction = event.key === 'ArrowDown' ? 'nextElementSibling' : 'previousElementSibling';
+                let nextRow = row[direction];
+                while (nextRow && (nextRow.hidden || nextRow.style.display === 'none')) {
+                    nextRow = nextRow[direction];
+                }
+                const nextButton = nextRow?.querySelector('.app-details-button');
+                if (nextButton) {
+                    nextButton.focus({ preventScroll: true });
+                    nextButton.scrollIntoView({ block: 'nearest', inline: 'nearest' });
                 }
             });
 			
@@ -317,10 +625,11 @@
 
                     displayApps(appData);
                     closeModal();
+                    closeExportMenu();
                     filterApps(); // Update stats immediately after loading the file
 					
 					// Show the export button now that data is available
-					document.getElementById('exportCsv').classList.remove('hidden');
+                    exportControls.classList.remove('hidden');
 
 					// Optionally also hide the "Click to load data" hint
 					document.getElementById('fileLoadText').style.display = 'none';					
@@ -330,10 +639,11 @@
                 reader.readAsText(file);
             });
 
-            //  Function to Copy Command to Clipboard
+            // Copy details and authentication commands to the clipboard.
             function copyToClipboard(elementId) {
-                const commandText = document.getElementById(elementId).innerText.trim();
-                navigator.clipboard.writeText(commandText).then(() => {
+                const element = document.getElementById(elementId);
+                const copyText = element.dataset.copyText ?? element.innerText.trim();
+                navigator.clipboard.writeText(copyText).then(() => {
                     // Show copied animation
                     const button = document.querySelector(`[onclick="copyToClipboard('${elementId}')"]`);
                     button.innerHTML = "✅";
@@ -433,6 +743,22 @@
                 return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             }
 
+            function parseSearchTerm(term) {
+                let value = String(term ?? '').trim();
+                let mode = 'contains';
+                if (value.length >= 2 && value.startsWith('"') && value.endsWith('"')) {
+                    mode = 'exact';
+                    value = value.slice(1, -1);
+                } else if (value.startsWith('^')) {
+                    mode = 'starts';
+                    value = value.slice(1);
+                } else if (value.startsWith('$')) {
+                    mode = 'ends';
+                    value = value.slice(1);
+                }
+                return { mode, value: value.toLowerCase() };
+            }
+
             function tokenizeSearchExpression(query) {
                 const tokens = [];
                 let index = 0;
@@ -442,6 +768,14 @@
 
                     if (/\s/.test(char)) {
                         index++;
+                        continue;
+                    }
+
+                    if (char === '"') {
+                        const closingQuote = query.indexOf('"', index + 1);
+                        const end = closingQuote === -1 ? query.length : closingQuote + 1;
+                        tokens.push({ type: 'TERM', value: query.slice(index, end) });
+                        index = end;
                         continue;
                     }
 
@@ -493,7 +827,6 @@
 
             function parseSearchExpression(query) {
                 const trimmedQuery = query.trim();
-                const usesExpressionSyntax = /&&|\|\||[()]/.test(trimmedQuery);
 
                 if (!trimmedQuery) {
                     return {
@@ -503,6 +836,8 @@
                     };
                 }
 
+                const tokens = tokenizeSearchExpression(trimmedQuery);
+                const usesExpressionSyntax = tokens.some(token => token.type !== 'TERM');
                 if (!usesExpressionSyntax) {
                     return {
                         mode: 'simple',
@@ -511,7 +846,6 @@
                     };
                 }
 
-                const tokens = tokenizeSearchExpression(trimmedQuery);
                 let index = 0;
 
                 function parseOrExpression() {
@@ -596,7 +930,7 @@
             }
 
             function appMatchesSearchTerm(app, term) {
-                const normalizedTerm = String(term ?? '').trim().toLowerCase();
+                const { mode, value: normalizedTerm } = parseSearchTerm(term);
 
                 if (!normalizedTerm) {
                     return true;
@@ -608,7 +942,13 @@
                     ...(app.graph_api_permissions || []).map(permission => String(permission || '')),
                 ];
 
-                return searchableValues.some(value => value.toLowerCase().includes(normalizedTerm));
+                return searchableValues.some(value => {
+                    const normalizedValue = value.toLowerCase();
+                    if (mode === 'starts') return normalizedValue.startsWith(normalizedTerm);
+                    if (mode === 'ends') return normalizedValue.endsWith(normalizedTerm);
+                    if (mode === 'exact') return normalizedValue === normalizedTerm;
+                    return normalizedValue.includes(normalizedTerm);
+                });
             }
 
             function evaluateSearchExpression(ast, app) {
@@ -662,19 +1002,31 @@
                 const terms = [...new Set((Array.isArray(searchTerms) ? searchTerms : [searchTerms])
                     .map(term => String(term ?? '').trim())
                     .filter(term => term.length > 0))]
-                    .sort((left, right) => right.length - left.length);
-                const regex = terms.length > 0
-                    ? new RegExp(terms.map(term => escapeRegExp(term)).join('|'), 'ig')
+                    .map(parseSearchTerm)
+                    .filter(term => term.value.length > 0)
+                    .sort((left, right) => right.value.length - left.value.length);
+                const patterns = terms.map(term => {
+                    const start = term.mode === 'starts' || term.mode === 'exact' ? '^' : '';
+                    const end = term.mode === 'ends' || term.mode === 'exact' ? '(?![\\s\\S])' : '';
+                    return start + escapeRegExp(term.value) + end;
+                });
+                const regex = patterns.length > 0
+                    ? new RegExp(patterns.join('|'), 'ig')
                     : null;
+                const hasAnchoredTerms = terms.some(term => term.mode !== 'contains');
                 const searchableColumns = new Set(['name', 'client_id', 'graph_api_permissions']);
 
                 for (const row of rows) {
                     if (row.style.display === 'none') continue;
                     for (const cell of row.cells) {
                         if (!searchableColumns.has(cell.dataset.column)) continue;
-                        const html = highlightText(cell.dataset.rawValue || '', regex);
+                        const rawValue = cell.dataset.rawValue || '';
+                        const html = hasAnchoredTerms && cell.dataset.column === 'graph_api_permissions'
+                            ? (permissionCellValues.get(cell) || [rawValue]).map(value => highlightText(value, regex)).join(', ')
+                            : highlightText(rawValue, regex);
                         if (highlightedCellContent.get(cell) !== html) {
-                            cell.innerHTML = html;
+                            const content = cell.dataset.column === 'name' ? (cell.firstElementChild || cell) : cell;
+                            content.innerHTML = html;
                             highlightedCellContent.set(cell, html);
                         }
                     }
@@ -696,6 +1048,7 @@
             }
 
             function openSearchHelpPopover() {
+                closeExportMenu();
                 searchHelpPopover.classList.remove('hidden');
                 searchHelpButton.setAttribute('aria-expanded', 'true');
             }
@@ -726,15 +1079,26 @@
                     row.classList.add("border-b", "cursor-pointer", "hover:bg-gray-700", "hover:text-white");
                     const authFlowText = `${app.auth_code ? 'AuthCode' : ''} ${app.device_code ? 'DeviceCode' : ''} ${app.broci ? 'BroCi' : ''}`.trim();
 
-                    row.appendChild(createTableCell('name', app.name || 'N/A'));
+                    const nameCell = createTableCell('name', app.name || 'N/A');
+                    const detailsButton = document.createElement('button');
+                    detailsButton.type = 'button';
+                    detailsButton.className = 'table-action app-details-button';
+                    detailsButton.setAttribute('aria-label', `View details for ${app.name || 'N/A'}`);
+                    detailsButton.setAttribute('aria-haspopup', 'dialog');
+                    detailsButton.textContent = app.name || 'N/A';
+                    nameCell.replaceChildren(detailsButton);
+                    row.appendChild(nameCell);
                     row.appendChild(createTableCell('client_id', app.client_id || 'N/A', ['whitespace-nowrap']));
                     row.appendChild(createTableCell('enabled', String(app.enabled).trim().toLowerCase() === "false" ? 'False' : 'True'));
-                    row.appendChild(createTableCell('graph_api_permissions', (app.graph_api_permissions || []).join(', ')));
+                    const permissions = app.graph_api_permissions || [];
+                    const permissionsCell = createTableCell('graph_api_permissions', permissions.join(', '));
+                    permissionCellValues.set(permissionsCell, permissions);
+                    row.appendChild(permissionsCell);
                     row.appendChild(createTableCell('auth_flow', authFlowText));
                     row.appendChild(createTableCell('foci', app.foci || 'N/A'));
 
                     row.tabIndex = -1;
-                    row.onclick = () => openModal(app, row);
+                    row.onclick = event => openModal(app, event.target.closest('.app-details-button') || row);
                     return row;
                 });
 
@@ -756,20 +1120,23 @@
                 document.getElementById('modalAppEnabled').innerText = app.enabled || 'N/A';
                 const permissionsDiv = document.getElementById('modalPermissions');
                 permissionsDiv.innerHTML = ''; // Clear previous content
+                const permissions = (app.graph_api_permissions || [])
+                    .map(permission => permission.trim())
+                    .filter(permission => permission !== '' && permission.toLowerCase() !== '[none]');
+                permissionsDiv.dataset.copyText = permissions.join('\n');
+                document.getElementById('copyModalPermissions').disabled = permissions.length === 0;
 
-                if (app.graph_api_permissions && app.graph_api_permissions.length > 0) {
+                if (permissions.length > 0) {
                     const permissionsContainer = document.createElement("div");
                     permissionsContainer.className = "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 bg-gray-700 p-3 rounded-lg"; 
 
 
-                    app.graph_api_permissions.forEach(permission => {
-                        if (permission.trim().toLowerCase() !== "[none]") { // Exclude "[None]"
-                            const permissionItem = document.createElement("span");
-                            permissionItem.className = "bg-gray-800 text-white px-3 py-1 rounded-lg text-sm break-words";
+                    permissions.forEach(permission => {
+                        const permissionItem = document.createElement("span");
+                        permissionItem.className = "bg-gray-800 text-white px-3 py-1 rounded-lg text-sm break-words";
 
-                            permissionItem.innerText = permission.trim();
-                            permissionsContainer.appendChild(permissionItem);
-                        }
+                        permissionItem.innerText = permission;
+                        permissionsContainer.appendChild(permissionItem);
                     });
 
                     permissionsDiv.appendChild(permissionsContainer);
@@ -795,7 +1162,7 @@
                 document.getElementById('modalFOCI').innerText = app.foci || 'N/A';
                 
                 const replyList = document.getElementById('modalReplyAddresses');
-                replyList.innerHTML = (app.reply_addresses || []).map(addr => `<li>${addr}</li>`).join('');
+                replyList.innerHTML = (app.reply_addresses || []).map(addr => `<li>${escapeHtml(addr)}</li>`).join('');
                 
                 const authCommandsDiv = document.getElementById('modalAuthCommands');
                 const generatedCommands = generateAuthCommands(app);
@@ -806,20 +1173,47 @@
                 authCommandsDiv.innerHTML = commandEntries.length > 0
                     ? commandEntries.map(([tool, commands]) => {
                         let toolLink = toolDownloadLinks[tool] 
-                            ? ` <a target="_blank" href="${toolDownloadLinks[tool]}" aria-label="Open ${escapeHtml(tool)} project page" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-600">🌍</a>`
+                            ? `<a target="_blank" href="${toolDownloadLinks[tool]}" aria-label="Open ${escapeHtml(tool)} GitHub repository" title="Open ${escapeHtml(tool)} on GitHub" rel="noopener noreferrer" class="auth-tool-link">${githubMark}</a>`
                             : "";
-                        let toolHTML = `<div class="p-3 rounded bg-gray-700"><p class="font-semibold text-lg mb-1">${tool}${toolLink}</p>`;
+                        const languageLabel = toolLanguages[tool]
+                            ? `<span class="auth-tool-language">${escapeHtml(toolLanguages[tool])}</span>` : '';
+                        let toolHTML = `<div class="p-3 rounded bg-gray-700"><div class="auth-tool-header"><p class="auth-tool-title font-semibold text-lg">${escapeHtml(tool)} ${toolLink}${languageLabel}</p></div>`;
                         
                         // Hints for BroCi and foci
                         Object.entries(commands).forEach(([authFlow, cmdList]) => {
                             let hintIcon = "";
                             if (authFlow === "BroCi") {
-                                hintIcon = ` <span class="text-gray-400 cursor-help" title="This requires a valid refresh token from the client 'Azure Portal'.">ℹ️</span>`;
+                                const hint = tool === 'ROADtx'
+                                    ? "The .roadtools_auth file in the current directory must contain a valid refresh token from the Azure Portal client."
+                                    : "This requires an Azure Portal refresh token in $portalTokens.refresh_token. Expand the setup section to obtain it.";
+                                hintIcon = ` <span class="text-gray-400 cursor-help" title="${escapeHtml(hint)}">ℹ️</span>`;
                             } else if (authFlow === "Refresh from another FOCI") {
-                                hintIcon = ` <span class="text-gray-400 cursor-help" title="This requires a valid refresh token from another FOCI client.">ℹ️</span>`;
+                                const hint = tool === 'ROADtx'
+                                    ? "The .roadtools_auth file in the current directory must contain a valid refresh token from another FOCI client."
+                                    : "This requires a valid refresh token from another FOCI client.";
+                                hintIcon = ` <span class="text-gray-400 cursor-help" title="${escapeHtml(hint)}">ℹ️</span>`;
                             }
 
                             toolHTML += `<p class="font-semibold mt-1 mb-1">${authFlow}:${hintIcon}</p>`;
+
+                            if (authFlow === 'BroCi' && cmdList.length > 0) {
+                                const setupCommands = generateBrociSetupCommands(tool);
+                                const setupNote = tool === 'EntraTokenAid'
+                                    ? 'Keep $portalTokens for the command below.'
+                                    : 'Saves tokens to .roadtools_auth in the current directory.';
+                                toolHTML += `<details class="broci-setup"><summary>Get the required Azure Portal token</summary>`;
+                                if (setupCommands.length > 0) {
+                                    toolHTML += `<p class="text-sm mt-2 mb-1">1. Authenticate as Azure Portal${setupCommands.length > 1 ? ' using one of these commands' : ''}.</p><p class="text-xs text-gray-300 mb-2">${escapeHtml(setupNote)}</p>`;
+                                    setupCommands.forEach((command, index) => {
+                                        const setupId = `${tool}-BroCi-setup-${index}`;
+                                        const setupLabel = escapeHtml(`Copy ${tool} Azure Portal setup command ${index + 1}`);
+                                        toolHTML += `<div class="relative bg-gray-800 text-white p-2 pr-8 rounded mb-1"><pre id="${setupId}" class="broci-setup-command whitespace-normal break-words m-0">${escapeHtml(command)}</pre><button type="button" onclick="copyToClipboard('${setupId}')" aria-label="${setupLabel}" title="${setupLabel}" class="absolute top-1 right-1 text-gray-400 hover:text-white">📋</button></div>`;
+                                    });
+                                } else {
+                                    toolHTML += '<p class="text-sm text-gray-300 mt-2">No usable Azure Portal auth-code entry was found in the loaded YAML. Load an Azure Portal entry with a supported auth-code flow and redirect URL to generate this command.</p>';
+                                }
+                                toolHTML += '</details><p class="text-xs text-gray-300 mb-1">2. Run the BroCI refresh for this application.</p>';
+                            }
 
 
                             cmdList.forEach((cmd, index) => {
@@ -827,7 +1221,7 @@
                                 const copyLabel = escapeHtml(`Copy ${tool} ${authFlow} command ${index + 1}`);
                                 toolHTML += `
                                     <div class="relative bg-gray-800 text-white p-2 rounded mb-1 flex items-center">
-                                        <pre id="${cmdId}" class="whitespace-normal break-words flex-1 m-0 p-0">${cmd.trim()}</pre>
+                                        <pre id="${cmdId}" class="whitespace-normal break-words flex-1 min-w-0 m-0 p-0">${escapeHtml(cmd.trim())}</pre>
                                         <button type="button" onclick="copyToClipboard('${cmdId}')" aria-label="${copyLabel}" title="${copyLabel}" class="absolute top-1 right-1 text-gray-400 hover:text-white">📋</button>
                                     </div>
                                 `.trim();
@@ -848,6 +1242,7 @@
                         notesField.parentElement.style.display = "none"; // Hide if empty
                     }
                     closeSearchHelpPopover();
+                    closeExportMenu();
                     document.getElementById('modal').classList.remove('hidden');
                     document.getElementById('appContent').inert = true;
                     document.body.style.overflow = 'hidden';
@@ -859,8 +1254,18 @@
             document.getElementById('closeModalTop').addEventListener('click', () => closeModal());
 
             function getModalFocusableElements() {
-                return [...document.getElementById('modalContent').querySelectorAll('a[href], button, input, select, textarea, [tabindex]')]
-                    .filter(element => !element.disabled && element.tabIndex >= 0 && element.getClientRects().length > 0);
+                const content = document.getElementById('modalContent');
+                return [...content.querySelectorAll('a[href], button, input, select, textarea, summary, [tabindex]')]
+                    .filter(element => {
+                        if (element.disabled || element.tabIndex < 0 || element.getClientRects().length === 0) return false;
+                        for (let parent = element.parentElement; parent && parent !== content; parent = parent.parentElement) {
+                            if (parent.tagName === 'DETAILS' && !parent.open) {
+                                const summary = [...parent.children].find(child => child.tagName === 'SUMMARY');
+                                if (!summary?.contains(element)) return false;
+                            }
+                        }
+                        return true;
+                    });
             }
 
             function closeModal(event) {
@@ -921,10 +1326,67 @@
                 
                 // Generate BroCi command (static except for ClientID)
                 if (app.broci) {
-                    commands["BroCi"] = [`$tokens = Invoke-Refresh -RefreshToken $tokens.refresh_token -ClientID '${app.client_id}' -BrkClientId 'c44b4083-3bb0-49c1-b47d-974e53cbdf3c' -RedirectUri 'brk-c44b4083-3bb0-49c1-b47d-974e53cbdf3c://portal.azure.com' -Origin 'https://portal.azure.com'`];
+                    commands["BroCi"] = [`$tokens = Invoke-Refresh -RefreshToken $portalTokens.refresh_token -ClientID '${app.client_id}' -BrkClientId 'c44b4083-3bb0-49c1-b47d-974e53cbdf3c' -RedirectUri 'brk-c44b4083-3bb0-49c1-b47d-974e53cbdf3c://portal.azure.com' -Origin 'https://portal.azure.com'`];
                 }
 
-                return { "EntraTokenAid": commands };
+                const roadtxCommands = {};
+                const roadtxClient = quotePowerShellArgument(app.client_id);
+                const roadtxScope = " -s 'https://graph.microsoft.com/.default offline_access'";
+
+                if (normalizeBool(app.auth_code) === true && app.reply_addresses?.length) {
+                    const roadtxAuthCodeCommands = app.reply_addresses
+                        .map(url => url.trim())
+                        .filter(url => url !== '' && !url.toLowerCase().startsWith('brk-'))
+                        .map(url => {
+                            let command = `roadtx interactiveauth -c ${roadtxClient} -ru ${quotePowerShellArgument(url)}`;
+                            if (normalizeBool(app.single_page_app) === true) {
+                                command += " --pkce --origin 'https://doesnotmatter'";
+                            }
+                            return command + roadtxScope;
+                        });
+                    if (roadtxAuthCodeCommands.length > 0) {
+                        roadtxCommands['AuthCode'] = roadtxAuthCodeCommands;
+                    }
+                }
+
+                if (normalizeBool(app.device_code) === true) {
+                    roadtxCommands['DeviceCode'] = [`roadtx gettokens --device-code -c ${roadtxClient}${roadtxScope}`];
+                }
+
+                if (normalizeBool(app.foci) === true) {
+                    roadtxCommands['Refresh from another FOCI'] = [`roadtx refreshtokento -c ${roadtxClient}${roadtxScope}`];
+                }
+
+                if (normalizeBool(app.broci) === true) {
+                    roadtxCommands['BroCi'] = [`roadtx refreshtokento -c ${roadtxClient} --broker-client 'c44b4083-3bb0-49c1-b47d-974e53cbdf3c' --broker-redirect-url 'brk-c44b4083-3bb0-49c1-b47d-974e53cbdf3c://portal.azure.com' --origin 'https://portal.azure.com'${roadtxScope}`];
+                }
+
+                return { "EntraTokenAid": commands, "ROADtx": roadtxCommands };
+            }
+
+            function quotePowerShellArgument(value) {
+                return `'${String(value).replace(/'/g, "''")}'`;
+            }
+
+            function generateBrociSetupCommands(tool) {
+                const portal = appById.get('c44b4083-3bb0-49c1-b47d-974e53cbdf3c');
+                if (!portal || normalizeBool(portal.auth_code) !== true || normalizeBool(portal.enabled) === false) return [];
+                const redirects = Array.isArray(portal.reply_addresses) ? portal.reply_addresses
+                    .map(url => url.trim())
+                    .filter(url => url !== '' && !url.toLowerCase().startsWith('brk-')) : [];
+                if (tool === 'EntraTokenAid') {
+                    return redirects.map(url => {
+                        const redirect = url === 'http://localhost' ? 'http://localhost:13824/' : url;
+                        let command = `$portalTokens = Invoke-Auth -ClientID ${quotePowerShellArgument(portal.client_id)} -RedirectUrl ${quotePowerShellArgument(redirect)}`;
+                        if (normalizeBool(portal.single_page_app) === true) command += " -Origin 'https://doesnotmatter'";
+                        return command;
+                    });
+                }
+                if (tool === 'ROADtx') {
+                    const portalCommands = generateAuthCommands({ ...portal, reply_addresses: redirects });
+                    return portalCommands.ROADtx?.AuthCode || [];
+                }
+                return [];
             }
 
             let showGraphPermissionsOnly = false; // Toggle state
@@ -1071,9 +1533,57 @@
                     !searchHelpPopover.contains(event.target)) {
                     closeSearchHelpPopover();
                 }
+                if (!exportControls.contains(event.target)) closeExportMenu();
             });
-			
-			document.getElementById('exportCsv').addEventListener('click', exportCurrentViewToCsv);
+
+            function openExportMenu(index = 0) {
+                closeSearchHelpPopover();
+                exportMenu.classList.remove('hidden');
+                exportButton.setAttribute('aria-expanded', 'true');
+                exportMenu.querySelectorAll('[role="menuitem"]')[index].focus();
+            }
+
+            function closeExportMenu(restoreFocus = false) {
+                if (exportMenu.classList.contains('hidden')) return;
+                exportMenu.classList.add('hidden');
+                exportButton.setAttribute('aria-expanded', 'false');
+                if (restoreFocus) exportButton.focus({ preventScroll: true });
+            }
+
+            exportButton.addEventListener('click', function() {
+                if (exportMenu.classList.contains('hidden')) openExportMenu();
+                else closeExportMenu();
+            });
+            exportButton.addEventListener('keydown', function(event) {
+                if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    openExportMenu(event.key === 'ArrowUp' ? 2 : 0);
+                }
+            });
+            exportMenu.addEventListener('keydown', function(event) {
+                const items = [...exportMenu.querySelectorAll('[role="menuitem"]')];
+                const index = items.indexOf(document.activeElement);
+                if (['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(event.key)) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    const next = event.key === 'Home' ? 0 : event.key === 'End' ? items.length - 1
+                        : (index + (event.key === 'ArrowDown' ? 1 : -1) + items.length) % items.length;
+                    items[next].focus();
+                } else if (event.key === 'Escape') {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    closeExportMenu(true);
+                } else if (event.key === 'Tab') {
+                    closeExportMenu(true);
+                }
+            });
+            exportMenu.addEventListener('click', function(event) {
+                const item = event.target.closest('[data-export-format]');
+                if (!item) return;
+                closeExportMenu(true);
+                exportCurrentView(item.dataset.exportFormat);
+            });
 
 
 
@@ -1084,11 +1594,45 @@
                 }
             });
 			
+            function getAppsForExport() {
+                if (!appData.length) {
+                    alert('No data loaded to export.');
+                    return null;
+                }
+                if (searchDebounceTimer !== null) filterApps();
+                const apps = [];
+                for (const row of document.querySelectorAll('#appTable tr')) {
+                    if (row.style.display === 'none') continue;
+                    const app = appById.get(row.dataset.clientId);
+                    if (app) apps.push(app);
+                }
+                if (!apps.length) {
+                    alert('No visible rows to export (check your filters/search).');
+                    return null;
+                }
+                return apps;
+            }
+
+            function exportCurrentView(format) {
+                if (format === 'csv') return exportCurrentViewToCsv();
+                if (format !== 'json' && format !== 'yaml') return;
+                const apps = getAppsForExport();
+                if (!apps) return;
+                const records = apps.map(app => {
+                    const record = { ...app };
+                    // Omit the empty command object added by the YAML loader.
+                    if (record.auth_commands && Object.keys(record.auth_commands).length === 0) delete record.auth_commands;
+                    return record;
+                });
+                const content = format === 'json'
+                    ? JSON.stringify(records, null, 2) + '\n'
+                    : jsyaml.dump({ apps: records }, { noRefs: true, lineWidth: -1 });
+                downloadExport(content, format, `application/${format};charset=utf-8;`);
+            }
+
 			function exportCurrentViewToCsv() {
-				if (!appData || appData.length === 0) {
-					alert("No data loaded to export.");
-					return;
-				}
+                const apps = getAppsForExport();
+                if (!apps) return;
 
 				// Column order for CSV
 				const headers = [
@@ -1110,15 +1654,7 @@
 				// First row: header
 				rows.push(headers.join(","));
 
-				// Visible rows = current view (respect search & filters)
-				const tableRows = document.querySelectorAll("#appTable tr");
-				tableRows.forEach(row => {
-					// If row is hidden by filters/search, skip
-					if (row.style.display === "none") return;
-
-					const clientId = row.getAttribute("data-client-id");
-					const app = appById.get(clientId);
-					if (!app) return;
+                apps.forEach(app => {
 
 					// Normalize fields similar to your PowerShell script
 					const graphPerms = Array.isArray(app.graph_api_permissions)
@@ -1159,18 +1695,16 @@
 					rows.push(csvLine);
 				});
 
-				if (rows.length === 1) { // only header
-					alert("No visible rows to export (check your filters/search).");
-					return;
-				}
+                downloadExport(rows.join('\r\n'), 'csv', 'text/csv;charset=utf-8;');
+			}
 
-				const csvContent = rows.join("\r\n");
-				const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+            function downloadExport(content, format, mimeType) {
+                const blob = new Blob([content], { type: mimeType });
 
-				// Build filename: GraphPreConsentExport_YYYYMMDD_HHMMSS.csv
+				// Build filename: GraphPreConsentExport_YYYYMMDD_HHMMSS.<format>
 				const now = new Date();
 				const pad = n => String(n).padStart(2, "0");
-				const fileName = `GraphPreConsentExport_${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}_${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}.csv`;
+				const fileName = `GraphPreConsentExport_${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}_${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}.${format}`;
 
 				const link = document.createElement("a");
 				if (link.download !== undefined) {
@@ -1182,7 +1716,7 @@
 					document.body.removeChild(link);
 					URL.revokeObjectURL(url);
 				} else {
-					alert("CSV export is not supported in this browser.");
+					alert(`${format.toUpperCase()} export is not supported in this browser.`);
 				}
 			}
 
@@ -1207,7 +1741,6 @@
 				}
 				return str;
 			}
-			document.getElementById('exportCsv').addEventListener('click', exportCurrentViewToCsv);
 
 			
         </script>

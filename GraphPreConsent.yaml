@@ -2,19 +2,18 @@ apps:
   - name: "Office 365 Management"
     client_id: "00b41c95-dab0-4487-9791-b9d2c32c80f2"
     enabled: "True"
-    graph_api_permissions: ["Contacts.Read", "Contacts.ReadWrite", "Directory.AccessAsUser.All", "email", "Mail.ReadWrite", "Mail.ReadWrite.All", "openid", "People.Read", "People.ReadWrite", "profile", "Tasks.ReadWrite", "User.ReadWrite", "User.ReadWrite.All"]
+    graph_api_permissions: ["_A.A3", "_A.AA", "_C.AA", "_C.AF", "Contacts.Read", "Contacts.ReadWrite", "Directory.AccessAsUser.All", "email", "Mail.ReadWrite", "Mail.ReadWrite.All", "openid", "People.Read", "People.ReadWrite", "profile", "Tasks.ReadWrite", "User.ReadWrite", "User.ReadWrite.All"]
     auth_code: "True"
     device_code: "True"
     broci: ""
     foci: "True"
     reply_addresses:
-      - "https://login.microsoftonline.com/common/oauth2/nativeclient"
-      - "urn:ietf:wg:oauth:2.0:oob"
+      - "msauth.com.microsoft.o365shdmobileapp://auth"
     single_page_app: ""
   - name: "Microsoft Azure CLI"
     client_id: "04b07795-8ddb-461a-bbee-02f9e1bf7b46"
     enabled: "True"
-    graph_api_permissions: ["Application.ReadWrite.All", "AppRoleAssignment.ReadWrite.All", "AuditLog.Read.All", "DelegatedPermissionGrant.ReadWrite.All", "Directory.AccessAsUser.All", "email", "Group.ReadWrite.All", "openid", "profile", "User.Read.All", "User.ReadWrite.All"]
+    graph_api_permissions: ["Application.ReadWrite.All", "AppRoleAssignment.ReadWrite.All", "AuditLog.Read.All", "DelegatedPermissionGrant.ReadWrite.All", "Directory.AccessAsUser.All", "email", "Group.ReadWrite.All", "openid", "profile", "SubjectNameRegistration.ReadWrite", "User.Read.All", "User.ReadWrite.All"]
     auth_code: "True"
     device_code: "True"
     broci: ""
@@ -41,7 +40,7 @@ apps:
   - name: "Microsoft Teams"
     client_id: "1fec8e78-bce4-4aaf-ab1b-5451cc387264"
     enabled: "True"
-    graph_api_permissions: ["AppCatalog.Read.All", "Calendars.Read", "Calendars.Read.Shared", "Calendars.ReadWrite", "Calendars.ReadWrite.Shared", "Channel.ReadBasic.All", "ChatMessage.Send", "Contacts.ReadWrite.Shared", "email", "Files.ReadWrite.All", "FileStorageContainer.Selected", "InformationProtectionPolicy.Read", "Mail.ReadWrite", "Mail.Send", "MailboxSettings.ReadWrite", "Notes.ReadWrite.All", "openid", "Organization.Read.All", "People.Read", "Place.Read.All", "profile", "Sites.ReadWrite.All", "Tasks.ReadWrite", "Team.ReadBasic.All", "TeamsAppInstallation.ReadForTeam", "TeamsTab.Create", "User.ReadBasic.All"]
+    graph_api_permissions: ["AppCatalog.Read.All", "Calendars.Read", "Calendars.Read.Shared", "Calendars.ReadWrite", "Calendars.ReadWrite.Shared", "Channel.Create", "Channel.ReadBasic.All", "ChannelMember.ReadWrite.All", "ChannelMessage.Read.All", "ChannelMessage.Send", "ChatMessage.Send", "Contacts.ReadWrite.Shared", "email", "Files.ReadWrite.All", "FileStorageContainer.Selected", "Group.Read.All", "InformationProtectionPolicy.Read", "Mail.ReadWrite", "Mail.Send", "MailboxSettings.ReadWrite", "Notes.ReadWrite.All", "openid", "Organization.Read.All", "People.Read", "Place.Read.All", "profile", "Sites.ReadWrite.All", "Tasks.ReadWrite", "Team.ReadBasic.All", "TeamMember.ReadWrite.All", "TeamsActivity.Send", "TeamsAppInstallation.ReadForTeam", "TeamsTab.Create", "TeamsTab.ReadWrite.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: "True"
     broci: ""
@@ -64,7 +63,7 @@ apps:
   - name: "Outlook Mobile"
     client_id: "27922004-5251-4030-b22d-91ecd9a37ea4"
     enabled: "True"
-    graph_api_permissions: ["email", "Files.ReadWrite.All", "FileStorageContainer.Selected", "Mail.Read", "Mail.Read.Shared", "openid", "People.Read", "People.Read.All", "Presence.Read.All", "profile", "Sites.ReadWrite.All", "User.Read", "User.ReadBasic.All", "UserAuthenticationMethod.ReadWrite"]
+    graph_api_permissions: ["Content.Process.User", "email", "Family.Read", "Files.ReadWrite.All", "FileStorageContainer.Selected", "Mail.Read", "Mail.Read.Shared", "openid", "People.Read", "People.Read.All", "Presence.Read.All", "profile", "ProtectionScopes.Compute.User", "Sites.ReadWrite.All", "User.Read", "User.Read.All", "User.ReadBasic.All", "UserAuthenticationMethod.ReadWrite"]
     auth_code: "True"
     device_code: "True"
     broci: ""
@@ -97,7 +96,7 @@ apps:
   - name: "Microsoft Office"
     client_id: "d3590ed6-52b3-4102-aeff-aad2292ab01c"
     enabled: "True"
-    graph_api_permissions: ["AuditLog.Create", "Calendar.ReadWrite", "Calendars.Read.Shared", "Calendars.ReadWrite", "Contacts.ReadWrite", "DataLossPreventionPolicy.Evaluate", "Directory.AccessAsUser.All", "Directory.Read.All", "email", "Files.Read", "Files.Read.All", "Files.ReadWrite.All", "FileStorageContainer.Selected", "Group.Read.All", "Group.ReadWrite.All", "InformationProtectionPolicy.Read", "Mail.ReadWrite", "Mail.Send", "Notes.Create", "openid", "Organization.Read.All", "People.Read", "People.Read.All", "Printer.Read.All", "PrinterShare.ReadBasic.All", "PrintJob.Create", "PrintJob.ReadWriteBasic", "profile", "Reports.Read.All", "SensitiveInfoType.Detect", "SensitiveInfoType.Read.All", "SensitivityLabel.Evaluate", "Tasks.ReadWrite", "TeamMember.ReadWrite.All", "TeamsTab.ReadWriteForChat", "User.Read.All", "User.ReadBasic.All", "User.ReadWrite", "Users.Read"]
+    graph_api_permissions: ["_J.AB", "AuditLog.Create", "Calendar.ReadWrite", "Calendars.Read.Shared", "Calendars.ReadWrite", "Channel.Create", "Channel.Delete.All", "Channel.ReadBasic.All", "ChannelMember.ReadWrite.All", "ChannelMessage.Read.All", "ChannelMessage.ReadWrite", "ChannelMessage.Send", "ChannelSettings.ReadWrite.All", "Chat.Create", "Chat.ReadWrite", "ChatMember.ReadWrite", "Contacts.ReadWrite", "Content.Process.User", "DataLossPreventionPolicy.Evaluate", "Directory.AccessAsUser.All", "Directory.Read.All", "email", "Files.Read", "Files.Read.All", "Files.ReadWrite.All", "FileStorageContainer.Selected", "Group.Read.All", "Group.ReadWrite.All", "InformationProtectionPolicy.Read", "Mail.ReadWrite", "Mail.Send", "Notes.Create", "openid", "Organization.Read.All", "People.Read", "People.Read.All", "Printer.Read.All", "PrinterShare.ReadBasic.All", "PrintJob.Create", "PrintJob.ReadWriteBasic", "profile", "ProtectionScopes.Compute.User", "Reports.Read.All", "ResourceSpecificPermissionGrant.ReadForTeam", "SensitiveInfoType.Detect", "SensitiveInfoType.Read.All", "SensitivityLabel.Evaluate", "SensitivityLabel.Read", "SensitivityLabels.Read.All", "Tasks.ReadWrite", "Team.Create", "Team.ReadBasic.All", "TeamMember.ReadWrite.All", "TeamsAppInstallation.ReadForTeam", "TeamSettings.ReadWrite.All", "TeamsTab.ReadWrite.All", "TeamsTab.ReadWriteForChat", "User.Read.All", "User.ReadBasic.All", "User.ReadWrite", "Users.Read"]
     auth_code: "True"
     device_code: "True"
     broci: ""
@@ -123,7 +122,7 @@ apps:
   - name: "OneDrive iOS App"
     client_id: "af124e86-4e96-495a-b70a-90f90ab96707"
     enabled: "True"
-    graph_api_permissions: ["Contacts.Read", "Directory.Read.All", "email", "Files.ReadWrite", "Group.Read.All", "openid", "People.Read", "profile", "Sites.Read.All", "User.Read.All"]
+    graph_api_permissions: ["Contacts.Read", "Content.Process.User", "Directory.Read.All", "email", "Files.ReadWrite", "Group.Read.All", "openid", "People.Read", "profile", "ProtectionScopes.Compute.User", "Sites.Read.All", "User.Read.All"]
     auth_code: "True"
     device_code: "True"
     broci: ""
@@ -175,7 +174,7 @@ apps:
   - name: "Office UWP PWA"
     client_id: "0ec893e0-5785-4de6-99da-4ed124e5296c"
     enabled: "True"
-    graph_api_permissions: ["Contacts.Read", "email", "Family.Read", "Files.ReadWrite.All", "FileStorageContainer.Selected", "GroupMember.Read.All", "InformationProtectionPolicy.Read", "Notes.Create", "Notes.ReadWrite.All", "openid", "Organization.Read.All", "People.Read", "profile", "SensitivityLabel.Read", "Tasks.ReadWrite", "User.Read", "User.ReadBasic.All"]
+    graph_api_permissions: ["_A.CG", "Calendars.ReadBasic", "Contacts.Read", "email", "Family.Read", "Files.ReadWrite.All", "FileStorageContainer.Selected", "GroupMember.Read.All", "InformationProtectionPolicy.Read", "Notes.Create", "Notes.ReadWrite.All", "openid", "Organization.Read.All", "People.Read", "Presence.Read", "Presence.Read.All", "profile", "SensitivityLabel.Read", "Tasks.ReadWrite", "User.Read", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: "True"
     broci: ""
@@ -220,13 +219,13 @@ apps:
   - name: "Microsoft Flow"
     client_id: "57fcbcfa-7cee-4eb1-8b25-12d2030b4ee0"
     enabled: "True"
-    graph_api_permissions: ["email", "Group.Read.All", "openid", "profile", "User.ReadBasic.All"]
+    graph_api_permissions: ["_A.AA", "_B.AC", "_C.AA", "_L.AA", "email", "Group.ReadBasic.All", "openid", "profile", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: "True"
     broci: ""
     foci: "True"
     reply_addresses:
-      - "urn:ietf:wg:oauth:2.0:oob"
+      - "x-msauth-msflow://com.microsoft.procsimo"
     single_page_app: ""
   - name: "Microsoft Planner"
     client_id: "66375f6b-983f-4c2c-9701-d680650f588f"
@@ -248,7 +247,6 @@ apps:
     foci: "True"
     reply_addresses:
       - "ms-appx-web://Microsoft.AAD.BrokerPlugin/9ba1a5c7-f17a-4de9-a1f1-6178c8d51223"
-      - "urn:ietf:wg:oauth:2.0:oob"
     single_page_app: ""
     notes: "Can be used to bypass Conditional Access Policies which require a compliant device."
   - name: "Accounts Control UI"
@@ -275,13 +273,13 @@ apps:
   - name: "OneDrive"
     client_id: "b26aadf8-566f-4478-926f-589f601d9c74"
     enabled: "True"
-    graph_api_permissions: ["Contacts.Read", "Directory.Read.All", "email", "Family.Read", "Files.ReadWrite.All", "Group.Read.All", "openid", "People.Read", "profile", "Sites.Read.All", "User.Read.All"]
+    graph_api_permissions: ["Contacts.Read", "Content.Process.User", "Directory.Read.All", "email", "Family.Read", "Files.ReadWrite.All", "Group.Read.All", "openid", "People.Read", "profile", "ProtectionScopes.Compute.User", "Sites.Read.All", "User.Read.All"]
     auth_code: "True"
     device_code: "True"
     broci: ""
     foci: "True"
     reply_addresses:
-      - "urn:ietf:wg:oauth:2.0:oob"
+      - "msauth://com.microsoft.skydrive/ODD3OR3tCemNTgxEX1K6yZVHByw%3D"
     single_page_app: ""
   - name: "Microsoft Power BI"
     client_id: "c0d2a505-13b8-4ae0-aa9e-cddd5eab0b12"
@@ -308,7 +306,7 @@ apps:
   - name: "Microsoft Edge"
     client_id: "e9c51622-460d-4d3d-952d-966a5b1da34c"
     enabled: "True"
-    graph_api_permissions: ["EduRoster.ReadBasic", "email", "Group.Read.All", "openid", "profile", "User.Read", "User.ReadBasic.All", "UserActivity.ReadWrite.CreatedByApp"]
+    graph_api_permissions: ["EduRoster.ReadBasic", "email", "Group.Read.All", "openid", "profile", "User.Read", "User.Read.All", "User.ReadBasic.All", "UserActivity.ReadWrite.CreatedByApp"]
     auth_code: "True"
     device_code: "True"
     broci: ""
@@ -329,7 +327,7 @@ apps:
   - name: "Microsoft Edge"
     client_id: "ecd6b820-32c2-49b6-98a6-444530e5a77a"
     enabled: "True"
-    graph_api_permissions: ["Calendars.Read", "Content.Process.User", "email", "Files.ReadWrite", "Files.ReadWrite.All", "Notes.Create", "Notes.ReadWrite", "Notes.ReadWrite.All", "openid", "People.Read", "profile", "ProtectionScopes.Compute.User", "User.Read", "User.ReadBasic.All"]
+    graph_api_permissions: ["_A.AA", "_B.AC", "_C.AA", "_E.AA", "_F.AB", "_G.AA", "_H.AD", "_L.AA", "Calendars.Read", "Content.Process.User", "email", "Files.ReadWrite", "Files.ReadWrite.All", "Notes.Create", "Notes.ReadWrite", "Notes.ReadWrite.All", "openid", "People.Read", "profile", "ProtectionScopes.Compute.User", "User.Read", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: "True"
     broci: ""
@@ -341,7 +339,7 @@ apps:
   - name: "SharePoint Android"
     client_id: "f05ff7c9-f75a-4acd-a3b5-f4b6a870245d"
     enabled: "True"
-    graph_api_permissions: ["Contacts.Read", "Directory.Read.All", "email", "Group.Read.All", "Member.Read.Hidden", "openid", "Organization.Read.All", "People.Read", "profile", "Sites.Read.All", "User.Read.All"]
+    graph_api_permissions: ["Contacts.Read", "Directory.Read.All", "email", "Group.Read.All", "openid", "Organization.Read.All", "People.Read", "profile", "Sites.Read.All", "User.Read.All"]
     auth_code: "True"
     device_code: "True"
     broci: ""
@@ -406,7 +404,7 @@ apps:
     single_page_app: ""
   - name: "Outlook Lite"
     client_id: "e9b154d0-7658-433b-bb25-6b8e0a8a7c59"
-    enabled: "True"
+    enabled: "False"
     graph_api_permissions: ["email", "openid", "profile", "User.Read"]
     auth_code: "True"
     device_code: "True"
@@ -418,7 +416,7 @@ apps:
   - name: "Managed Meeting Rooms"
     client_id: "eb20f3e3-3dce-4d2c-b721-ebb8d4414067"
     enabled: "True"
-    graph_api_permissions: ["DeviceManagementServiceConfig.Read.All", "email", "Group.Read.All", "LicenseAssignment.ReadWrite.All", "openid", "Organization.Read.All", "Place.ReadWrite.All", "profile", "RoleManagement.Read.Directory", "User.ManageIdentities.All", "User.Read", "User.Read.All"]
+    graph_api_permissions: ["_O.AC", "Contacts.ReadWrite", "Contacts.ReadWrite.Shared", "DeviceManagementServiceConfig.Read.All", "DeviceManagementTeamsConfig.Read.All", "email", "Group.Read.All", "LicenseAssignment.ReadWrite.All", "openid", "Organization.Read.All", "Place.ReadWrite.All", "profile", "RoleManagement.Read.Directory", "User-PasswordProfile.ReadWrite.All", "User.ManageIdentities.All", "User.Read", "User.Read.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -429,7 +427,7 @@ apps:
   - name: "OfficeHome"
     client_id: "4765445b-32c6-49b0-83e6-1d93765276ca"
     enabled: "True"
-    graph_api_permissions: ["Calendars.Read", "Contacts.Read", "email", "Family.Read", "Files.ReadWrite.All", "FileStorageContainer.Selected", "GroupMember.Read.All", "InformationProtectionPolicy.Read", "Notes.Create", "openid", "Organization.Read.All", "People.Read", "Presence.Read.All", "profile", "SensitivityLabel.Read", "Sites.Read.All", "Tasks.ReadWrite", "User.Read", "User.ReadBasic.All", "User.ReadWrite"]
+    graph_api_permissions: ["Calendars.Read", "Contacts.Read", "email", "Family.Read", "Files.ReadWrite.All", "FileStorageContainer.Selected", "GroupMember.Read.All", "InformationProtectionPolicy.Read", "Mail.ReadBasic", "Notes.Create", "openid", "Organization.Read.All", "People.Read", "Presence.Read.All", "profile", "SensitivityLabel.Read", "Sites.Read.All", "Tasks.ReadWrite", "User.Read", "User.Read.All", "User.ReadBasic.All", "User.ReadWrite"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -503,7 +501,7 @@ apps:
   - name: "Azure Portal"
     client_id: "c44b4083-3bb0-49c1-b47d-974e53cbdf3c"
     enabled: "True"
-    graph_api_permissions: ["email", "openid", "Organization.Read.All", "Policy.ReadWrite.ApplicationConfiguration", "profile", "User.Read"]
+    graph_api_permissions: ["CustomObject.Read.All", "CustomObjectDefinition.Read.All", "email", "openid", "Organization.Read.All", "Policy.ReadWrite.ApplicationConfiguration", "profile", "User.Read"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -784,7 +782,7 @@ apps:
     foci: "False"
     reply_addresses: []
     single_page_app: ""
-  - name: "MSAI Substrate Meeting Intelligence "
+  - name: "MSAI Substrate Meeting Intelligence"
     client_id: "038187f5-ca69-4382-8c0b-8d87708d099f"
     enabled: "True"
     graph_api_permissions: ["[None]"]
@@ -826,7 +824,7 @@ apps:
     single_page_app: ""
   - name: "Microsoft Stream Portal"
     client_id: "cf53fce8-def6-4aeb-8d30-b158e7b1cf83"
-    enabled: "True"
+    enabled: "False"
     graph_api_permissions: ["email", "Files.Read.All", "Group.ReadWrite.All", "openid", "People.Read", "Policy.Read.All", "profile", "Sites.ReadWrite.All", "User.Invite.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
@@ -1598,7 +1596,7 @@ apps:
   - name: "Azure DevOps"
     client_id: "499b84ac-1321-427f-aa17-267ca6975798"
     enabled: "True"
-    graph_api_permissions: ["CrossTenantInformation.ReadBasic.All", "email", "openid", "profile", "User.Invite.All", "User.Read"]
+    graph_api_permissions: ["_E.AC", "CrossTenantInformation.ReadBasic.All", "email", "openid", "profile", "User.Invite.All", "User.Read"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -1656,7 +1654,6 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://login.microsoftonline.com/common/oauth2/nativeclient"
-      - "urn:ietf:wg:oauth:2.0:oob"
     single_page_app: ""
   - name: "Microsoft Intune SCCM Connector"
     client_id: "63e61dc2-f593-4a6f-92b9-92e4d2c03d4f"
@@ -2001,7 +1998,7 @@ apps:
   - name: "Microsoft Whiteboard Services"
     client_id: "95de633a-083e-42f5-b444-a4295d8e9314"
     enabled: "True"
-    graph_api_permissions: ["Chat.ReadWrite", "Directory.Read.All", "email", "Files.ReadWrite.All", "FileStorageContainer.Selected", "Group.Read.All", "GroupMember.ReadWrite.All", "InformationProtectionPolicy.Read", "openid", "Organization.Read.All", "People.Read", "profile", "Tasks.ReadWrite", "User.Read", "User.ReadBasic.All"]
+    graph_api_permissions: ["_A.AA", "_B.AC", "_B.AR", "_C.AA", "Chat.ReadWrite", "Directory.Read.All", "email", "Files.ReadWrite.All", "FileStorageContainer.Selected", "Group.Read.All", "GroupMember.ReadWrite.All", "InformationProtectionPolicy.Read", "openid", "Organization.Read.All", "People.Read", "profile", "Tasks.ReadWrite", "User.Read", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -2309,7 +2306,7 @@ apps:
     foci: "False"
     reply_addresses: []
     single_page_app: ""
-  - name: "Microsoft Teams Partner Tenant Administration "
+  - name: "Microsoft Teams Partner Tenant Administration"
     client_id: "0c708d37-30b2-4f22-8168-5d0cba6f37be"
     enabled: "True"
     graph_api_permissions: ["[None]"]
@@ -2362,7 +2359,7 @@ apps:
   - name: "Microsoft Teams Admin Portal Service"
     client_id: "2ddfbe71-ed12-4123-b99b-d5fc8a062a79"
     enabled: "True"
-    graph_api_permissions: ["_E.AN", "AppCatalog.ReadWrite.All", "Channel.Delete.All", "ChannelMember.Read.All", "ChannelMember.ReadWrite.All", "ChannelSettings.ReadWrite.All", "Chat.Create", "Chat.ReadBasic", "ChatMessage.Send", "Directory.Read.All", "EduRoster.ReadBasic", "email", "Group.Read.All", "Group.ReadWrite.All", "openid", "Place.Read.All", "Policy.ReadWrite.CrossTenantAccess", "profile", "Reports.Read.All", "TeamsActivity.Send", "TeamworkAppSettings.Read.All", "User.Read", "User.Read.All", "User.ReadBasic.All", "User.ReadWrite.All"]
+    graph_api_permissions: ["_E.AN", "AppCatalog.ReadWrite.All", "Bookings.Read.All", "Channel.Create", "Channel.Delete.All", "ChannelMember.Read.All", "ChannelMember.ReadWrite.All", "ChannelSettings.ReadWrite.All", "Chat.Create", "Chat.ReadBasic", "ChatMessage.Send", "CrossTenantInformation.ReadBasic.All", "Directory.Read.All", "EduRoster.ReadBasic", "email", "Group.Read.All", "Group.ReadWrite.All", "openid", "Place.Read.All", "Policy.ReadWrite.CrossTenantAccess", "profile", "Reports.Read.All", "RoleManagement.ReadWrite.Applications", "Team.Create", "Team.ReadBasic.All", "TeamMember.ReadWrite.All", "TeamsActivity.Send", "TeamsAppInstallation.ReadWriteAndConsentForTeam", "TeamSettings.ReadWrite.All", "TeamsTab.ReadWrite.All", "TeamworkAppSettings.Read.All", "User.Read", "User.Read.All", "User.ReadBasic.All", "User.ReadWrite.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -2684,7 +2681,7 @@ apps:
   - name: "Defender Experts for XDR"
     client_id: "9ee7b58d-f9db-45bc-ad7b-c2b97bbc3337"
     enabled: "True"
-    graph_api_permissions: ["Channel.Create", "Channel.ReadBasic.All", "ChannelMember.ReadWrite.All", "email", "openid", "profile", "Team.Create", "Team.ReadBasic.All", "TeamMember.ReadWriteNonOwnerRole.All", "TeamsAppInstallation.ManageSelectedForTeam", "TeamsAppInstallation.ReadWriteAndConsentSelfForTeam", "TeamsAppInstallation.ReadWriteSelfForTeam", "User.Read", "User.Read.All"]
+    graph_api_permissions: ["email", "openid", "profile", "User.Read", "User.Read.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -3097,13 +3094,13 @@ apps:
   - name: "ProjectWorkManagement"
     client_id: "09abbdfd-ed23-44ee-a2d9-a627aa1c90f3"
     enabled: "True"
-    graph_api_permissions: ["AllSites.Manage", "AllSites.Read", "AllSites.Write", "Calendar.ReadWrite", "Channel.ReadBasic.All", "ChannelMember.Read.All", "Directory.Read.All", "email", "Files.Read.All", "Files.ReadWrite", "Files.ReadWrite.All", "FileStorageContainer.Selected", "Group.ReadWrite.All", "InformationProtectionPolicy.Read", "Mail.Read", "MailboxSettings.Read", "OnlineMeetings.Read", "openid", "Privilege.SkipClientAccessRules", "profile", "SensitivityLabel.Read", "UnifiedGroupMember.Read.AsGuest", "User.Invite.All", "User.Read.All"]
+    graph_api_permissions: ["_C.AD", "_C.AO", "AllSites.Manage", "AllSites.Read", "AllSites.Write", "Calendar.ReadWrite", "Channel.ReadBasic.All", "ChannelMember.Read.All", "Directory.Read.All", "email", "Files.Read.All", "Files.ReadWrite", "Files.ReadWrite.All", "FileStorageContainer.Selected", "Group.ReadWrite.All", "InformationProtectionPolicy.Read", "Mail.Read", "MailboxSettings.Read", "OnlineMeetings.Read", "openid", "Privilege.SkipClientAccessRules", "profile", "SensitivityLabel.Read", "UnifiedGroupMember.Read.AsGuest", "User.Invite.All", "User.Read.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
     foci: "False"
     reply_addresses:
-      - "https://planner.cloud.microsoft/auth/msalredirect2"
+      - "https://login.microsoftonline.com/common/oauth2/nativeclient"
     single_page_app: "True"
   - name: "Office Shredding Service"
     client_id: "b97b6bd4-a49f-4a0c-af18-af507d1da76c"
@@ -3159,7 +3156,7 @@ apps:
   - name: "CPIM Service"
     client_id: "bb2a2e3a-c5e7-4f0a-88e0-8e01fd3fc1f4"
     enabled: "True"
-    graph_api_permissions: ["_D.AW", "Application.Read.All", "Application.ReadWrite.All", "Domain.Read.All", "email", "EntitlementManagement.Read.All", "IdentityProvider.ReadWrite.All", "IdentityUserFlow.Read.All", "openid", "profile"]
+    graph_api_permissions: ["_D.AW", "Application.Read.All", "Application.ReadWrite.All", "Domain.Read.All", "email", "EntitlementManagement.Read.All", "IdentityProvider.ReadWrite.All", "IdentityUserFlow.Read.All", "openid", "Policy.Read.All", "profile"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -3352,7 +3349,7 @@ apps:
   - name: "Microsoft Flow Portal"
     client_id: "6204c1d1-4712-4c46-a7d9-3ed63d992682"
     enabled: "True"
-    graph_api_permissions: ["email", "Files.Read", "Files.Read.All", "openid", "People.Read", "profile", "Sites.Read.All", "User.Read", "User.Read.All"]
+    graph_api_permissions: ["email", "Files.Read", "Files.Read.All", "openid", "profile", "Sites.Read.All", "User.Read", "User.Read.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -3620,7 +3617,7 @@ apps:
     foci: "False"
     reply_addresses: []
     single_page_app: ""
-  - name: "CAP Neptune Prod CM Prod "
+  - name: "CAP Neptune Prod CM Prod"
     client_id: "ab158d9a-0b5c-4cc3-bb2b-f6646581e4e4"
     enabled: "True"
     graph_api_permissions: []
@@ -3663,7 +3660,7 @@ apps:
   - name: "OneNote"
     client_id: "2d4d3d8e-2be3-4bef-9f87-7875a61c29de"
     enabled: "True"
-    graph_api_permissions: ["Calendars.Read", "Calendars.ReadWrite", "Channel.ReadBasic.All", "Chat.Read", "Chat.ReadBasic", "DeviceManagementServiceConfig.Read.All", "Directory.Read.All", "email", "Files.ReadWrite.All", "FileStorageContainer.Selected", "Group.Read.All", "InformationProtectionPolicy.Read", "Mail.Read", "Notes.ReadWrite", "Notes.ReadWrite.All", "openid", "People.Read", "profile", "Sites.Read.All", "Tasks.ReadWrite", "Team.ReadBasic.All", "TeamsActivity.Send", "TeamsTab.ReadWriteForChat", "TeamsTab.ReadWriteForTeam", "User.Read", "User.Read.All", "User.ReadBasic.All"]
+    graph_api_permissions: ["_A.CG", "Calendars.Read", "Calendars.ReadWrite", "Channel.ReadBasic.All", "ChannelMember.Read.All", "Chat.Read", "Chat.ReadBasic", "DeviceManagementServiceConfig.Read.All", "Directory.Read.All", "email", "Files.ReadWrite.All", "FileStorageContainer.Selected", "Group.Read.All", "InformationProtectionPolicy.Read", "Mail.Read", "Notes.ReadWrite", "Notes.ReadWrite.All", "openid", "Organization.Read.All", "People.Read", "profile", "Sites.Read.All", "Tasks.ReadWrite", "Team.ReadBasic.All", "TeamsActivity.Send", "TeamsTab.ReadWriteForChat", "TeamsTab.ReadWriteForTeam", "User.Read", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -4628,7 +4625,7 @@ apps:
   - name: "Dynamics Data Integration"
     client_id: "2e49aa60-1bd3-43b6-8ab6-03ada3d9f08b"
     enabled: "True"
-    graph_api_permissions: ["email", "openid", "profile", "user_impersonation"]
+    graph_api_permissions: ["_G.AA", "email", "openid", "profile"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -4791,7 +4788,7 @@ apps:
   - name: "Microsoft Dynamics 365 Apps Integration"
     client_id: "44a02aaa-7145-4925-9dcd-79e6e1b94eff"
     enabled: "True"
-    graph_api_permissions: ["Channel.ReadBasic.All", "Chat.Read", "email", "GroupMember.Read.All", "InformationProtectionPolicy.Read", "OnlineMeetings.Read", "openid", "profile", "Sites.Read.All", "Team.ReadBasic.All", "TeamMember.ReadWrite.All", "TeamsAppInstallation.ReadWriteForTeam", "TeamsTab.Create", "User.Read", "User.ReadBasic.All"]
+    graph_api_permissions: ["Channel.ReadBasic.All", "Chat.Read", "email", "GroupMember.Read.All", "InformationProtectionPolicy.Read", "OnlineMeetings.Read", "openid", "profile", "Sites.Read.All", "Team.ReadBasic.All", "TeamMember.ReadWrite.All", "TeamsAppInstallation.ReadWriteForTeam", "TeamsTab.Create", "User.Read", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -4923,7 +4920,7 @@ apps:
   - name: "Azure AD Notification"
     client_id: "fc03f97a-9db0-4627-a216-ec98ce54e018"
     enabled: "True"
-    graph_api_permissions: ["email", "openid", "profile", "User.Read"]
+    graph_api_permissions: ["Chat.Read", "Chat.ReadBasic", "email", "EntitlementMgmt-SubjectAccess.ReadWrite", "IdentityNotifications.Read.All", "IdentityNotifications.ReadWrite.All", "openid", "profile", "User.Read"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -4974,7 +4971,7 @@ apps:
   - name: "Microsoft Teams Web Client"
     client_id: "5e3ce6c0-2b1f-4285-8d4b-75ee78787346"
     enabled: "True"
-    graph_api_permissions: ["AppCatalog.Read.All", "Calendars.Read", "Calendars.Read.Shared", "Calendars.ReadWrite", "Calendars.ReadWrite.Shared", "Channel.ReadBasic.All", "ChatMember.Read", "ChatMessage.Send", "email", "Files.ReadWrite.All", "FileStorageContainer.Selected", "Group.Read.All", "InformationProtectionPolicy.Read", "Mail.Read", "Mail.ReadWrite", "MailboxSettings.ReadWrite", "Notes.ReadWrite.All", "openid", "Organization.Read.All", "People.Read", "Place.Read", "Place.Read.All", "Place.Read.Shared", "profile", "Sites.ReadWrite.All", "Tasks.ReadWrite", "Team.ReadBasic.All", "TeamsAppInstallation.ReadForTeam", "TeamsTab.Create", "User.ReadBasic.All"]
+    graph_api_permissions: ["AppCatalog.Read.All", "Calendars.Read", "Calendars.Read.Shared", "Calendars.ReadWrite", "Calendars.ReadWrite.Shared", "Channel.Create", "Channel.ReadBasic.All", "ChannelMember.ReadWrite.All", "ChannelMessage.Read.All", "ChannelMessage.Send", "ChatMember.Read", "ChatMessage.Send", "email", "Files.ReadWrite.All", "FileStorageContainer.Selected", "Group.Read.All", "InformationProtectionPolicy.Read", "Mail.Read", "Mail.ReadWrite", "MailboxSettings.ReadWrite", "Notes.ReadWrite.All", "openid", "Organization.Read.All", "People.Read", "Place.Read", "Place.Read.All", "Place.Read.Shared", "profile", "Sites.ReadWrite.All", "Tasks.ReadWrite", "Team.ReadBasic.All", "TeamMember.ReadWrite.All", "TeamsActivity.Send", "TeamsAppInstallation.ReadForTeam", "TeamsTab.Create", "TeamsTab.ReadWrite.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -5195,7 +5192,7 @@ apps:
   - name: "Azure AD Identity Governance - Entitlement Management"
     client_id: "810dcf14-1858-4bf2-8134-4c369fa3235b"
     enabled: "True"
-    graph_api_permissions: ["AccessReview.ReadWrite.All", "Application.Read.All", "AuthenticationContext.Read.All", "CrossTenantInformation.ReadBasic.All", "email", "GroupMember.Read.All", "openid", "People.Read", "profile", "ResourcePolicyAssignment.ReadWrite.All", "ResourcePolicyDefinition.ReadWrite.All", "User.Read", "User.ReadBasic.All"]
+    graph_api_permissions: ["AccessReview.ReadWrite.All", "Application.Read.All", "AuthenticationContext.Read.All", "CrossTenantInformation.ReadBasic.All", "email", "GroupMember.Read.All", "IdentityRiskyUser.Read.All", "LifecyclePolicies-Guests.Read.All", "openid", "People.Read", "profile", "ResourcePolicyAssignment.ReadWrite.All", "ResourcePolicyDefinition.ReadWrite.All", "User.Read", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -5216,13 +5213,13 @@ apps:
   - name: "Portfolios"
     client_id: "f53895d3-095d-408f-8e93-8f94b391404e"
     enabled: "True"
-    graph_api_permissions: ["Channel.ReadBasic.All", "ChannelSettings.Read.All", "ChannelSettings.ReadWrite.All", "Directory.Read.All", "Directory.ReadWrite.All", "email", "Group.ReadWrite.All", "openid", "People.Read", "People.Read.All", "profile", "Sites.Read.All", "TeamsActivity.Send", "TeamsTab.Read.All", "TeamsTab.ReadWrite.All", "UnifiedGroupMember.Read.AsGuest", "User.Invite.All", "User.ReadBasic.All"]
+    graph_api_permissions: ["Channel.ReadBasic.All", "ChannelSettings.Read.All", "ChannelSettings.ReadWrite.All", "Directory.Read.All", "Directory.ReadWrite.All", "email", "Group.ReadWrite.All", "openid", "People.Read", "People.Read.All", "profile", "Sites.Read.All", "TeamsActivity.Send", "TeamsTab.Read.All", "TeamsTab.ReadWrite.All", "UnifiedGroupMember.Read.AsGuest", "User.Invite.All", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
     foci: "False"
     reply_addresses:
-      - "https://project.microsoft.com/msal-redirect2"
+      - "https://oneproject-ppe-torus-wus-azsc-000.project.microsoft.com/auth/redirectbridge"
     single_page_app: "True"
   - name: "Microsoft Intune Checkin"
     client_id: "26a4ae64-5862-427f-a9b0-044e62572a4f"
@@ -5264,10 +5261,10 @@ apps:
     foci: "False"
     reply_addresses: []
     single_page_app: ""
-  - name: "Power Virtual Agents "
+  - name: "Power Virtual Agents"
     client_id: "96ff4394-9197-43aa-b393-6a41652e21f8"
     enabled: "True"
-    graph_api_permissions: ["AppCatalog.ReadWrite.All", "Application.Read.All", "Calendars.Read", "Channel.ReadBasic.All", "ChannelMessage.Send", "Chat.ReadBasic", "ChatMessage.Send", "email", "ExternalItem.Read.All", "Files.Read.All", "Files.ReadWrite.All", "FileStorageContainer.Selected", "Group.Read.All", "InformationProtectionPolicy.Read", "MailboxSettings.Read", "openid", "Organization.Read.All", "People.Read", "profile", "SensitivityLabel.Read", "Sites.Read.All", "Sites.ReadWrite.All", "Team.ReadBasic.All", "TeamsAppInstallation.ReadForTeam", "TeamsAppInstallation.ReadWriteForTeam", "User.Read.All"]
+    graph_api_permissions: ["_A.AA", "_B.A2", "_B.AC", "_C.AA", "_H.AD", "AppCatalog.ReadWrite.All", "Application.Read.All", "Calendars.Read", "Calendars.Read.Shared", "Calendars.ReadWrite", "Channel.Create", "Channel.ReadBasic.All", "ChannelMember.Read.All", "ChannelMember.ReadWrite.All", "ChannelMessage.Read.All", "ChannelMessage.Send", "ChannelSettings.Read.All", "ChannelSettings.ReadWrite.All", "Chat.Create", "Chat.ManageDeletion.All", "Chat.Read", "Chat.ReadBasic", "Chat.ReadWrite", "ChatMember.ReadWrite", "ChatMessage.Send", "Contacts.Read", "Contacts.ReadWrite", "email", "ExternalItem.Read.All", "Files.Read.All", "Files.ReadWrite.All", "FileStorageContainer.Selected", "Group.Read.All", "InformationProtectionPolicy.Read", "Mail.Read", "Mail.ReadBasic", "Mail.ReadWrite", "Mail.Send", "MailboxSettings.Read", "MailboxSettings.ReadWrite", "OnlineMeetingAiInsight.Read.All", "OnlineMeetingArtifact.Read.All", "OnlineMeetingRecording.Read.All", "OnlineMeetings.Read", "OnlineMeetings.ReadWrite", "OnlineMeetingTranscript.Read.All", "openid", "Organization.Read.All", "People.Read", "Presence.ReadWrite", "profile", "SensitivityLabel.Read", "Sites.Read.All", "Sites.ReadWrite.All", "Team.ReadBasic.All", "TeamMember.Read.All", "TeamMember.ReadWrite.All", "TeamMember.ReadWriteNonOwnerRole.All", "TeamsAppInstallation.ReadForTeam", "TeamsAppInstallation.ReadWriteForTeam", "TeamSettings.ReadWrite.All", "TeamworkTag.Read", "TeamworkTag.ReadWrite", "User.Read.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -5448,7 +5445,7 @@ apps:
   - name: "My Profile"
     client_id: "8c59ead7-d703-4a27-9e55-c96a0054c8d2"
     enabled: "True"
-    graph_api_permissions: ["AccessReview.Read.All", "AgentIdentity.EnableDisable.All", "AgentIdentity.Read.All", "Application.Read.All", "AuditLog.Read.All", "BitlockerKey.Read.All", "Contacts.Read", "CrossTenantInformation.ReadBasic.All", "CrossTenantUserProfileSharing.ReadWrite.All", "DelegatedPermissionGrant.Read.All", "Device.EnableDisableAccount.All", "Device.Read.All", "email", "EntitlementManagement.Read.All", "Group.Read.All", "Group.ReadWrite.All", "GroupMember.Read.All", "MailboxSettings.ReadWrite", "openid", "Organization.Read.All", "Policy.Read.All", "PrivilegedAssignmentSchedule.ReadWrite.AzureADGroup", "PrivilegedEligibilitySchedule.Read.AzureADGroup", "profile", "RoleManagement.ReadWrite.Directory", "User.Invite.All", "User.Read.All", "User.ReadBasic.All", "User.ReadWrite", "UserAuthenticationMethod.Read"]
+    graph_api_permissions: ["_A.AW", "_A.CF", "AccessReview.Read.All", "AdministrativeUnit.Read.All", "AgentIdentity.EnableDisable.All", "AgentIdentity.Read.All", "AgentIdentity.UpdateSponsors.All", "Application.Read.All", "AuditLog.Read.All", "AuthenticationContext.Read.All", "BitlockerKey.Read.All", "Contacts.Read", "CrossTenantInformation.ReadBasic.All", "CrossTenantUserProfileSharing.ReadWrite.All", "DelegatedPermissionGrant.Read.All", "Device.EnableDisableAccount.All", "Device.Read.All", "email", "EntitlementManagement.Read.All", "EntitlementMgmt-SubjectAccess.ReadWrite", "Group.Read.All", "Group.ReadWrite.All", "GroupMember.Read.All", "LifecyclePolicies-AgentId.Read.All", "MailboxSettings.ReadWrite", "openid", "Organization.Read.All", "Policy.Read.All", "PrivilegedAssignmentSchedule.ReadWrite.AzureADGroup", "PrivilegedAssignmentSchedule.ReadWrite.EntraAppAuthorization", "PrivilegedAssignmentSchedule.ReadWrite.EntraAppRole", "PrivilegedEligibilitySchedule.Read.AzureADGroup", "PrivilegedEligibilitySchedule.ReadWrite.EntraAppAuthorization", "PrivilegedEligibilitySchedule.ReadWrite.EntraAppRole", "profile", "ProfilePhoto.Read.All", "RoleManagement-Authorization.Read.All", "RoleManagement.Read.Applications", "RoleManagement.Read.Directory", "RoleManagement.ReadWrite.Directory", "RoleManagementPolicy.Read.EntraAppRole", "RoleManagementPolicy.ReadWrite.EntraAppAuthorization", "User.Invite.All", "User.Read.All", "User.ReadBasic.All", "User.ReadWrite", "UserAuthenticationMethod-Policy.Read.All", "UserAuthenticationMethod.Read", "UserAuthMethod-Phone.ReadWrite.All", "UserAuthMethod-QR.ReadWrite.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -5519,7 +5516,7 @@ apps:
   - name: "Microsoft 365 Security and Compliance Center"
     client_id: "80ccca67-54bd-44ab-8625-4b79c4dc7775"
     enabled: "True"
-    graph_api_permissions: ["AgentCollection.Read.Global", "AgentInstance.Read.All", "Application.Read.All", "AppRoleAssignment.ReadWrite.All", "AuditLog.Read.All", "Channel.ReadBasic.All", "ChannelMessage.Send", "DeviceManagementConfiguration.Read.All", "DeviceManagementManagedDevices.Read.All", "DeviceManagementManagedDevices.ReadWrite.All", "Directory.Read.All", "eDiscovery.Read.All", "eDiscovery.ReadWrite.All", "email", "Group.Read.All", "IdentityRiskyAgent.Read.All", "IdentityRiskyUser.Read.All", "InformationProtectionPolicy.Read", "MailboxSettings.Read", "openid", "People.Read.All", "Policy.Read.All", "Policy.ReadWrite.ConditionalAccess", "profile", "Reports.Read.All", "SecurityEvents.ReadWrite.All", "ServiceHealth.Read.All", "ServiceMessage.Read.All", "Sites.Read.All", "User.Read", "User.Read.All"]
+    graph_api_permissions: ["_C.AL", "_C.AO", "AgentCollection.Read.Global", "AgentInstance.Read.All", "Application.Read.All", "AppRoleAssignment.ReadWrite.All", "AuditLog.Read.All", "CaseManagement.Read.All", "Channel.ReadBasic.All", "ChannelMessage.Send", "DeviceManagementConfiguration.Read.All", "DeviceManagementManagedDevices.Read.All", "DeviceManagementManagedDevices.ReadWrite.All", "DeviceManagementScripts.ReadWrite.All", "Directory.Read.All", "eDiscovery.Read.All", "eDiscovery.ReadWrite.All", "email", "Group.Read.All", "IdentityRiskyAgent.Read.All", "IdentityRiskyUser.Read.All", "InformationProtectionPolicy.Read", "MailboxSettings.Read", "NetworkAccess.ReadWrite.All", "openid", "People.Read.All", "Policy.Read.All", "Policy.ReadWrite.AuthenticationMethod", "Policy.ReadWrite.ConditionalAccess", "profile", "Reports.Read.All", "SecurityEvents.ReadWrite.All", "ServiceHealth.Read.All", "ServiceMessage.Read.All", "Sites.Read.All", "User.Read", "User.Read.All", "WindowsUpdates.Read.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -5570,7 +5567,7 @@ apps:
   - name: "Microsoft.Azure.ActiveDirectoryIUX"
     client_id: "bb8f18b0-9c38-48c9-a847-e1ef3af0602d"
     enabled: "True"
-    graph_api_permissions: ["CustomSecAttributeDefinition.Read.All", "CustomSecAttributeDefinition.ReadWrite.All", "email", "MS-RemoteTenantGroups.Read.All", "openid", "Organization.Read.All", "profile", "User.Invite.All", "User.Read.All"]
+    graph_api_permissions: ["_C.AA", "_G.AA", "CustomSecAttributeDefinition.Read.All", "CustomSecAttributeDefinition.ReadWrite.All", "Device.Read.All", "email", "Member.Read.Hidden", "MS-RemoteTenantGroups.Read.All", "openid", "Organization.Read.All", "profile", "User.Invite.All", "User.Read.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -5693,7 +5690,7 @@ apps:
   - name: "ADIbizaUX"
     client_id: "74658136-14ec-4630-ad9b-26e160ff0fc6"
     enabled: "True"
-    graph_api_permissions: ["_C.A6", "_C.AY", "AccessReview.ReadWrite.All", "AgentCollection.Read.All", "AgentCollection.Read.Global", "AgentCollection.Read.Quarantined", "AgentInstance.Read.All", "Application.Read.All", "AuditLog.Read.All", "ChangeManagement.Read.All", "ConsentRequest.Create", "ConsentRequest.Read", "ConsentRequest.ReadApprove.All", "ConsentRequest.ReadWrite.All", "CustomSecAttributeAssignment.Read.All", "CustomSecAttributeAuditLogs.Read.All", "Device-OrganizationalUnit.ReadWrite.All", "Directory.AccessAsUser.All", "Directory.Read.All", "Directory.ReadWrite.All", "Directory.Write.Restricted", "DirectoryRecommendations.Read.All", "DirectoryRecommendations.ReadWrite.All", "Domain.ReadWrite.All", "email", "EntitlementManagement.Read.All", "Group.ReadWrite.All", "HealthMonitoringAlert.ReadWrite.All", "HealthMonitoringAlertConfig.ReadWrite.All", "IdentityProvider.ReadWrite.All", "IdentityRiskEvent.ReadWrite.All", "IdentityRiskyServicePrincipal.ReadWrite.All", "IdentityRiskyUser.ReadWrite.All", "IdentityUserFlow.Read.All", "LifecycleWorkflows.ReadWrite.All", "OnPremDirectorySynchronization.Read.All", "openid", "OrganizationalUnit.ReadWrite.All", "Policy.Read.All", "Policy.Read.IdentityProtection", "Policy.ReadWrite.AuthenticationFlows", "Policy.ReadWrite.AuthenticationMethod", "Policy.ReadWrite.Authorization", "Policy.ReadWrite.ConditionalAccess", "Policy.ReadWrite.ExternalIdentities", "Policy.ReadWrite.IdentityProtection", "Policy.ReadWrite.MobilityManagement", "PrivilegedEligibilitySchedule.Read.AzureADGroup", "profile", "Reports.Read.All", "RoleEligibilitySchedule.Read.Directory", "RoleManagement.ReadWrite.Directory", "SecurityEvents.ReadWrite.All", "TrustFrameworkKeySet.Read.All", "User.Export.All", "User.ReadWrite.All", "UserAuthenticationMethod.ReadWrite.All", "User-OrganizationalUnit.ReadWrite.All"]
+    graph_api_permissions: ["_B.AG", "_C.A6", "_C.AY", "_E.AN", "AccessReview.ReadWrite.All", "AgentCollection.Read.All", "AgentCollection.Read.Global", "AgentCollection.Read.Quarantined", "AgentInstance.Read.All", "AppGalleryIntegrationRequest.ReadArtifact.All", "AppGalleryIntegrationRequest.ReadData.All", "AppGalleryIntegrationRequest.ReadScimTest.All", "AppGalleryIntegrationRequest.ReadSsoTest.All", "AppGalleryIntegrationRequest.ReadWrite", "AppGalleryIntegrationRequest.ReadWriteArtifact.All", "AppGalleryIntegrationRequest.ReadWriteScimTest.All", "AppGalleryIntegrationRequest.ReadWriteSsoTest.All", "AppGalleryIntegrationRequest.Submit", "Application.Read.All", "AuditLog.Read.All", "ChangeManagement.Read.All", "ConsentRequest.Create", "ConsentRequest.Read", "ConsentRequest.ReadApprove.All", "ConsentRequest.ReadWrite.All", "CustomObject.Read.All", "CustomObjectDefinition.Read.All", "CustomSecAttributeAssignment.Read.All", "CustomSecAttributeAuditLogs.Read.All", "Device-OrganizationalUnit.ReadWrite.All", "Directory.AccessAsUser.All", "Directory.Read.All", "Directory.ReadWrite.All", "Directory.Write.Restricted", "DirectoryRecommendations.Read.All", "DirectoryRecommendations.ReadWrite.All", "Domain.ReadWrite.All", "email", "EntitlementManagement.Read.All", "EntitlementManagement.ReadWrite.All", "Group.ReadWrite.All", "HealthMonitoringAlert.ReadWrite.All", "HealthMonitoringAlertConfig.ReadWrite.All", "IdentityDiagnostic.Read.All", "IdentityDiagnostic.StartDiagnosis.All", "IdentityProvider.ReadWrite.All", "IdentityRiskEvent.ReadWrite.All", "IdentityRiskyServicePrincipal.ReadWrite.All", "IdentityRiskyUser.ReadWrite.All", "IdentityUserFlow.Read.All", "LifecycleWorkflows.ReadWrite.All", "LockboxRequest.Read.All", "LockboxRequest.ReadWrite.All", "LockboxSettings.Read.All", "LockboxSettings.ReadWrite.All", "MS-BrandingMigration.ReadWrite.All", "NetworkAccess.ReadWrite.All", "OnPremDirectorySynchronization.Read.All", "openid", "OrganizationalUnit.ReadWrite.All", "Policy.Read.All", "Policy.Read.IdentityProtection", "Policy.ReadWrite.AuthenticationFlows", "Policy.ReadWrite.AuthenticationMethod", "Policy.ReadWrite.Authorization", "Policy.ReadWrite.ConditionalAccess", "Policy.ReadWrite.ExternalIdentities", "Policy.ReadWrite.IdentityProtection", "Policy.ReadWrite.MobilityManagement", "PrivilegedEligibilitySchedule.Read.AzureADGroup", "profile", "Reports.Read.All", "RoleEligibilitySchedule.Read.Directory", "RoleManagement.Read.Applications", "RoleManagement.ReadWrite.Directory", "SecurityAlert.Read.All", "SecurityEvents.ReadWrite.All", "TrustFrameworkKeySet.Read.All", "User-OrganizationalUnit.ReadWrite.All", "User.Export.All", "User.ReadWrite.All", "UserAuthenticationMethod.ReadWrite.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -5853,7 +5850,7 @@ apps:
     broci: ""
     foci: "False"
     reply_addresses:
-      - "urn:ietf:wg:oauth:2.0:oob"
+      - "https://login.microsoftonline.com/androidbroker/com.microsoft.mockltw"
     single_page_app: ""
   - name: "Microsoft Bing Default Search Engine"
     client_id: "1786c5ed-9644-47b2-8aa0-7201292175b6"
@@ -5972,7 +5969,7 @@ apps:
   - name: "Microsoft Power BI"
     client_id: "871c010f-5e61-4fb1-83ac-98610a7e9110"
     enabled: "True"
-    graph_api_permissions: ["Application.Read.All", "Channel.ReadBasic.All", "email", "Files.Read.All", "Files.ReadWrite.All", "Group.Read.All", "openid", "profile", "Sites.FullControl.All", "Sites.Read.All", "Sites.ReadWrite.All", "Team.ReadBasic.All", "User.Read", "User.Read.All"]
+    graph_api_permissions: ["_D.AA", "_E.A3", "_E.AA", "_E.AF", "_G.AA", "_G.AC", "Application.Read.All", "AppRegistration.Create", "Channel.ReadBasic.All", "email", "Files.Read.All", "Files.ReadWrite.All", "Group.Read.All", "openid", "profile", "Sites.FullControl.All", "Sites.Read.All", "Sites.ReadWrite.All", "Team.ReadBasic.All", "User.Read", "User.Read.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -6241,7 +6238,7 @@ apps:
     broci: ""
     foci: "False"
     reply_addresses:
-      - "urn:ietf:wg:oauth:2.0:oob"
+      - "ms-appx-web://Microsoft.AAD.BrokerPlugin/S-1-15-2-1609473798-1231923017-684268153-4268514328-882773646-2760585773-1760938157"
     single_page_app: ""
   - name: "WeveEngine"
     client_id: "3c896ded-22c5-450f-91f6-3d1ef0848f6e"
@@ -6277,7 +6274,7 @@ apps:
   - name: "Yammer Web"
     client_id: "c1c74fed-04c9-4704-80dc-9f79a2e515cb"
     enabled: "True"
-    graph_api_permissions: ["AppCatalog.Read.All", "email", "Files.Read.All", "openid", "profile", "TeamsAppInstallation.ReadForUser"]
+    graph_api_permissions: ["AppCatalog.Read.All", "email", "Files.Read.All", "Group.ReadBasic.All", "openid", "profile", "TeamsAppInstallation.ReadForUser"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -6408,7 +6405,7 @@ apps:
   - name: "My Signins"
     client_id: "19db86c3-b2b9-44cc-b339-36da233a3be2"
     enabled: "True"
-    graph_api_permissions: ["AuditLog.Read.All", "CrossTenantInformation.ReadBasic.All", "Directory.Read.All", "email", "openid", "Policy.Read.All", "profile", "User.Read", "User.RevokeSessions.All"]
+    graph_api_permissions: ["AgentIdentity.Read.All", "AuditLog.Read.All", "CrossTenantInformation.ReadBasic.All", "Directory.Read.All", "email", "openid", "Organization.Read.All", "OrganizationalBranding.Read.All", "Policy.Read.All", "profile", "User.Read", "User.RevokeSessions.All", "UserAuthenticationMethod.Read", "UserAuthenticationMethod.ReadWrite"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -6440,7 +6437,7 @@ apps:
   - name: "Message Recall"
     client_id: "0e90d0b8-039a-4936-a6f4-d25dd510be5d"
     enabled: "True"
-    graph_api_permissions: ["email", "Mail.ReadWrite", "MailboxSettings.Read", "openid", "profile", "User.Read"]
+    graph_api_permissions: ["email", "Mail.ReadWrite", "Mail.Send", "Mail.Send.Shared", "MailboxSettings.Read", "openid", "profile", "User.Read"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -6471,14 +6468,13 @@ apps:
   - name: "Microsoft Azure Active Directory Connect"
     client_id: "cb1056e2-e479-49de-ae31-7812af012ed8"
     enabled: "True"
-    graph_api_permissions: ["Application.ReadWrite.All", "Directory.Read.All", "Domain.ReadWrite.All", "email", "OnPremDirectorySynchronization.ReadWrite.All", "openid", "Organization.ReadWrite.All", "profile"]
+    graph_api_permissions: ["Application.ReadWrite.All", "Directory.Read.All", "Domain.ReadWrite.All", "email", "OnPremDirectorySynchronization.ReadWrite.All", "openid", "Organization.ReadWrite.All", "profile", "Reports.Read.All", "Synchronization.ReadWrite.All"]
     auth_code: "True"
     device_code: "True"
     broci: ""
     foci: "False"
     reply_addresses:
       - "https://login.microsoftonline.com/common/oauth2/nativeclient"
-      - "urn:ietf:wg:oauth:2.0:oob"
     single_page_app: ""
   - name: "Device Management Client"
     client_id: "de50c81f-5f80-4771-b66b-cebd28ccdfc1"
@@ -6494,7 +6490,7 @@ apps:
   - name: "PowerApps - apps.powerapps.com"
     client_id: "3e62f81e-590b-425b-9531-cad6683656cf"
     enabled: "True"
-    graph_api_permissions: ["ChannelMessage.Read.All", "Chat.Create", "Chat.Read", "ChatMessage.Send", "email", "Files.Read.All", "Group.Read.All", "Mail.Read", "openid", "Organization.Read.All", "People.Read", "Presence.Read.All", "profile", "TeamMember.Read.All", "TeamsAppInstallation.ReadWriteAndConsentForChat", "TeamsAppInstallation.ReadWriteForChat", "TeamworkAppSettings.Read.All", "TeamworkTag.Read", "User.Read", "User.Read.All", "User.ReadBasic.All"]
+    graph_api_permissions: ["Channel.ReadBasic.All", "ChannelMessage.Read.All", "Chat.Create", "Chat.Read", "ChatMessage.Send", "email", "Files.Read.All", "Group.Read.All", "Mail.Read", "openid", "Organization.Read.All", "People.Read", "Presence.Read.All", "profile", "TeamMember.Read.All", "TeamsAppInstallation.ReadWriteAndConsentForChat", "TeamsAppInstallation.ReadWriteForChat", "TeamworkAppSettings.Read.All", "TeamworkTag.Read", "User.Read", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: "True"
     broci: ""
@@ -6505,7 +6501,7 @@ apps:
   - name: "make.powerapps.com"
     client_id: "a8f7a65c-f5ba-4859-b2d6-df772c264e9d"
     enabled: "True"
-    graph_api_permissions: ["Application.ReadWrite.All", "email", "Group.Read.All", "openid", "profile", "User.Read", "User.Read.All", "User.ReadBasic.All"]
+    graph_api_permissions: ["_A.AA", "_B.AC", "_C.AA", "_E.AA", "_F.AB", "_G.AA", "_H.AD", "_L.AA", "Application.ReadWrite.All", "Channel.ReadBasic.All", "email", "Group.Read.All", "openid", "profile", "Team.ReadBasic.All", "User.Read", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -6516,13 +6512,13 @@ apps:
   - name: "Microsoft Power Query for Excel"
     client_id: "a672d62c-fc7b-4e81-a576-e60dc46e951d"
     enabled: "True"
-    graph_api_permissions: ["Calendars.ReadWrite", "Calendars.ReadWrite.Shared", "Contacts.ReadWrite", "Contacts.ReadWrite.Shared", "email", "Group.Read.All", "Mail.ReadWrite", "Mail.ReadWrite.Shared", "Mail.Send", "Mail.Send.Shared", "openid", "People.Read", "profile", "user_impersonation"]
+    graph_api_permissions: ["Calendars.Read", "Calendars.Read.Shared", "Calendars.ReadWrite", "Calendars.ReadWrite.Shared", "ChannelMember.Read.All", "ChannelMessage.Read.All", "ChannelSettings.Read.All", "Contacts.Read", "Contacts.Read.Shared", "Contacts.ReadWrite", "Contacts.ReadWrite.Shared", "email", "Group.Read.All", "Mail.Read", "Mail.Read.Shared", "Mail.ReadWrite", "Mail.ReadWrite.Shared", "Mail.Send", "Mail.Send.Shared", "openid", "People.Read", "profile", "Team.ReadBasic.All", "TeamMember.Read.All", "user_impersonation"]
     auth_code: "True"
     device_code: "True"
     broci: ""
     foci: "False"
     reply_addresses:
-      - "http://localhost"
+      - "https://login.microsoftonline.com/common/oauth2/nativeclient"
       - "ms-appx-web://Microsoft.AAD.BrokerPlugin/a672d62c-fc7b-4e81-a576-e60dc46e951d"
     single_page_app: ""
   - name: "Power BI Desktop"
@@ -6550,7 +6546,7 @@ apps:
   - name: "Power Platform Admin Center"
     client_id: "065d9450-1e87-434e-ac2f-69af271549ed"
     enabled: "True"
-    graph_api_permissions: ["Directory.Read.All", "email", "Group.Read.All", "openid", "Organization.Read.All", "profile", "RoleManagement.Read.Directory", "ServiceHealth.Read.All", "Team.ReadBasic.All", "User.Read", "User.Read.All"]
+    graph_api_permissions: ["_B.AR", "Directory.Read.All", "email", "Group.Read.All", "NetworkAccess.Read.All", "NetworkAccess.ReadWrite.All", "openid", "Organization.Read.All", "profile", "RoleManagement.Read.Directory", "ServiceHealth.Read.All", "Team.ReadBasic.All", "User.Read", "User.Read.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -7241,7 +7237,7 @@ apps:
   - name: "Weve"
     client_id: "71a7c376-13e6-4100-968e-92ce98c5d3d2"
     enabled: "True"
-    graph_api_permissions: ["AppCatalog.Read.All", "Calendars.ReadWrite", "Channel.ReadBasic.All", "email", "MailboxSettings.ReadWrite", "openid", "Organization.Read.All", "People.Read", "profile", "User.Read", "User.ReadBasic.All", "user_impersonation"]
+    graph_api_permissions: ["_A.AA", "_B.AC", "_C.AA", "_F.AB", "_H.AD", "_L.AA", "AppCatalog.Read.All", "Calendars.ReadWrite", "Channel.ReadBasic.All", "email", "MailboxSettings.ReadWrite", "Member.Read.Hidden", "openid", "Organization.Read.All", "People.Read", "profile", "user_impersonation", "User.Read", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -7262,7 +7258,7 @@ apps:
   - name: "Micorsoft Azure AppInsightsExtension"
     client_id: "95a5d94c-a1a0-40eb-ac6d-48c5bdee96d5"
     enabled: "True"
-    graph_api_permissions: ["DeviceManagementApps.Read.All", "DeviceManagementConfiguration.Read.All", "DeviceManagementManagedDevices.Read.All", "email", "openid", "Policy.Read.All", "Policy.Read.ConditionalAccess", "profile", "User.Read", "User.ReadBasic.All", "WindowsUpdates.ReadWrite.All"]
+    graph_api_permissions: ["_A.AA", "_B.AC", "_C.AA", "DeviceManagementApps.Read.All", "DeviceManagementConfiguration.Read.All", "DeviceManagementManagedDevices.Read.All", "email", "openid", "Policy.Read.All", "Policy.Read.ConditionalAccess", "profile", "User.Read", "User.ReadBasic.All", "WindowsUpdates.ReadWrite.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -7273,7 +7269,7 @@ apps:
   - name: "Microsoft_Azure_Policy"
     client_id: "c556d48a-da18-409b-817d-064fa2fcf2a0"
     enabled: "True"
-    graph_api_permissions: ["CrossTenantUserProfileSharing.Read.All", "CrossTenantUserProfileSharing.ReadWrite.All", "Directory.Read.All", "email", "openid", "profile", "User.Export.All", "User.Read.All"]
+    graph_api_permissions: ["_A.AA", "CrossTenantUserProfileSharing.Read.All", "CrossTenantUserProfileSharing.ReadWrite.All", "Directory.Read.All", "email", "openid", "profile", "User.Export.All", "User.Read.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -7401,7 +7397,7 @@ apps:
   - name: "Microsoft_Azure_Compute"
     client_id: "03ec703c-bc36-4494-b8ab-73e84692823a"
     enabled: "True"
-    graph_api_permissions: ["Application.Read.All", "email", "openid", "profile"]
+    graph_api_permissions: ["_G.AA", "_G.AL", "Application.Read.All", "email", "openid", "profile"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -7454,7 +7450,7 @@ apps:
   - name: "Microsoft_Azure_Storage"
     client_id: "691458b9-1327-4635-9f55-ed83a7f1b41c"
     enabled: "True"
-    graph_api_permissions: ["Application.Read.All", "email", "GroupMember.Read.All", "openid", "profile", "User.ReadBasic.All"]
+    graph_api_permissions: ["_A.AA", "_C.AA", "_E.AA", "_G.AA", "Application.Read.All", "email", "GroupMember.Read.All", "openid", "profile", "User.ReadBasic.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -7465,7 +7461,7 @@ apps:
   - name: "Microsoft_Azure_Kailani"
     client_id: "e4d7e78b-c114-46b9-9880-29f5b1cf4a90"
     enabled: "True"
-    graph_api_permissions: ["Application.ReadWrite.All", "email", "openid", "profile"]
+    graph_api_permissions: ["_G.AA", "Application.ReadWrite.All", "email", "openid", "profile"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -7486,7 +7482,7 @@ apps:
   - name: "Azure Arc UX Client - Public Cloud"
     client_id: "55850760-a3b5-4271-8dd2-3cd9c4d05869"
     enabled: "True"
-    graph_api_permissions: ["Application.ReadWrite.All", "email", "openid", "profile"]
+    graph_api_permissions: ["_H.AD", "Application.ReadWrite.All", "email", "openid", "profile"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -7507,7 +7503,7 @@ apps:
   - name: "Microsoft_Azure_FileStorage"
     client_id: "ac212b6d-5417-46fc-a74a-bd8f1ccf3501"
     enabled: "True"
-    graph_api_permissions: ["mail", "GroupMember.Read.All", "openid", "profile", "User.Read.All"]
+    graph_api_permissions: ["email", "GroupMember.Read.All", "openid", "profile", "User.Read.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -7570,7 +7566,7 @@ apps:
   - name: "Microsoft_AAD_RegisteredApps"
     client_id: "18ed3507-a475-4ccb-b669-d66bc9f2a36e"
     enabled: "True"
-    graph_api_permissions: ["AdministrativeUnit.Read.All", "AdministrativeUnit.ReadWrite.All", "AgentCardManifest.Read.All", "AgentCardManifest.ReadWrite.All", "AgentCollection.Read.All", "AgentCollection.Read.Global", "AgentCollection.Read.Quarantined", "AgentCollection.ReadWrite.All", "AgentCollection.ReadWrite.Global", "AgentCollection.ReadWrite.Quarantined", "AgentIdentity.EnableDisable.All", "AgentIdentity.Read.All", "AgentIdentity.ReadWrite.All", "AgentIdentityBlueprintPrincipal.EnableDisable.All", "AgentIdentityBlueprintPrincipal.Read.All", "AgentIdentityBlueprintPrincipal.ReadWrite.All", "AgentInstance.Read.All", "AgentInstance.ReadWrite.All", "Application.Read.All", "Application.ReadWrite.All", "AppRoleAssignment.ReadWrite.All", "AuditLog.Read.All", "CrossTenantInformation.ReadBasic.All", "CustomSecAttributeAssignment.ReadWrite.All", "CustomSecAttributeDefinition.ReadWrite.All", "DelegatedPermissionGrant.ReadWrite.All", "Domain.Read.All", "email", "IdentityProvider.ReadWrite.All", "openid", "Organization.ReadWrite.All", "Policy.Read.All", "Policy.ReadWrite.ApplicationConfiguration", "Policy.ReadWrite.MobilityManagement", "profile", "RoleManagement.ReadWrite.Directory", "User.Read", "User.Read.All"]
+    graph_api_permissions: ["AdministrativeUnit.Read.All", "AdministrativeUnit.ReadWrite.All", "AgentCardManifest.Read.All", "AgentCardManifest.ReadWrite.All", "AgentCollection.Read.All", "AgentCollection.Read.Global", "AgentCollection.Read.Quarantined", "AgentCollection.ReadWrite.All", "AgentCollection.ReadWrite.Global", "AgentCollection.ReadWrite.Quarantined", "AgentIdentity.Create.All", "AgentIdentity.EnableDisable.All", "AgentIdentity.Read.All", "AgentIdentity.ReadWrite.All", "AgentIdentityBlueprint.Create", "AgentIdentityBlueprint.ReadWrite.All", "AgentIdentityBlueprintPrincipal.Create", "AgentIdentityBlueprintPrincipal.EnableDisable.All", "AgentIdentityBlueprintPrincipal.Read.All", "AgentIdentityBlueprintPrincipal.ReadWrite.All", "AgentInstance.Read.All", "AgentInstance.ReadWrite.All", "AppFederatedCredentialIssuers.ReadWrite.All", "AppGalleryIntegrationRequest.ReadWrite", "AppGalleryIntegrationRequest.ReadWriteArtifact.All", "AppGalleryIntegrationRequest.ReadWriteScimTest.All", "AppGalleryIntegrationRequest.ReadWriteSsoTest.All", "Application.Read.All", "Application.ReadWrite.All", "AppRoleAssignment.ReadWrite.All", "AuditLog.Read.All", "CrossTenantInformation.ReadBasic.All", "CustomSecAttributeAssignment.ReadWrite.All", "CustomSecAttributeDefinition.ReadWrite.All", "DelegatedPermissionGrant.ReadWrite.All", "Domain.Read.All", "email", "IdentityProvider.ReadWrite.All", "openid", "Organization.ReadWrite.All", "Policy.Read.All", "Policy.ReadWrite.ApplicationConfiguration", "Policy.ReadWrite.MobilityManagement", "PreAuthorizationGrant.Read.All", "profile", "RoleManagement.ReadWrite.Directory", "User.Read", "User.Read.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -7581,7 +7577,7 @@ apps:
   - name: "Microsoft_Entra_PM"
     client_id: "7655d621-3c86-4a9a-92f8-47244f293b55"
     enabled: "True"
-    graph_api_permissions: ["Application.Read.All", "AuthorizationSystem.ReadWrite.All", "AuthorizationSystemInventory.Read.All", "AuthorizationSystemOnboarding.ReadWrite.All", "email", "openid", "Organization.Read.All", "PermissionsManagementOnboarding.ReadWrite.All", "profile"]
+    graph_api_permissions: ["email", "EntitlementManagement.ReadWrite.All", "openid", "profile", "User.Read"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -7597,8 +7593,7 @@ apps:
     device_code: ""
     broci: "True"
     foci: "False"
-    reply_addresses:
-      - "0"
+    reply_addresses: []
     single_page_app: ""
   - name: "Microsoft_Azure_EdgeGateway"
     client_id: "344280e9-601d-401c-b634-416276f48e3e"
@@ -7624,7 +7619,7 @@ apps:
   - name: "Liftr-IN-FPA-PRT-AME"
     client_id: "f4548917-4954-4f48-8185-cd902208436c"
     enabled: "True"
-    graph_api_permissions: ["Application.Read.All", "email", "openid", "profile", "User.Read"]
+    graph_api_permissions: ["email", "openid", "profile", "User.Read"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -7645,7 +7640,7 @@ apps:
   - name: "Microsoft_Azure_PIMCommon"
     client_id: "50aaa389-5a33-4f1a-91d7-2c45ecd8dac8"
     enabled: "True"
-    graph_api_permissions: ["Application.Read.All", "AuditLog.Read.All", "CustomSecAttributeDefinition.Read.All", "email", "Group.Read.All", "openid", "Policy.Read.ConditionalAccess", "PrivilegedAccess.ReadWrite.AzureAD", "PrivilegedAssignmentSchedule.ReadWrite.AzureADGroup", "PrivilegedEligibilitySchedule.ReadWrite.AzureADGroup", "profile", "ResourcePolicyAssignment.ReadWrite.All", "ResourcePolicyDefinition.ReadWrite.All", "RoleAssignmentSchedule.ReadWrite.Directory", "RoleEligibilitySchedule.ReadWrite.Directory", "RoleManagement.Read.Applications", "RoleManagement.Read.Directory", "RoleManagementAlert.ReadWrite.Directory", "RoleManagementPolicy.ReadWrite.AzureADGroup", "RoleManagementPolicy.ReadWrite.Directory"]
+    graph_api_permissions: ["_K.AA", "Application.Read.All", "AuditLog.Read.All", "CustomSecAttributeDefinition.Read.All", "email", "GroupMember.Read.All", "openid", "Policy.Read.ConditionalAccess", "PrivilegedAccess-CustomExt.ReadWrite.All", "PrivilegedAccess.ReadWrite.AzureAD", "PrivilegedAssignmentSchedule.ReadWrite.AzureADGroup", "PrivilegedAssignmentSchedule.ReadWrite.EntraAppAuthorization", "PrivilegedEligibilitySchedule.ReadWrite.AzureADGroup", "PrivilegedEligibilitySchedule.ReadWrite.EntraAppAuthorization", "profile", "ResourcePolicyAssignment.ReadWrite.All", "ResourcePolicyDefinition.ReadWrite.All", "RoleAssignmentSchedule.ReadWrite.Directory", "RoleEligibilitySchedule.ReadWrite.Directory", "RoleManagement-Authorization.ReadWrite.All", "RoleManagement.Read.Applications", "RoleManagement.Read.Directory", "RoleManagement.ReadWrite.Applications", "RoleManagementAlert.ReadWrite.Directory", "RoleManagementPolicy.ReadWrite.AzureADGroup", "RoleManagementPolicy.ReadWrite.Directory", "RoleManagementPolicy.ReadWrite.EntraAppAuthorization"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -7667,7 +7662,7 @@ apps:
   - name: "Microsoft_Azure_ELMAdmin"
     client_id: "0032593d-6a05-4847-8ca4-4b6220ed2a1e"
     enabled: "True"
-    graph_api_permissions: ["AccessReview.Read.All", "AccessReview.ReadWrite.All", "Application.Read.All", "AuditLog.Read.All", "AuthenticationContext.Read.All", "DirectoryRecommendations.Read.All", "email", "EntitlementManagement.Read.All", "EntitlementManagement.ReadWrite.All", "Insights-GuestActivity.Read.All", "Insights-GuestActivity.ReadBasic.All", "LifecycleManagement.ReadWrite.All", "LifecycleWorkflows.ReadWrite.All", "openid", "profile", "RoleManagement.Read.Directory"]
+    graph_api_permissions: ["_C.AA", "_E.AA", "_H.AD", "AccessReview.Read.All", "AccessReview.ReadWrite.All", "Application.Read.All", "AuditLog.Read.All", "AuthenticationContext.Read.All", "DirectoryRecommendations.Read.All", "email", "EntitlementManagement.Read.All", "EntitlementManagement.ReadWrite.All", "Group.ReadBasic.All", "Insights-GuestActivity.Read.All", "Insights-GuestActivity.ReadBasic.All", "LicenseAssignment.Read.All", "LifecycleManagement.ReadWrite.All", "LifecyclePolicies-Guests.Read.All", "LifecycleWorkflows.ReadWrite.All", "openid", "profile", "RoleManagement.Read.Directory", "Synchronization.Read.All", "User.EnableDisableAccount.All", "User.Read.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -7825,7 +7820,7 @@ apps:
   - name: "Microsoft_AAD_LifecycleManagement"
     client_id: "7b32d65b-837b-4365-931e-3c87e8a860aa"
     enabled: "True"
-    graph_api_permissions: ["AdministrativeUnit.Read.All", "Application.Read.All", "CustomSecAttributeAssignment.Read.All", "CustomSecAttributeDefinition.Read.All", "email", "EntitlementManagement.Read.All", "GroupMember.Read.All", "LifecycleManagement.ReadWrite.All", "LifecycleWorkflows.ReadWrite.All", "openid", "Organization.Read.All", "Policy.Read.All", "profile", "RoleManagement.Read.Directory", "User.Read.All", "User.ReadBasic.All"]
+    graph_api_permissions: ["AdministrativeUnit.Read.All", "Application.Read.All", "CustomSecAttributeAssignment.Read.All", "CustomSecAttributeDefinition.Read.All", "email", "EntitlementManagement.Read.All", "GroupMember.Read.All", "LifecycleManagement.ReadWrite.All", "LifecyclePolicies-AgentId.ReadWrite.All", "LifecyclePolicies-Guests.ReadWrite.All", "LifecycleWorkflows.ReadWrite.All", "openid", "Organization.Read.All", "Policy.Read.All", "profile", "RoleManagement.Read.Directory", "User.Read.All", "User.ReadBasic.All", "VerifiedId-Profile.Read.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -7846,7 +7841,7 @@ apps:
   - name: "Liftr-DT-FPA-PRT-AME"
     client_id: "80ee910d-3412-4991-aa65-1380520e5ff9"
     enabled: "True"
-    graph_api_permissions: ["Application.Read.All", "Domain.Read.All", "email", "openid", "profile", "User.Read"]
+    graph_api_permissions: ["Application.Read.All", "Domain.Read.All", "email", "openid", "Organization.Read.All", "profile", "User.Read"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -7920,7 +7915,7 @@ apps:
   - name: "Microsoft_AAD_GTM"
     client_id: "4ba4d253-8ed1-42a1-b919-37fad5e5f06e"
     enabled: "True"
-    graph_api_permissions: ["email", "openid", "profile", "User.Invite.All"]
+    graph_api_permissions: ["_A.AA", "_B.AC", "_C.AA", "_E.AA", "_G.AA", "_H.AD", "email", "openid", "profile", "User.Invite.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -7941,7 +7936,7 @@ apps:
   - name: "ZTNA UX Portal"
     client_id: "ea8d014c-04e7-450c-a600-eaa309e42309"
     enabled: "True"
-    graph_api_permissions: ["Application.ReadWrite.All", "Directory.ReadWrite.All", "DirectoryRecommendations.ReadWrite.All", "email", "openid", "Policy.Read.All", "Policy.ReadWrite.ConditionalAccess", "profile", "SecurityEvents.ReadWrite.All"]
+    graph_api_permissions: ["Application.ReadWrite.All", "Directory.ReadWrite.All", "DirectoryRecommendations.ReadWrite.All", "email", "NetworkAccess-Reports.Read.All", "NetworkAccess.ReadWrite.All", "openid", "Policy.Read.All", "Policy.ReadWrite.ConditionalAccess", "profile", "SecurityEvents.ReadWrite.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -8003,7 +7998,7 @@ apps:
   - name: "Microsoft_Azure_Security_Insights"
     client_id: "bda0771f-b6df-474a-b348-26a308db88aa"
     enabled: "True"
-    graph_api_permissions: ["Application.Read.All", "Application.ReadWrite.All", "email", "GroupMember.Read.All", "openid", "profile", "User.Read.All", "User.ReadBasic.All"]
+    graph_api_permissions: ["_A.AA", "_B.AC", "_C.AA", "_E.AA", "_G.AA", "_H.AD", "_L.AA", "Application.Read.All", "Application.ReadWrite.All", "email", "GroupMember.Read.All", "openid", "profile", "User.Read.All", "User.ReadBasic.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -8035,7 +8030,7 @@ apps:
   - name: "Microsoft_AAD_UsersAndTenants"
     client_id: "f9885e6e-6f74-46b3-b595-350157a27541"
     enabled: "True"
-    graph_api_permissions: ["AdministrativeUnit.ReadWrite.All", "AuditLog.Read.All", "Directory.AccessAsUser.All", "Directory.Write.Restricted", "email", "EventListener.ReadWrite.All", "IdentityRiskyUser.Read.All", "openid", "Organization.Read.All", "Policy.ReadWrite.Authorization", "profile", "PublicKeyInfrastructure.ReadWrite.All", "RoleEligibilitySchedule.Read.Directory", "User.EnableDisableAccount.All", "User.ReadWrite.All"]
+    graph_api_permissions: ["AdministrativeUnit.ReadWrite.All", "AuditLog.Read.All", "BackupRestore-Configuration.Read.All", "Directory.AccessAsUser.All", "Directory.Write.Restricted", "email", "EventListener.ReadWrite.All", "IdentityRiskyUser.Read.All", "MS-BrandingMigration.ReadWrite.All", "openid", "Organization.Read.All", "Policy.ReadWrite.Authorization", "profile", "PublicKeyInfrastructure.ReadWrite.All", "RoleEligibilitySchedule.Read.Directory", "User.EnableDisableAccount.All", "User.ReadWrite.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -8066,7 +8061,7 @@ apps:
   - name: "Microsoft Defender for APIs UI"
     client_id: "61e987ea-ea8c-4843-903e-1b58e57b7ab1"
     enabled: "True"
-    graph_api_permissions: ["email", "GroupMember.Read.All", "openid", "profile", "User.ReadBasic.All"]
+    graph_api_permissions: ["email", "openid", "profile", "User.ReadBasic.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -8120,7 +8115,7 @@ apps:
   - name: "CPIM Portal Extension Application"
     client_id: "aced0c89-3b79-49ab-b2f1-27b67d3f0054"
     enabled: "True"
-    graph_api_permissions: ["Application.ReadWrite.All", "CustomAuthenticationExtension.ReadWrite.All", "email", "EntitlementManagement.Read.All", "EventListener.ReadWrite.All", "IdentityProvider.ReadWrite.All", "IdentityRiskEvent.Read.All", "IdentityUserFlow.Read.All", "IdentityUserFlow.ReadWrite.All", "Insights-UserMetrics.Read.All", "openid", "Organization.ReadWrite.All", "Policy.Read.All", "profile", "RiskPreventionProviders.ReadWrite.All", "SignInIdentifier.ReadWrite.All"]
+    graph_api_permissions: ["Application.ReadWrite.All", "CustomAuthenticationExtension.ReadWrite.All", "DelegatedPermissionGrant.Read.All", "email", "EntitlementManagement.Read.All", "EventListener.ReadWrite.All", "IdentityProvider.ReadWrite.All", "IdentityRiskEvent.Read.All", "IdentityUserFlow.Read.All", "IdentityUserFlow.ReadWrite.All", "Insights-UserMetrics.Read.All", "openid", "Organization.ReadWrite.All", "Policy.Read.All", "Policy.ReadWrite.ApplicationConfiguration", "Policy.ReadWrite.ConditionalAccess", "profile", "RiskPreventionProviders.ReadWrite.All", "SignInIdentifier.ReadWrite.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -8131,7 +8126,7 @@ apps:
   - name: "Identity Protection UX"
     client_id: "7f7ba5f2-edd7-4b6c-af4c-f48dfb5beec5"
     enabled: "True"
-    graph_api_permissions: ["AgentIdentity.EnableDisable.All", "Application.Read.All", "Application.ReadWrite.All", "AuditLog.Read.All", "email", "IdentityRiskEvent.ReadWrite.All", "IdentityRiskyAgent.ReadWrite.All", "IdentityRiskyServicePrincipal.ReadWrite.All", "IdentityRiskyUser.ReadWrite.All", "openid", "Organization.Read.All", "Policy.Read.All", "Policy.ReadWrite.ConditionalAccess", "Policy.ReadWrite.IdentityProtection", "profile", "RoleManagement.Read.Directory", "ThreatHunting.Read.All", "User.EnableDisableAccount.All", "User.Read.All", "User.RevokeSessions.All", "UserAuthenticationMethod.ReadWrite.All"]
+    graph_api_permissions: ["AgentIdentity.EnableDisable.All", "Application.Read.All", "Application.ReadWrite.All", "AuditLog.Read.All", "email", "IdentityRiskEvent.ReadWrite.All", "IdentityRiskyAgent.ReadWrite.All", "IdentityRiskyServicePrincipal.ReadWrite.All", "IdentityRiskyUser.ReadWrite.All", "openid", "Organization.Read.All", "Policy.Read.All", "Policy.ReadWrite.ConditionalAccess", "Policy.ReadWrite.IdentityProtection", "profile", "RoleManagement.Read.Directory", "User.EnableDisableAccount.All", "User.Read.All", "User.RevokeSessions.All", "UserAuthenticationMethod.ReadWrite.All", "UserAuthMethod-Password.ReadWrite.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -8152,7 +8147,7 @@ apps:
   - name: "Microsoft_Azure_ActivityLog"
     client_id: "2c879423-ba8d-42b3-9fb4-a444905905c4"
     enabled: "True"
-    graph_api_permissions: ["Application.Read.All", "email", "GroupMember.Read.All", "openid", "profile", "User.Read.All"]
+    graph_api_permissions: ["_A.AA", "_B.AC", "_C.AA", "_G.AA", "Application.Read.All", "email", "GroupMember.Read.All", "openid", "profile", "User.Read.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -8194,7 +8189,7 @@ apps:
   - name: "Websites Extensions"
     client_id: "f64071b9-a79b-4655-9dad-3b3535e00b84"
     enabled: "True"
-    graph_api_permissions: ["Application.ReadWrite.All", "email", "openid", "Policy.Read.All", "profile"]
+    graph_api_permissions: ["_E.A3", "_E.AF", "_G.AF", "Application.ReadWrite.All", "email", "openid", "Policy.Read.All", "profile"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -8226,7 +8221,7 @@ apps:
   - name: "Microsoft_AAD_Devices"
     client_id: "c40dfea8-483f-469b-aafe-642149115b3a"
     enabled: "True"
-    graph_api_permissions: ["AdministrativeUnit.Read.All", "AdministrativeUnit.ReadWrite.All", "Application-RemoteDesktopConfig.ReadWrite.All", "AuditLog.Read.All", "BitlockerKey.Read.All", "Device.Read.All", "DeviceLocalCredential.Read.All", "DeviceManagementManagedDevices.Read.All", "Device-OrganizationalUnit.ReadWrite.All", "email", "GroupMember.Read.All", "openid", "OrganizationalUnit.Read.All", "Policy.Read.All", "Policy.ReadWrite.Authorization", "Policy.ReadWrite.DeviceConfiguration", "profile", "User.ReadBasic.All"]
+    graph_api_permissions: ["AdministrativeUnit.Read.All", "AdministrativeUnit.ReadWrite.All", "AdministrativeUnitMember.ReadWrite.All", "Application-RemoteDesktopConfig.ReadWrite.All", "AuditLog.Read.All", "BitlockerKey.Read.All", "Device-OrganizationalUnit.ReadWrite.All", "Device.Read.All", "DeviceLocalCredential.Read.All", "DeviceManagementManagedDevices.Read.All", "email", "GroupMember.Read.All", "openid", "Policy.Read.All", "Policy.ReadWrite.Authorization", "Policy.ReadWrite.DeviceConfiguration", "profile", "User.ReadBasic.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -8247,7 +8242,7 @@ apps:
   - name: "Microsoft_Azure_Monitoring"
     client_id: "46ff7383-ea2d-47fe-92a0-e27d7dc2fee9"
     enabled: "True"
-    graph_api_permissions: ["Application.Read.All", "email", "openid", "Organization.Read.All", "profile", "User.Read", "User.Read.All"]
+    graph_api_permissions: ["_A.AA", "_B.AC", "_G.AA", "Application.Read.All", "email", "openid", "Organization.Read.All", "profile", "User.Read", "User.Read.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -8321,7 +8316,7 @@ apps:
   - name: "AzurePortal Console App"
     client_id: "b677c290-cf4b-4a8e-a60e-91ba650a4abe"
     enabled: "True"
-    graph_api_permissions: ["AuditLog.Read.All", "Directory.ReadWrite.All", "email", "Group.ReadWrite.All", "IdentityProvider.ReadWrite.All", "openid", "profile", "User.Invite.All"]
+    graph_api_permissions: ["AppCatalog.Read.All", "AuditLog.Read.All", "Channel.Create", "Channel.ReadBasic.All", "ChannelMember.ReadWrite.All", "Directory.ReadWrite.All", "email", "Group.ReadWrite.All", "IdentityProvider.ReadWrite.All", "openid", "profile", "Team.Create", "Team.ReadBasic.All", "TeamSettings.ReadWrite.All", "User.Invite.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -8382,7 +8377,7 @@ apps:
   - name: "Capri"
     client_id: "5b0b1829-551e-44c8-ab85-e37f2437eb63"
     enabled: "True"
-    graph_api_permissions: ["Application.Read.All", "DelegatedPermissionGrant.Read.All", "email", "GroupMember.Read.All", "openid", "Organization.Read.All", "Policy.Read.All", "Policy.ReadWrite.AuthenticationMethod", "profile", "RoleManagement.Read.Directory", "User.Read.All", "UserAuthenticationMethod.ReadWrite.All", "VerifiedId-Profile.ReadWrite.All"]
+    graph_api_permissions: ["_A.BM", "Application.Read.All", "AuditLog.Read.All", "CredentialProvenance.ReadWrite.All", "DelegatedPermissionGrant.Read.All", "email", "GroupMember.Read.All", "IdentityVerification.ReadWrite.All", "openid", "Organization.Read.All", "Policy.Read.All", "Policy.ReadWrite.AuthenticationMethod", "Policy.ReadWrite.Recovery", "profile", "RoleManagement.Read.Directory", "User.Read.All", "User.RevokeSessions.All", "UserAuthenticationMethod.ReadWrite.All", "VerifiedId-Profile.ReadWrite.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -8393,7 +8388,7 @@ apps:
   - name: "Microsoft_AAD_DomainServices"
     client_id: "721b7c62-eec0-4d88-9b77-5e7c15e210a8"
     enabled: "True"
-    graph_api_permissions: ["Application.ReadWrite.All", "AppRoleAssignment.ReadWrite.All", "Directory.Read.All", "email", "Group.ReadWrite.All", "openid", "Organization.Read.All", "profile"]
+    graph_api_permissions: ["_A.BP", "_B.BQ", "_C.AF", "_G.AB", "_G.AC", "_G.AG", "_G.AL", "Application.ReadWrite.All", "AppRoleAssignment.ReadWrite.All", "Directory.Read.All", "email", "Group.ReadWrite.All", "openid", "Organization.Read.All", "profile"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -8478,7 +8473,7 @@ apps:
   - name: "Microsoft Azure Batch Portal Extension"
     client_id: "0fac0caa-efd0-46cc-a6df-945f8c5eae54"
     enabled: "True"
-    graph_api_permissions: ["email", "openid", "profile", "user_impersonation"]
+    graph_api_permissions: ["_G.AA", "email", "openid", "profile"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -8500,7 +8495,7 @@ apps:
   - name: "Windows 365 Ibiza Extension"
     client_id: "69cc3193-b6c4-4172-98e5-ed0f38ab3ff8"
     enabled: "True"
-    graph_api_permissions: ["Application.Read.All", "AuthenticationContext.Read.All", "CloudPC.ReadWrite.All", "DeviceManagementApps.Read.All", "DeviceManagementConfiguration.Read.All", "DeviceManagementRBAC.Read.All", "email", "Group.Read.All", "GroupMember.Read.All", "openid", "Organization.Read.All", "profile", "User.Read.All"]
+    graph_api_permissions: ["Application.Read.All", "AuthenticationContext.Read.All", "CloudPC.ReadWrite.All", "DeviceManagementApps.Read.All", "DeviceManagementConfiguration.Read.All", "DeviceManagementRBAC.Read.All", "email", "Group.Read.All", "Group.ReadWrite.All", "GroupMember.Read.All", "openid", "Organization.Read.All", "Policy.Read.All", "profile", "Sites.Read.All", "User.Read.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -8543,7 +8538,7 @@ apps:
   - name: "Microsoft_Azure_RecoveryServices"
     client_id: "20a3058f-cd75-4115-8166-83f8c3767069"
     enabled: "True"
-    graph_api_permissions: ["Application.Read.All", "email", "openid", "profile", "User.Read"]
+    graph_api_permissions: ["_G.AA", "_G.AC", "_G.AL", "Application.Read.All", "email", "openid", "profile", "User.Read"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -8585,7 +8580,7 @@ apps:
   - name: "Microsoft_Azure_Education"
     client_id: "01941e19-f441-4835-b4a0-546a1da6d99c"
     enabled: "True"
-    graph_api_permissions: ["Directory.Read.All", "email", "openid", "profile", "User.Invite.All", "User.Read", "User.Read.All"]
+    graph_api_permissions: ["_A.AA", "_H.AD", "Directory.Read.All", "email", "openid", "profile", "User.Invite.All", "User.Read", "User.Read.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -8767,7 +8762,7 @@ apps:
   - name: "Microsoft_Azure_WVD"
     client_id: "21ff6926-4d49-46ea-a34e-e9937fd65fea"
     enabled: "True"
-    graph_api_permissions: ["AuthenticationContext.Read.All", "email", "Group.Read.All", "GroupMember.Read.All", "openid", "profile", "RoleManagement.ReadWrite.Directory", "User.Read.All"]
+    graph_api_permissions: ["_L.AA", "AuthenticationContext.Read.All", "email", "Group.Read.All", "GroupMember.Read.All", "openid", "profile", "RoleManagement.ReadWrite.Directory", "User.Read.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -8799,7 +8794,7 @@ apps:
   - name: "Microsoft Intune portal extension"
     client_id: "5926fc8e-304e-4f59-8bed-58ca97cc39a4"
     enabled: "True"
-    graph_api_permissions: ["CloudPC.Read.All", "CloudPC.ReadWrite.All", "DeviceManagementApps.ReadWrite.All", "DeviceManagementCloudCA.Read.All", "DeviceManagementCloudCA.ReadWrite.All", "DeviceManagementConfiguration.ReadWrite.All", "DeviceManagementManagedDevices.PrivilegedOperations.All", "DeviceManagementManagedDevices.ReadWrite.All", "DeviceManagementRBAC.ReadWrite.All", "DeviceManagementScripts.ReadWrite.All", "DeviceManagementServiceConfiguration.ReadWrite.All", "Directory.AccessAsUser.All", "email", "openid", "profile"]
+    graph_api_permissions: ["CloudPC.Read.All", "CloudPC.ReadWrite.All", "DeviceManagementApps.ReadWrite.All", "DeviceManagementCloudCA.Read.All", "DeviceManagementCloudCA.ReadWrite.All", "DeviceManagementConfiguration.ReadWrite.All", "DeviceManagementManagedDevices.PrivilegedOperations.All", "DeviceManagementManagedDevices.ReadWrite.All", "DeviceManagementRBAC.ReadWrite.All", "DeviceManagementScripts.ReadWrite.All", "DeviceManagementServiceConfiguration.ReadWrite.All", "Directory.AccessAsUser.All", "email", "openid", "profile", "User.Read.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -8852,7 +8847,7 @@ apps:
   - name: "Microsoft_Print_Extension"
     client_id: "90c17bc4-8398-44d4-9b47-89ed4ea32d25"
     enabled: "True"
-    graph_api_permissions: ["email", "Group.Read.All", "openid", "PrintAlertSettings.ReadWrite.All", "PrintConnector.Read.All", "Printer.FullControl.All", "PrinterShare.ReadWrite.All", "PrintJob.ReadWrite.All", "PrintSettings.ReadWrite.All", "profile", "PullPrintPrinter.FullControl.All", "PullPrintQueue.FullControl.All", "Reports.Read.All", "User.ReadBasic.All"]
+    graph_api_permissions: ["_A.AA", "_C.AA", "_F.AB", "_H.AD", "email", "Group.Read.All", "openid", "PrintAlertSettings.ReadWrite.All", "PrintConnector.Read.All", "Printer.FullControl.All", "PrinterShare.ReadWrite.All", "PrintJob.ReadWrite.All", "PrintSettings.ReadWrite.All", "profile", "PullPrintPrinter.FullControl.All", "PullPrintQueue.FullControl.All", "Reports.Read.All", "User.ReadBasic.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -9734,7 +9729,7 @@ apps:
   - name: "Power Automate Desktop For Windows"
     client_id: "386ce8c0-7421-48c9-a1df-2a532400339f"
     enabled: "True"
-    graph_api_permissions: ["Contacts.Read", "email", "openid", "People.Read", "profile", "RoleManagement.Read.Directory", "User.Read", "User.Read.All", "User.ReadBasic.All"]
+    graph_api_permissions: ["Contacts.Read", "email", "openid", "People.Read", "profile", "RoleManagement.Read.Directory", "SensitivityLabel.Read", "User.Read", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: "True"
     broci: ""
@@ -9867,7 +9862,7 @@ apps:
   - name: "Universal Print PS Module"
     client_id: "aad98258-6bb0-44ed-a095-21506dfb68fe"
     enabled: "True"
-    graph_api_permissions: ["email", "GroupMember.Read.All", "openid", "PrintConnector.ReadWrite.All", "Printer.FullControl.All", "PrinterShare.ReadWrite.All", "PrintJob.ReadBasic.All", "profile", "Reports.Read.All", "User.Read", "User.ReadBasic.All"]
+    graph_api_permissions: ["email", "GroupMember.Read.All", "openid", "PrintConnector.ReadWrite.All", "Printer.FullControl.All", "PrinterShare.ReadWrite.All", "PrintJob.ReadBasic.All", "profile", "Reports.Read.All", "User.Read", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: "True"
     broci: ""
@@ -9878,7 +9873,7 @@ apps:
   - name: "Visual Studio Code"
     client_id: "aebc6443-996d-45c2-90f0-388ff96faa56"
     enabled: "True"
-    graph_api_permissions: ["email", "Mail.Send", "openid", "profile", "Tasks.ReadWrite", "User.Read", "User.ReadBasic.All"]
+    graph_api_permissions: ["EduCurricula.Read", "EduRoster.ReadBasic", "email", "Mail.Send", "openid", "profile", "Tasks.ReadWrite", "User.Read", "User.Read.All", "User.ReadBasic.All", "User.ReadWrite", "WindowsUpdates.Read.All"]
     auth_code: "True"
     device_code: "True"
     broci: ""
@@ -9970,7 +9965,7 @@ apps:
     broci: ""
     foci: "False"
     reply_addresses:
-      - "http://localhost"
+      - "ms-appx-web://Microsoft.AAD.BrokerPlugIn/S-1-15-2-4234924467-3963199177-1623101979-1436672056-3225247549-2236434604-2583156583"
     single_page_app: ""
   - name: "Microsoft Exchange Message Tracking Service"
     client_id: "6326e366-9d6d-4c70-b22a-34c7ea72d73d"
@@ -10116,7 +10111,7 @@ apps:
   - name: "Reading Assignments"
     client_id: "22d27567-b3f0-4dc2-9ec2-46ed368ba538"
     enabled: "True"
-    graph_api_permissions: ["EduAssignments.ReadBasic", "email", "Files.ReadWrite.All", "GroupMember.Read.All", "Notes.Read.All", "openid", "profile", "Sites.Manage.All", "Sites.ReadWrite.All", "Team.ReadBasic.All", "User.Read", "User.ReadBasic.All"]
+    graph_api_permissions: ["EduAssignments.ReadBasic", "email", "Files.ReadWrite.All", "GroupMember.Read.All", "Notes.Read.All", "openid", "profile", "Sites.Manage.All", "Sites.ReadWrite.All", "Team.ReadBasic.All", "User.Read", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -11210,7 +11205,7 @@ apps:
     single_page_app: ""
   - name: "Biz Apps Demo Hub Prod"
     client_id: "46e9667d-34e6-43d8-a494-6759b3ae6a5e"
-    enabled: "True"
+    enabled: "False"
     graph_api_permissions: ["Channel.Create", "Channel.ReadBasic.All", "email", "openid", "profile", "Team.Create", "Team.ReadBasic.All", "TeamMember.ReadWrite.All", "TeamsAppInstallation.ReadWriteForTeam", "TeamsTab.Create", "User.ReadWrite.All"]
     auth_code: "True"
     device_code: ""
@@ -11234,7 +11229,7 @@ apps:
   - name: "Power Platform Admin Center Client Test"
     client_id: "c84a0f23-a0f8-4e8e-918b-57db620d110a"
     enabled: "True"
-    graph_api_permissions: ["Application.Read.All", "email", "Group.Read.All", "openid", "Organization.Read.All", "profile", "ServiceHealth.Read.All", "User.Read", "User.Read.All"]
+    graph_api_permissions: ["Application.Read.All", "email", "Group.Read.All", "NetworkAccess.Read.All", "NetworkAccess.ReadWrite.All", "openid", "Organization.Read.All", "profile", "ServiceHealth.Read.All", "Team.ReadBasic.All", "User.Read", "User.Read.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -11285,7 +11280,7 @@ apps:
   - name: "make.test.powerapps.com"
     client_id: "60f38cf4-a0bf-4fdf-b0b5-14d3131bc031"
     enabled: "True"
-    graph_api_permissions: ["Application.ReadWrite.All", "email", "Group.Read.All", "openid", "profile", "User.Read.All"]
+    graph_api_permissions: ["Application.ReadWrite.All", "Channel.ReadBasic.All", "email", "Group.Read.All", "openid", "profile", "Team.ReadBasic.All", "User.Read.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -11313,7 +11308,6 @@ apps:
     broci: ""
     foci: "False"
     reply_addresses:
-      - "http://localhost"
       - "ms-appx-web://Microsoft.AAD.BrokerPlugin/5c17a0cf-5493-4b86-b23d-dabc1cc46f5a"
     single_page_app: ""
   - name: "PhysOps.Clients.Worker"
@@ -11402,7 +11396,7 @@ apps:
   - name: "Power Platform CLI - pac"
     client_id: "9cee029c-6210-4654-90bb-17e6e9d36617"
     enabled: "True"
-    graph_api_permissions: ["Application.ReadWrite.All", "email", "openid", "Organization.Read.All", "People.Read", "profile", "Tasks.ReadWrite", "User.Read", "User.ReadBasic.All"]
+    graph_api_permissions: ["Application.ReadWrite.All", "email", "openid", "Organization.Read.All", "People.Read", "profile", "Tasks.ReadWrite", "User.Read", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: "True"
     broci: ""
@@ -11413,7 +11407,7 @@ apps:
     single_page_app: ""
   - name: "Power Cards"
     client_id: "2f7b4d11-d621-4079-9798-27f548d681f1"
-    enabled: "True"
+    enabled: "False"
     graph_api_permissions: ["email", "openid", "profile", "TeamsAppInstallation.ReadWriteSelfForChat", "TeamsAppInstallation.ReadWriteSelfForTeam", "TeamsAppInstallation.ReadWriteSelfForUser"]
     auth_code: "True"
     device_code: ""
@@ -11496,7 +11490,7 @@ apps:
   - name: "PowerVirtualAgentsUSGovGCC"
     client_id: "9315aedd-209b-43b3-b149-2abff6a95d59"
     enabled: "True"
-    graph_api_permissions: ["AppCatalog.ReadWrite.All", "Application.Read.All", "Calendars.Read", "Channel.ReadBasic.All", "ChannelMessage.Send", "Chat.ReadBasic", "ChatMessage.Send", "email", "ExternalItem.Read.All", "Files.Read.All", "Files.ReadWrite.All", "Group.Read.All", "GroupMember.Read.All", "InformationProtectionPolicy.Read", "MailboxSettings.Read", "openid", "Organization.Read.All", "People.Read", "profile", "SensitivityLabel.Read", "Sites.Read.All", "Sites.ReadWrite.All", "Team.ReadBasic.All", "TeamsAppInstallation.ReadForTeam", "TeamsAppInstallation.ReadWriteForTeam", "User.Read.All"]
+    graph_api_permissions: ["_A.AA", "_B.AC", "_C.AA", "AppCatalog.ReadWrite.All", "Application.Read.All", "Calendars.Read", "Calendars.Read.Shared", "Calendars.ReadWrite", "Channel.Create", "Channel.ReadBasic.All", "ChannelMember.Read.All", "ChannelMember.ReadWrite.All", "ChannelMessage.Send", "ChannelSettings.Read.All", "ChannelSettings.ReadWrite.All", "Chat.Create", "Chat.ManageDeletion.All", "Chat.ReadBasic", "Chat.ReadWrite", "ChatMember.ReadWrite", "ChatMessage.Send", "Contacts.Read", "Contacts.ReadWrite", "email", "ExternalItem.Read.All", "Files.Read.All", "Files.ReadWrite.All", "Group.Read.All", "GroupMember.Read.All", "InformationProtectionPolicy.Read", "Mail.Read", "Mail.ReadBasic", "Mail.ReadWrite", "Mail.Send", "MailboxSettings.Read", "MailboxSettings.ReadWrite", "OnlineMeetingAiInsight.Read.All", "OnlineMeetingArtifact.Read.All", "OnlineMeetingRecording.Read.All", "OnlineMeetings.Read", "OnlineMeetings.ReadWrite", "OnlineMeetingTranscript.Read.All", "openid", "Organization.Read.All", "People.Read", "Presence.ReadWrite", "profile", "SensitivityLabel.Read", "Sites.Read.All", "Sites.ReadWrite.All", "Team.ReadBasic.All", "TeamMember.Read.All", "TeamMember.ReadWrite.All", "TeamMember.ReadWriteNonOwnerRole.All", "TeamsAppInstallation.ReadForTeam", "TeamsAppInstallation.ReadWriteForTeam", "TeamSettings.ReadWrite.All", "TeamworkTag.Read", "TeamworkTag.ReadWrite", "User.Read.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -11627,7 +11621,7 @@ apps:
   - name: "Power Automate Desktop GCC"
     client_id: "041e4c2d-ba3e-46a1-9347-5bc4054c8af4"
     enabled: "True"
-    graph_api_permissions: ["Contacts.Read", "email", "openid", "People.Read", "profile", "User.Read", "User.ReadBasic.All"]
+    graph_api_permissions: ["Contacts.Read", "email", "openid", "People.Read", "profile", "User.Read", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: "True"
     broci: ""
@@ -11990,7 +11984,7 @@ apps:
   - name: "make.gov.powerapps.us"
     client_id: "feb2c8aa-4f70-4881-abec-521141627b04"
     enabled: "True"
-    graph_api_permissions: ["email", "Group.Read.All", "openid", "profile", "User.Read", "User.Read.All", "User.ReadBasic.All"]
+    graph_api_permissions: ["_A.AA", "_B.AC", "_C.AA", "_E.AA", "_F.AB", "_G.AA", "_H.AD", "_L.AA", "Channel.ReadBasic.All", "email", "Group.Read.All", "openid", "profile", "Team.ReadBasic.All", "User.Read", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -12031,7 +12025,7 @@ apps:
   - name: "ProcessSimpleGCC"
     client_id: "38a893b6-d74c-4786-8fe7-bc3b4318e881"
     enabled: "True"
-    graph_api_permissions: ["email", "Group.Read.All", "openid", "profile", "Sites.Read.All", "User.Read.All"]
+    graph_api_permissions: ["_A.AA", "_B.AC", "_C.AA", "_E.AA", "_G.AA", "_H.AD", "_L.AA", "email", "Group.Read.All", "Member.Read.Hidden", "openid", "profile", "Sites.Read.All", "User.Read.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -12082,13 +12076,13 @@ apps:
   - name: "MicrosoftDynamics365MRGuidesCoreClient"
     client_id: "655db33f-4580-4e63-bad1-4618764badb9"
     enabled: "True"
-    graph_api_permissions: ["Calendars.Read", "ChannelMessage.Read.All", "ChannelMessage.Send", "Chat.ReadWrite", "email", "Files.Read.All", "Files.ReadWrite", "openid", "Presence.Read.All", "profile", "User.Read"]
+    graph_api_permissions: ["_A.AA", "Calendars.Read", "ChannelMessage.Read.All", "ChannelMessage.Send", "Chat.ReadWrite", "email", "Files.Read.All", "Files.ReadWrite", "openid", "Presence.Read.All", "profile", "User.Read"]
     auth_code: "True"
     device_code: "True"
     broci: ""
     foci: "False"
     reply_addresses:
-      - "http://localhost"
+      - "msauth.com.microsoft.guidesmobile://auth"
     single_page_app: ""
   - name: "ccibots"
     client_id: "a59cef1e-2e32-4703-8dab-810d9807efeb"
@@ -12103,7 +12097,7 @@ apps:
   - name: "Copilot Studio - Dogfood"
     client_id: "a522f059-bb65-47c0-8934-7db6e5286414"
     enabled: "True"
-    graph_api_permissions: ["AppCatalog.ReadWrite.All", "Application.Read.All", "Calendars.Read", "Channel.ReadBasic.All", "ChannelMessage.Send", "Chat.ReadBasic", "ChatMessage.Send", "email", "ExternalItem.Read.All", "Files.Read.All", "Files.ReadWrite", "Files.ReadWrite.All", "FileStorageContainer.Selected", "Group.Read.All", "InformationProtectionPolicy.Read", "MailboxSettings.Read", "openid", "Organization.Read.All", "People.Read", "profile", "SensitivityLabel.Read", "Sites.Read.All", "Sites.ReadWrite.All", "Team.ReadBasic.All", "TeamsAppInstallation.ReadForTeam", "TeamsAppInstallation.ReadWriteForTeam", "User.Read.All"]
+    graph_api_permissions: ["AppCatalog.ReadWrite.All", "Application.Read.All", "Calendars.Read", "Calendars.Read.Shared", "Calendars.ReadWrite", "Channel.Create", "Channel.ReadBasic.All", "ChannelMember.Read.All", "ChannelMember.ReadWrite.All", "ChannelMessage.Read.All", "ChannelMessage.Send", "ChannelSettings.Read.All", "ChannelSettings.ReadWrite.All", "Chat.Create", "Chat.ManageDeletion.All", "Chat.Read", "Chat.ReadBasic", "Chat.ReadWrite", "ChatMember.ReadWrite", "ChatMessage.Send", "Contacts.Read", "Contacts.ReadWrite", "email", "ExternalItem.Read.All", "Files.Read.All", "Files.ReadWrite", "Files.ReadWrite.All", "FileStorageContainer.Selected", "Group.Read.All", "InformationProtectionPolicy.Read", "Mail.Read", "Mail.ReadBasic", "Mail.ReadWrite", "Mail.Send", "MailboxSettings.Read", "MailboxSettings.ReadWrite", "OnlineMeetingAiInsight.Read.All", "OnlineMeetingArtifact.Read.All", "OnlineMeetingRecording.Read.All", "OnlineMeetings.Read", "OnlineMeetings.ReadWrite", "OnlineMeetingTranscript.Read.All", "openid", "Organization.Read.All", "People.Read", "Presence.ReadWrite", "profile", "SensitivityLabel.Read", "Sites.Read.All", "Sites.ReadWrite.All", "Team.ReadBasic.All", "TeamMember.Read.All", "TeamMember.ReadWrite.All", "TeamMember.ReadWriteNonOwnerRole.All", "TeamsAppInstallation.ReadForTeam", "TeamsAppInstallation.ReadWriteForTeam", "TeamSettings.ReadWrite.All", "TeamworkTag.Read", "TeamworkTag.ReadWrite", "User.Read.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -12287,7 +12281,6 @@ apps:
     foci: "False"
     reply_addresses:
       - "ms-appx-web://Microsoft.AAD.BrokerPlugin/4d079b4c-cab7-4b7c-a115-8fd51b6f8239"
-      - "urn:ietf:wg:oauth:2.0:oob"
     single_page_app: ""
   - name: "ODBC Client Driver"
     client_id: "2c1229aa-16c5-4ff5-b46b-4f7fe2a2a9c8"
@@ -12311,7 +12304,6 @@ apps:
     reply_addresses:
       - "http://localhost"
       - "ms-appx-web://Microsoft.AAD.BrokerPlugin/a94f9c62-97fe-4d19-b06d-472bed8d2bcf"
-      - "urn:ietf:wg:oauth:2.0:oob"
     single_page_app: ""
   - name: "JDBC Client Driver"
     client_id: "7f98cb04-cd1e-40df-9140-3bf7e2cea4db"
@@ -12938,7 +12930,7 @@ apps:
   - name: "Feedback Hub"
     client_id: "0973ecd5-7828-4430-9548-bb2331536767"
     enabled: "True"
-    graph_api_permissions: ["email", "openid", "profile", "User.ReadBasic.All"]
+    graph_api_permissions: ["_A.AA", "email", "openid", "profile", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: "True"
     broci: ""
@@ -12960,7 +12952,7 @@ apps:
   - name: "Microsoft Azure"
     client_id: "0c1307d4-29d6-4389-a11c-5cbe7f65d7fa"
     enabled: "True"
-    graph_api_permissions: ["AuditLog.Read.All", "Directory.Read.All", "email", "Group.ReadWrite.All", "GroupMember.ReadWrite.All", "IdentityRiskyUser.ReadWrite.All", "openid", "PrivilegedAccess.ReadWrite.AzureAD", "profile", "RoleAssignmentSchedule.ReadWrite.Directory", "RoleEligibilitySchedule.ReadWrite.Directory", "RoleManagement.ReadWrite.Directory", "RoleManagementPolicy.ReadWrite.Directory", "User.Invite.All", "User.ReadWrite.All", "UserAuthenticationMethod.ReadWrite.All"]
+    graph_api_permissions: ["_B.AC", "_G.AA", "_H.AD", "AuditLog.Read.All", "Directory.Read.All", "email", "Group.ReadWrite.All", "GroupMember.ReadWrite.All", "IdentityRiskyUser.ReadWrite.All", "openid", "PrivilegedAccess.ReadWrite.AzureAD", "profile", "RoleAssignmentSchedule.ReadWrite.Directory", "RoleEligibilitySchedule.ReadWrite.Directory", "RoleManagement.ReadWrite.Directory", "RoleManagementPolicy.ReadWrite.Directory", "User.Invite.All", "User.ReadWrite.All", "UserAuthenticationMethod.ReadWrite.All"]
     auth_code: "True"
     device_code: "True"
     broci: ""
@@ -12982,7 +12974,7 @@ apps:
   - name: "MS Teams Powershell Cmdlets"
     client_id: "12128f48-ec9e-42f0-b203-ea49fb6af367"
     enabled: "True"
-    graph_api_permissions: ["AppCatalog.ReadWrite.All", "Channel.Delete.All", "ChannelMember.ReadWrite.All", "ChannelSettings.ReadWrite.All", "email", "Group.ReadWrite.All", "openid", "profile", "Reports.Read.All", "TeamsAppInstallation.ReadWriteForUser", "TeamSettings.ReadWrite.All", "User.Read.All"]
+    graph_api_permissions: ["AppCatalog.ReadWrite.All", "Channel.Create", "Channel.Delete.All", "ChannelMember.ReadWrite.All", "ChannelMessage.Read.All", "ChannelMessage.Send", "ChannelSettings.Read.All", "ChannelSettings.ReadWrite.All", "email", "Group.ReadWrite.All", "openid", "profile", "Reports.Read.All", "Team.Create", "TeamsAppInstallation.ReadWriteAndConsentForTeam", "TeamsAppInstallation.ReadWriteForUser", "TeamSettings.ReadWrite.All", "TeamsTab.ReadWrite.All", "TeamworkCustomEmoji.Create", "TeamworkCustomEmoji.Read", "User.Read.All"]
     auth_code: "True"
     device_code: "True"
     broci: ""
@@ -13005,7 +12997,7 @@ apps:
   - name: "Clipchamp Classic"
     client_id: "15ddab63-ba81-45db-9bb6-6f8bc445c459"
     enabled: "True"
-    graph_api_permissions: ["Channel.ReadBasic.All", "Contacts.Read", "email", "Files.ReadWrite.All", "InformationProtectionPolicy.Read", "openid", "Organization.Read.All", "People.Read", "profile", "SensitivityLabel.Read", "Sites.ReadWrite.All", "Team.ReadBasic.All", "User.Read", "User.ReadBasic.All"]
+    graph_api_permissions: ["Channel.ReadBasic.All", "Contacts.Read", "email", "Files.ReadWrite.All", "InformationProtectionPolicy.Read", "openid", "Organization.Read.All", "People.Read", "profile", "SensitivityLabel.Read", "Sites.ReadWrite.All", "Team.ReadBasic.All", "User.Read", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -13039,7 +13031,7 @@ apps:
   - name: "Get Help"
     client_id: "1f7f6f43-2f81-429c-8499-293566d0ab0c"
     enabled: "True"
-    graph_api_permissions: ["email", "openid", "profile", "User.Read"]
+    graph_api_permissions: ["_A.AA", "_B.AC", "_F.AB", "email", "openid", "profile", "User.Read"]
     auth_code: "True"
     device_code: "True"
     broci: ""
@@ -13111,7 +13103,7 @@ apps:
   - name: "Windows Admin Center"
     client_id: "3aa85724-c5ce-42f5-b7f9-36b5a387b7b4"
     enabled: "True"
-    graph_api_permissions: ["Application.ReadWrite.All", "email", "openid", "profile"]
+    graph_api_permissions: ["_A.AA", "_E.AA", "_G.AA", "_G.AB", "Application.ReadWrite.All", "AppRegistration.Create", "email", "openid", "profile"]
     auth_code: "True"
     device_code: "True"
     broci: ""
@@ -13165,7 +13157,7 @@ apps:
   - name: "Dev Tunnels Service"
     client_id: "46da2f7e-b5ef-422a-88d4-2a7f9de6a0b2"
     enabled: "True"
-    graph_api_permissions: ["email", "Group.Read.All", "openid", "Organization.Read.All", "People.Read", "profile", "User.ReadBasic.All"]
+    graph_api_permissions: ["email", "Group.Read.All", "openid", "Organization.Read.All", "People.Read", "profile", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -13182,7 +13174,6 @@ apps:
     broci: ""
     foci: "False"
     reply_addresses:
-      - "https://login.microsoftonline.com/common/oauth2/nativeclient"
       - "ms-appx-web://microsoft.aad.brokerplugin/S-1-15-2-1833036066-2895077478-3042796309-3916857424-3116468946-3381894339-2055140690"
     single_page_app: ""
   - name: "Power Platform API Tools"
@@ -13198,13 +13189,12 @@ apps:
   - name: "Microsoft Exchange Hybrid Wizard"
     client_id: "4d2f5175-f06b-49e2-9f4a-8e614a8abc03"
     enabled: "True"
-    graph_api_permissions: ["Application.ReadWrite.All", "AppRoleAssignment.ReadWrite.All", "Calendars.Read.Shared", "Calendars.ReadWrite", "Contacts.ReadWrite", "email", "Group.Read.All", "Mail.ReadWrite", "openid", "profile"]
+    graph_api_permissions: ["Application.ReadWrite.All", "AppRoleAssignment.ReadWrite.All", "Calendars.Read.Shared", "Calendars.ReadWrite", "Contacts.ReadWrite", "email", "Group.Read.All", "Mail.ReadWrite", "OnPremisesPublishingProfiles.ReadWrite.All", "openid", "profile"]
     auth_code: "True"
     device_code: "True"
     broci: ""
     foci: "False"
     reply_addresses:
-      - "http://localhost"
       - "https://login.microsoftonline.com/common/oauth2/nativeclient"
     single_page_app: ""
   - name: "Custom Speech AI Portal"
@@ -13285,7 +13275,7 @@ apps:
   - name: "Sip Gateway UserApp"
     client_id: "582b2e88-6cca-4418-83d2-2451801e1d26"
     enabled: "True"
-    graph_api_permissions: ["email", "Mail.ReadBasic", "openid", "profile", "User.Read", "User.ReadBasic.All"]
+    graph_api_permissions: ["email", "Mail.ReadBasic", "openid", "profile", "User.Read", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -13307,7 +13297,7 @@ apps:
   - name: "Engagement Insights"
     client_id: "5a9cece4-4e66-4a74-9286-da0f62578dd8"
     enabled: "True"
-    graph_api_permissions: ["email", "openid", "People.Read", "profile", "User.ReadBasic.All"]
+    graph_api_permissions: ["email", "openid", "People.Read", "profile", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -13327,7 +13317,7 @@ apps:
     single_page_app: ""
   - name: "Surface Hub and Microsoft Teams Room Device Management"
     client_id: "60dd25e4-9d08-44fa-9b18-280cff19b15b"
-    enabled: "True"
+    enabled: "False"
     graph_api_permissions: ["Directory.AccessAsUser.All", "email", "openid", "profile"]
     auth_code: "True"
     device_code: "True"
@@ -13447,7 +13437,7 @@ apps:
   - name: "Sticky Notes Client"
     client_id: "7fba38f4-ec1f-458d-906c-f4e3c4f41335"
     enabled: "True"
-    graph_api_permissions: ["Calendars.Read", "Contacts.Read", "Directory.Read.All", "email", "openid", "profile", "User.Read", "User.ReadBasic.All"]
+    graph_api_permissions: ["_A.A3", "_A.AA", "_B.AC", "_G.AA", "Calendars.Read", "Contacts.Read", "Directory.Read.All", "email", "openid", "profile", "User.Read", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: "True"
     broci: ""
@@ -13511,7 +13501,7 @@ apps:
   - name: "Microsoft People"
     client_id: "a2a1fecc-b06e-4a1e-95c1-2afd94bcadff"
     enabled: "True"
-    graph_api_permissions: ["Contacts.ReadWrite", "email", "openid", "People.Read", "profile", "User.Read", "User.ReadBasic.All"]
+    graph_api_permissions: ["Contacts.ReadWrite", "email", "openid", "People.Read", "profile", "User.Read", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: "True"
     broci: ""
@@ -13578,7 +13568,7 @@ apps:
   - name: "Microsoft Nonprofit Portal"
     client_id: "aaa651fc-734c-48a1-8c37-ad1724b2088c"
     enabled: "True"
-    graph_api_permissions: ["Application.Read.All", "Device.Read.All", "Directory.Read.All", "email", "Group.Read.All", "Member.Read.Hidden", "openid", "Organization.Read.All", "OrgContact.Read.All", "profile", "RoleManagement.Read.Directory", "User.Read.All"]
+    graph_api_permissions: ["_B.AR", "Application.Read.All", "Device.Read.All", "Directory.Read.All", "email", "Group.Read.All", "Member.Read.Hidden", "openid", "Organization.Read.All", "OrgContact.Read.All", "profile", "RoleManagement.Read.Directory", "User.Read.All"]
     auth_code: "True"
     device_code: "True"
     broci: ""
@@ -13623,7 +13613,7 @@ apps:
   - name: "Azure Analysis Services User Picker"
     client_id: "bb301b1f-c8f3-473a-9ff5-7ad970c639c2"
     enabled: "True"
-    graph_api_permissions: ["Application.Read.All", "email", "GroupMember.Read.All", "openid", "profile", "User.ReadBasic.All"]
+    graph_api_permissions: ["_A.AA", "_C.AA", "_E.AA", "Application.Read.All", "email", "GroupMember.Read.All", "openid", "profile", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: "True"
     broci: ""
@@ -13668,7 +13658,7 @@ apps:
   - name: "Microsoft Launcher"
     client_id: "cb5b7de5-2ef8-4fb2-9600-9feadb91dc45"
     enabled: "True"
-    graph_api_permissions: ["email", "Group.Read.All", "openid", "Organization.Read.All", "People.Read", "Presence.Read.All", "profile", "User.Read", "User.Read.All"]
+    graph_api_permissions: ["_L.AA", "email", "Group.Read.All", "openid", "Organization.Read.All", "People.Read", "Presence.Read.All", "profile", "User.Read", "User.Read.All"]
     auth_code: "True"
     device_code: "True"
     broci: ""
@@ -13831,7 +13821,7 @@ apps:
   - name: "Viva Glint"
     client_id: "ea82ed9a-5efb-4911-877e-ef6896bf3586"
     enabled: "True"
-    graph_api_permissions: ["email", "openid", "Organization.Read.All", "profile", "User.Read", "User.ReadBasic.All"]
+    graph_api_permissions: ["email", "openid", "Organization.Read.All", "profile", "User.Read", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -13863,7 +13853,7 @@ apps:
   - name: "Microsoft Reflect and Insights"
     client_id: "f7691d3f-18be-4a7b-8639-efbb9ff02349"
     enabled: "True"
-    graph_api_permissions: ["ChannelMessage.Delete", "ChannelMessage.ReadWrite", "ChannelMessage.Send", "Chat.Create", "ChatMessage.Send", "EduAssignments.ReadBasic", "EduAssignments.ReadWrite", "EduAssignments.ReadWriteBasic", "EduRoster.ReadBasic", "email", "Files.Read.All", "Files.ReadWrite", "Group.Read.All", "Notes.Read", "openid", "Policy.Read.All", "profile", "RoleManagement.Read.Directory", "TeamsActivity.Send", "TeamsAppInstallation.ReadWriteForTeam", "User.ReadBasic.All"]
+    graph_api_permissions: ["_A.AA", "_B.AC", "_G.AA", "Calendars.ReadWrite", "Channel.ReadBasic.All", "ChannelMessage.Delete", "ChannelMessage.ReadWrite", "ChannelMessage.Send", "Chat.Create", "Chat.Read", "ChatMessage.Send", "EduAssignments.ReadBasic", "EduAssignments.ReadWrite", "EduAssignments.ReadWriteBasic", "EduRoster.ReadBasic", "email", "Files.Read.All", "Files.ReadWrite", "Group.Read.All", "LicenseAssignment.Read.All", "MailboxSettings.Read", "Notes.Read", "Notes.ReadWrite.All", "OnlineMeetingArtifact.Read.All", "OnlineMeetingRecording.Read.All", "OnlineMeetings.ReadWrite", "openid", "Policy.Read.All", "profile", "RoleManagement.Read.Directory", "Sites.Manage.All", "TeamsActivity.Send", "TeamsAppInstallation.ReadWriteForTeam", "User.ReadBasic.All", "VirtualEvent.Read"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -13874,7 +13864,7 @@ apps:
   - name: "Office Scripts"
     client_id: "fa3d58b1-f3bc-489e-954e-119d58a29bae"
     enabled: "True"
-    graph_api_permissions: ["email", "Files.ReadWrite.All", "Mail.Send", "openid", "profile", "Sites.ReadWrite.All", "User.Read", "User.ReadBasic.All"]
+    graph_api_permissions: ["email", "Files.ReadWrite.All", "openid", "profile", "Sites.ReadWrite.All", "User.Read", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -14096,7 +14086,7 @@ apps:
   - name: "Workplace Analytics"
     client_id: "9d827643-d003-4cca-9dc8-71213a8f1644"
     enabled: "True"
-    graph_api_permissions: ["email", "GroupMember.Read.All", "MailboxSettings.Read", "openid", "Organization.Read.All", "People.Read", "profile", "User.ReadBasic.All"]
+    graph_api_permissions: ["email", "GroupMember.Read.All", "MailboxSettings.Read", "openid", "Organization.Read.All", "People.Read", "profile", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -14108,11 +14098,12 @@ apps:
     client_id: "a0e1e353-1a3e-42cf-a8ea-3a9746eec58c"
     enabled: "True"
     graph_api_permissions: ["email", "openid", "profile", "User.Read"]
-    auth_code: ""
+    auth_code: "True"
     device_code: ""
     broci: ""
     foci: "False"
-    reply_addresses: []
+    reply_addresses:
+      - "https://appsource.microsoft.com/auth"
     single_page_app: "True"
   - name: "Microsoft Volume Licensing"
     client_id: "b4ec8d8b-0275-4833-8568-690db4af4b45"
@@ -14817,7 +14808,7 @@ apps:
   - name: "Azure AI Studio App"
     client_id: "cb2ff863-7f30-4ced-ab89-a00194bcf6d9"
     enabled: "True"
-    graph_api_permissions: ["Application.ReadWrite.All", "email", "Files.Read.All", "GroupMember.Read.All", "openid", "profile", "Sites.Read.All", "User.ReadBasic.All"]
+    graph_api_permissions: ["Application.ReadWrite.All", "email", "Files.Read.All", "GroupMember.Read.All", "LicenseAssignment.Read.All", "openid", "profile", "Sites.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -14828,7 +14819,7 @@ apps:
   - name: "Azure Machine Learning Workbench Web App"
     client_id: "d7304df8-741f-47d3-9bc2-df0e24e2071f"
     enabled: "True"
-    graph_api_permissions: ["email", "Files.Read.All", "openid", "profile", "Sites.Read.All", "User.ReadBasic.All", "User.ReadWrite"]
+    graph_api_permissions: ["email", "Files.Read.All", "openid", "profile", "Sites.Read.All", "User.Read.All", "User.ReadBasic.All", "User.ReadWrite"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -14887,7 +14878,7 @@ apps:
     foci: "False"
     reply_addresses: []
     single_page_app: ""
-  - name: "Microsoft Todo web app "
+  - name: "Microsoft Todo web app"
     client_id: "3ff8e6ba-7dc3-4e9e-ba40-ee12b60d6d48"
     enabled: "True"
     graph_api_permissions: ["email", "openid", "profile", "User.Read", "User.Read.All"]
@@ -14911,18 +14902,18 @@ apps:
   - name: "Microsoft Planner Client"
     client_id: "75f31797-37c9-498e-8dc9-53c16a36afca"
     enabled: "True"
-    graph_api_permissions: ["Calendars.ReadBasic", "ChannelMember.Read.All", "Chat.ReadBasic", "Directory.Read.All", "email", "Files.ReadWrite.All", "FileStorageContainer.Selected", "Group.ReadWrite.All", "GroupMember.ReadWrite.All", "InformationProtectionPolicy.Read", "openid", "Organization.Read.All", "profile", "SensitivityLabel.Read", "Tasks.ReadWrite", "UnifiedGroupMember.Read.AsGuest", "User.Read.All", "User.ReadBasic.All"]
+    graph_api_permissions: ["AppCatalog.Read.All", "Calendars.ReadBasic", "Channel.ReadBasic.All", "ChannelMember.Read.All", "ChannelMessage.Send", "Chat.ReadWrite", "Directory.Read.All", "email", "Files.ReadWrite.All", "FileStorageContainer.Selected", "Group.ReadWrite.All", "GroupMember.ReadWrite.All", "InformationProtectionPolicy.Read", "openid", "Organization.Read.All", "profile", "SensitivityLabel.Read", "Tasks.ReadWrite", "Team.ReadBasic.All", "TeamMember.Read.All", "UnifiedGroupMember.Read.AsGuest", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
     foci: "False"
     reply_addresses:
-      - "https://planner.cloud.microsoft/webui/blankmsalredirect"
+      - "https://planner.cloud.microsoft/webui/redirectbridge2"
     single_page_app: "True"
   - name: "M365ChatClient"
     client_id: "c0ab8ce9-e9a0-42e7-b064-33d422df41f1"
     enabled: "True"
-    graph_api_permissions: ["AppCatalog.Read.All", "Calendars.Read", "Channel.ReadBasic.All", "Chat.ReadBasic", "ChatMessage.Send", "email", "Files.ReadWrite.All", "FileStorageContainer.Selected", "Group.Read.All", "InformationProtectionPolicy.Read", "MailboxSettings.Read", "openid", "Organization.Read.All", "People.Read", "profile", "Sites.ReadWrite.All", "Team.ReadBasic.All", "User.Read", "User.Read.All", "User.ReadBasic.All"]
+    graph_api_permissions: ["AppCatalog.Read.All", "Calendars.Read", "Channel.ReadBasic.All", "Chat.ReadBasic", "ChatMessage.Send", "email", "Files.ReadWrite.All", "FileStorageContainer.Selected", "Group.Read.All", "InformationProtectionPolicy.Read", "MailboxSettings.Read", "openid", "Organization.Read.All", "People.Read", "profile", "Sites.ReadWrite.All", "Tasks.Read", "Tasks.ReadWrite", "Team.ReadBasic.All", "User.Read", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -14953,7 +14944,7 @@ apps:
   - name: "Microsoft Forms Web"
     client_id: "5f00fd34-f302-417f-81ef-1adda179d8fd"
     enabled: "True"
-    graph_api_permissions: ["Channel.ReadBasic.All", "ChannelMember.Read.All", "ChannelMessage.Send", "Chat.ReadWrite", "Directory.Read.All", "Group.Read.All", "Mail.Send", "MailboxSettings.Read", "People.Read", "User.Read", "User.Read.All"]
+    graph_api_permissions: ["Channel.ReadBasic.All", "ChannelMember.Read.All", "ChannelMessage.Send", "Chat.ReadWrite", "Directory.Read.All", "email", "Group.Read.All", "Mail.Send", "MailboxSettings.Read", "openid", "People.Read", "profile", "User.Read", "User.Read.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -15285,13 +15276,13 @@ apps:
   - name: "Dynamics 365 Fraud Protection application ID"
     client_id: "bf04bdab-e06f-44f3-9821-d3af64fc93a9"
     enabled: "True"
-    graph_api_permissions: ["Application.ReadWrite.All", "AppRoleAssignment.ReadWrite.All", "Directory.Read.All", "email", "openid", "profile", "User.Invite.All", "User.Read.All"]
+    graph_api_permissions: ["_A.AA", "_B.AC", "_C.AA", "_E.AA", "_E.AB", "_G.AA", "_G.AC", "_G.AL", "_H.AD", "Application.ReadWrite.All", "AppRoleAssignment.ReadWrite.All", "Directory.Read.All", "email", "openid", "profile", "User.Invite.All", "User.Read.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
     foci: "False"
     reply_addresses:
-      - "https://dfp.microsoft.com/api/auth"
+      - "https://app.cfp.microsoft.com/api/auth"
     single_page_app: "True"
   - name: "Microsoft Managed Policy Manager"
     client_id: "87e86b91-9ae3-4679-b68a-471fe50be746"
@@ -15968,7 +15959,7 @@ apps:
   - name: "Microsoft Developer Portal"
     client_id: "0140a36d-95e1-4df5-918c-ca7ccd1fafc9"
     enabled: "True"
-    graph_api_permissions: ["Application.Read.All", "email", "openid", "profile", "User.Read", "User.ReadBasic.All"]
+    graph_api_permissions: ["Application.Read.All", "email", "openid", "profile", "User.Read", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -16001,7 +15992,7 @@ apps:
   - name: "RemoteAssistanceService"
     client_id: "1dee7b72-b80d-4e56-933d-8b6b04f9a3e2"
     enabled: "True"
-    graph_api_permissions: ["Device.Read.All", "DeviceManagementConfiguration.Read.All", "DeviceManagementServiceConfig.Read.All", "DeviceManagementServiceConfig.ReadWrite.All", "email", "Group.Read.All", "openid", "Organization.Read.All", "profile", "User.Read", "User.ReadBasic.All"]
+    graph_api_permissions: ["Device.Read.All", "DeviceManagementConfiguration.Read.All", "DeviceManagementServiceConfig.Read.All", "DeviceManagementServiceConfig.ReadWrite.All", "email", "Group.Read.All", "Group.ReadBasic.All", "openid", "Organization.Read.All", "profile", "ProfilePhoto.Read.All", "User.Read", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -16019,7 +16010,7 @@ apps:
     foci: "False"
     reply_addresses:
       - "https://cosmos.azure.com/mpac/explorer.html"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Viva Goals Web App"
     client_id: "29eb068f-2f54-4fda-a8be-32f37312678a"
     enabled: "True"
@@ -16034,7 +16025,7 @@ apps:
   - name: "SalesConversationIntelligenceProd"
     client_id: "373aedd7-18be-428f-81e6-8174c02cf6d8"
     enabled: "True"
-    graph_api_permissions: ["Calendars.Read", "Chat.Read", "Contacts.Read", "email", "Files.ReadWrite.All", "OnlineMeetingTranscript.Read.All", "openid", "Presence.ReadWrite", "profile", "User.Read.All"]
+    graph_api_permissions: ["Calendars.Read", "Chat.Read", "Contacts.Read", "email", "Files.ReadWrite.All", "OnlineMeetings.ReadWrite", "OnlineMeetingTranscript.Read.All", "openid", "Presence.ReadWrite", "profile", "User.Read.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -16045,7 +16036,7 @@ apps:
   - name: "Microsoft Volume Licensing"
     client_id: "3ab9b3bc-762f-4d62-82f7-7e1d653ce29f"
     enabled: "True"
-    graph_api_permissions: ["email", "openid", "Organization.Read.All", "profile", "RoleManagement.ReadWrite.Directory"]
+    graph_api_permissions: ["_A.AB", "_H.AL", "email", "openid", "Organization.Read.All", "profile", "RoleManagement.ReadWrite.Directory"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -16088,7 +16079,7 @@ apps:
     single_page_app: "True"
   - name: "Threat Intelligence Portal"
     client_id: "478d8d1a-326f-49da-a58e-8f576faa4b5e"
-    enabled: "True"
+    enabled: "False"
     graph_api_permissions: ["Organization.Read.All", "User.Read"]
     auth_code: "True"
     device_code: ""
@@ -16122,7 +16113,7 @@ apps:
   - name: "Viva Pulse PROD"
     client_id: "56233257-15ee-4d3d-bdcd-9aa975244e4c"
     enabled: "True"
-    graph_api_permissions: ["AppCatalog.Read.All", "Channel.ReadBasic.All", "email", "Group.Read.All", "MailboxSettings.Read", "openid", "Organization.Read.All", "People.Read", "profile", "RoleManagement.Read.Directory", "Team.ReadBasic.All", "TeamsAppInstallation.ReadForUser", "User.Read", "User.Read.All", "User.ReadBasic.All", "User.ReadWrite"]
+    graph_api_permissions: ["_B.A2", "_J.AB", "AppCatalog.Read.All", "Channel.ReadBasic.All", "email", "Group.Read.All", "MailboxSettings.Read", "openid", "Organization.Read.All", "People.Read", "profile", "RoleManagement.Read.Directory", "Team.ReadBasic.All", "TeamsAppInstallation.ReadForUser", "User.Read", "User.Read.All", "User.ReadBasic.All", "User.ReadWrite"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -16144,7 +16135,7 @@ apps:
   - name: "Microsoft Remote Connectivity Analyzer"
     client_id: "5801fbf1-8df2-4c3c-a65c-e230edf60ca2"
     enabled: "True"
-    graph_api_permissions: ["AuditLog.Read.All", "Calendars.Read.Shared", "DeviceManagementConfiguration.Read.All", "DeviceManagementServiceConfig.Read.All", "email", "GroupMember.Read.All", "Mail.Read", "MailboxSettings.ReadWrite", "openid", "Policy.Read.All", "profile", "TeamworkDevice.Read.All", "User.Read", "User.Read.All"]
+    graph_api_permissions: ["_B.AE", "AuditLog.Read.All", "Calendars.Read.Shared", "DeviceManagementConfiguration.Read.All", "DeviceManagementServiceConfig.Read.All", "email", "GroupMember.Read.All", "GroupSettings.Read.All", "Mail.Read", "MailboxSettings.ReadWrite", "openid", "Policy.Read.All", "profile", "TeamworkDevice.Read.All", "User.Read", "User.Read.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -16166,7 +16157,7 @@ apps:
   - name: "Microsoft 365 Admin portal"
     client_id: "618dd325-23f6-4b6f-8380-4df78026e39b"
     enabled: "True"
-    graph_api_permissions: ["Application.Read.All", "email", "Group.Read.All", "openid", "Organization.Read.All", "profile", "User.Read.All"]
+    graph_api_permissions: ["_B.AR", "Application.Read.All", "email", "Group.Read.All", "openid", "Organization.Read.All", "profile", "User.Read.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -16210,7 +16201,7 @@ apps:
   - name: "Security Copilot"
     client_id: "7b7f48f0-62d0-4183-b9ad-c2b6b4fd7aff"
     enabled: "True"
-    graph_api_permissions: ["_H.AB", "Application.Read.All", "email", "GroupMember.Read.All", "openid", "profile", "User.Read.All"]
+    graph_api_permissions: ["_H.AB", "Application.Read.All", "email", "GroupMember.Read.All", "openid", "profile", "Sites.Read.All", "User.Read.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -16232,14 +16223,14 @@ apps:
   - name: "Azure Commercial Services Tool - CST"
     client_id: "801546d2-55cc-4ff4-b66d-134b1208deb5"
     enabled: "True"
-    graph_api_permissions: ["email", "openid", "profile", "User.Read", "User.Read.All"]
+    graph_api_permissions: ["email", "openid", "profile", "User.Read", "User.Read.All", "User.ReadWrite"]
     auth_code: "True"
     device_code: ""
     broci: ""
     foci: "False"
     reply_addresses:
       - "https://azapp-cst-nx-southindia-staging.azurewebsites.net/"
-    single_page_app: ""
+    single_page_app: "True"
   - name: "Hubble Media Service"
     client_id: "84a0e9dd-6e58-4aad-82af-ebe485acd09d"
     enabled: "True"
@@ -16265,7 +16256,7 @@ apps:
   - name: "Microsoft Loop App"
     client_id: "a187e399-0c36-4b98-8f04-1edc167a0996"
     enabled: "True"
-    graph_api_permissions: ["Calendars.Read", "ChatMessage.Send", "Contacts.Read", "Directory.Read.All", "email", "Files.ReadWrite.All", "FileStorageContainer.Selected", "Group.Read.All", "GroupMember.ReadWrite.All", "InformationProtectionPolicy.Read", "Mail.Send", "openid", "Organization.Read.All", "People.Read", "profile", "RecordsManagement.Read.All", "Sites.Read.All", "Tasks.ReadWrite", "User.Invite.All", "User.Read", "User.Read.All", "User.ReadBasic.All"]
+    graph_api_permissions: ["_B.AR", "Calendars.Read", "ChannelMessage.Read.All", "Chat.Read", "ChatMessage.Send", "Contacts.Read", "Directory.Read.All", "email", "Files.ReadWrite.All", "FileStorageContainer.Selected", "Group.Read.All", "GroupMember.ReadWrite.All", "InformationProtectionPolicy.Read", "Mail.Send", "openid", "Organization.Read.All", "People.Read", "profile", "RecordsManagement.Read.All", "Sites.Read.All", "Tasks.ReadWrite", "User.Invite.All", "User.Read", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -16286,7 +16277,7 @@ apps:
   - name: "Viva Learning Web"
     client_id: "b910b879-6c07-48aa-9cfd-d1916f62130d"
     enabled: "True"
-    graph_api_permissions: ["email", "Files.Read", "Files.Read.All", "openid", "profile", "User.Read"]
+    graph_api_permissions: ["AppCatalog.Read.All", "email", "Files.Read", "Files.Read.All", "openid", "profile", "User.Read"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -16297,7 +16288,7 @@ apps:
   - name: "ExP Studio"
     client_id: "b998f6f8-79d0-4b6a-8c25-5791dbe49ad0"
     enabled: "True"
-    graph_api_permissions: ["Application.Read.All", "email", "GroupMember.Read.All", "openid", "profile", "User.ReadBasic.All"]
+    graph_api_permissions: ["Application.Read.All", "email", "GroupMember.Read.All", "openid", "profile", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -16319,7 +16310,7 @@ apps:
   - name: "Office Online Loop integration SSO"
     client_id: "c26d35f8-e7e9-4a67-9180-d9f50d5e981c"
     enabled: "True"
-    graph_api_permissions: ["email", "Files.ReadWrite.All", "FileStorageContainer.Selected", "InformationProtectionPolicy.Read", "openid", "People.Read", "profile", "Tasks.ReadWrite", "User.Read", "User.ReadBasic.All"]
+    graph_api_permissions: ["email", "Files.ReadWrite.All", "FileStorageContainer.Selected", "InformationProtectionPolicy.Read", "openid", "People.Read", "profile", "Tasks.ReadWrite", "User.Read", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -16385,7 +16376,7 @@ apps:
   - name: "Sophia Platform Service"
     client_id: "e4712ded-3c3d-47d4-b800-91eea97808aa"
     enabled: "True"
-    graph_api_permissions: ["email", "openid", "profile", "User.Read"]
+    graph_api_permissions: ["email", "openid", "profile", "User.Read", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
@@ -16446,7 +16437,6 @@ apps:
     broci: ""
     foci: "False"
     reply_addresses:
-      - "http://localhost"
       - "https://mesh.df.onecdn.static.microsoft/AuthEnd"
     single_page_app: "True"
   - name: "ADIbizaUX-AsyncProcessor"
@@ -16955,18 +16945,18 @@ apps:
   - name: "Azure ExP"
     client_id: "e00d2f8a-f6c8-46e4-b379-e66082e28ca8"
     enabled: "True"
-    graph_api_permissions: ["email", "openid", "profile", "Application.Read.All", "GroupMember.Read.All", "User.Read.All", "User.ReadBasic.All"]
+    graph_api_permissions: ["email", "GroupMember.Read.All", "openid", "profile", "User.Read.All", "User.ReadBasic.All"]
     auth_code: "True"
     device_code: ""
     broci: ""
     foci: "False"
     reply_addresses:
-      - "https://config.exp.microsoft.com/swagger/oauth2-redirect.html"
-    single_page_app: ""
+      - "https://ae-metricservice-dev.azurewebsites.net/oauth"
+    single_page_app: "True"
   - name: "Entra-Copilot-UX"
     client_id: "ffe59ab3-5993-4931-863a-2e78afcf0d1f"
     enabled: "True"
-    graph_api_permissions: ["AccessReview.Read.All", "Application.Read.All", "AuditLog.Read.All", "AuthenticationContext.Read.All", "CloudPC.Read.All", "CustomSecAttributeAssignment.Read.All", "Device.Read.All", "DeviceManagementApps.Read.All", "DeviceManagementConfiguration.Read.All", "DeviceManagementManagedDevices.Read.All", "DeviceManagementRBAC.Read.All", "DirectoryRecommendations.Read.All", "Domain.Read.All", "email", "EntitlementManagement.Read.All", "Group.ReadWrite.All", "GroupMember.Read.All", "HealthMonitoringAlert.ReadWrite.All", "HealthMonitoringAlertConfig.Read.All", "HealthMonitoringAlertConfig.ReadWrite.All", "IdentityRiskEvent.Read.All", "IdentityRiskyServicePrincipal.Read.All", "IdentityRiskyUser.Read.All", "LicenseAssignment.Read.All", "LifecycleWorkflows-Reports.Read.All", "LifecycleWorkflows-Workflow.Read.All", "NetworkAccess-Reports.Read.All", "openid", "Organization.Read.All", "Policy.Read.All", "Policy.Read.AuthenticationMethod", "Policy.ReadWrite.ConditionalAccess", "profile", "Reports.Read.All", "RoleAssignmentSchedule.Read.Directory", "RoleAssignmentSchedule.ReadWrite.Directory", "RoleEligibilitySchedule.Read.Directory", "RoleManagement.Read.Directory", "User.Read", "User.Read.All", "UserAuthenticationMethod.Read.All"]
+    graph_api_permissions: ["AccessReview.Read.All", "Application.Read.All", "AuditLog.Read.All", "AuthenticationContext.Read.All", "CloudPC.Read.All", "CustomSecAttributeAssignment.Read.All", "Device.Read.All", "DeviceManagementApps.Read.All", "DeviceManagementApps.ReadWrite.All", "DeviceManagementConfiguration.Read.All", "DeviceManagementConfiguration.ReadWrite.All", "DeviceManagementManagedDevices.Read.All", "DeviceManagementRBAC.Read.All", "DeviceManagementServiceConfig.Read.All", "DirectoryRecommendations.Read.All", "Domain.Read.All", "email", "EntitlementManagement.Read.All", "Group.ReadWrite.All", "GroupMember.Read.All", "HealthMonitoringAlert.ReadWrite.All", "HealthMonitoringAlertConfig.Read.All", "HealthMonitoringAlertConfig.ReadWrite.All", "IdentityRiskEvent.Read.All", "IdentityRiskyServicePrincipal.Read.All", "IdentityRiskyUser.Read.All", "LicenseAssignment.Read.All", "LifecycleWorkflows-Reports.Read.All", "LifecycleWorkflows-Workflow.Read.All", "NetworkAccess-Reports.Read.All", "openid", "Organization.Read.All", "Policy.Read.All", "Policy.Read.AuthenticationMethod", "Policy.ReadWrite.ConditionalAccess", "profile", "Reports.Read.All", "RoleAssignmentSchedule.Read.Directory", "RoleAssignmentSchedule.ReadWrite.Directory", "RoleEligibilitySchedule.Read.Directory", "RoleManagement.Read.Directory", "User.Read", "User.Read.All", "UserAuthenticationMethod.Read.All"]
     auth_code: ""
     device_code: ""
     broci: "True"
@@ -16981,9 +16971,8 @@ apps:
     auth_code: "True"
     device_code: ""
     broci: ""
-    foci: "0"
-    reply_addresses:
-      - "0"
+    foci: "False"
+    reply_addresses: []
     single_page_app: ""
   - name: "Defender for Cloud Apps - Microsoft Copilot Collector"
     client_id: "6d81daa3-fdfe-4d42-a619-5b89358c3838"
@@ -16992,9 +16981,8 @@ apps:
     auth_code: "True"
     device_code: ""
     broci: ""
-    foci: "0"
-    reply_addresses:
-      - "0"
+    foci: "False"
+    reply_addresses: []
     single_page_app: ""
   - name: "Power Platform Authorization Service PROD"
     client_id: "8d605dfc-1a04-4da6-9be2-8426724af3f3"
@@ -17003,9 +16991,8 @@ apps:
     auth_code: "True"
     device_code: ""
     broci: ""
-    foci: "0"
-    reply_addresses:
-      - "0"
+    foci: "False"
+    reply_addresses: []
     single_page_app: ""
   - name: "Microsoft Defender For Cloud Apps - Data Loss Prevention - SPO"
     client_id: "71559765-2fa9-4207-b59f-a8bd85269d4a"
@@ -17014,9 +17001,8 @@ apps:
     auth_code: "True"
     device_code: ""
     broci: ""
-    foci: "0"
-    reply_addresses:
-      - "0"
+    foci: "False"
+    reply_addresses: []
     single_page_app: ""
   - name: "Safelinks"
     client_id: "85eced78-2127-4b24-9418-95f0bbe3d145"
@@ -17025,9 +17011,8 @@ apps:
     auth_code: "True"
     device_code: ""
     broci: ""
-    foci: "0"
-    reply_addresses:
-      - "0"
+    foci: "False"
+    reply_addresses: []
     single_page_app: ""
   - name: "Privacy Management"
     client_id: "5a4a238f-f186-4fff-95bd-d3e70f9e1a08"
@@ -17036,9 +17021,8 @@ apps:
     auth_code: "True"
     device_code: ""
     broci: ""
-    foci: "0"
-    reply_addresses:
-      - "0"
+    foci: "False"
+    reply_addresses: []
     single_page_app: ""
   - name: "Power Apps Service Data Plane Backend"
     client_id: "b6fb6bd6-f0fb-4a60-beb1-4e50afd0eaa9"
@@ -17047,9 +17031,8 @@ apps:
     auth_code: "True"
     device_code: ""
     broci: ""
-    foci: "0"
-    reply_addresses:
-      - "0"
+    foci: "False"
+    reply_addresses: []
     single_page_app: ""
   - name: "Viva Skills"
     client_id: "75d4238e-b142-4d2d-aed9-232b830b8706"
@@ -17058,8 +17041,7 @@ apps:
     auth_code: "True"
     device_code: ""
     broci: ""
-    foci: "0"
-    reply_addresses:
-      - "0"
+    foci: "False"
+    reply_addresses: []
     single_page_app: ""
 

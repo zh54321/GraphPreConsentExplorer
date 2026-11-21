@@ -7,7 +7,7 @@ During security assessments, I often rely on various pre-consented scopes for th
 
 To address this, I used [EntraTokenAid](https://github.com/zh54321/EntraTokenAid) to perform thousands of authentication attempts using ~1600 first party clients. This process helped identify which clients work with specific authentication flows and their corresponding pre-consented scopes on the Microsoft Graph API.
 
-The result is a fairly large list of 368 Client IDs that have pre-consented scopes on the Graph API and can be used to authenticate without a client secret.  
+The dataset includes 359 clients marked as enabled with pre-consented MS Graph API scopes and at least one supported authentication flow.
 All the information is stored in a YAML file, and there is a simple HTML GUI for easy search and filter navigation. It also provides easy copy-and-paste authentication commands for use with [EntraTokenAid](https://github.com/zh54321/EntraTokenAid).
 
 If you know of additional first-party clients or authentication methods, feel free to contribute!  
@@ -16,10 +16,12 @@ Note: The goal is not to list every valid redirect URL, but to have at least one
 ## 🚀 Features
 
 **Data:**
-- Around 1664 clients
-- Around 368 clients with usable pre-consented scopes for the Microsoft Graph API
-- Around 342 unique pre-consented scopes
-- Total 49 FOCI clients
+
+- 1664 clients
+- 377 clients with recorded pre-consented scopes for the Microsoft Graph API
+- 359 usable clients: marked as enabled, with Graph scopes and at least one supported authentication flow
+- 452 unique pre-consented Graph scopes
+- 49 FOCI clients (46 enabled)
 
 
 **GUI**:
@@ -28,7 +30,7 @@ Note: The goal is not to list every valid redirect URL, but to have at least one
 - Filter, search and sorting capabilities (by name, client ID, FOCI, Auth Flow, etc.)
 - Runs 100% locally in your browser
 - Export the visible data
-- [EntraTokenAid](https://github.com/zh54321/EntraTokenAid) authentication command generator (OAuth, Device Code, BroCi, etc.)
+- [EntraTokenAid](https://github.com/zh54321/EntraTokenAid) and [ROADtx](https://github.com/dirkjanm/ROADtools) authentication command generator (OAuth, Device Code, BroCi, etc.)
 - No external dependencies (All local, simple HTML + JavaScript)
 
 
@@ -56,7 +58,6 @@ git clone https://github.com/zh54321/GraphPreConsentExplorer.git
 2. **Load a YAML File:** Click on `📂 Load YML File` to load the YAML file.
 
 
-
 ## 📖 YAML Format
 ```yaml
 apps:
@@ -76,6 +77,23 @@ apps:
 
 
 ## 📝 Changelog
+
+### 2026-11-21
+
+UI/UX
+- Refreshed the table and application details layouts.
+- Improved search and filter performance.
+- Improved authentication guidance for BroCi and FOCI.
+- Added starts-with (`^microsoft`), ends-with (`$.read`), and exact-match (`"User.read"`) searches, all case-insensitive.
+- Added keyboard navigation for applications and column sorting.
+- Added a copy button for Graph API permissions in application details.
+- Added CSV, JSON, and YAML export options.
+- Added ROADtx authentication commands.
+
+Client list
+- Replaced redirect URLs that no longer worked
+- Updated pre-consented permissions for all apps. Microsoft appears to be increasingly using opaque scope values such as `_A.AA` for pre-consented permissions granted to first-party apps. See [internal permissions between Microsoft services](https://learn.microsoft.com/en-us/entra/identity-platform/scopes-oidc#internal-permissions-between-microsoft-services).
+
 
 ### 2026-03-20
 
